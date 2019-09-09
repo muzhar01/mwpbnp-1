@@ -1,0 +1,25 @@
+2018/11/04 20:43:11 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1.
+in /Users/yasir/Sites/Mwpbnp/protected/modules/administrator/modules/products/controllers/OrdersController.php (239)
+in /Users/yasir/Sites/Mwpbnp/protected/modules/administrator/modules/products/controllers/OrdersController.php (53)
+in /Users/yasir/Sites/Mwpbnp/index.php (15)
+2018/11/04 20:43:11 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1 in /Users/yasir/Sites/Mwpbnp/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/Mwpbnp/framework/db/CDbCommand.php(426): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/yasir/Sites/Mwpbnp/framework/db/ar/CActiveRecord.php(1341): CDbCommand->queryRow()
+#2 /Users/yasir/Sites/Mwpbnp/framework/db/ar/CActiveRecord.php(1443): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/yasir/Sites/Mwpbnp/protected/modules/administrator/modules/products/controllers/OrdersController.php(239): CActiveRecord->find(Array)
+#4 /Users/yasir/Sites/Mwpbnp/protected/modules/administrator/modules/products/controllers/OrdersController.php(53): OrdersController->loadModel('images')
+#5 [internal function]: OrdersController->actionDetails('images')
+#6 /Users/yasir/Sites/Mwpbnp/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(OrdersController), Array)
+#7 /Users/yasir/Sites/Mwpbnp/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(OrdersController), Object(ReflectionMethod), Array)
+#8 /Users/yasir/Sites/Mwpbnp/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#9 /Users/yasir/Sites/Mwpbnp/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#10 /Users/yasir/Sites/Mwpbnp/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/yasir/Sites/Mwpbnp/framework/web/CWebApplication.php(282): CController->run('details')
+#12 /Users/yasir/Sites/Mwpbnp/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#13 /Users/yasir/Sites/Mwpbnp/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/yasir/Sites/Mwpbnp/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/administrator/products/orders/details/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/products/orders/details/id/1537092588
+---

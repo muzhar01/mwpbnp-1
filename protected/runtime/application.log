@@ -1,0 +1,1705 @@
+2019/08/07 13:10:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:11:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:11:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:11:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:12:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:14:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:27:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:41:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 13:42:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:03:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:20:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:37:44 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/07 14:37:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:38:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:39:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:39:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:39:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:39:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:43:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:43:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:49:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:52:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:53:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:54:18 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/07 14:54:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:58:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 14:59:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:04:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:17:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:19:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:26:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 15:54:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:19:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:29:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:29:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:30:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:31:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:32:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:32:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:33:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:33:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:33:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:33:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:33:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:34:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:35:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:35:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:44:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:45:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:45:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:45:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 16:45:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:04:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:04:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:07:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:17:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:20:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:21:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:21:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:23:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:24:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:28:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:35:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 17:59:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:01:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:01:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:10:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:11:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:11:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:11:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:11:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:21:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:29:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:47:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:48:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:52:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 18:53:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:28:05 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/07 19:28:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:28:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:29:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:29:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:29:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:29:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:33:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:33:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:39:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:40:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:43:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:43:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:44:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:44:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:44:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:44:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:44:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:45:09 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/07 19:45:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:50:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:50:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:50:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 19:54:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 20:44:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 21:24:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 21:47:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 21:54:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:00:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:13:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:16:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:20:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:29:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 22:33:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 23:03:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 23:27:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 23:35:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 23:47:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/07 23:49:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:05:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:05:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:05:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:05:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 00:06:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:00:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 01:45:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 02:22:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 02:39:30 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/current-rate
+2019/08/08 02:39:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 02:42:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/noorzeeshan786/public_html/protected/controllers/SiteController.php:152
+Stack trace:
+#0 [internal function]: SiteController->actionWidgetGraph('hardware-produc...')
+#1 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#2 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#3 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): CController->run('widgetgraph')
+#7 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('site/widgetgrap...')
+#8 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/widget/graph/hardware-products
+---
+2019/08/08 02:42:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 02:42:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 03:14:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 03:29:39 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=products&cid=33
+2019/08/08 03:29:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 03:57:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 03:57:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 03:59:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('ads.txt')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2019/08/08 03:59:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:00:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:00:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:20:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:35:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:40:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:43:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:44:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:44:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:53:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 04:53:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 05:06:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 05:20:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 05:45:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:02:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('ads.txt')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2019/08/08 06:02:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:19:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:20:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:20:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:20:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:20:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:20:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:28:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 06:47:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:06:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:18:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:29:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:31:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:31:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 07:31:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:26:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:37:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:37:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:37:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:37:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:37:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:38:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:39:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:47:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 08:48:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 09:05:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 09:06:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 09:27:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 09:55:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:15:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:15:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:51:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:56:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:57:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 10:58:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 11:13:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 11:20:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 11:21:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 11:41:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:04:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:04:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:38:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:39:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:55:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:56:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:58:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 12:58:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:14:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:14:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:29 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/404testpage4525d2fdc
+2019/08/08 13:22:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "404javascript.js".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('404javascript.j...')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/404javascript.js
+HTTP_REFERER=http://www.google.com/url/?sa=t
+---
+2019/08/08 13:22:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:22:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:38:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:44:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:45:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:45:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:45:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:57:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 13:58:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 14:15:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 14:15:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 14:16:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 14:22:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 14:42:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 15:10:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 15:10:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 15:18:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/noorzeeshan786/public_html/protected/controllers/ProductController.php:150
+Stack trace:
+#0 [internal function]: ProductController->actionDetails('ms-door-frame')
+#1 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#2 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#3 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): CController->run('details')
+#7 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('product/details')
+#8 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/product/details/ms-door-frame
+---
+2019/08/08 15:18:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 15:33:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:41:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:44:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:47:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:47:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:52:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:53:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:54:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:51 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/08 16:55:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:55:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:56:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:33 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/current-rate
+2019/08/08 16:59:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:43 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/chowkat-tool
+2019/08/08 16:59:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 16:59:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:00:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:00:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:02:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:02:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:02:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:02:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:02:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:03:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:04:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:05:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:15:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:18:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:44:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 17:44:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 18:16:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 18:17:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/noorzeeshan786/public_html/protected/controllers/ProductController.php:150
+Stack trace:
+#0 [internal function]: ProductController->actionDetails('rerolled--squar...')
+#1 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#2 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#3 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): CController->run('details')
+#7 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('product/details')
+#8 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/product/details/rerolled--square
+---
+2019/08/08 18:17:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 18:45:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:00:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:04:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:04:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:07:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:08:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 19:12:20 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=28
+2019/08/08 19:12:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:21:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:43:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:53:13 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/08 20:53:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:54:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:55:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:55:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:59:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 20:59:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:00:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:04:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:08:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:10:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:10:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:10:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:10:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:10:32 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/08 21:10:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:13:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:15:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:17:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:18:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:19:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 21:20:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:12:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:46:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:47:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 22:48:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 23:24:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 23:30:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 23:34:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('ads.txt')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2019/08/08 23:34:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 23:42:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/08 23:52:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:11:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:12:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:20:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:20:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:49:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 00:50:13 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=16
+2019/08/09 00:50:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:02:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:03:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:05:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 01:20:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /home/noorzeeshan786/public_html/framework/web/CController.php:492
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(265): CController->missingAction('images')
+#1 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#3 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/administrator/products/default/images/favicon.png
+---
+2019/08/09 01:32:08 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'noor786'@'localhost' (using password: YES)
+2019/08/09 01:32:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/framework/db/ar/CActiveRecord.php(2431): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/framework/db/ar/CActiveRecord.php(418): CActiveRecordMetaData->__construct(Object(Products))
+#7 /home/noorzeeshan786/public_html/framework/db/ar/CActiveRecord.php(77): CActiveRecord->getMetaData()
+#8 /home/noorzeeshan786/public_html/protected/modules/administrator/modules/products/controllers/DefaultController.php(27): CActiveRecord->__construct('search')
+#9 [internal function]: DefaultController->actionPriceList('')
+#10 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#11 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#13 /home/noorzeeshan786/public_html/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#14 /home/noorzeeshan786/public_html/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): CController->run('pricelist')
+#16 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#17 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#18 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/administrator/products/default/pricelist
+HTTP_REFERER=https://www.mwpbnp.com/administrator/products/default/reports
+---
+2019/08/09 01:32:08 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'noor786'@'localhost' (using password: YES)
+2019/08/09 01:39:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:10:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:19:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:20:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:22:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:24:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:42:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 02:55:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:12:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:13:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:13:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:13:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:13:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 03:55:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:10:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:11:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:11:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 04:48:23 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 05:34:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 06:02:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 07:08:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 07:08:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 07:26:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 07:35:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 07:35:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 08:10:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 08:20:45 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=18
+2019/08/09 08:20:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 08:26:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 08:56:40 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=18
+2019/08/09 08:56:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:01:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:02:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:09:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 09:49:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 10:15:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 10:16:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 10:24:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 10:57:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('ads.txt')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2019/08/09 10:57:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 11:00:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 11:20:07 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/current-rate
+2019/08/09 11:20:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 11:20:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:20:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:20:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:38:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:40:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:42:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 12:53:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:57 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/404testpage4525d2fdc
+2019/08/09 13:12:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "404javascript.js".' in /home/noorzeeshan786/public_html/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController('404javascript.j...')
+#1 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/noorzeeshan786/public_html/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/404javascript.js
+HTTP_REFERER=http://www.google.com/url/?sa=t
+---
+2019/08/09 13:12:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:12:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:13:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:40 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:14:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:08 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:15 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:15:50 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:48 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:16:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:03 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:17 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:17:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:05 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:20 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:35 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:18:57 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:19:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:19:37 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=24
+2019/08/09 13:19:38 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:29:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:30:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 13:51:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 14:18:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 14:26:19 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:02:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:21 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:27 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:44 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:47 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:23:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:35:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:35:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:45:52 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 15:46:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:10:54 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:19:53 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=5
+2019/08/09 16:19:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:24:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:34 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:51 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:32:58 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:33:02 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:33:04 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 16:41:41 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:08:36 [error] [php] Trying to get property of non-object (/home/noorzeeshan786/public_html/protected/controllers/SiteController.php:165)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CController.php(283): SiteController->runAction()
+#1 /home/noorzeeshan786/public_html/framework/web/CController.php(261): SiteController->runActionWithFilters()
+#2 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#4 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?page=product-detail&id=26
+2019/08/09 17:08:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:27:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:27:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:27:28 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:29:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:35:10 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:42:43 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 17:47:09 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:00:11 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/09 18:00:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:00:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:01:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:02:12 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:02:24 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:02:32 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:07:59 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:09:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:10:01 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:13:55 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:19:14 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:19:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:19:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:19:31 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:19:33 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:21:16 [error] [php] SimpleXMLElement::__construct(): Entity: line 13: parser error : Specification mandate value for attribute async (/home/noorzeeshan786/public_html/protected/extensions/feeds/YaSimpleFeed.php:64)
+Stack trace:
+#0 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(184): YaSimpleFeed->run()
+#1 /home/noorzeeshan786/public_html/protected/views/news/index.php(21): NewsController->widget()
+#2 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(131): require()
+#3 /home/noorzeeshan786/public_html/framework/web/CBaseController.php(96): NewsController->renderInternal()
+#4 /home/noorzeeshan786/public_html/framework/web/CController.php(892): NewsController->renderFile()
+#5 /home/noorzeeshan786/public_html/framework/web/CController.php(794): NewsController->renderPartial()
+#6 /home/noorzeeshan786/public_html/protected/controllers/NewsController.php(14): NewsController->render()
+#7 unknown(0): NewsController->actionIndex()
+#8 /home/noorzeeshan786/public_html/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#9 /home/noorzeeshan786/public_html/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#10 /home/noorzeeshan786/public_html/framework/web/CController.php(304): CInlineAction->runWithParams()
+#11 /home/noorzeeshan786/public_html/framework/web/CController.php(283): NewsController->runAction()
+#12 /home/noorzeeshan786/public_html/framework/web/CController.php(261): NewsController->runActionWithFilters()
+#13 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(282): NewsController->run()
+#14 /home/noorzeeshan786/public_html/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#15 /home/noorzeeshan786/public_html/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /home/noorzeeshan786/public_html/index.php(15): CWebApplication->run()
+REQUEST_URI=/news/index/id/1
+2019/08/09 18:21:16 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:22:42 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:28:07 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:29:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:34:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:34:45 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:22 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:26 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:30 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:36 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:46 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:49 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:40:56 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:41:00 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:41:11 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:41:13 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:41:18 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:41:25 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:42:37 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:44:53 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 18:57:39 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 19:34:06 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js
+2019/08/09 21:03:01 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 21:03:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/09 21:03:01 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 21:03:58 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 21:03:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/09 21:03:58 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 21:05:35 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 21:05:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/09 21:05:35 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 22:25:41 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 22:25:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/09 22:25:42 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 22:43:06 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/09 22:43:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/09 22:43:06 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 02:30:02 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 02:30:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 02:30:03 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 02:51:44 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 02:51:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 02:51:44 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 06:14:20 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 06:14:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 06:14:20 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 07:54:34 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 07:54:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 07:54:34 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:13:02 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:13:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 08:13:02 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:13:12 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:13:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 08:13:12 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:14:03 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:14:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 08:14:03 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:14:04 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 08:14:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 08:14:04 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 10:09:52 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 10:09:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 10:09:52 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 10:10:20 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 10:10:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 10:10:20 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 12:26:05 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 12:26:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 12:26:05 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 12:42:01 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/10 12:42:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_Other_Sites/www.qhtel.com/demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/10 12:42:01 [error] [exception.CDbException] SQLSTATE[42000] [1044] Access denied for user 'demo123'@'localhost' to database 'demo-mwpbnp'
+2019/08/24 20:09:23 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'demo123'@'localhost' (using password: YES)
+2019/08/24 20:09:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php:417
+Stack trace:
+#0 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(364): CDbConnection->open()
+#1 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/CDbConnection.php(342): CDbConnection->setActive(true)
+#2 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CModule.php(400): CDbConnection->init()
+#3 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(478): CModule->getComponent('db')
+#4 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(638): CApplication->getDb()
+#5 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(672): CActiveRecord->getDbConnection()
+#6 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/db/ar/CActiveRecord.php(1442): CActiveRecord->getCommandBuilder()
+#7 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/protected/controllers/SiteController.php(163): CActiveRecord->find(Array)
+#8 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/actions/CInlineAction.php(47): SiteController->actionIndex()
+#9 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#10 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#11 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(282): CController->run('')
+#13 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/web/CWebApplication.php(140): CWebApplication->runController('')
+#14 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/noorzeeshan786/public_html/_demo.mwpbnp.com/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/
+---
+2019/08/24 20:09:23 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'demo123'@'localhost' (using password: YES)
+2019/09/09 12:47:29 [warning] [system.web.CClientScript] There is no CClientScript package: /themes/mwpbnp/js/jquery.js

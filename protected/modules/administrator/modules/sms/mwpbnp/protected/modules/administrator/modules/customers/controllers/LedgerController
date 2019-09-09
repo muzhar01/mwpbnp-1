@@ -1,0 +1,35 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+class LedgerController extends Controller {
+
+    public $layout = '//layouts/column2';
+
+    /**
+     * @return array action filters
+     */
+    public $resource_id = 23;
+    public $name = '', $number = '';
+
+    public function init() {
+        Yii::import('application.extensions.phpmailer.JPhpMailer'); // Import php mail class
+        if (Yii::app()->user->isGuest) {
+            $session = Yii::app()->session;
+            $session['referal_url'] = '/administrator/customers/ledger';
+            $session->open();
+            $this->redirect('/administrator', true);
+        }
+        $this->baseUrl .= '/customers/ledger';
+    }
+
+    public function actionIndex() {
+        $this->render('ledger');
+    }
+
+
+}
