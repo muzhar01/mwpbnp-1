@@ -64,7 +64,7 @@ class Members extends CActiveRecord
 			
 			array('company_ntn_no, company_gst_no', 'length', 'max'=>25),
 			array('job_title', 'length', 'max'=>60),
-            array('allow_sms,allow_email,verify_sms', 'length', 'max'=>1),
+            array('allow_sms,allow_email,verify_sms,verify_cnic,verify_company_ntn,verify_company_gst', 'length', 'max'=>1),
             array('email,cellular,cellular2,cellular3', 'unique'),
 			array('password', 'length', 'max'=>32),
 			array('secret_key', 'length', 'max'=>255),
@@ -113,7 +113,7 @@ public function is9NumbersOnly($attribute)
 			'lname' => 'Business Name',
 			'username' => 'User name',
 			'address' => 'Address',
-			'cnic' => 'CNIC',
+			'cnic' => 'CNIC#',
 			'city' => 'City',
 			'zipcode' => 'Zip code',
 			'phone_office' => 'Phone Office',
@@ -128,9 +128,9 @@ public function is9NumbersOnly($attribute)
 			'notification_language' => 'Notification Language',
 			'sales_officer' => 'Sales Officer',
 			'company_name' => 'Company Name',
-			'company_no' => 'Company No',
-			'company_ntn_no' => 'Company Ntn No',
-			'company_gst_no' => 'Company Gst No',
+			'company_no' => 'Company#',
+			'company_ntn_no' => 'NTN#',
+			'company_gst_no' => 'GST#',
 			'job_title' => 'Job Title',
 			'password' => 'Password',
 			'status' => 'Status',
@@ -141,7 +141,11 @@ public function is9NumbersOnly($attribute)
             'allow_sms'=>'Allow SMS Subscription',
             'allow_email'=>'Allow Email Subscriptions',
             'verify_sms' =>'Verify',
-            'verify_email' =>'Verify'
+            'verify_email' =>'Verify',
+            'verify_company_ntn'=>'Verify',
+            'verify_company_gst' => 'Verify',
+            'verify_cnic' =>'Verify',
+
 		);
 	}
 

@@ -20,22 +20,19 @@
 		
 		<?php echo $form->textField($model,'fname',array('class'=>'form-control','size'=>60,'maxlength'=>100,'placeholder' => 'Name')); ?>
 	</div>
-
-	<div class="col-lg-2 col-md-2 col-sm-12">
-		<?php echo $form->textField($model,'lname',array('class'=>'form-control','size'=>60,'maxlength'=>100,'placeholder' => 'Business Name')); ?>
-	</div>
-	
+    <div class="col-lg-2 col-md-2 col-sm-12">
+        <?php echo $form->textField($model,'email',array('class'=>'form-control','size'=>50,'maxlength'=>50,'placeholder' => 'Email Address')); ?>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-12">
+        <?php echo $form->textField($model,'lname',array('class'=>'form-control','size'=>60,'maxlength'=>100,'placeholder' => 'Business Name')); ?>
+    </div>
 	<div class="col-lg-2 col-md-2 col-sm-12">		
 		<?php echo $form->textField($model,'cellular',array('class'=>'form-control','size'=>50,'maxlength'=>50,'placeholder' => 'Cell No.')); ?>
 	</div>
 
-	<div class="col-lg-2 col-md-2 col-sm-12">		
-		<?php echo $form->textField($model,'email',array('class'=>'form-control','size'=>50,'maxlength'=>50,'placeholder' => 'Email Address')); ?>
-	</div>
-
 	<div class="col-lg-2 col-md-2 col-sm-12">
 		
-		<?php echo $form->textField($model,'company_name',array('class'=>'form-control','size'=>50,'maxlength'=>50,'placeholder' => 'Company Name')); ?>
+		<?php echo $form->textField($model,'cnic',array('class'=>'form-control','size'=>50,'maxlength'=>50,'placeholder' => 'CNIC#')); ?>
 	</div>
 
 	<div class="col-lg-1 col-md-2 col-sm-12">

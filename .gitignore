@@ -3,5 +3,6 @@
 /assets/
 /cgi-bin/
 /downloads/
-.idea
+.idea/
 .DS_Store
+/protected/runtime/

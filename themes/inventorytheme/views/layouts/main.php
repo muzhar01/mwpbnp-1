@@ -21,13 +21,14 @@
         <!--AdminLTE Skins. Choose a skin from the css/skins 
                  folder instead of downloading all of them to reduce the load.-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+
         <!-- iCheck -->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
         <!--Morris chart-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
         
 
-    <body class="sidebar-mini skin-red">
+    <body class="sidebar-mini skin-green">
         <div class="wrapper">
             <header class="main-header">
                 <!-- Logo -->
