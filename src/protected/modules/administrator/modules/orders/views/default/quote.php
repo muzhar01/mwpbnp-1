@@ -37,7 +37,7 @@ $this->breadcrumbs = array(
                 'pagerCssClass' => 'box-footer clearfix',
                 'columns' => array(
                     array('name' => 'id', 'value' => 'CHtml::link($data->quote_id, "/administrator/orders/default/details/id/".$data->quote_id)', 'type' => 'raw'),
-                    array('name' => 'member', 'value' => '$data->member->fname . " " . $data->member->lname'),
+                    //array('name' => 'member', 'value' => '$data->member->fname . " " . $data->member->lname'),
                     array('name' => 'sales by', 'value' => '$data->getName()'),
                     array('name' => 'status', 'value' => '$data->status'),
                     array('name' => 'payment_type', 'value' => '$data->payment_type'),

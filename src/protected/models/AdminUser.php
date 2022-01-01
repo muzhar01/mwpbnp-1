@@ -22,7 +22,7 @@
  * @property float $commission
  *
  * The followings are the available model relations:
- * @property Role $role
+ * @property Roles $role
  */
 class AdminUser extends CActiveRecord {
 

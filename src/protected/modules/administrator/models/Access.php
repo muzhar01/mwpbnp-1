@@ -14,7 +14,7 @@
  * @property integer $view
  *
  * The followings are the available model relations:
- * @property Role $role
+ * @property Roles $role
  * @property Resources $resource
  */
 class Access extends CActiveRecord

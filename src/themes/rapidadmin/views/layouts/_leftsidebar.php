@@ -43,38 +43,33 @@
                 </ul>
             </li>
             <?php }?>
-            <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('13')) {?>
-            <li   class=" <?php  echo (Yii::app ()->controller->id == "banks")  ?  "active" : '' ; ?>">
-                <a href="/administrator/banks"><i class="fa fa-bank"></i>Payment Methods</a>
-            </li>
-            <?php }?>
+
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('19')){ ?>
              <li class="
               <?php if(Yii::app ()->controller->action->id ==  'vehicles' || Yii::app ()->controller->action->id ==  'drivers'  || Yii::app ()->controller->action->id ==  'vehiclespayment'   || Yii::app ()->controller->action->id ==  'ledger'){ echo "active"; } ?>  treeview">
-                <a   href="/administrator/vehicles/Vehicles"><i class="fa fa-envelope-o"></i>Vehicle Management 
+                <a   href="/administrator/vehicles/vehicles"><i class="fa fa-cab"></i>Vehicle Management
                     <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/VehicleRegistration")  ?  "active" : '' ; ?>  treeview-menu">
                      <li   class=" <?php  echo (Yii::app ()->controller->action->id == "vehicles")  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/vehicles/Vehicles"><i class="fa fa-file"></i> Registration</a>
+                        <a   href="/administrator/vehicles/vehicles"><i class="fa fa-barcode"></i> Registration</a>
                     </li>
                      <li   class=" <?php  echo (Yii::app ()->controller->action->id == "drivers")  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/vehicles/Drivers"><i class="fa fa-file"></i> Drivers</a>
+                        <a   href="/administrator/vehicles/drivers"><i class="fa fa-users"></i> Drivers</a>
                     </li>
                     <li   class=" <?php  echo (Yii::app ()->controller->action->id == "vehiclespayment")  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/vehicles/VehiclesPayment"><i class="fa fa-file"></i> Payment+Income+Expense</a>
+                        <a   href="/administrator/vehicles/vehiclesPayment"><i class="fa fa-money"></i> Payments</a>
                     </li>
-
-                   
                     <li   class=" <?php  echo (Yii::app ()->controller->action->id == "ledger")  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/vehicles/Ledger"><i class="fa fa-file"></i> Ledger</a>
+                        <a   href="/administrator/vehicles/ledger"><i class="fa fa-bar-chart"></i> Ledger</a>
                     </li>
                   
             
                 </ul>
             </li>
-             <?php }if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('2')){ ?>
-            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/products")  ?  "active" : '' ; ?>  treeview">
-                <a   href="/administrator/products/products"><i class="fa fa-barcode"></i>Product Management <i class="fa fa-angle-left pull-right"></i></a>
+             <?php }
+            if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('2')){ ?>
+            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/products" || Yii::app ()->controller->module->id ==  "administrator/orders")  ?  "active" : '' ; ?>  treeview">
+                <a   href="/administrator/products"><i class="fa fa-barcode"></i>Product Management <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/products")  ?  "active" : '' ; ?>  treeview-menu">
                      <li   class=" <?php  echo (Yii::app ()->controller->id == "productsize")  ?  "active" : '' ; ?>">
                         <a   href="/administrator/products/productsize"><i class="fa fa-database"></i> Size</a>
@@ -83,12 +78,21 @@
                         <a href="/administrator/products/productthickness"><i class="fa fa-cogs"></i> Thickness</a>
                     </li>
                     <li   class=" <?php  echo (Yii::app ()->controller->id == "category")  ?  "active" : '' ; ?>">
-                        <a  href="/administrator/products/category"><i class="fa fa-table"></i>Category</a>
+                        <a  href="/administrator/products/category"><i class="fa fa-table"></i> Category</a>
                     </li>
                    <li   class=" <?php  echo (Yii::app ()->controller->id == "products")  ?  "active" : '' ; ?>">
                         <a  href="/administrator/products/products"><i class="fa fa-barcode"></i> Products</a>
                     </li>
-
+                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('13')) {?>
+                        <li   class=" <?php  echo (Yii::app ()->controller->id == "banks")  ?  "active" : '' ; ?>">
+                            <a href="/administrator/banks"><i class="fa fa-bank"></i> Payment Methods</a>
+                        </li>
+                    <?php }?>
+                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('24')){ ?>
+                        <li   class=" <?php  echo (Yii::app ()->controller->id == "orders")  ?  "active" : '' ; ?>">
+                            <a  href="/administrator/orders"><i class="fa fa fa-shopping-cart"></i> Orders Management</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </li>
             <?php } ?>
@@ -149,11 +153,7 @@
                 </ul>
             </li>
             <?php } ?>
-            <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('24')){ ?>
-                <li   class=" <?php  echo (Yii::app ()->controller->id == "orders")  ?  "active" : '' ; ?>">
-                    <a  href="/administrator/orders"><i class="fa fa fa-shopping-cart"></i> Orders/ Cart</a>
-                </li> 
-            <?php } ?>
+
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('16')){ ?>
             <li>
                 <a href="/administrator/inventory/vendor"><i class="fa fa-circle" aria-hidden="true"></i><span>Vendor Center</span></a>
@@ -292,47 +292,16 @@
            </li> 
            <?php } ?>
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('10')) { ?>
-                <li class="<?php echo (Yii::app()->controller->id == "ironfurniturecategory" or Yii::app()->controller->id == "ironfurnitureproducts") ? "active" : ''; ?>  treeview">
-                    <a href="/administrator/ironfurniture/ironfurniturecategory"><i class="fa fa-anchor"></i>Iron Furniture <i
-                                class="fa fa-angle-left pull-right"></i></a>
-                    <ul class="<?php echo (Yii::app()->controller->id == "ironfurniturecategory" or Yii::app()->controller->id == "ironfurnitureproducts") ? "active" : ''; ?>  treeview-menu">
-                        <li class="<?php echo (Yii::app()->controller->id == "ironfurniturecategory") ? "active" : ''; ?>">
-                            <a href="/administrator/ironfurniture/ironfurniturecategory"><i class="fa fa-table"></i>Category</a></li>
-                        <li class="<?php echo (Yii::app()->controller->id == "ironfurnitureproducts") ? "active" : ''; ?>">
-                            <a href="/administrator/ironfurniture/ironfurnitureproducts"><i class="fa fa-barcode"></i>Products</a>
-                        </li>
-                    </ul>
-                </li>
-                <?php
+
+            <?php
             }  ?>
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('8')){ ?>
             <li   class=" <?php  echo (Yii::app ()->controller->id == "videos")  ?  "active" : '' ; ?>">
                 <a href="/administrator/videos"><i class="fa fa-file-video-o" aria-hidden="true"></i>Videos</a>
             </li>
-            <?php }if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('14')){ ?>
-            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/newsletter")  ?  "active" : '' ; ?>  treeview">
-                <a   href="/administrator/newsletter/"><i class="fa fa-envelope-o"></i>Newsletter <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/newsletter")  ?  "active" : '' ; ?>  treeview-menu">
-                     <li   class=" <?php  echo (Yii::app ()->controller->id == "rmpnewsletter")  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/newsletter/rmpnewsletter"><i class="fa fa-file"></i> Content</a>
-                    </li>
-                     <li   class=" <?php  echo (Yii::app ()->controller->id == "rmplist")  ?  "active" : '' ; ?>">
-                        <a href="/administrator/newsletter/rmplist"><i class="fa fa-list"></i> Subscription List</a>
-                    </li>
-                     <li   class=" <?php  echo (Yii::app ()->controller->id == "rmpassigncontent")  ?  "active" : '' ; ?>">
-                        <a href="/administrator/newsletter/rmpassigncontent"><i class="fa fa-link"></i> Assign content to list</a>
-                    </li>   
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "rmpsubscribers")  ?  "active" : '' ; ?>">
-                        <a  href="/administrator/newsletter/rmpsubscribers"><i class="fa fa-rss"></i> Subscribers</a>
-                    </li>
-                   <li   class=" <?php  echo (Yii::app ()->controller->id == "rmpqueue")  ?  "active" : '' ; ?>">
-                        <a  href="/administrator/newsletter/rmpqueue"><i class="fa fa-upload"></i> Queue</a>
-                    </li>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "rmplog")  ?  "active" : '' ; ?>">
-                        <a  href="/administrator/newsletter/rmplog"><i class="fa fa-bar-chart"></i> Report</a>
-                    </li>
-                </ul>
-            </li>
+            <?php }
+            if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('14')){ ?>
+
             <?php  } if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('12')){ ?>
             <li   class=" <?php  echo (Yii::app ()->controller->id == "weblinks")  ?  "active" : '' ; ?>">
                 <a href="/administrator/weblinks"><i class="fa fa-external-link" aria-hidden="true"></i>Weblinks</a>

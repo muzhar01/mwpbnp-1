@@ -168,9 +168,7 @@ class ProductController extends Controller {
             $cartCookies=$cookie;
         }
 
-         $product = Yii::app()->request->getParam('product');
-          $thinkness_id = Yii::app()->request->getParam('thickness');
-        // print_r($thinkness_id); die();
+        $product = Yii::app()->request->getParam('product');
         $thinkness_id = Yii::app()->request->getParam('thickness');
         $size_id = Yii::app()->request->getParam('size');
         $model = $this->loadModel($product);
@@ -188,6 +186,7 @@ class ProductController extends Controller {
             $modelCart->thickness_id = $modelthickness->thickness_id;
             $modelCart->created_by = $cartCookies;
             $modelCart->quantity = 1;
+            $modelCart->user_id=1;
             if ($modelCart->save())
                 echo "<script>window.location.reload();</script>";
                 // echo "<div class='alert alert-success'>$model->name is added to Cart</div>";

@@ -1,9 +1,9 @@
 <?php
    return array (
-	        'connectionString' => 'mysql:host=localhost;dbname=development_qhtel_18-05-2021',
+        'connectionString' => 'mysql:host=localhost;dbname=mwpbnp',
 		'emulatePrepare' => true,
-		'username' => 'noor786123',
-		'password' => 'khannoor456789%%%123!@#$%',
+		'username' => 'root',
+		'password' => 'password',
 		'charset' => 'utf8',
         ); 
 

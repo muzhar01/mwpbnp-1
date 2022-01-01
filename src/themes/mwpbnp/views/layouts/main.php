@@ -661,7 +661,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
   </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
   <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
-  <?php Yii::app()->clientScript->registerCoreScript(Yii::app()->theme->baseUrl . '/js/jquery.js', CClientScript::POS_END, array('id' => 'async')); ?>
+  <?php //Yii::app()->clientScript->registerCoreScript(Yii::app()->theme->baseUrl . '/js/jquery.js', CClientScript::POS_END, array('id' => 'async')); ?>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script>

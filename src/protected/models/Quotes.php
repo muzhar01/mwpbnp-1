@@ -73,20 +73,15 @@ class Quotes extends CActiveRecord {
    public function getName(){
         $id=$this->created_by;
         $connection = Yii::app()->getDb();
-        $command = $connection->createCommand("
-        SELECT name from admin_user where id= ".$id);
+        $command = $connection->createCommand("SELECT name from admin_user where id= ".$id);
 
         $result = $command->queryAll();
         if(isset( $result[0]['name'])){
             return $result[0]['name'];
-            print_r($result);die;
+            print_r($result);
+            die;
 
         }
-        
-        //return Product::model ()->getTodayPrice($this->product_id,  $this->size_id,$this->thickness_id);
-          // $query =  Products::model()->find(4);
-          // echo $query->createCommand()->getRawSql();die;
-        
     }
     /**
      * @return array relational rules.
@@ -182,11 +177,6 @@ class Quotes extends CActiveRecord {
         $criteria->compare('chowak_installation', $this->chowak_installation, true);
         $criteria->compare('created_by', $this->created_by);
 
-
-       // $criteria->condition = "status != '$this->status'";
-
-        
-        
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
             'sort' => array(
@@ -336,52 +326,7 @@ class Quotes extends CActiveRecord {
         $mail->sendEmail($this->member->email, 'Order No. '.$this->quote_id.' for call verification is completed', $message);
     }
 
-    // public function search1() {
-           
-    //     // @todo Please modify the following code to remove attributes that should not be searched.
-    //     $criteria = new CDbCriteria;
-
-    //     $criteria->compare('id', $this->id, true);
-    //     $criteria->compare('member_id', $this->member_id);
-    //     $criteria->compare('quote_id', $this->quote_id,true);
-    //     $criteria->compare('created_on', $this->created_on, true);
-    //     $criteria->compare('status', $this->status,false);
-        
-    //     $criteria->compare('last_modified', $this->last_modified, true);
-    //     $criteria->compare('billing_name', $this->billing_name, true);
-    //     $criteria->compare('billing_address', $this->billing_address, true);
-    //     $criteria->compare('billing_city', $this->billing_city, true);
-    //     $criteria->compare('billing_zipcode', $this->billing_zipcode, true);
-    //     $criteria->compare('billing_cellno', $this->billing_cellno, true);
-    //     $criteria->compare('billing_phoneno', $this->billing_phoneno, true);
-    //     $criteria->compare('shipping_name', $this->shipping_name, true);
-    //     $criteria->compare('shipping_address', $this->shipping_address, true);
-    //     $criteria->compare('shipping_city', $this->shipping_city, true);
-    //     $criteria->compare('shipping_zipcode', $this->shipping_zipcode, true);
-    //     $criteria->compare('shipping_cellno', $this->shipping_cellno, true);
-    //     $criteria->compare('shipping_phoneno', $this->shipping_phoneno, true);
-    //     $criteria->compare('payment_type', $this->payment_type);
-    //     $criteria->compare('quote_value', $this->quote_value);
-    //     $criteria->compare('carriage', $this->carriage);
-    //     $criteria->compare('quote_type', $this->quote_type);
-    //     $criteria->compare('chowak_installation', $this->chowak_installation, true);
-    //     $criteria->compare('created_by', $this->created_by);
-
-    //     $criteria->condition = "status != '$this->status'";
-
-        
-        
-    //     return new CActiveDataProvider($this, array(
-    //         'criteria' => $criteria,
-    //         'sort' => array(
-    //             'defaultOrder' => 'id DESC',
-    //         ),
-    //         'pagination' => array(
-    //             'pageSize' => Yii::app()->user->getState('pageSize', 50),
-    //         ),
-    //     ));
-    // }
-        protected function getAllPaidQuotes(){
+    protected function getAllPaidQuotes(){
             $paid=array();
             $rows= Payments::model()->findAll();
             if($rows){
@@ -392,7 +337,7 @@ class Quotes extends CActiveRecord {
             return $paid;
         }
 
-        public function payment() {
+    public function payment() {
         // @todo Please modify the following code to remove attributes that should not be searched.
             
         $criteria = new CDbCriteria;
@@ -425,6 +370,7 @@ class Quotes extends CActiveRecord {
             'totalItemCount' => 5,
         ));
     }
+
     public function SaveOrder(){
         $created_by = isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value : '';
         $models= Cart::model()->findAll(array('condition'=>"created_by = $created_by"));
@@ -457,6 +403,7 @@ class Quotes extends CActiveRecord {
         $percentage= ($this->commission/100) * $this->quote_value;
         return round($percentage,2);
     }
+
     public function getBalance(){
         $total = Yii::app()->db->createCommand('SELECT SUM(amountpaid) as total FROM `payments` WHERE quote_id='.$this->id)->queryScalar();
         return abs(round($this->getEarning()- $total,2));
@@ -471,7 +418,7 @@ class Quotes extends CActiveRecord {
        
     }
 
-        protected function beforeSave() {
+    protected function beforeSave() {
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {
                 $this->created_on = date('Y-m-d h:m:s');

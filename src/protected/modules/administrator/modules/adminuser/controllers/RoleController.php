@@ -29,7 +29,7 @@ class RoleController extends Controller {
             throw new CHttpException(403, Yii::app()->params['access']);
         
     }
-public function actionPublished($id) {
+    public function actionPublished($id) {
 		$Id = (int) $_GET['id'];
 		$model = $this->loadModel($Id);
 	
@@ -117,8 +117,11 @@ public function actionPublished($id) {
      * Lists all models.
      */
     public function actionIndex() {
-       if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'edit')) {        
+
+       if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'view')) {
+
         $model = new Role('search');
+
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Role']))
             $model->attributes = $_GET['Role'];

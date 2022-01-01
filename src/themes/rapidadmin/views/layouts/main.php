@@ -26,7 +26,7 @@
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
         
 
-    <body class="sidebar-mini skin-red">
+    <body class="sidebar-mini skin-black">
         <div class="wrapper">
             <header class="main-header">
                 <!-- Logo -->

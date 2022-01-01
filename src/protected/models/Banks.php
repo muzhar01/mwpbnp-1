@@ -123,7 +123,7 @@ class Banks extends CActiveRecord {
             ),
             'pagination' =>false,
             ),
-        ));
+        );
     }
 
     protected function beforeSave() {

@@ -22,23 +22,14 @@ class DefaultController extends Controller {
     
     public function actionIndex(){
         $model = new Quotes('search');
-        //$model = Quotes::model()->findall();
         $model->unsetAttributes();  // clear any default values
         if (isset($_POST['Quotes'])){ 
             $model->attributes = $_POST['Quotes'];
-        }else{
-           // $model->status = 'Processing';  
         }
-         
-        // $model->status = 'New';
-        //echo count($model); die;
+
         $this->render('quote', array(
             'model' => $model,
         ));
-        
-          //$model->setAttributes(array('status'=>"Processing"));
-       
-           //$model->
     }
 
     public function actionDetails($id){
