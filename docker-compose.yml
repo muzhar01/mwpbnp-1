@@ -1,0 +1,42 @@
+version: '3.7'
+x-db-config:
+  &db-config
+  MYSQL_USER: forge
+  MYSQL_PASSWORD: pass1234
+  MYSQL_DATABASE: mwpbnp
+services:
+  php-apache-environment:
+    container_name: yii_app
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    image: php:7.0-apache
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 8000:80
+    # command: bash -c "/app/init/init.sh"
+  database:
+    container_name: database
+    image: mysql
+    restart: always
+    environment:
+      <<: *db-config
+      MYSQL_ROOT_PASSWORD: pass1234
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "9906:3306"
+  phpmyadmin:
+    container_name: laravel-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    links:
+      - database
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+    ports:
+      - '8081:80'
+    volumes:
+      - /sessions
