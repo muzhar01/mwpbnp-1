@@ -1,1 +1,0 @@
-ALTER TABLE `quotes` ADD `created_by` INT NULL DEFAULT NULL AFTER `transection_id`;
