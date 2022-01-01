@@ -1,6 +1,6 @@
 /protected/config/database.php
 /log/
-/assets/
+/assets
 /cgi-bin/
 /downloads/
 .idea/

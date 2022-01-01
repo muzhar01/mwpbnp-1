@@ -226,7 +226,7 @@ class VehiclesController extends Controller
 			$model->added_on = date("Y-m-d h:i:s");
 			$model->added_by = Yii::app()->user->id;
 			if($model->save())
-				$this->redirect(array('VehiclesPayment'));
+				$this->redirect(array('vehiclespayment'));
 		}
 
 		$this->render('create_vehicle_income',array(
@@ -238,7 +238,7 @@ class VehiclesController extends Controller
 	public function actionVehiclesPayment()
 	{
 		$Today = date("Y-m-d");
-		$model=new VehiclePayments;
+		$model=new VehiclePayments('search');
 		
 		$criteria = new CDbCriteria;
 		$criteria->select = 't.vehicle_id';
@@ -246,20 +246,12 @@ class VehiclesController extends Controller
 		$criteria->addCondition("date_format(payment_date,'%Y-%m-%d') = '".$Today."'");
 		$GetVehicles = VehiclePayments::model()->findAll($criteria);
 
-		// 		$criteria = new CDbCriteria;
-		// $criteria->distinct=true;
-		// $criteria->select = 't.vehicle_id';
-		// $criteria->addCondition("date_format(payment_date,'%Y-%m-%d') = '".$Today."'");
-		// $GetWatchlistedTenants    =    VehiclePayments::model()->findAll($criteria);
-
-		//echo count($GetVehicles); die;
-		//$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['VehiclePayments']))
 			$model->attributes=$_GET['VehiclePayments'];
             if (isset ($_GET['pageSize'])) {
                 Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
                 unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
-            }   
+            }
 		$this->render('vehicles_payment',array(
 			'model'=>$model,'GetVehicles'=>$GetVehicles
 		));

@@ -8403,3 +8403,892 @@ Stack trace:
 REQUEST_URI=/administrator/marketing/images/favicon.png
 HTTP_REFERER=http://devmwpbnp.com/administrator/marketing/
 ---
+2022/01/01 20:48:14 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/products/controllers/OrdersController.php:59
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('', Object(ProductsModule))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('orders/', Object(AdministratorModule))
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(277): CWebApplication->createController('products/orders...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#4 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/administrator/products/orders
+HTTP_REFERER=http://devmwpbnp.com/administrator/products
+---
+2022/01/01 20:48:18 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/products/controllers/OrdersController.php:59
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('', Object(ProductsModule))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('orders/', Object(AdministratorModule))
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(277): CWebApplication->createController('products/orders...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#4 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/administrator/products/orders
+HTTP_REFERER=http://devmwpbnp.com/administrator/products
+---
+2022/01/01 20:48:19 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/products/controllers/OrdersController.php:59
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('', Object(ProductsModule))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('orders/', Object(AdministratorModule))
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(277): CWebApplication->createController('products/orders...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#4 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/administrator/products/orders
+HTTP_REFERER=http://devmwpbnp.com/administrator/products
+---
+2022/01/01 20:52:06 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (238)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (36)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 20:52:06 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1 in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(426): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1341): CDbCommand->queryRow()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1443): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(238): CActiveRecord->find(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(36): DefaultController->loadModel('images')
+#5 [internal function]: DefaultController->actionDetails('images')
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('details')
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/o...')
+#13 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/administrator/orders/default/details/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/orders/default/details/id/1641050070
+---
+2022/01/01 20:52:23 [error] [exception.ParseError] ParseError: syntax error, unexpected '<<' (T_SL) in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/products/controllers/OrdersController.php:59
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('UpdateVehicleCh...', Object(ProductsModule))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(338): CWebApplication->createController('Orders/UpdateVe...', Object(AdministratorModule))
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(277): CWebApplication->createController('products/Orders...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/p...')
+#4 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#6 {main}
+REQUEST_URI=/administrator/products/Orders/UpdateVehicleCharges/
+HTTP_REFERER=http://devmwpbnp.com/administrator/orders/default/details/id/1641050070
+---
+2022/01/01 20:52:23 [error] [php] Trying to get property 'id' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/views/default/details.php:149)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): DefaultController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): DefaultController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(54): DefaultController->render()
+#3 unknown(0): DefaultController->actionDetails()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): DefaultController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): DefaultController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): DefaultController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/orders/default/details/id/1641050070?ajax=order-grid
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/views/default/details.php (149)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (54)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 20:56:04 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php:492
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(265): CController->missingAction('images')
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/m...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/administrator/marketing/default/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/marketing/default/members
+---
+2022/01/01 20:56:41 [error] [php] Trying to get property 'resigtration_number' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(80): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateVehicle()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateVehicle/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (80)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 20:59:56 [error] [php] Trying to get property 'resigtration_number' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(80): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateVehicle()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateVehicle/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (80)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:00:30 [error] [php] Trying to get property 'resigtration_number' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(80): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateVehicle()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateVehicle/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (80)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:02:04 [error] [php] Trying to get property 'resigtration_number' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(80): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateVehicle()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateVehicle/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_vehicle.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (80)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:02:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php:492
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(265): CController->missingAction('index')
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/v...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/administrator/vehicles/index
+---
+2022/01/01 21:02:25 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:02:53 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:03:04 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:03:17 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:03:23 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:07:34 [error] [php] Trying to get property 'FullName' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php:17)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(151): VehiclesController->render()
+#3 unknown(0): VehiclesController->actionUpdateDriver()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/UpdateDriver/id/images/favicon.png
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/update_driver.php (17)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (151)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:19:39 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:19:43 [error] [php] Undefined offset: 0 (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/_view.php:46)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CListView.php(308): OrdersController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CListView->renderItems()
+#2 unknown(0): CListView->renderSection()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CListView->renderContent()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CListView->run()
+#6 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/create.php(167): OrdersController->widget()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(152): OrdersController->render()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionCreate()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders/create
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/_view.php (46)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/create.php (167)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (152)
+2022/01/01 21:19:46 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:22:38 [error] [php] Trying to get property 'id' of non-object (/Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/views/default/details.php:149)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): DefaultController->renderFile()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): DefaultController->renderPartial()
+#2 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(54): DefaultController->render()
+#3 unknown(0): DefaultController->actionDetails()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CInlineAction->runWithParamsInternal()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): DefaultController->runAction()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): DefaultController->runActionWithFilters()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): DefaultController->run()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/orders/default/details/id/1641050070
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/views/default/details.php (149)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (54)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:22:42 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (238)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (36)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:22:42 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1 in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(426): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1341): CDbCommand->queryRow()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1443): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(238): CActiveRecord->find(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(36): DefaultController->loadModel('images')
+#5 [internal function]: DefaultController->actionDetails('images')
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('details')
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/o...')
+#13 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/administrator/orders/default/details/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/orders/default/details/id/1592374303
+---
+2022/01/01 21:23:16 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (238)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (60)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:23:16 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1 in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(426): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1341): CDbCommand->queryRow()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1443): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(238): CActiveRecord->find(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(60): DefaultController->loadModel('images')
+#5 [internal function]: DefaultController->actionBill('images')
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('bill')
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/o...')
+#13 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/administrator/orders/default/bill/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/orders/default/bill/id/1592374303
+---
+2022/01/01 21:23:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (238)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php (36)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:23:49 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'images' in 'where clause'. The SQL statement executed was: SELECT * FROM `quotes` `t` WHERE quote_id=images LIMIT 1 in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(426): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1341): CDbCommand->queryRow()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1443): CActiveRecord->query(Object(CDbCriteria))
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(238): CActiveRecord->find(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/orders/controllers/DefaultController.php(36): DefaultController->loadModel('images')
+#5 [internal function]: DefaultController->actionDetails('images')
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(DefaultController), Array)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(DefaultController), Object(ReflectionMethod), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('details')
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/o...')
+#13 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/administrator/orders/default/details/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/orders/default/details/id/1592361732
+---
+2022/01/01 21:25:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mwpbnp.rmp_subscribers' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `rmp_subscribers`.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php (22)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php (61)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:25:25 [error] [exception.CDbException] CDbException: The table "rmp_subscribers" for active record class "RmpSubscribers" cannot be found in the database. in /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php:2432
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(418): CActiveRecordMetaData->__construct(Object(RmpSubscribers))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1602): CActiveRecord->getTableSchema()
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php(22): CActiveRecord->count()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require('/Users/yasir/Si...')
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/yasir/Si...', Array, true)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): CBaseController->renderFile('/Users/yasir/Si...', Array, true)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): CController->renderPartial('dashboard', Array, true)
+#8 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php(61): CController->render('dashboard', Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionIndex()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(131): CController->runAction(Object(CInlineAction))
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilter.php(39): CFilterChain->run()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(1200): CFilter->filter(Object(CFilterChain))
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CInlineFilter.php(61): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(129): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(287): CFilterChain->run()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('index')
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/d...')
+#20 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/administrator
+HTTP_REFERER=http://devmwpbnp.com/administrator/inventory/vendor
+---
+2022/01/01 21:25:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mwpbnp.rmp_subscribers' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `rmp_subscribers`.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php (22)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php (61)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:25:31 [error] [exception.CDbException] CDbException: The table "rmp_subscribers" for active record class "RmpSubscribers" cannot be found in the database. in /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php:2432
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(418): CActiveRecordMetaData->__construct(Object(RmpSubscribers))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1602): CActiveRecord->getTableSchema()
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php(22): CActiveRecord->count()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require('/Users/yasir/Si...')
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/yasir/Si...', Array, true)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): CBaseController->renderFile('/Users/yasir/Si...', Array, true)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): CController->renderPartial('dashboard', Array, true)
+#8 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php(61): CController->render('dashboard', Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionIndex()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(131): CController->runAction(Object(CInlineAction))
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilter.php(39): CFilterChain->run()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(1200): CFilter->filter(Object(CFilterChain))
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CInlineFilter.php(61): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(129): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(287): CFilterChain->run()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('index')
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/d...')
+#20 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/administrator
+HTTP_REFERER=http://devmwpbnp.com/administrator/inventory/vendor
+---
+2022/01/01 21:26:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mwpbnp.rmp_subscribers' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `rmp_subscribers`.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php (22)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php (61)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:26:56 [error] [exception.CDbException] CDbException: The table "rmp_subscribers" for active record class "RmpSubscribers" cannot be found in the database. in /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php:2432
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(418): CActiveRecordMetaData->__construct(Object(RmpSubscribers))
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(663): CActiveRecord->getMetaData()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(1602): CActiveRecord->getTableSchema()
+#3 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/default/dashboard.php(22): CActiveRecord->count()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require('/Users/yasir/Si...')
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Users/yasir/Si...', Array, true)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): CBaseController->renderFile('/Users/yasir/Si...', Array, true)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): CController->renderPartial('dashboard', Array, true)
+#8 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/DefaultController.php(61): CController->render('dashboard', Array)
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionIndex()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(131): CController->runAction(Object(CInlineAction))
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilter.php(39): CFilterChain->run()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(1200): CFilter->filter(Object(CFilterChain))
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CInlineFilter.php(61): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/filters/CFilterChain.php(129): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(287): CFilterChain->run()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('index')
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/d...')
+#20 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#21 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/administrator
+HTTP_REFERER=http://devmwpbnp.com/administrator/vehicles/vehicles
+---
+2022/01/01 21:39:56 [error] [exception.CException] CException: Property "VehiclePayments.updated_on" is not defined. in /Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php:171
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(163): CComponent->__set('updated_on', '2022-01-01 09:3...')
+#1 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(293): CActiveRecord->__set('updated_on', '2022-01-01 09:3...')
+#2 [internal function]: VehiclesController->actionDeleteVehiclePayment('11')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(VehiclesController), Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(VehiclesController), Object(ReflectionMethod), Array)
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('deletevehiclepa...')
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/v...')
+#10 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/administrator/vehicles/DeleteVehiclePayment/id/11?ajax=vehicles-grid
+HTTP_REFERER=http://devmwpbnp.com/administrator/vehicles/VehiclesPayment
+---
+2022/01/01 21:46:00 [error] [php] include(VehicleRegistration.php): failed to open stream: No such file or directory (/Users/yasir/Sites/mwpbnp/src/framework/YiiBase.php:430)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(403): spl_autoload_call()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(183): model()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(232): CActiveFinder->getModel()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(50): CActiveFinder->buildJoinTree()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(924): CActiveFinder->__construct()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(290): VehiclePayments->getActiveFinder()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(144): VehiclePayments->getRelated()
+#7 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/vehicles_payment.php(59): VehiclePayments->__get()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): VehiclesController->renderInternal()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#12 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(264): VehiclesController->render()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): VehiclesController->actionVehiclesPayment()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/VehiclesPayment
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/vehicles_payment.php (59)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (264)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:46:01 [error] [php] include(VehicleRegistration.php): failed to open stream: No such file or directory (/Users/yasir/Sites/mwpbnp/src/framework/YiiBase.php:430)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(403): spl_autoload_call()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(183): model()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(232): CActiveFinder->getModel()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveFinder.php(50): CActiveFinder->buildJoinTree()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(924): CActiveFinder->__construct()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(290): VehiclePayments->getActiveFinder()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(144): VehiclePayments->getRelated()
+#7 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/vehicles_payment.php(59): VehiclePayments->__get()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): VehiclesController->renderInternal()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): VehiclesController->renderFile()
+#11 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): VehiclesController->renderPartial()
+#12 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(264): VehiclesController->render()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): VehiclesController->actionVehiclesPayment()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): VehiclesController->runAction()
+#16 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): VehiclesController->runActionWithFilters()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): VehiclesController->run()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#20 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/vehicles/VehiclesPayment
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/views/vehicles/vehicles_payment.php (59)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php (264)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 21:49:41 [error] [exception.CException] CException: Property "VehiclePayments.updated_on" is not defined. in /Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php:171
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/ar/CActiveRecord.php(163): CComponent->__set('updated_on', '2022-01-01 09:4...')
+#1 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/VehiclesController.php(293): CActiveRecord->__set('updated_on', '2022-01-01 09:4...')
+#2 [internal function]: VehiclesController->actionDeleteVehiclePayment('11')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(VehiclesController), Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(VehiclesController), Object(ReflectionMethod), Array)
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('deletevehiclepa...')
+#9 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/v...')
+#10 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/administrator/vehicles/DeleteVehiclePayment/id/11?ajax=vehicles-grid
+HTTP_REFERER=http://devmwpbnp.com/administrator/vehicles/VehiclesPayment
+---
+2022/01/01 22:07:38 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "administrator/customer/type/Invoice". in /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php:285
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/c...')
+#1 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/administrator/customer/type/Invoice
+HTTP_REFERER=http://devmwpbnp.com/administrator/customer/default/ledgers
+---
+2022/01/01 22:08:38 [error] [exception.CHttpException.404] CHttpException: The requested page does not exist. in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/MembersController.php:201
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/controllers/MembersController.php(34): MembersController->loadModel('images')
+#1 [internal function]: MembersController->actionView('images')
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CAction.php(113): ReflectionMethod->invokeArgs(Object(MembersController), Array)
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(45): CAction->runWithParamsInternal(Object(MembersController), Object(ReflectionMethod), Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('view')
+#8 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/m...')
+#9 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/administrator/members/view/id/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/members/view/id/1309
+---
+2022/01/01 22:09:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php (210)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:09:51 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(405): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php(210): CDbCommand->queryAll()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionReceivebill()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('receivebill')
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/c...')
+#8 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/administrator/customer/default/receivebill
+HTTP_REFERER=http://devmwpbnp.com/administrator/customer/default/customerledger
+---
+2022/01/01 22:10:08 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php (228)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:10:08 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(405): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php(228): CDbCommand->queryAll()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionPaymentsReturn()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('paymentsreturn')
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/c...')
+#8 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/administrator/customer/default/paymentsReturn
+HTTP_REFERER=http://devmwpbnp.com/administrator/customer/default/customerledger
+---
+2022/01/01 22:10:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC.
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php (247)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:10:12 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #43 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'mwpbnp.customer_transaction.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by. The SQL statement executed was: SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC in /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php:559
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/db/CDbCommand.php(405): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/customer/controllers/DefaultController.php(247): CDbCommand->queryAll()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): DefaultController->actionGoodsReturned()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams(Array)
+#4 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): CController->runAction(Object(CInlineAction))
+#5 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('goodsreturned')
+#7 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/c...')
+#8 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/administrator/customer/default/goodsReturned
+HTTP_REFERER=http://devmwpbnp.com/administrator/customer/default/customerledger
+---
+2022/01/01 22:10:19 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:10:23 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders/index/status/processing
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:10:28 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "images". in /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php:492
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(265): CController->missingAction('images')
+#1 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController('administrator/s...')
+#3 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /Users/yasir/Sites/mwpbnp/src/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/administrator/sales/default/images/favicon.png
+HTTP_REFERER=http://devmwpbnp.com/administrator/sales/default/payments
+---
+2022/01/01 22:10:51 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)
+2022/01/01 22:11:06 [error] [php] Trying to get property 'fname' of non-object (/Users/yasir/Sites/mwpbnp/src/framework/base/CComponent.php(624) : eval()'d code:1)
+Stack trace:
+#0 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(243): CDataColumn->getDataCellContent()
+#1 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridColumn.php(164): CDataColumn->renderDataCellContent()
+#2 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(646): CDataColumn->renderDataCell()
+#3 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(630): CGridView->renderDataCell()
+#4 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(585): CGridView->renderTableRow()
+#5 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/grid/CGridView.php(506): CGridView->renderTableBody()
+#6 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(198): CGridView->renderItems()
+#7 unknown(0): CGridView->renderSection()
+#8 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(181): preg_replace_callback()
+#9 /Users/yasir/Sites/mwpbnp/src/framework/zii/widgets/CBaseListView.php(164): CGridView->renderContent()
+#10 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(184): CGridView->run()
+#11 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php(26): OrdersController->widget()
+#12 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(131): require()
+#13 /Users/yasir/Sites/mwpbnp/src/framework/web/CBaseController.php(96): OrdersController->renderInternal()
+#14 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(892): OrdersController->renderFile()
+#15 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(794): OrdersController->renderPartial()
+#16 /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php(45): OrdersController->render()
+#17 /Users/yasir/Sites/mwpbnp/src/framework/web/actions/CInlineAction.php(47): OrdersController->actionIndex()
+#18 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(304): CInlineAction->runWithParams()
+#19 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(283): OrdersController->runAction()
+#20 /Users/yasir/Sites/mwpbnp/src/framework/web/CController.php(261): OrdersController->runActionWithFilters()
+#21 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(282): OrdersController->run()
+#22 /Users/yasir/Sites/mwpbnp/src/framework/web/CWebApplication.php(140): CWebApplication->runController()
+#23 /Users/yasir/Sites/mwpbnp/src/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#24 /Users/yasir/Sites/mwpbnp/src/index.php(15): CWebApplication->run()
+REQUEST_URI=/administrator/sales/orders
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/views/orders/quote.php (26)
+in /Users/yasir/Sites/mwpbnp/src/protected/modules/administrator/modules/sales/controllers/OrdersController.php (45)
+in /Users/yasir/Sites/mwpbnp/src/index.php (15)

@@ -185,7 +185,7 @@
                 <a   href="/administrator/marketing/"><i class="fa fa-briefcase"></i>Marketing Management <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/sales")  ?  "active" : '' ; ?>  treeview-menu">
                     <li>
-                        <a href="/administrator/marketing//"><i class="fa fa-circle" aria-hidden="true"></i><span>SMS & Emails</span></a>
+                        <a href="/administrator/marketing"><i class="fa fa-circle" aria-hidden="true"></i><span>SMS & Emails</span></a>
                     </li>
                 </ul>
             </li>

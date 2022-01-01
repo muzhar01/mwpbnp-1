@@ -84,7 +84,7 @@ $this->breadcrumbs = array(
                                         <div class="progress-bar" style="width: 100%"></div>
                                     </div>
                                     <span class="progress-description">
-                                        <a href="/administrator/products/orders" style="color: #fff;"><i class="fa fa-shopping-cart"></i> See all orders</a>
+                                        <a href="/administrator/orders" style="color: #fff;"><i class="fa fa-shopping-cart"></i> See all orders</a>
                                     </span>
                                 </div><!-- /.info-box-content -->
                             </div><!-- /.info-box -->

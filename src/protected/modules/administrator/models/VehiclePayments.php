@@ -64,12 +64,12 @@ class VehiclePayments extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'vehicle_id' => 'Vehicle',
-			'income' => 'Income (PKR)',
-			'expenses' => 'Expenses (PKR)',
-			'payment' => 'Payment (PKR)',
+			'income' => 'Income',
+			'expenses' => 'Expenses',
+			'payment' => 'Payment',
 			'payment_date' => 'Date and Time',
 			'payment_mode' => 'Payment Mode',
-			'reference' => 'Income Reference',
+			'reference' => 'Income',
 			'added_on' => 'Added On',
 			'added_by' => 'Added By',
 		);
