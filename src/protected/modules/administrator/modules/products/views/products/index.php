@@ -29,6 +29,11 @@ Yii::app ()->clientScript->registerScript ('search', "
                    echo CHtml::link ('<i class="fa fa-plus-square" aria-hidden="true"></i> Create Products', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
             ?>        </div>
         <div class="box-body">
+            <?php if (Yii::app()->user->hasFlash('success')): ?>
+            <div class="alert alert-success">
+                <?php echo Yii::app()->user->getFlash('success'); ?>
+            </div>
+            <?php endif; ?>
             <div class="search-form">
                 <?php
                 $this->renderPartial ('_search', array(

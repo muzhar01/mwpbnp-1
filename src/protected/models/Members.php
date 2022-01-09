@@ -447,6 +447,12 @@ public function is9NumbersOnly($attribute)
         $sms->sendMessage($CellNo,$SmsMessage);
 
     }
+    public function getTopCustomer(){
+        $SQL='select m.id, CONCAT(m.fname," ",m.lname) as name,count(qo.id) as total from members m
+    inner join quotes qo on m.id = qo.member_id
+group by m.id  order by total DESC limit 0,5';
+        return Yii::app()->db->createCommand($SQL)->queryAll();
+    }
 
 }
 

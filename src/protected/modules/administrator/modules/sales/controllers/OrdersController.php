@@ -40,7 +40,9 @@ class OrdersController extends Controller {
             $model->created_by = Yii::app()->user->id;
             if(!empty($status))
                 $model->status=$status;
-        
+        //echo '<pre>';
+        //print_r($model);
+        //exit();
         $this->render('quote', array(
             'model' => $model,
         ));

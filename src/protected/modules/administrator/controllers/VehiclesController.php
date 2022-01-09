@@ -239,7 +239,9 @@ class VehiclesController extends Controller
 	{
 		$Today = date("Y-m-d");
 		$model=new VehiclePayments('search');
-		
+		$model->unsetAttributes();
+        $model->today=$Today;
+
 		$criteria = new CDbCriteria;
 		$criteria->select = 't.vehicle_id';
 		$criteria->distinct = true;
@@ -248,7 +250,9 @@ class VehiclesController extends Controller
 
 		if(isset($_GET['VehiclePayments']))
 			$model->attributes=$_GET['VehiclePayments'];
-            if (isset ($_GET['pageSize'])) {
+            $model->today=$Today;
+
+        if (isset ($_GET['pageSize'])) {
                 Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
                 unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
             }
@@ -295,7 +299,22 @@ class VehiclesController extends Controller
 
 	public function actionLedger()
 	{
-		$this->render('Ledger');
+        $model=new VehiclePayments('search');
+        $model->unsetAttributes();  // clear any default values
+        if(isset($_GET['VehiclePayments'])) {
+            $model->attributes = $_GET['VehiclePayments'];
+            $model->from_date = $_GET['VehiclePayments']['from_date'];
+            $model->to_date = $_GET['VehiclePayments']['to_date'];
+            //$model->today = $_GET['VehiclePayments']['today'];
+        }
+        if (isset ($_GET['pageSize'])) {
+            Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
+            unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
+        }
+        $this->render('Ledger',array(
+            'model'=>$model,
+        ));
+
 	}
 
 	/**

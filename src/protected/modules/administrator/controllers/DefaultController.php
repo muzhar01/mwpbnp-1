@@ -53,12 +53,10 @@ class DefaultController extends Controller {
 
     }
 	public function actionIndex() { //echo 1; die;
-		$os=$orders=$products=$browsers='';
 		$this->render('dashboard', array(
-                'os' => $os,
-                'orders' => $orders,
-                'products' => $products,
-                'browsers' => $browsers,
+                'salesorders' => Quotes::model()->getLastSales(),
+                'products' => Products::model()->getTopProducts(),
+                'customers'=> Members::model()->getTopCustomer(),
                 )
         );
 	}

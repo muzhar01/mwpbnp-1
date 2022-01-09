@@ -14,10 +14,10 @@ table tbody
 
 </style>
 <section class="content">
-    <div class="box box-danger">   
+    <div class="box box-danger">
         <div class="box-header">
-            <div class="row" style="margin-left:15px; margin-right:15px">
-              <h3 style="margin-left: 10px">Customer Ledger</h3>
+            <h3>Customer Ledger</h3>
+            <div class="row">
               <form action="<?php echo Yii::app()->getBaseUrl();?>/administrator/customer/default/ledgers" method="post">
                 <div class="col-lg-2 col-md-2 col-sm-12">
                     <input class="form-control" size="60" maxlength="100" placeholder="Name" name="name" id="customerName" type="text">
@@ -62,13 +62,13 @@ table tbody
                                 <h4>Customer Information</h4>
                             </div>
                             <div class="col-xs-8">
-                                <input type="text" name="address" value="Address" id="addr" size="60">
+                                <input class="form-control" type="text" name="address" value="Address" id="addr" size="60" readonly="readonly">
                             </div>
                             <div class="col-xs-12">
                                 <div class="table-responsive">
                                     <table class="table table-hover table-info">
                                       
-                                      <tfoot> 
+                                      <tfoot>
                                       </tfoot>
                                     </table>
                                   </div>
@@ -79,8 +79,7 @@ table tbody
 
                         </div>
                         <?php
-
-                        $this->widget('zii.widgets.grid.CGridView', array(
+                         $this->widget('zii.widgets.grid.CGridView', array(
                             'id' => 'customer-grid',
                             'dataProvider' => $model->search(),
                             //'enableSorting' => false,

@@ -118,13 +118,13 @@ class RmpsubscribersController extends Controller
 	{
             if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'view')) {
                 $model=new RmpSubscribers('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['RmpSubscribers']))
-			$model->attributes=$_GET['RmpSubscribers'];
-                if (isset ($_GET['pageSize'])) {
-                            Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
-                            unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
-                }
+            $model->unsetAttributes();  // clear any default values
+            if(isset($_GET['RmpSubscribers']))
+                $model->attributes=$_GET['RmpSubscribers'];
+                    if (isset ($_GET['pageSize'])) {
+                                Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
+                                unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
+                    }
 		$this->render('index',array(
 			'model'=>$model,
 		));

@@ -24,7 +24,9 @@
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
         <!--Morris chart-->
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
-        
+
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+
 
     <body class="sidebar-mini skin-black">
         <div class="wrapper">
@@ -105,6 +107,7 @@
 
     </body>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/datepicker/bootstrap-datepicker.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         
  <style>

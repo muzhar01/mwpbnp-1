@@ -1,5 +1,5 @@
 <!--Modified by me-->
-<div class="box box-danger">
+<div class="box box-solid box-info">
             <div class="box-header with-border">
               <h3 class="box-title">Latest Customer</h3>
              

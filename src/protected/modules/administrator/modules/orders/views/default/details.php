@@ -8,245 +8,73 @@ $settings= QuotesSettings::model()->find();
 $GetVehicle= VehicleRegistration::model()->findall('status="Active"');
 ?>
 <section class="content">
+    <?php
+    $form = $this->beginWidget('CActiveForm', array(
+        'enableAjaxValidation' => true,
+    ));
+    ?>
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h1 class="box-title">Quotes Details</h1>
+            <h1 class="box-title">Quotes details.</h1>
         </div>
         <div class="box-body">
-<?php
-$form = $this->beginWidget('CActiveForm', array(
-    'enableAjaxValidation' => true,
-        ));
-?>
+
             <div class="row"> 
-                <div class="col-lg-12">
+                <div class="col-lg-5">
+                    <div class="text">Order Id: <span class="pull-right bold"><?php echo $model->quote_id; ?></span></div> <br />
+                    <div class="text">Created Date: <span class="pull-right bold"><?php echo $model->created_on; ?></span></div> <br />
+                    <div class="text"> Payment Method: <span class="text-bold"><?php echo $model->payment_type; ?></span></div> <br />
 
-                    <table class="table table-striped">
-                        <tfoot>
-                            <tr>
-                                <td>Order Id.</td>
-                                <td ><?php echo $model->quote_id; ?>
-                                    <div class="pull-right" style="font-size: 5px">
+                    </tr>
+                </div>
+                <div class="col-lg-4">
+                    <div id="message" class="text-info"></div>
+                    <div class="text">Status: </div>
+                    <div class="row">
+                        <div class="col-lg-7"><?php echo CHtml::dropDownList('status', $model->status, Yii::app()->params['payment_status'], array('class' => 'form-control')); ?>
+                        </div>
+                        <div class="col-lg-1"><?php echo CHtml::ajaxSubmitButton('Change status', '/administrator/orders/default/processing', array(
+                                'type' => 'POST',
+                                'data' => 'js:{"quoteid": ' . $model->quote_id . ',  "status": $("#status").val() }',
+                                'success' => 'js:function(string){ $("#message").html(string); $("#yt1").remove()}'
+                            ), array('class' => 'btn btn-success'))
+                            ?></div>
+                    </div>
 
-                                        <a href="/administrator/orders/default/predelivery/id/<?php echo $model->quote_id?>" target="_blank" class="btn btn-success btn-flat"> <i class="fa fa-print"></i> Pre Delivery List </a> &nbsp;
-                                        <a href="/administrator/orders/default/delivery/id/<?php echo $model->quote_id?>" target="_blank" class="btn btn-primary btn-flat"> <i class="fa fa-print"></i> D.C.Corporate </a> &nbsp; 
-                                        <a href="/administrator/orders/default/smallinvoice/id/<?php echo $model->quote_id?>" target="_blank"  class="btn btn-danger btn-flat"> <i class="fa fa-print"></i> D.C.Retail</a> &nbsp; 
-                                        
-                                        <a href="/administrator/orders/default/bill/id/<?php echo $model->quote_id?>" target="_blank" class="btn btn-warning btn-flat"> <i class="fa fa-print"></i> Invoice</a>  &nbsp;
-                                        <a href="/administrator/orders/default/gstinvoice/id/<?php echo $model->quote_id?>" target="_blank" class="btn btn-info btn-flat"> <i class="fa fa-print"></i> GST Invoice</a>
-                                         <a href="/administrator/orders/default/cashinvoice/id/<?php echo $model->quote_id?>"" target="_blank" class="btn btn-info btn-flat"> <i class="fa fa-print"></i> Cash Receipt</a>
-                                          <a href="/administrator/orders/default/Vechiletoken/id/<?php echo $model->quote_id?>" target="_blank" class="btn btn-success btn-flat"> <i class="fa fa-print"></i> Vehicle Token </a>
-                                          <br>
-                                          <div style="margin-top: 5px">
-                                            <a href="#" target="_blank" class="btn btn-success btn-flat wa-event" data-toggle="modal" data-target="#whatsapp_modal" id="wa-<?php echo $user->id?>" data-ofc_geo_lng="<?php echo $user->office_geo_lng?>" data-ofc_geo_lat="<?php echo $user->office_geo_lat?>" data-shp_geo_lng="<?php echo $user->shipping_geo_lng?>" data-shp_geo_lat="<?php echo $user->shipping_geo_lat?>">Send Location through Whatsapp </a> &nbsp;
-
-                                            <a href="#" target="_blank" class="btn btn-success btn-flat em-event" data-toggle="modal" data-target="#email_modal" id="em-<?php echo $user->id?>" data-ofc_geo_lng="<?php echo $user->office_geo_lng?>" data-ofc_geo_lat="<?php echo $user->office_geo_lat?>" data-shp_geo_lng="<?php echo $user->shipping_geo_lng?>" data-shp_geo_lat="<?php echo $user->shipping_geo_lat?>">Send Location through Email </a>
-                                          </div>
-                                        
-                                    </div>
-                                   
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Created Date.</td>
-                                <td ><?php echo $model->created_on; ?></td>
-                            </tr>
-                            <tr>
-                                <td>Status.</td>
-                                <td>
-                                    <div class="row">
-
-                                        <div class="col-lg-4">
-
-                                            <?php
-                                            echo CHtml::dropDownList('status', $model->status, Yii::app()->params['payment_status'], array('class' => 'form-control'));
-                                            ?>
-                                            <div id="message" class="text-danger"></div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <?php
-                                            echo CHtml::ajaxSubmitButton('Change status', '/administrator/orders/default/processing', array(
-                                                'type' => 'POST',
-                                                'data' => 'js:{"quoteid": ' . $model->quote_id . ',  "status": $("#status").val() }',
-                                                'success' => 'js:function(string){ $("#message").html(string); $("#yt1").remove()}'
-                                                    ), array('class' => 'btn btn-success'))
-                                            ?>
-                                        </div>
-                                       
-                                    </div>
-
-                                </td>
-                            </tr>
-
-                        </tfoot>
-                    </table>
+                </div>
+                <div class="col-lg-3">
+                <div class=" form-group">
+                    <div class="text">Print Receipt: </div>
+                    <select class="form-control" id="print_receipt">
+                        <option value="0">Select print receipt</option>
+                        <option value="/administrator/orders/default/predelivery/id/<?php echo $model->quote_id?>">Pre Delivery List</option>
+                        <option value="/administrator/orders/default/delivery/id/<?php echo $model->quote_id?>">D.C.Corporate</option>
+                        <option value="/administrator/orders/default/smallinvoice/id/<?php echo $model->quote_id?>">D.C.Retail</option>
+                        <option value="/administrator/orders/default/bill/id/<?php echo $model->quote_id?>">Invoice</option>
+                        <option value="/administrator/orders/default/gstinvoice/id/<?php echo $model->quote_id?>?>">GST Invoice</option>
+                        <option value="/administrator/orders/default/cashinvoice/id/<?php echo $model->quote_id?>?>">Cash Receipt</option>
+                        <option value="/administrator/orders/default/Vechiletoken/id/<?php echo $model->quote_id?>">Vehicle Token</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="text">Send Location: </div>
+                    <a href="#" target="_blank" class="btn btn-info btn-flat wa-event" data-toggle="modal" data-target="#whatsapp_modal" id="wa-<?php echo $user->id?>" data-ofc_geo_lng="<?php echo $user->office_geo_lng?>" data-ofc_geo_lat="<?php echo $user->office_geo_lat?>" data-shp_geo_lng="<?php echo $user->shipping_geo_lng?>" data-shp_geo_lat="<?php echo $user->shipping_geo_lat?>"><i class="fa fa-wechat"></i> Whatsapp </a> &nbsp;
+                    <a href="#" target="_blank" class="btn btn-info btn-flat em-event" data-toggle="modal" data-target="#email_modal" id="em-<?php echo $user->id?>" data-ofc_geo_lng="<?php echo $user->office_geo_lng?>" data-ofc_geo_lat="<?php echo $user->office_geo_lat?>" data-shp_geo_lng="<?php echo $user->shipping_geo_lng?>" data-shp_geo_lat="<?php echo $user->shipping_geo_lat?>"><i class="fa fa-envelope"></i> Email </a>
                 </div>
             </div>
-            <?php
-            $this->widget('zii.widgets.grid.CGridView', array(
-                'id' => 'order-grid',
-                'dataProvider' => $order->search(),
-                'enableSorting' => false,
-                'pager' => array('header' => '', 'htmlOptions' => array('class' => 'pagination pagination-sm no-margin pull-right')),
-                'pagerCssClass' => 'box-footer clearfix',
-                'columns' => array(
-                    array('name' => 'id', 'value' => '$data->id', 'type' => 'raw'),
-                    array('name' => 'product_id', 'type' => 'raw', 'value' => '$data->products->name."<br /> ".stripslashes($data->size->title)."(".$data->additional.") / ".stripslashes($data->thickness->title)."  [".$data->weight."] <br /> [".$data->width." Feet * ".$data->height." Feet]"'),
-                    array('name' => 'gst_tax', 'value' => '$data->gst_tax . "%"'),
-                    array('name' => 'income_tax', 'value' => '$data->income_tax. "%"',),
-                    array('name' => 'other_tax', 'value' => '$data->other_tax. "%"'),
-                     array(
-                        'name' => 'price',
-                        'type' => 'raw',
-                        'value' => 'CHtml::textField("price[$data->id]",$data->getPrice(),array("style"=>"width:80px;", "maxlength" => 15, "readonly"=>true))',
-                    ),
-                    array(
-                        'name' => 'quantity',
-                        'type' => 'raw',
-                        'value' => 'CHtml::textField("quantity[$data->id]",$data->quantity,array("style"=>"width:80px;", "maxlength" => 10))',
-                    ),
-                    array('name' => 'price',  'value' => '$data->price'),
-
-                ),
-            ));
-            ?>
-
-            <input type="hidden" name="qoute_ids" value="<?php echo $model->quote_id?>">
-            <div class="col-lg-12 pull-right no-margin">
+            </div>
+        </div>
+    </div>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h1 class="box-title">Customer information</h1>
+        </div>
+        <div class="box-body">
                 <div class="row">
-                    <table class="table table-striped">
-                        <tr>
-                            <td>Gross Total Amount including All Taxes ( GST + Income Tax + Other Tax)</td>
-                            <td align="right"><span id="firstgrand"><?php echo number_format($model->quote_value, 0); ?></span>Rs</td>
-                        </tr>
-                        <tr>
-                                <td>Payment Method</td>
-                                <td align="right"><?php echo $model->payment_type; ?></td>
-                            </tr>
-                            
-                            <tr>
-                                <td>Loading/ Unloading Charges (<?php echo $settings->loading_price . '% and ' . $settings->unloading_price . '%' ?>) </td>
-                                <td align="right" ><span id="carriage"><?php echo number_format($model->carriage, 0); ?></span> Rs</td>
-                            </tr>
-                  
-                            <tr>
-                                <td>Vehicle Charges </td>
-                                <td align="right" >
-                                  <table class="table dynatable">
-                                    <thead>
-                                    <div>
-                                        <th>Vehicle</th>
-                                        <th>Charges</th>
-                                        <th><button class="add"  type="button">Add</button></th>
-                                    </div>
-                                </thead>
-                                <tbody>
-           <?php if(!empty($model->vehicle)){ 
-                                $GetVehicles = explode(",",$model->vehicle);
-                                $sno = 0;
-                                foreach($GetVehicles as $gv){
-                                    $GetVehicleId= VehicleRegistration::model()->find('resigtration_number=:r',array(':r'=>$gv));
-                                    $GetVehiclePayment= VehiclePayments::model()->find('vehicle_id=:r and reference=:rf',array(':r'=>$GetVehicleId->id,':rf'=>$model->quote_id));
-                                    if(!empty($GetVehiclePayment)){
-                                        $GetVehicleIncome = $GetVehiclePayment->income;
-                                    }else{
-                                        $GetVehicleIncome = 0;
-                                    }
-                                    $sno++;?>                         
-                    <tr class="subrowtype <?php if($sno == 1){ echo "prototype"; }?>">
-                        <td  class="text-center">
-                            <select name="quote_vehicle[]" id="quote_vehicle" style="width: 150px;height: 25px;" >
-                                        <option>Select Vehicle</option>
-                                        <?php if(!empty($GetVehicle)){
-                                            foreach($GetVehicle as $vr){?>
-                                                <option value="<?php echo $vr->resigtration_number; ?>" 
-                                                    <?php 
-                                                        if($vr->resigtration_number == $gv){ echo "selected";}?> >
-                                                        <?php echo $vr->resigtration_number; ?></option>
-                                            <?php }
-                                        }?>
-                                    </select>
-                        </td>
-                       
-                        <td class="text-center">
-                            <input type="number" name="vehicle_charges[]" class="get_ech_product_price" style="text-align: center;"  value="<?php echo number_format($GetVehicleIncome, 0); ?>"> 
-                        </td>
-                         <td><button class="remove" type="button">Remove</button></td>
-                        
-                    </tr>
-                <?php }
-            }else{?>
-                    <tr class="subrowtype prototype">
-                        <td  class="text-center">
-                            <select name="quote_vehicle[]" id="quote_vehicle" style="width: 150px;height: 25px;" >
-                                        <option>Select Vehicle</option>
-                                        <?php if(!empty($GetVehicle)){
-                                            foreach($GetVehicle as $vr){?>
-                                                <option value="<?php echo $vr->resigtration_number; ?>" >
-                                                        <?php echo $vr->resigtration_number; ?></option>
-                                            <?php }
-                                        }?>
-                                    </select>
-                        </td>
-                       
-                        <td class="text-center">
-                            <input type="number" min="0" name="vehicle_charges[]" class="get_ech_product_price" style="text-align: center;"  value=""> 
-                        </td>
-                         <td><button class="remove" type="button">Remove</button></td>
-                        
-                    </tr>
-                <?php }?>
-                    </tbody>
-                                  </table>
-                                   </td>
-                            </tr>
-                           
-                            <tr>
-                                <td>Total Charges </td>
-                                <td align="right" >
-                                 
-                                    <input readonly="readonly" class="product_total_price" type="text" size="6" name="transportCharges" id="transport" value="<?php echo number_format($model->transport_charges, 0); ?>" required> Rs</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>Total Amount </td>
-                                <td align="right" ><span id="grandtwo"><?php echo number_format($model->quote_value + $model->transport_charges + $model->carriage, 0); ?></span> Rs</td>
-                            </tr>
-                            <tr>
-                                <td>Discount </td>
-                                <td align="right" ><input type="text" size="6" name="discounts" id="discount" value="<?php echo number_format($model->discount, 0); ?>" required > Rs</td>
-                            </tr>
-                            <tr>
-                                <td>Gross Total Amount</td>
-                               
-                                <td align="right"><span id="grandthree"> <?php echo number_format(($model->quote_value + $model->transport_charges  + $model->carriage)-$model->discount, 0); ?></span> Rs</td>
-                            </tr>
-                            <tr>
-                                <td>Current Balance</td>
-                               
-                                <td align="right"><span id="current_status"><?php echo $model->member->current_balance; ?></span> Rs</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-            <?php
-if($model->status== 'Processing'){
-echo CHtml::ajaxSubmitButton('Update Cart', array('ajaxupdateorder'), array('success' => 'reloadGrid'), array('class' => 'btn btn-info btn-flat pull-right'));
-}
-?> &nbsp;
-<?php $this->endWidget(); ?>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="box-title">Additional Comments</h3>
-                    <?php echo CHtml::decode($model->comments); ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Personal Information</h3>
-                    <table class="table table-striped">
-                        <tfoot>
+                    <div class="col-lg-4">
+                        <h4>Personal Information</h4>
+                        <table class="table table-striped">
+                            <tfoot>
                             <tr>
                                 <td>Full Name.</td>
                                 <td ><?php echo $model->member->fname . '  ' . $model->member->lname; ?></td>
@@ -276,15 +104,13 @@ echo CHtml::ajaxSubmitButton('Update Cart', array('ajaxupdateorder'), array('suc
                                 <td>Member Type.</td>
                                 <td><?php echo $model->member->getUserType() ?></td>
                             </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Billing Information</h3>
-                    <table class="table table-striped">
-                        <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Billing Information</h4>
+                        <table class="table table-striped">
+                            <tfoot>
                             <tr>
                                 <td>Billing Name.</td>
                                 <td ><?php echo $model->billing_name; ?></td>
@@ -302,15 +128,13 @@ echo CHtml::ajaxSubmitButton('Update Cart', array('ajaxupdateorder'), array('suc
                                 <td>Mobile No.</td>
                                 <td><?php echo $model->billing_cellno; ?></td>
                             </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3>Shipping Information</h3>
-                    <table class="table table-striped">
-                        <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Shipping Information</h4>
+                        <table class="table table-striped">
+                            <tfoot>
                             <tr>
                                 <td>Billing Name.</td>
                                 <td ><?php echo $model->shipping_name; ?></td>
@@ -328,14 +152,218 @@ echo CHtml::ajaxSubmitButton('Update Cart', array('ajaxupdateorder'), array('suc
                                 <td>Mobile No.</td>
                                 <td><?php echo $model->shipping_cellno; ?></td>
                             </tr>
-                        </tfoot>
-                    </table>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            
         </div>
     </div>
-    
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h1 class="box-title">Products information.</h1>
+        </div>
+        <div class="box-body">
+            <?php
+            $this->widget('zii.widgets.grid.CGridView', array(
+                'id' => 'order-grid',
+                'dataProvider' => $order->search(),
+                'enableSorting' => false,
+                'pager' => array('header' => '', 'htmlOptions' => array('class' => 'pagination pagination-sm no-margin pull-right')),
+                'pagerCssClass' => 'box-footer clearfix',
+                'columns' => array(
+                    array('name' => 'id', 'value' => '$data->id', 'type' => 'raw'),
+                    array('name' => 'product_id', 'type' => 'raw', 'value' => '$data->products->name."<br /> ".stripslashes($data->size->title)."(".$data->additional.") / ".stripslashes($data->thickness->title)."  [".$data->weight."] <br /> [".$data->width." Feet * ".$data->height." Feet]"'),
+                    array('name' => 'gst_tax', 'value' => '$data->gst_tax . "%"'),
+                    array('name' => 'income_tax', 'value' => '$data->income_tax. "%"',),
+                    array('name' => 'other_tax', 'value' => '$data->other_tax. "%"'),
+                     array(
+                        'name' => 'price',
+                        'type' => 'raw',
+                        'value' => 'CHtml::textField("price[$data->id]",$data->getPrice(),array("class"=>"form-control", "maxlength" => 15, "readonly"=>true))',
+                    ),
+                    array(
+                        'name' => 'quantity',
+                        'type' => 'raw',
+                        'value' => 'CHtml::textField("quantity[$data->id]",$data->quantity,array("class"=>"form-control", "maxlength" => 10))',
+                    ),
+                    array('name' => 'price',  'value' => '$data->price'),
+
+                ),
+            ));
+            ?>
+
+            <input type="hidden" name="qoute_ids" value="<?php echo $model->quote_id?>">
+            <div class="row">
+
+                <div class="col-lg-6 pull-right">
+                        <table class="table table-striped">
+                            <tr>
+                                <td>Gross Total Amount including All Taxes ( GST + Income Tax + Other Tax)</td>
+                                <td align="right"><span id="firstgrand"><?php echo number_format($model->quote_value, 0); ?></span> Rs</td>
+                            </tr>
+                                <tr>
+                                    <td>Loading/ Unloading Labour Charges (<?php echo $settings->loading_price . '% and ' . $settings->unloading_price . '%' ?>) </td>
+                                    <td align="right" ><span id="carriage"><?php echo number_format($model->carriage, 0); ?></span> Rs</td>
+                                </tr>
+                                <tr>
+
+                                    <td colspan="2" align="right" >
+                                      <table class="table dynatable">
+                                          <thead>
+                                              <tr>
+                                                <th colspan="3" class="text-center">Vehicle Charges</th>
+                                              </tr>
+                                              <tr>
+                                                <th>Vehicle</th>
+                                                <th>Charges</th>
+                                                <th>
+                                                    <button class="add btn btn-flat btn-small btn-success pull-right" type="button" id="add_vehicle">
+                                                        <i class="fa fa-plus-square"></i> Add Vehicle</button>
+                                                </th>
+                                            </tr>
+                                          </thead>
+                                        <tbody>
+                                        <?php if(!empty($model->vehicle)){
+
+                                         $GetVehicles = explode(",",$model->vehicle);
+
+                                         $sno = 0;
+                                        foreach($GetVehicles as $gv){
+                                            if(!empty($gv)){
+                                            $GetVehicleId= VehicleRegistration::model()->find('resigtration_number=:r',array(':r'=>$gv));
+                                            $GetVehiclePayment= VehiclePayments::model()->find('vehicle_id=:r and reference=:rf',array(':r'=>$GetVehicleId->id,':rf'=>$model->quote_id));
+                                            if(!empty($GetVehiclePayment)){
+                                                $GetVehicleIncome = $GetVehiclePayment->income;
+                                            }else{
+                                                $GetVehicleIncome = 0;
+                                            }
+                                            $sno++;
+                                            ?>
+                                        <tr class="subrowtype <?php if($sno == 1){ echo "prototype"; }?>">
+                                            <td  class="text-center">
+                                                <div class="form-group">
+                                                <select name="quote_vehicle[]" id="quote_vehicle"  class="form-control">
+                                                            <option>Select Vehicle</option>
+                                                            <?php if(!empty($GetVehicle)){
+                                                                foreach($GetVehicle as $vr){?>
+                                                                    <option value="<?php echo $vr->resigtration_number; ?>"
+                                                                        <?php
+                                                                            if($vr->resigtration_number == $gv){ echo "selected";}?> >
+                                                                            <?php echo $vr->resigtration_number; ?></option>
+                                                                <?php }
+                                                            }?>
+                                                  </select>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="form-group">
+                                                    <input type="number" name="vehicle_charges[]" class="form-control get_ech_product_price"   value="<?php echo number_format($GetVehicleIncome, 0); ?>">
+                                                </div>
+                                            </td>
+                                             <td>
+                                                 <button class="remove btn btn-danger btn-flat pull-right" type="button"><i class="fa fa-remove"></i>  Remove</button>
+                                             </td>
+
+                                        </tr>
+                                    <?php
+                                        }
+                                        }
+                            }else{?>
+                        <tr class="subrowtype prototype">
+                            <td  class="text-center">
+                                <select name="quote_vehicle[]" id="quote_vehicle" class="form-control" >
+                                            <option>Select Vehicle</option>
+                                            <?php if(!empty($GetVehicle)){
+                                                foreach($GetVehicle as $vr){?>
+                                                    <option value="<?php echo $vr->resigtration_number; ?>" >
+                                                            <?php echo $vr->resigtration_number; ?></option>
+                                                <?php }
+                                            }?>
+                                        </select>
+                            </td>
+
+                            <td class="text-center">
+                                <div class="input-group">
+                                <input type="number" min="0" name="vehicle_charges[]" class="get_ech_product_price form-control" value="">
+                                    <div class="input-group-addon">Rs</div>
+                                </div>
+                            </td>
+                             <td><button class="remove btn btn-danger btn-flat" type="button"> <i class="fa fa-remove"></i> Remove</button></td>
+
+                        </tr>
+                    <?php }?>
+                        </tbody>
+                                      </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td >Total Transport Charges </td>
+                                    <td align="right" >
+                                        <div class="input-group">
+                                        <input readonly="readonly" class="product_total_price form-control col-lg-1" type="text"  name="transportCharges"
+                                               id="transport" value="<?php echo number_format($model->transport_charges, 0); ?>" required>
+                                            <div class="input-group-addon">Rs</div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td >Total Amount </td>
+                                    <td align="right" >
+                                        <span id="grandtwo">
+                                            <div class="input-group">
+                                        <input readonly="readonly" class="form-control col-lg-1" type="text"   value="<?php echo number_format($model->quote_value + $model->transport_charges + $model->carriage, 0); ?>">
+                                            <div class="input-group-addon">Rs</div>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Discount </td>
+                                    <td align="right" >
+                                        <div class="input-group has-error">
+                                        <input type="text" class="form-control" size="6" name="discounts" id="discount" value="<?php echo number_format($model->discount, 0); ?>" required >
+                                            <div class="input-group-addon">Rs</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold text-success">Gross Total Amount</td>
+                                    <td align="right"><span id="grandthree" class="text-success text-bold"> <?php
+                                            $total =($model->quote_value + $model->transport_charges  + $model->carriage)-$model->discount;
+                                            echo number_format($total, 2); ?> Rs</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-bold"><span class="text-danger">Current Balance</span></td>
+                                   <td align="right">
+                                       <span id="current_status" class="text-danger text-bold">
+                                           <?php echo number_format($model->member->current_balance,2); ?> Rs
+                                       </span>
+                                   </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                </div>
+            </div>
+            <?php
+            if($model->status== 'Processing'){
+            echo CHtml::ajaxSubmitButton('Update Cart', array('/administrator/orders/default/ajaxupdateorder'), array('success' => 'reloadGrid'), array('class' => 'btn btn-info btn-flat pull-right'));
+            }
+            ?> &nbsp;
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="box-title">Additional Comments</h3>
+                    <?php echo CHtml::decode($model->comments); ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <?php $this->endWidget(); ?>
 </section>
 <?php
 Yii::app()->clientScript->registerScript('cart', "
@@ -373,6 +401,12 @@ $('#grandthree').text(grandtotal - discount)
 
         });
     })
+
+$('#print_receipt').on('change',function (){
+    if($(this).val()!=0) {
+        window.open($(this).val(), '_blank');
+    }
+});
 $('#yt1').on('click', function(){
        
        var orderid = '<?php echo $_REQUEST['id'];?>';
@@ -382,7 +416,7 @@ $('#yt1').on('click', function(){
        var getvehicleid = $("select[name='quote_vehicle[]']").map(function(){return $(this).val();}).get();
        var getvalues = $("input[name='vehicle_charges[]']").map(function(){return $(this).val();}).get();
 
-    $.post("<?php echo Yii::app()->request->baseUrl."/administrator/products/Orders/UpdateVehicleCharges/"; ?>", {payment_date:payment_date,orderid: orderid,getvehicleid: getvehicleid,getpaymentmethod: getpaymentmethod,getvalues:getvalues}, function(result){
+    $.post("<?php echo Yii::app()->request->baseUrl."/administrator/orders/default/UpdateVehicleCharges/"; ?>", {payment_date:payment_date,orderid: orderid,getvehicleid: getvehicleid,getpaymentmethod: getpaymentmethod,getvalues:getvalues}, function(result){
        // $("span").html(result);
     });
 

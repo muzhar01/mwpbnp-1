@@ -2,169 +2,96 @@
 /* @var $this DefaultController */
 
 $this->breadcrumbs=array(
-	'Sales Management'
+    'Customer Management'
 );
 ?>
-<style>
-table tbody 
-{
-   overflow: auto;
-   
-}
-
-</style>
 <section class="content">
-    <div class="box box-danger">   
+    <div class="box box-danger">
         <div class="box-header">
-
-            
-            <div class="row" style="margin-left:15px; margin-right:15px">
-
-              <h3 style="margin-left: 10px">Customer Center</h3>
-              <form action="<?php echo Yii::app()->getBaseUrl();?>/administrator/customer/" method="post">
-                <div class="col-lg-2 col-md-2 col-sm-12">
-                    <input class="form-control" size="60" maxlength="100" placeholder="Name" name="name" id="customerName" type="text">
-                </div>
-                <div class="col-lg-1 col-md-2 col-sm-12">
-                    <input class="btn btn-primary" type="submit" name="searchCust" value="Search"> 
-                  </div>
-                
-              </form>
-              </div>
+            <h3>Customer Management</h3>
             <div class="box-body">
-                <div class="row"> 
-                    <div class="col-md-4 col-sm-5 col-xs-12">
-                      <div class="table-responsive" >
-                        <table class="table table-bordered table-hover cust">
-                          <thead style="display: block;">
-                            <tr>
-                              <th style="width:100%">Company Name</th>
-                              <th>Balance</th>
-                            </tr>
-                          </thead>
-                          <tbody style="display: block;height: 66vh;">
-                        <?php foreach($customer as $customers){  ?>
-                            <tr id="<?= $customers['id'];?>" onclick="javascript:memberDetails(this.id)">
-                              <td class="col-xs-12"><?= $customers['lname']; ?></td>
-                              <td><?= $customers['current_balance']; ?></td>
-                            </tr>
-                        <?php } ?>
-                          </tbody>
-                          <tfoot> 
-                          </tfoot>
-                        </table>
-                      </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-blue">
+                            <span class="info-box-icon"><i class="fa fa fa-user-md"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ladger</span>
+                                <span class="info-box-number">-</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-description">
+                                        <a href="/administrator/customer/default/customerledger" style="color: #fff;"><i class="fa fa fa-user-md"></i> See all</a>
+                                    </span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
                     </div><!-- /.col -->
-                    <div class="col-md-8 col-sm-6 col-xs-12 " style="border:1px solid #ccc;padding: 15px;">
-                        
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <h4>Customer Information</h4>
-                            </div>
-                            <div class="col-xs-8">
-                                <input type="text" name="address" value="Address" id="addr" size="60">
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="table-responsive">
-                                    <table class="table table-hover table-info">
-                                      
-                                      <tfoot> 
-                                      </tfoot>
-                                    </table>
-                                  </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                        <div class="search-form">
-                            <?php
-                            $this->renderPartial('_search', array(
-                                'model' => $model,
-                            ));
-                            ?>
-                        </div>
-                        <?php
 
-                        $this->widget('zii.widgets.grid.CGridView', array(
-                            'id' => 'customer-grid',
-                            'dataProvider' => $model->search(),
-                            //'enableSorting' => false,
-                            'pager' => array('header' => '', 'htmlOptions' => array('class' => 'pagination pagination-sm no-margin pull-right')),
-                            'pagerCssClass' => 'box-footer clearfix',
-                            'columns' => array(
-                                array('name' => 'type', 'value' => 'CHtml::link($data->type, "/administrator/customer/type/".$data->type)', 'type' => 'raw'),
-                                array('name' => 'num', 'value' => '$data->num'),
-                                array('name' => 'date', 'value' => '$data->date'),
-                                array('name' => 'payment_method', 'value' => '$data->payment_method'),
-                                array('name' => 'amount', 'value' => '$data->amount'),
-                            ),
-                        ));
-                        ?>
-                    </div>
-                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-red">
+                            <span class="info-box-icon"><i class="fa fa-compass"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Members</span>
+                                <span class="info-box-number"><?php echo Members::model()->count(); ?></span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-description">
+                                        <a href="/administrator/members" style="color: #fff;"><i class="fa fa-compass"></i> See all</a>
+                                    </span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-aqua">
+                            <span class="info-box-icon"><i class="fa fa-briefcase"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Payments</span>
+                                <span class="info-box-number">-</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-description">
+                                        <a href="/administrator/customer/default/receivebill" style="color: #fff;"><i class="fa fa-briefcase"></i> See all </a>
+                                    </span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-green">
+                            <span class="info-box-icon"><i class="fa fa-gavel"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Return Payments</span>
+                                <span class="info-box-number">-</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-description">
+                                        <a href="/administrator/customer/default/paymentsReturn" style="color: #fff;"><i class="fa fa-gavel"></i> See all</a>
+                                    </span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box bg-orange">
+                            <span class="info-box-icon"><i class="fa fa-gavel"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Return Goods</span>
+                                <span class="info-box-number">-</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 100%"></div>
+                                </div>
+                                <span class="progress-description">
+                                        <a href="/administrator/customer/default/goodsReturned" style="color: #fff;"><i class="fa fa-gavel"></i> See all</a>
+                                    </span>
+                            </div><!-- /.info-box-content -->
+                        </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+
                 </div>
             </div>
         </div>
     </div>
 </section>
-<script>
-    function memberDetails(id){
-        var id = id;
-        $.ajax({
-            url : '<?php echo Yii::app()->getBaseUrl();?>/administrator/customer/customer/memberz',
-            data : {id: id},
-            method: 'post',
-            success: function(data){
-              data = JSON.parse(data);
-                $('#addr').val(data.address)
-                $('.table-info').empty();
-                  $('.table-info').append('<tbody ><tr>'+
-                                          '<td>Customer Name</td>'+
-                                          '<td>'+data["fname"]+'</td>'+
-                                          '<td>Company Name</td>'+
-                                          '<td>'+data["lname"]+'</td>'+
-                                          '<td>Email</td>'+
-                                          '<td>'+data["email"]+'</td>'+
-                                        '</tr>'+
-                                        '<tr>'+
-                                          '<td>Contact Office</td>'+
-                                          '<td>'+data["phone_office"]+'</td>'+
-                                          '<td>Contact Residance</td>'+
-                                          '<td>'+data["phone_res"]+'</td>'+
-                                          '<td>Contact Fax</td>'+
-                                          '<td>'+data["fax_no"]+'</td>'+
-                                        '</tr>'+
-                                        '<tr>'+
-                                          '<td>Cell One</td>'+
-                                          '<td>'+data["cellular"]+'</td>'+
-                                          '<td>Cell 2</td>'+
-                                          '<td>'+data["cellular2"]+'</td>'+
-                                          '<td>Cell 3</td>'+
-                                          '<td>'+data["cellular3"]+'</td>'+
-                                        '</tr>'+
-                                      '</tbody>');
-            }
-        });
-
-
-        $.ajax({
-            url : '<?php echo Yii::app()->getBaseUrl();?>/administrator/customer/customer/membertrans',
-            data : {id: id},
-            method: 'post',
-            success: function(data){
-              data = JSON.parse(data);
-              totalResult = data.length;
-              var res = 'Displaying 1-'+totalResult+' of '+ totalResult;
-
-              $('#customer-grid .summary').html(res);
-
-                $('#customer-grid table tbody').empty();
-                $.each(data, function(index, item){
-                  $('#customer-grid table tbody').append('<tr class="odd"><td><a href="/administrator/customer/type/Invoice">'+item.type+'</a></td><td>'+item.num+'</td><td>'+item.date+'</td><td>'+item.payment_method+'</td><td>'+item.amount+'</td></tr>');
-                })
-            }
-        })
-
-
-
-    }
-</script>

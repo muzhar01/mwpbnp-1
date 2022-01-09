@@ -100,7 +100,7 @@ class ProductThickness extends CActiveRecord
                     ),
         ));
 	}
-protected function beforeSave () {
+    protected function beforeSave () {
               if (parent::beforeSave ()) {
                      if ($this->isNewRecord) {
                             $this->created_date =  date('Y-m-d h:m:s');

@@ -136,11 +136,12 @@ class ProductsController extends Controller
                 $model=$this->loadModel($id);
                 $thickness= ProductsThicknessListings::model()->findAll("product_id=$id");
                 $size=  ProductsSizesListings::model()->findAll("product_id=$id");
-		if(isset($_POST['Products']))
-		{
-                      $model->saveBasePrice();
-                      $this->redirect(array('baseprice','id'=>$id));
-                 }
+            if(isset($_POST['Products']))
+            {
+                          $model->saveBasePrice();
+                          Yii::app()->user->setFlash('success', "Product is saved successfully!");
+                          $this->redirect(array('index'));
+                     }
 		$this->render('baseprice',array(
 			'model'=>$model,
                         'thickness'=>  $thickness,
@@ -158,7 +159,8 @@ class ProductsController extends Controller
     		if(isset($_POST['Products']))
     		{
                 $model->saveMarketPrice();
-                $this->redirect(array('marketprice','id'=>$id));
+                Yii::app()->user->setFlash('success', "Product is saved successfully!");
+                $this->redirect(array('index'));
             }
     		$this->render('marketprice',array(
     			'model'=>$model,
@@ -177,7 +179,8 @@ class ProductsController extends Controller
 		if(isset($_POST['Products']))
 		{
                      $model->saveWeight();
-                      $this->redirect(array('weight','id'=>$id));
+                Yii::app()->user->setFlash('success', "Product is saved successfully!");
+                $this->redirect(array('index'));
               }
 		$this->render('weight',array(
 			'model'=>$model,

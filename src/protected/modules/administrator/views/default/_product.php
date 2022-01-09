@@ -1,24 +1,38 @@
           <!-- PRODUCT LIST -->
-          <div class="box box-primary">
+          <div class="box box-solid box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Recently Added Products</h3>
-              <div class="box-tools pull-right">
-                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
+              <h3 class="box-title">Top 5 Selling Products</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                  <?php $this->widget('zii.widgets.CListView', array(
-                        'dataProvider'=>$products,
-                        'summaryText' => '',
-                        'itemsTagName'=>'ul',
-                        'itemsCssClass'=>'products-list product-list-in-box',
-                        'itemView'=>'_products',   // refers to the partial view named '_post'
-                    )); ?>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Sales/Orders</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                    <?php
+                    if(count($products)){
+                        foreach ($products as $product){?>
+                            <tr>
+                                <td><?php echo $product['name'] ?> </td>
+                                <td><?php echo $product['total'] ?> </td>
+                            </tr>
+                        <?php }
+                    }
+                    else{?>
+                        <tr><td colspan="2"> No data found</td></tr>
+                    <?php } ?>
+                    </tbody>
+                </table>
             </div>
             <!-- /.box-body -->
-            <div class="box-footer text-center"> <a href="/administrator/products/product" class="uppercase">View All Products</a> </div>
+            <div class="box-footer text-center">
+                <a href="/administrator/products/products" class="uppercase">View All more</a>
+            </div>
             <!-- /.box-footer --> 
           </div>
           <!-- /.box --> 

@@ -92,13 +92,16 @@ class Quotes extends CActiveRecord {
         return array(
             'member' => array(self::BELONGS_TO, 'Members', 'member_id'),
             'adminuser' => array(self::BELONGS_TO, 'AdminUser', 'created_by'),
-            /*'AdminUser' => array(self::HAS_ONE, 'AdminUser', 'name'),*/
         );
     }
 
     /**
      * @return array customized attribute labels (name=>label)
      */
+    public function getMemberName(){
+        $model = Members::model()->findByPk($this->member_id);
+        return (!empty($model->fname) && !empty($model->lname)) ? $model->fname . ' ' . $model->lname : '';
+    }
     public function attributeLabels() {
         return array(
             'id' => 'ID',
@@ -369,6 +372,16 @@ class Quotes extends CActiveRecord {
             'pagination' => array('pageSize' => '5'),
             'totalItemCount' => 5,
         ));
+    }
+
+    public function getLastSales(){
+        $SQL="select count(id) as total,date_format(created_on,'%M-%d-%Y') as dates from quotes
+        where created_on  >= curdate() - INTERVAL DAYOFWEEK(curdate())+8 DAY
+        AND created_on < curdate() - INTERVAL DAYOFWEEK(curdate())-2 DAY
+        group by dates order by dates DESC limit 0,10";
+
+        return Yii::app()->db->createCommand($SQL)->queryAll();
+
     }
 
     public function SaveOrder(){

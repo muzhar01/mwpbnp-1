@@ -52,7 +52,7 @@ class RmpSubscribersList extends CActiveRecord
 		return array(
 			'list' => array(self::BELONGS_TO, 'RmpList', 'list_id'),
 			'subscriber' => array(self::BELONGS_TO, 'RmpSubscribers', 'subscriber_id'),
-                     );
+        );
 	}
 
 	/**
@@ -67,7 +67,7 @@ class RmpSubscribersList extends CActiveRecord
 			'subscription_on' => 'Subscription On',
 			'receiving_status' => 'Receiving Status',
 			'published' => 'Published',
-                        'status'=>'Status'
+            'status'=>'Status'
 		);
 	}
 

@@ -21,8 +21,10 @@ class RmpSubscribers extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
-       public $list_id;
-	public function tableName()
+    public $list_id;
+
+
+    public function tableName()
 	{
 		return 'rmp_subscribers';
 	}
@@ -55,7 +57,7 @@ class RmpSubscribers extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'rmpLogs' => array(self::HAS_MANY, 'RmpLog', 'subscriber_id'),
-			'rmpSubscribersLists' => array(self::HAS_MANY, 'RmpSubscribersList', 'subscriber_id'),
+            'rmpSubscribersLists' => array(self::HAS_MANY, 'RmpSubscribersList', 'subscriber_id'),
 		);
 	}
 
@@ -89,7 +91,7 @@ class RmpSubscribers extends CActiveRecord
 			'subscription_date' => 'Subscription Date',
 			'unsubscription_date' => 'Unsubscription Date',
 			'status' => 'Status',
-                        'list_id'=>'Lists',
+            'list_id'=>'Lists',
 		);
 	}
     public function beforeFind () {

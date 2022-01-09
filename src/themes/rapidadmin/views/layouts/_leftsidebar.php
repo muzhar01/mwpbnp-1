@@ -101,8 +101,8 @@
                 <a href="/administrator/members"><i class="fa fa-user" aria-hidden="true"></i>Members</a>
             </li>
             <?php }if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('23')){ ?>
-            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/customer")  ?  "active" : '' ; ?>  treeview">
-               <a   href="/administrator/customer/default/customerledger"><i class="fa fa-briefcase"></i>Customer Center <i class="fa fa-angle-right pull-right"></i></a>
+            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/customer" || Yii::app ()->controller->id ==  "members")  ?  "active" : '' ; ?>  treeview">
+               <a   href="/administrator/customer/default"><i class="fa fa-briefcase"></i> Customer Center <i class="fa fa-angle-right pull-right"></i></a>
                <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/customer")  ?  "active" : '' ; ?>  treeview-menu">
                    <li   class=" <?php  echo (Yii::app ()->controller->id == "ledger" && Yii::app()->controller->action->id=='index' || Yii::app()->controller->action->id=='details')  ?  "active" : '' ; ?>">
                        <a   href="/administrator/customer/default/customerledger"><i class="fa fa fa-user-md"></i> Customer Ledger</a>
@@ -110,7 +110,7 @@
                    <?php 
                     if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('6')){ ?>
                     <li   class=" <?php  echo (Yii::app ()->controller->id == "members")  ?  "active" : '' ; ?>">
-                        <a href="/administrator/members"><i class="fa fa-user" aria-hidden="true"></i>Members</a>
+                        <a href="/administrator/members"><i class="fa fa-user" aria-hidden="true"></i> Members</a>
                     </li>
                     <?php } ?>
                     <li   class=" <?php  echo (Yii::app ()->controller->id == "orders" && Yii::app()->controller->action->id=='create')  ?  "active" : '' ; ?>">

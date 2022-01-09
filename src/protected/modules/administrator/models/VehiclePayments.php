@@ -22,6 +22,8 @@ class VehiclePayments extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    public $from_date, $to_date , $today;
+
 	public function tableName()
 	{
 		return 'vehicle_payments';
@@ -91,9 +93,12 @@ class VehiclePayments extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-		$Today = date("Y-m-d");
 		$criteria=new CDbCriteria;
-		$criteria->addCondition("date_format(payment_date,'%Y-%m-%d') = '".$Today."'");
+        if(!empty($this->to_date) && !empty($this->from_date)){
+		    $criteria->addBetweenCondition('payment_date',$this->from_date,$this->to_date,['AND']);
+        } else if(!empty($this->today)) {
+           $criteria->addCondition("date_format(payment_date,'%Y-%m-%d') = '".$this->today."'");
+        }
 		$criteria->compare('id',$this->id);
 		$criteria->compare('vehicle_id',$this->vehicle_id);
 		$criteria->compare('income',$this->income);
@@ -107,6 +112,12 @@ class VehiclePayments extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+            'sort' => array(
+                'defaultOrder' => 'payment_date asc',
+            ),
+            'pagination' => array(
+                'pageSize' => Yii::app()->user->getState('pageSize', 50),
+            ),
 		));
 	}
 

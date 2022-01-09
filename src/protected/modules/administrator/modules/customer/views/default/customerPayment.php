@@ -1,112 +1,119 @@
-<style>
-	.top-buffer { margin-top:20px; }
-</style>
-<div class="container">
 
+    <section class="content">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h1 class="box-title">Customer Payments</h1>
+            </div>
+            <div  class="form">
+                <div class="box-body">
+                 <?php $form=$this->beginWidget('CActiveForm', array(
+                        'id'=>'myForm',
+                        'enableAjaxValidation'=>false,
+                        'enableClientValidation'=>true,
+                    )); ?>
 
-		<div class="row" style="margin: 0 auto; display:flex; justify-content: center; border: 1px solid; background: #fff">
-			<h1>Customer Payments</h1>
-		</div>
-		
-		<div  class="form">
-		<?php $form=$this->beginWidget('CActiveForm', array(
-			'id'=>'myForm',
-			'enableAjaxValidation'=>false,
-			'enableClientValidation'=>true,
-		)); ?>	
-		<div class="row" style="margin: 0 auto;background: #fff">
-			<div>
-				<?php if(isset($message)){
-					var_dump($message);
-				}
+                        <div>
+                            <?php if(isset($message)){
+                                var_dump($message);
+                            }
 
-				?>
-			</div>
-			<div class="row" style="margin: 0px">
-				<div class="form-group col-xs-10 col-sm-4 col-md-5 col-lg-5">
-				    <label for="exampleSelect1">Customer</label>
-				    <select  id="customerSel" class="form-control col-md-3" name="customer_id" required="required">
-				    	<option value="">Select Customer</option>	
-				    <?php foreach($bill_details as $customer){ ?>
-				      <option value="<?= $customer['id'] ?>"><?= $customer['lname']; ?></option>
-				      <?php } ?>
-				    </select>
-				<?php foreach($bill_details as $customers){ ?>
-				      <input type="hidden"  id="<?= $customers['id']; ?>" value="<?= $customers['address']; ?>"> 
-				<?php } ?>
-				</div>
-				<div class="form-group col-xs-10 col-sm-6 col-md-6 col-lg-6">
-			    <label for="address">Address</label>
-			    <input class="form-control" id="customer-address" rows="2" name="vendorAddress">
-				</div>
-			</div>
-			<div class="row" style="margin: 0px">	
-				<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-					<label for="example-datetime-local-input" >Date and time</label>
-					<div class="input-group date" id="example">
-					  	<input type="text" class="form-control"  name="bill_date" required="required"  id="bill_date"/>
-						<span class="input-group-addon">
-						    <span class="glyphicon glyphicon-calendar"></span>
-						</span>
-					</div>
-				</div>
-				<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-					<label>Method</label>
-					<select  name="method"  class="form-control" id="method">
-						<option value="">Select Method</option>
-					<?php foreach($payment_method as $method){ ?>
-						<option value="<?= $method['id']; ?>"><?= $method['name'];?></option>
-					<?php }?>
-					</select>
-				</div>
-				<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-				    <label for="terms">Remarks</label>
-				    <input type="text" class="form-control col-md-2" id="remarks" placeholder="Enter Remarks" name="remarks">
-				</div>
-				<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-				    <label for="Ref" >Ref no</label>
-				    <input type="text" class="form-control col-md-3" id="refno" readonly="readonly" placeholder="Enter Ref no." name="refno" required="required" value="">
-				</div>
-			</div>
+                            ?>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-4 col-md-5 col-lg-3">
+                                <label for="exampleSelect1">Customer</label>
+                                <select  id="customerSel" class="form-control col-md-3" name="customer_id" required="required">
+                                    <option value="">Select Customer</option>
+                                    <?php foreach($bill_details as $customer){ ?>
+                                        <option value="<?= $customer['id'] ?>"><?= $customer['lname']; ?></option>
+                                    <?php } ?>
+                                </select>
+                                <?php foreach($bill_details as $customers){ ?>
+                                    <input type="hidden"  id="<?= $customers['id']; ?>" value="<?= $customers['address']; ?>">
+                                <?php } ?>
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="address">Address</label>
+                                <input class="form-control" id="customer-address" rows="2" name="vendorAddress">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label for="example-datetime-local-input" >Date and time</label>
+                                <div class="input-group date" id="example">
+                                    <input type="text" class="form-control"  name="bill_date" required="required"  id="bill_date"/>
+                                    <span class="input-group-addon">
+						                <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group  col-lg-3">
+                                <label>Method</label>
+                                <select  name="method"  class="form-control" id="method">
+                                    <option value="">Select Method</option>
+                                    <?php foreach($payment_method as $method){ ?>
+                                        <option value="<?= $method['id']; ?>"><?= $method['name'];?></option>
+                                    <?php }?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-3">
+                                <label for="terms">Remarks</label>
+                                <input type="text" class="form-control col-md-2" id="remarks" placeholder="Enter Remarks" name="remarks">
+                            </div>
+                            <div class="form-group  col-lg-3">
+                                <label for="Ref" >Reference no.</label>
+                                <input type="text" class="form-control col-md-3" id="refno" readonly="readonly" placeholder="Enter Ref no." name="refno" required="required" value="">
+                            </div>
+                            <div class="form-group  col-lg-3">
+                                <label for="amount">Amount Paying</label><br />
+                                <input type="text" class="form-control" id="totamounts" placeholder="Enter Amount." name="totalamount">
+                            </div>
+                            <div class="form-group  col-lg-3">
+                                <button id="applys" type="button" class="btn btn-primary" style="margin-top: 25px">Apply</button>
+                            </div>
+                        </div>
+                        <div class="row">
 
-			<div class="row" style="margin: 0px">	
-				<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-				    <label for="amount">Amount Paying</label>
-				    <input type="text" class="" id="totamounts" placeholder="Enter Amount." name="totalamount" style="height: 33px;">
-				    <button id="applys" type="button" class="btn btn-primary">Apply</button>
-				</div>
-			</div>	
-			<div class="clearfix hr" ></div>
-			<div class="table-responsive" style="margin-bottom: 10px">
-			  <table class="table table-bordered" id="tables">
-			  	<thead>
-			  		<th style="text-align: center;font-size: 18px">✓</th>
-				   	<th>Date</th>
-				   	<th>Invoice No.</th>
-				   	<th>Original Amount</th>
-				   	<th>Amount Due</th>
-				   	<th>Payment</th>
-			 	</thead>
-				<tbody class="table-striped invoice_details">
-					
-				</tbody>
-			</table>
-			</div>	
-		</div>
-		Advance Amount : <input type="text" id="reamining_amount" value="">
-		<input type="hidden" id="amountkeyed" value="0" />
-		<input type="hidden" id="amountpaid" value="0" />
-		<input type="hidden" id="amountdues" value="0" />
-		<input type="hidden" id="remove_count" value="0">
-		<input type="hidden" id="pressed" value="0">
-		<div class="form-control" style="margin-top: 10px ; background: none;border: none;" >
-			<button class="btn btn-success" type="button" onclick="javascript:pay_invoice('new')">Receive & New</button>
-			<button class="btn btn-success" type="button" onclick="javascript:pay_invoice('rexit')">Receive & Exit</button>
-			<button class="btn btn-success" type="button" onclick="javascript:pay_invoice('exit')">Exit Without Saving</button>
-		</div>
-		<?php $this->endWidget(); ?>
-	</div><!-- form -->
-</div>
+                        </div>
+                        <div class="clearfix hr" ></div>
+                        <div class="table-responsive" style="margin-bottom: 10px">
+                            <table class="table table-bordered" id="tables">
+                                <thead>
+                                <th style="text-align: center;font-size: 18px">✓</th>
+                                <th>Date</th>
+                                <th>Invoice No.</th>
+                                <th>Original Amount</th>
+                                <th>Amount Due</th>
+                                <th>Payment</th>
+                                </thead>
+                                <tbody class="table-striped invoice_details">
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                </div>
+                <div class="box-footer">
+                    <div class="row">
+                        <div class="form-group col-lg-3">
+                            Advance Amount : <input type="text" class="form-control" id="reamining_amount" value="">
+                            <input type="hidden" id="amountkeyed" value="0" />
+                            <input type="hidden" id="amountpaid" value="0" />
+                            <input type="hidden" id="amountdues" value="0" />
+                            <input type="hidden" id="remove_count" value="0">
+                            <input type="hidden" id="pressed" value="0">
+                        </div>
+                        <div class="col-lg-6" style="margin-top: 20px;" >
+                            <button class="btn btn-success" type="button" onclick="javascript:pay_invoice('new')">Receive & New</button>&nbsp;
+                            <button class="btn btn-primary" type="button" onclick="javascript:pay_invoice('rexit')">Receive & Exit</button>&nbsp;
+                            <button class="btn btn-danger" type="button" onclick="javascript:pay_invoice('exit')">Exit Without Saving</button>&nbsp;
+                        </div>
+                    </div>
+                </div>
+                    <?php $this->endWidget(); ?>
+                </div>
+            </div><!-- form -->
+    </section>
 
 <script type="text/javascript">
 

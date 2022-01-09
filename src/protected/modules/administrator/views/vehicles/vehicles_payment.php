@@ -39,33 +39,38 @@ Yii::app()->clientScript->registerScript('search', "
         <div class="box-body">
             <div class="search-form">
               <p class="text-danger">Note: All payments are in PKR.</p>
-              <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Vehicle</th>
-                        <th>Income</th>
-                        <th>Expense</th>
-                        <th>Payment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if(!empty($GetVehicles)){
-                        foreach($GetVehicles as $gv){
-                            $Today = date("Y-m-d");
-                            $expensetotal = Yii::app()->db->createCommand("select SUM(expenses) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
-                            $incometotal = Yii::app()->db->createCommand("select SUM(income) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
-                            $paymenttotal = Yii::app()->db->createCommand("select SUM(payment) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
-                            ?>
-                    <tr>
-                        <td><?php echo $gv->vehicle->resigtration_number;?></td>
-                        <td class="text-green text-bold"><?php echo number_format($incometotal,2);?></td>
-                        <td class="text-danger text-bold"><?php echo number_format($expensetotal,2);?></td>
-                        <td class="text-bold"><?php echo number_format($paymenttotal,2);?></td>
-                    </tr>
-                <?php }
-              }?>
-                </tbody>
-              </table>
+                <div class="row">
+                    <div class="col-lg-6 pull-right">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Vehicle</th>
+                                <th class="text-green text-bold">Income</th>
+                                <th class="text-danger text-bold">Expense</th>
+                                <th class="text-bold text-info">Payment</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php if(!empty($GetVehicles)){
+                                foreach($GetVehicles as $gv){
+                                    $Today = date("Y-m-d");
+                                    $expensetotal = Yii::app()->db->createCommand("select SUM(expenses) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
+                                    $incometotal = Yii::app()->db->createCommand("select SUM(income) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
+                                    $paymenttotal = Yii::app()->db->createCommand("select SUM(payment) as paid from vehicle_payments WHERE date_format(payment_date,'%Y-%m-%d') = '".$Today."' and vehicle_id=".$gv->vehicle_id."")->queryAll()[0]['paid'];
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $gv->vehicle->resigtration_number;?></td>
+                                        <td class="text-green text-bold"><?php echo number_format($incometotal,2);?></td>
+                                        <td class="text-danger text-bold"><?php echo number_format($expensetotal,2);?></td>
+                                        <td class="text-bold text-info"><?php echo number_format($paymenttotal,2);?></td>
+                                    </tr>
+                                <?php }
+                            }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
             <?php 
             $this->widget('zii.widgets.grid.CGridView', array(

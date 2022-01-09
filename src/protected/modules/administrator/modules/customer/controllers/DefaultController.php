@@ -26,38 +26,9 @@ class DefaultController extends Controller
 
 	public function actionIndex()
 	{
-         $model = new CustomerTransaction('search');
-        if(isset($_POST['name'])){
-            $name = $_POST['name'];
-            $id = $_POST['id'];
-            $members = new Members();
-            $criteria=new CDbCriteria;
-            if(isset($name))
-            $criteria->addSearchCondition('lname', $name);     
-            if(isset($id))
-            $criteria->addSearchCondition('id', $id);
-            $customer= $members->findAll($criteria);
-           
-        }/*if(isset($_GET['CustomerTransaction']['type'])){
-            $type = $_GET['CustomerTransaction']['type'];
-            $model = new CustomerTransaction('search');
-            $criteria=new CDbCriteria;
-            $criteria->addSearchCondition('type', $type);     
-
-            $model= $model->findAll($criteria);
-            $members = new Members();
-            $customer= $members->findAll();
-
-        }*/else{
-        $model = new CustomerTransaction('search');
-        $members = new Members();
-        $customer= $members->findAll();
-
-
-        }
+       $model = new Members('search');
         $this->render('index', array(
-            'model' => $model,
-            'customer' => $customer,
+            'model' => $model
         ));
 	}
     

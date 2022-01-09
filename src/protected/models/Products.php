@@ -288,4 +288,10 @@ class Products extends CActiveRecord {
         return parent::model($className);
     }
 
+    public function getTopProducts(){
+        $SQL='select p.id,p.name,count(qo.quote_id) as total from products p inner join quotes_order qo on p.id = qo.product_id
+                    group by p.id  order by total DESC limit 0,5';
+        return Yii::app()->db->createCommand($SQL)->queryAll();
+    }
+
 }

@@ -62,38 +62,29 @@
             </div></div>
         <!-- /.row -->
     </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <?php $this->renderPartial('_saleschart',array('salesorders'=>$salesorders));?>
+        </div>
+        <div class="col-lg-6">
+            <?php $this->renderPartial('_topcustomer',array('customers'=>$customers));?>
+        </div>
+    </div>
 
 
     <div class="row">
-
-        <section class="col-lg-7 connectedSortable">
-            <div id="sales_map">
-                <?php
-                $graph = ProductsGraph::model()->getDaily();
-                ?>
-                <div class="nav-tabs-custom no">
-                    <!-- Tabs within a box -->
-                    <ul class="nav nav-tabs pull-right">
-                        <li class="active"><a href="#revenue-chart" data-toggle="tab">Sales Graph</a></li>
-                    </ul>
-
-                    <div class="tab-content no-padding" style="text-align: center">
-
-                    </div>
-
-                </div>
-                </div>
-
-            <div id="users">
-               <h1><i class="fa fa-spinner fa-pulse"></i></h1>
-			</div>
+        <div class="col-lg-6 connectedSortable">
+            <div id="users"></div>
+        </div>
+        <div class="col-lg-6">
+            <?php $this->renderPartial('_product',array('products'=>$products));?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <?php if(Yii::app()->user->role == 1) {?>
-                <div class="box box-solid">
-
-                    <div class="box-header">
-                        <!-- tools box -->
-
-                        <!-- /. tools -->
+                <div class="box box-solid box-success">
+                    <div class="box-header with-border">
                         <i class="fa fa-map-marker"></i>
                         <h3 class="box-title">Cart Settings</h3>
                     </div>
@@ -127,8 +118,8 @@
                                     array(
                                         'type'=>'POST',
                                         'success'=>'js:function(string){
-                                    $(".message").html(string);
-                                    }'
+                                        $(".message").html(string);
+                                        }'
                                     ),array('class'=>'btn btn-success',));?>
                             </div>
 
@@ -136,39 +127,10 @@
                         </div>
 
                     </div>
-                  <?php }?>
-                    <div class="col-md-4">
-                        <?php //include('_product.php'); ?>
-                    </div>
-        </section>
-        <div id="worldmap">
-           <!--  <section class="col-lg-5 connectedSortable">
-           
-           
-               /.box
-               Calendar
-               <div class="box box-primary">
-                <div class="box-header"><i class="fa fa-th"></i>
-                               <h3 class="box-title">Weather Forcast</h3>
-                               
-                           </div>
-                           <div class="box-body border-radius-none">
-           
-           
-                                   <a href="https://www.accuweather.com/en/pk/islamabad/258278/current-weather/258278" class="aw-widget-legal">
-                                       By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
-                                   </a><div id="awtd1488637256603" class="aw-widget-36hour"  data-locationkey="" data-unit="f" data-language="en-us" data-useip="true" data-uid="awtd1488637256603" data-editlocation="true"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
-           
-           
-                           </div>
-                           /.box-body
-                           </div>
-           
-           </section> -->
-            </div>
-
+                </div>
+            <?php }?>
+        </div>
     </div>
-
 
 
 </section>
@@ -177,28 +139,19 @@
         width:16%;
     }
 </style>
+<script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/chartjs/chart.min.js"></script>
 
 <!-- Morris.js charts -->
 <script type="text/javascript">
     $(function () {
-
-
         <?php
-
-
-
          echo (CHtml::ajax(array (
             'url'=>array('/administrator/default/ajaxgetusers'),
             'update'=>'#users',
             ))
          );
-
-
-
     ?>
-
-
-
+       // show_sales_chart();
     });
 
 </script>

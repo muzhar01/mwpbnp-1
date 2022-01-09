@@ -230,6 +230,7 @@ class DefaultController extends Controller {
                 $model = Quotes::model()->findByPk($key);
                 $model->transport_charges=$_POST['quotes']['transport_charges'][$key];
                 $model->discount=$itmes;
+
                 $model->save(FALSE);
             }
         }
@@ -275,24 +276,17 @@ class DefaultController extends Controller {
  }
      public function actionAjaxUpdateOrder(){
         if(Yii::app()->request->isAjaxRequest){
+            $totalCosting = 0;
             if(isset($_POST['quantity']) && isset($_POST['price'])){
-                $totalCosting = 0;
                 $total_weight=0;
                 $weight =0;
                 $total_laod_unload=0;
                 $loadingUnloading = QuotesSettings::model()->findAll();
-                
-                
-
-
                 foreach ($_POST['quantity'] as $key =>$items){
-                   
                     $model= QuotesOrder::model()->findByPk($key);
                     if($model){
                         $totalCosting += $_POST['price'][$key] * $items;
                         $calc_price = $_POST['price'][$key] * $items;
-
-                        
 
                         //CALCULATING THE LAODING AND UNLOADING
                         if(!empty($items['type'])){
@@ -311,7 +305,6 @@ class DefaultController extends Controller {
                           }
                           $total_weight = $items * $weight;
                       }
-
                         //END CALCULATION
                         $loading  = $loadingUnloading[0]->loading_price;
                         $unloading = $loadingUnloading[0]->unloading_price;
@@ -320,48 +313,20 @@ class DefaultController extends Controller {
                         $model->quantity=$items;
                         $model->price = $calc_price;
                         $model->save(false);
-
-                        
                     }
-                            
                 }
-
                 if($totalCosting>0){
-
-
                     $id = $_POST['qoute_ids'];
-                    $transport_charges = $_POST['transportCharges'];
-                    $discount = $_POST['discounts'];
                     $models = Quotes::model()->find(array('condition'=>"quote_id=$id"));
                     if($models){
                         $models->carriage = $total_laod_unload;
-                       
                         $models->quote_value = $totalCosting;
                         $models->vehicle = join(",",$_POST['quote_vehicle']);
                         $models->transport_charges = $_POST['transportCharges'];
                         $models->discount = $_POST['discounts'];
                         $models->save(false);
-                        /*if($models->status != 'Processing'){
-                        //Updating transaction table 
-                        $model_transaction = new CustomerTransaction();
-                        $criteria=new CDbCriteria;     
-                        $criteria->condition= 'num="'.$_POST['qoute_ids'].'"';
-                        $model_transaction= $model_transaction->find($criteria);
-                        $model_transaction->amount  = $totalCosting + $_POST['transportCharges'] + $total_laod_unload - $_POST['discounts'];
-                        $model_transaction->save();
-
-                        //Updating Receipts table 
-                        $model_transaction = new CustomerTransaction();
-                        $criteria=new CDbCriteria;     
-                        $criteria->condition= 'num="'.$_POST['qoute_ids'].'"';
-                        $model_transaction= $model_transaction->find($criteria);
-                        $model_transaction->amount  = $totalCosting + $_POST['transportCharges'] + $total_laod_unload - $_POST['discounts'];
-                        $model_transaction->save();
-
-                        }*/
-
                         $data = array('load_unload'=>round($total_laod_unload,0), 'total_cost' => round($totalCosting,0));
-                       echo CJSON::encode($data);
+                        echo CJSON::encode($data);
 ;
                     }
                 }
