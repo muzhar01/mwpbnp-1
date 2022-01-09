@@ -68,7 +68,9 @@
             </li>
              <?php }
             if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('2')){ ?>
-            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/products" || Yii::app ()->controller->module->id ==  "administrator/orders")  ?  "active" : '' ; ?>  treeview">
+            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/products" ||
+                Yii::app ()->controller->module->id ==  "administrator/orders" ||
+                Yii::app ()->controller->id ==  "banks")  ?  "active" : '' ; ?>  treeview">
                 <a   href="/administrator/products"><i class="fa fa-barcode"></i>Product Management <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/products")  ?  "active" : '' ; ?>  treeview-menu">
                      <li   class=" <?php  echo (Yii::app ()->controller->id == "productsize")  ?  "active" : '' ; ?>">
