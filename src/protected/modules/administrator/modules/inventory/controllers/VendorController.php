@@ -63,15 +63,15 @@ class VendorController extends Controller
 		}
 		
 	}
-	public function actionAdmin()
+	public function actionadmin()
 	{
 	$model=new Vendor();
 	if(isset($_POST['Vendor'])){
 		     $name=$_POST['Vendor']['Name'];
 		     $contact=$_POST['Vendor']['contactOne'];
-		      $criteria=new CDbCriteria;     
+		     $criteria=new CDbCriteria;
     		 $criteria->condition='Name="'.$name.'" OR contactOne= "'.$contact.'" ';
-		   $searchmodel=$model->find($criteria);
+		     $searchmodel=$model->find($criteria);
 			if($searchmodel){
 		   	$this->render('admin',['model'=>$searchmodel]);
 		   }
@@ -256,18 +256,14 @@ public function actionUpdate($id)
 	}
 
 	public function actionCreateQuotesForDesktop(){
-		$sumCurrentQty; 
+
 		$produts=new Products();
 		$item=new Item();
-		$exitfild='';
-
 		$sqls = Yii::app()->db->createCommand("SELECT * FROM `item` ORDER BY `id` DESC LIMIT 1");
 		$bill_unique_no = $sqls->queryAll();
-		$catId;$proID;$sizeId;$thicId;$new_Qty;
 
-		if(isset($_POST['review_confirm'])){ //echo "<pre>"; print_r($_POST); //die;
+		if(isset($_POST['review_confirm'])){
 			extract($_POST);
-			
 			$totalRows = $_POST['totalRows'];
 			$GetMemberinfo=Members::model()->findByPk($vendor_id);
 			$AddQuotes = new Quotes();
@@ -344,14 +340,9 @@ public function actionUpdate($id)
 
 		}
 		if(isset($_POST['totalRows'])){ //echo "<pre>"; print_r($_POST); die;
-			//===================Get Wait ==================//	
-        	//echo 1; die;
-			//print_r($bill_unique_no); die;
-			//print_r($bill_unique_no); die;
 			$this->render('review_confirm_enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' =>$bill_unique_no]);
         }else{
-        	// $this->render('enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
-			$this->render('enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
+        	$this->render('enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
         }
 
 	}
@@ -373,20 +364,7 @@ public function actionUpdate($id)
        $GetWeight = $getquantity * $modelWgt->weight;
 
        echo $GetWeight; die;
-        // if(!empty($created_by)){
-        //   $model= Cart::model()->findAll(array('condition'=>"created_by=$created_by"));
-        //   $weight=0;
-        //   foreach ($model as $row){
-            
-        //       $modelWgt = ProductWeightListingsChowkatTool::model ()->find(array('condition'=>"product_id=$row->product_id AND "
-        //               . "size_id=$row->size_id AND "
-        //               . "thickness_id=$row->thickness_id"));
-        //         $total_weight+= $row->quantity * $weight;
 
-        //     }
-        //   echo $total_weight;
-           
-        // }
     }
 
 public function actionCategory(){

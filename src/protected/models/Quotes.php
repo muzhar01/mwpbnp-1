@@ -375,10 +375,14 @@ class Quotes extends CActiveRecord {
     }
 
     public function getLastSales(){
-        $SQL="select count(id) as total,date_format(created_on,'%M-%d-%Y') as dates from quotes
-        where created_on  >= curdate() - INTERVAL DAYOFWEEK(curdate())+8 DAY
-        AND created_on < curdate() - INTERVAL DAYOFWEEK(curdate())-2 DAY
-        group by dates order by dates DESC limit 0,10";
+        $SQL="select count(id) as total,date_format(created_on,'%Y-%m-%d') as dates,
+       (select curdate() - INTERVAL DAYOFWEEK(curdate()) +2 WEEK) as start_date,
+       (select curdate()) as end_date
+       from quotes
+where date_format(created_on,'%Y-%m-%d')  >= curdate() - INTERVAL DAYOFWEEK(curdate())+2 WEEK
+  AND date_format(created_on,'%Y-%m-%d') <= curdate()
+group by dates order by dates DESC limit 0,10;";
+
 
         return Yii::app()->db->createCommand($SQL)->queryAll();
 

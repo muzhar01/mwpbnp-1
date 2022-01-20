@@ -3,20 +3,14 @@
 //include('submenu.php');
 $getcompanysettings = QuotesSettings::model()->find();
 
-		 $sql = Yii::app()->db->createCommand()
+       $sql = Yii::app()->db->createCommand()
                                         ->select('id,name')
                                         ->from('products');
                          $pro=$sql->queryAll();
        $sql = Yii::app()->db->createCommand()
                                         ->select('id,category,unit')
                                         ->from('product_main_category');
-                         $Category=$sql->queryAll();  
-
-        // $sql = Yii::app()->db->createCommand()
-        //                                 ->select('id,Name, address')
-        //                                 ->from('vendor');
-        //                  $vendor=$sql->queryAll(); 
-
+                         $Category=$sql->queryAll();
         $sql = Yii::app()->db->createCommand()
                                         ->select('id,fname,lname,current_balance, address,cellular')
                                         ->from('members');
@@ -395,37 +389,8 @@ $(".qtys").change(function(){
 
 });
 	function addOneRow(id){
-		//alert(id); //muddassar
 		var getrowid = id.split('Rows');
-		//alert(getrowid[1]);
 		var getrownumber = getrowid[1];
-		// var getproductid = $("#pro"+getrownumber).val();
-		// var getsizepid = $("#size"+getrownumber).val();
-		// var getthinknessid = $("#thickness"+getrownumber).val();
-		// var getquantity = $("#getQty"+getrownumber).val();
-		// var gettotalquote = $("#total"+getrownumber).val();
-		// var getpreviousbalance = $("#user_current_balance").val();
-		// // alert(getproductid);
-		// // alert(getsizepid);
-		// // alert(getthinknessid);
-		// // alert(getquantity);
-  //       $.post("<?php //echo Yii::app()->request->baseUrl; ?>/administrator/inventory/vendor/GetDeskTopOrderWeight", {getproductid: getproductid,getsizepid: getsizepid,getthinknessid: getthinknessid,getquantity: getquantity}, function(result){
-  //           $("#quote_weight").val(result);
-  //           var Loadingpring = '<?php //echo $getcompanysettings->loading_price;?>';
-  //           var UnLoadingpring = '<?php //echo $getcompanysettings->unloading_price;?>';
-  //           var getloadingamount = Number(Loadingpring) * Number(result);
-  //           var getunloadingamount = Number(UnLoadingpring) * Number(result);
-  //           $("#quote_weight_loading").val(getloadingamount);
-  //           $("#quote_weight_unloading").val(getunloadingamount);
-  //           var overallquote = Number(getunloadingamount) + Number(getloadingamount) + Number(gettotalquote);
-  //           $("#quote_total_amount").val(overallquote);
-  //           $("#original_quote_total_amount").val(overallquote);
-  //           $("#customer_previous_balance").val(getpreviousbalance);
-  //           $("#total_net_payable").val(overallquote);
-            
-  //       });
-
-
 		var getRow = $('#addRow').html();
 		var getRowNo = parseInt($('#totalRows').val());
 		getRowNo += 1;
@@ -574,34 +539,8 @@ function products(id){
             }
 	            
         }
-
-
-/*function thinesses(id){
-	var RowNumber = id.match(/\d+$/)[0];  
-            var proid=$("#pro"+RowNumber).val();
-            if(!proid){
-            	$('#thickness'+RowNumber).empty();
-            }else{
-	            	 $.ajax({
-		             type : "POST",
-		             url: " <?php echo Yii::app()->getBaseUrl();?>/inventory/vendor/Thickness",
-		             data: {proid: proid }, 
-		             success: function(data){
-		               						$('#thickness'+RowNumber).html(data);
-
-		             						}
-		       		 });
-            }
-	            
-	       
-        }*/
-
-
 function thicknesses(id) {
-			// var thinkness_id = $(this).val();
-			// var size_id = $("#size"+id).val();
-			// var product_id = $("#pro"+id).val();
-			var RowNumber = id.match(/\d+$/)[0];  
+			var RowNumber = id.match(/\d+$/)[0];
 			var cateId=$("#category"+RowNumber).val();
 			var proId=$("#pro"+RowNumber).val();
 			var sizeId=$("#size"+RowNumber).val();

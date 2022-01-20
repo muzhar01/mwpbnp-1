@@ -375,8 +375,5 @@
 <script type="text/javascript">
 	$(document).ready(function(e) {
 		$('#example').datetimepicker();	
-		$(".main-sidebar").css('display', 'none');
-		$(".content-wrapper").css('margin-left', '0');
-		$(".main-form").css('width', '100%');
-	});
+ 	});
 </script>

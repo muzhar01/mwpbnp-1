@@ -36,17 +36,17 @@ $total_thickness = count($thickness);
 							$product_id = $data->id;
 							$size_id = $sizedata->size_id; 
 							$thickness_id = $thicknessdata->thickness_id;
-						      
-							$model1= Yii::app()->db->createCommand("select * from product_base_price where product_id = $product_id AND size_id = $size_id AND thickness_id = $thickness_id")->queryAll();
-							$price1 = $model1[0]['price'];
+
+                            $SQL="select * from product_base_price where product_id = $product_id AND size_id = $size_id AND thickness_id = $thickness_id";
+							$model1= Yii::app()->db->createCommand($SQL)->queryAll();
+                            $price1 = (isset($model1[0]['price'])) ? $model1[0]['price'] : 0.00;
 							$query = "select * from product_market_price where product_id = $product_id AND size_id = $size_id AND thickness_id = $thickness_id AND created_date between '" . date('Y-m-d 00:00:00') . "' AND '" . date('Y-m-d 23:59:59') . "' order by created_date DESC";
 
-							$model2= Yii::app()->db->createCommand($query)->queryAll();
-                         
-                            $price2 = $model2[0]['price'];
-                			
+							 $model2= Yii::app()->db->createCommand($query)->queryAll();
+                             $price2 = (isset($model2[0]['price'])) ? $model2[0]['price'] : 0.00;
+
 							 $todayprice = ($price2 / 100) * $price1;
-                           $price = number_format(($price1 + $todayprice),2);
+                             $price = number_format(($price1 + $todayprice),2);
                              ?>
                          <td >
                              <?php
