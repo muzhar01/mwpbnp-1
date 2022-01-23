@@ -3,8 +3,8 @@
 /* @var $model Banks */
 $pageSize = Yii::app ()->user->getState ('pageSize', 50);
 $this->breadcrumbs = array(
-                    'Payment Methods' => array('index'),
-                    'Manage',
+                    'Reports' => array('index'),
+                    'Payment Methods',
 );
 
 ?>
@@ -12,12 +12,13 @@ $this->breadcrumbs = array(
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Payment Methods</h1>
-                    </div>
-        <div class="box-body">
-          <div class="otherArea">
-                <a class="btn btn-success" href="exportpaymentmethods">Export List</a>
-            <a href="javascript:void(0)" class="btn btn-danger pull-left mr-5" style="margin-right: 10px;" onclick="printData()">Print</a>  
+            <div class="otherArea pull-right">
+                <a class="btn btn-success" href="exportpaymentmethods"><i class="fa fa-download"></i> Export List</a>
+                <a href="javascript:void(0)" class="btn btn-danger pull-left mr-5" style="margin-right: 10px;" onclick="printData()"><i class="fa fa-print"></i> Print</a>
+            </div>
           </div>
+        <div class="box-body">
+
             <?php
             $this->widget ('zii.widgets.grid.CGridView', array(
                 'id' => 'printTable',

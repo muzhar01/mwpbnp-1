@@ -4,20 +4,18 @@
 
 $pageSize = Yii::app ()->user->getState ('pageSize', 50);
 $this->breadcrumbs = array(
-                    'Quotes Confirmed' => array('index'),
-                    'Manage',
+                    'Reports' => array('index'),
+                    'Quotes Confirmed',
 );
 ?>
 <section class="content">
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Quotes Confirmed</h1>
-                    </div>
+            <a class="btn btn-success pull-right otherArea" href="exportquotesconfirmed"><i class="fa fa-download"></i> Export</a>
+            <a class="btn btn-danger pull-right otherArea" style="margin-right: 5px;" onClick="printData()"><i class="fa fa-print"></i> Print List</a>
+           </div>
         <div class="box-body">
-         <div class="otherArea">
-                <a class="btn btn-success" href="exportquotesconfirmed">export</a>
-            <a class="btn btn-danger" onClick="printData()">Print List</a>
-         </div>
             <table class="table table-bordered table table-striped">
                 <thead>
                     <tr>

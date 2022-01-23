@@ -1,14 +1,13 @@
 <?php
 $this->breadcrumbs = array(
     'Vendor' => array('index'),
-    'Manage',
+    'Print',
 );
 ?>
 <section class="content">
-	<?php include('submenu.php');?>
-    <div class="box box-info">
+	<div class="box box-info">
         <div class="box-header with-border">
-            <h1 class="box-title">Search Vendors</h1>
+            <h1 class="box-title">Print Vendors</h1>
             <a class="btn btn-danger pull-right" id="print"><i class="fa fa-print"></i> Print</a>
         </div>
         <div class="box-body">

@@ -25,15 +25,13 @@ Yii::app()->clientScript->registerScript('search', "
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Mobile and Mail List</h1>
+            <span id="otherArea ">
+                <a class="btn btn-success pull-right" style="margin-right: 2px;" href="exportmobileandmaillist"><i class="fa fa-download"></i>Export List</a>
+                <button class="btn btn-danger pull-right" style="margin-right: 2px;" onCLick="printData()"><i class="fa fa-download"></i> Print List</button>
+            </span>
         </div>
     
         <div class="box-body">
-          <div id="otherArea">  
-                <a class="btn btn-success" href="exportmobileandmaillist">Export List</a>
-                <button class="btn btn-danger" onCLick="printData()">Print List</button>
-          </div>
-
-            
             <?php $this->widget('zii.widgets.grid.CGridView', array(
             'id'=>'members-grid',
             'dataProvider'=>$model,

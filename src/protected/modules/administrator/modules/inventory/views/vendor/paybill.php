@@ -1,219 +1,102 @@
 <?php
-
-/* @var $this VendorController */
-
-/* @var $model Vendor */
-
+$this->breadcrumbs = array(
+    'Vendor' => array('index'),
+    'Bills to Pay',
+);
 ?>
-
-<style>
-
-	.top-buffer { margin-top:20px; }
-
-</style>
-
-<div class="container">
-
-<?php include('submenu.php');?>
-
-
-
-				<div class="row" style="margin: 0 auto; display:flex; justify-content: center; border: 1px solid #ccc; background: #fff">
-
-					<h1>BILLS TO PAY</h1>
-
-				</div>
-
-				
-
-				<div  class="form">
-
-				<?php $form=$this->beginWidget('CActiveForm', array(
-
-					'id'=>'myForm',
-
-					'enableAjaxValidation'=>false,
-
-					'enableClientValidation'=>true,
-
-				)); ?>
-
-				<div class="row" style="margin: 0 auto;background: #fff">
-
-					<div>
-
-					<?php if(isset($message)){
-
-						var_dump($message);
-
-					}?>
-
-				</div>
-
-				<div class="table-responsive">
-
-				  <table class="table table-bordered">
-
-				  	<thead>
-
-				  		<th>Sel.</th>
-
-					   	<th>Bill Date</th>
-
-					   	<th>Vendor</th>
-
-					   	<th>Ref.No</th>
-
-					   	<th>Bill Total</th>
-
-					   	<th>Amount Due</th>
-
-					   	<th>Amount Paid</th>
-
-					   	<th>Discount</th>
-
-					   	<th>Amount To Pay</th>
-
-				 	</thead>
-
-					<tbody class="table-striped">
-
-						<?php $i=1; foreach($bill_details as $bill_detail){ ?>	
-
-					  	<tr>
-
-					  		<td><input data-paybillID="<?= $bill_detail['paybillID']; ?>" data-target-id="<?= $bill_detail['id']; ?>" type="radio" name="paying" class="bill_selected" id="<?= $bill_detail['id'].'-'.$i ?>"></td>
-
-					  		<td><?= $bill_detail['bill_date']; ?><input type="hidden" name="bill_date" value="<?= $bill_detail['bill_date']; ?>"></td>
-
-					  		<td ><?= $bill_detail['Name']; ?><span id="vendor_name_org<?= $i ;?>" style="display: none"><?= $bill_detail['Name']; ?></span><input type="hidden" name="vendor_id" value="<?= $bill_detail['id']; ?>"></td>
-
-					  		<td><?= $bill_detail['bill_id']; ?><input id="refno<?= $i ?>" type="hidden" name="refno" 
-					  			value="<?= $bill_detail['bill_id']; ?>"></td>
-
-					  		<td id="bill_total<?= $i; ?>"><?= $bill_detail['amount_due']; ?></td>
-
-					  		<td><?= $bill_detail['amount_balance']; ?><input id="amount_due<?= $i ?>" type="hidden" name="totalamount" value="<?= $bill_detail['amount_balance']; ?>"></td>
-
-					  		<td id="partial_paid_amount<?= $i ?>"><?=$bill_detail['amount_paid']; ?><input type="hidden" name="partial_paid_amount" value="0"></td>
-
-					  		<td><input type="text" name="discount" data-discount-id="<?=$bill_detail['id'].'-'.$i ?>" class="discount" id="discount<?= $i ?>" value="" disabled="disabled">
-
-							<input type="hidden" name="prev_discount" value="<?= $bill_detail['discount']; ?>">
-
-					  		</td>
-
-					  		<input type="hidden" name="vendor_balance" id="vendor_balance<?= $i ?>" value="<?= $bill_detail['current_balance'] ?>">
-
-					  		<td><input type="text" name="amount_pay" data-amountpay-id="<?=$bill_detail['id'].'-'.$i ?>" class="amount_pay" id="amount_pay<?= $i++?>" value="" disabled="disabled"></td>
-
-					  		
-
-					  	</tr>
-
-					  	 <?php } ?>
-
-					</tbody>
-
-				</table>
-
-				</div>	
-
-				</div>
-
-				<div class="panel panel-info top-buffer">
-
-			      <div class="panel-heading">Payment</div>
-
-			      <div class="panel-body">
-
-					<div style="display: flex; justify-content: space-around;">
-
-						<div>
-
-							<label>Date:</label>
-
-							<input type="date" name="date_bill" class="form-control">
-
-						</div>
-
-						<div>
-
-							<label>Method:</label>
-
-							<select  name="method"  class="form-control">
-
-								<option value="">Select Method</option>
-
-							<?php foreach($payment_method as $method){ ?>
-
-								<option value="<?= $method['id']; ?>"><?= $method['name'];?></option>
-
-							<?php }?>
-
-							</select>
-
-						</div>
-
-						<div>
-
-							<label for="Current_Balance">Vendor Name</label><br>
-
-							<div>
-
-								<span id="vendor_name"></span>
-
-							</div>
-
-						</div>
-
-						<div>
-
-							<input type="hidden" id="pre_row" value="" name="id">
-
-							<input type="hidden" id="data-target-id" name="vendor_id">
-
-							<input type="hidden" id="total_fixed_amount" name="total_fixed_amount">
-
-							<input type="hidden" id="tar_ref_no" name="tar_ref_no">
-
-							<input type="hidden" id="paybill_select_id" name="paybillID" value="">
-
-							<input type="hidden" id="vendor_bal_previous" value="">
-
-							<label>Remaining Balance:</label>
-							<input type="hidden" id="remaing_bal_fixed" >
-							<input type="text" name="remaining_balance"  class="form-control remaining_bal" id="remaining_bal" readonly="" style="border:none; ">
-
-						</div>
-
-					</div>
-
-			      </div>
-
-			    </div>
-
-				<div class="row">
-
-					<div class="col-lg-1">
-
-						<button class="btn btn-success" type="button" onclick="checkRemainingBal()">Paybill</button>
-
-					</div>
-
-				</div>
-
-				<?php $this->endWidget(); ?>
-
-
-
-			</div><!-- form -->
-
-
-
-</div>
-
-
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h1 class="box-title">Bill to pay</h1>
+        </div>
+        <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'myForm',
+            'enableAjaxValidation'=>false,
+            'enableClientValidation'=>true,
+        )); ?>
+        <div class="box-body">
+            <div class="row" style="margin: 0 auto;background: #fff">
+                <div>
+                    <?php if(isset($message)){
+                        var_dump($message);
+                    }?>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>Sel.</th>
+                        <th>Bill Date</th>
+                        <th>Vendor</th>
+                        <th>Ref.No</th>
+                        <th>Bill Total</th>
+                        <th>Amount Due</th>
+                        <th>Amount Paid</th>
+                        <th>Discount</th>
+                        <th>Amount To Pay</th>
+                        </thead>
+                        <tbody class="table-striped">
+                        <?php $i=1; foreach($bill_details as $bill_detail){ ?>
+                            <tr>
+                                <td><input data-paybillID="<?= $bill_detail['paybillID']; ?>" data-target-id="<?= $bill_detail['id']; ?>" type="radio" name="paying" class="bill_selected" id="<?= $bill_detail['id'].'-'.$i ?>"></td>
+                                <td><?= $bill_detail['bill_date']; ?><input type="hidden" name="bill_date" value="<?= $bill_detail['bill_date']; ?>"></td>
+                                <td ><?= $bill_detail['Name']; ?><span id="vendor_name_org<?= $i ;?>" style="display: none"><?=  $bill_detail['Name']; ?></span><input type="hidden" name="vendor_id" value="<?= $bill_detail['id']; ?>"></td>
+                                <td><?= $bill_detail['bill_id']; ?><input id="refno<?= $i ?>" type="hidden" name="refno"
+                                                                          value="<?= $bill_detail['bill_id']; ?>"></td>
+                                <td id="bill_total<?= $i; ?>"><?= $bill_detail['amount_due']; ?></td>
+                                <td><?= $bill_detail['amount_balance']; ?><input id="amount_due<?= $i ?>" type="hidden" name="totalamount" value="<?= $bill_detail['amount_balance']; ?>"></td>
+                                <td id="partial_paid_amount<?= $i ?>"><?=$bill_detail['amount_paid']; ?><input type="hidden" name="partial_paid_amount" value="0"></td>
+                                <td><input type="text" name="discount" data-discount-id="<?=$bill_detail['id'].'-'.$i ?>" class="discount" id="discount<?= $i ?>" value="" disabled="disabled">
+                                    <input type="hidden" name="prev_discount" value="<?= $bill_detail['discount']; ?>">
+                                </td>
+                                <input type="hidden" name="vendor_balance" id="vendor_balance<?= $i ?>" value="<?= $bill_detail['current_balance'] ?>">
+                                <td><input type="text" name="amount_pay" data-amountpay-id="<?=$bill_detail['id'].'-'.$i ?>" class="amount_pay" id="amount_pay<?= $i++?>" value="" disabled="disabled"></td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-lg-2">
+                    <label>Date:</label>
+                    <input type="date" name="date_bill" class="form-control">
+                </div>
+                <div class="col-lg-3">
+                    <label>Method:</label>
+                    <select  name="method"  class="form-control">
+                        <option value="">Select Method</option>
+                        <?php foreach($payment_method as $method){ ?>
+                            <option value="<?= $method['id']; ?>"><?= $method['name'];?></option>
+                        <?php }?>
+                    </select>
+                </div>
+                <div class="col-lg-2">
+                    <label for="Current_Balance">Vendor Name</label><br>
+                    <div>
+                        <input class="form-control" id="vendor_name" type="text" disabled="disabled">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <input type="hidden" id="pre_row" value="" name="id">
+                    <input type="hidden" id="data-target-id" name="vendor_id">
+                    <input type="hidden" id="total_fixed_amount" name="total_fixed_amount">
+                    <input type="hidden" id="tar_ref_no" name="tar_ref_no">
+                    <input type="hidden" id="paybill_select_id" name="paybillID" value="">
+                    <input type="hidden" id="vendor_bal_previous" value="">
+                    <label>Remaining Balance:</label>
+                    <input type="hidden" id="remaing_bal_fixed" >
+                    <input type="text" name="remaining_balance"  class="form-control remaining_bal" id="remaining_bal" readonly="" style="border:none; ">
+                </div>
+                <div class="col-lg-1">
+                    <button class="btn btn-success" type="button" onclick="checkRemainingBal()" style="margin-top: 25px">Paybill</button>
+                </div>
+            </div>
+        </div>
+            <?php $this->endWidget(); ?>
+    </div>
+</section>
 
 <script type="text/javascript">
 
@@ -250,7 +133,7 @@
 
 			var vendor_name = $('#vendor_name_org'+rowNum).html();
 
-			$('#vendor_name').html(vendor_name)
+			$('#vendor_name').val(vendor_name)
 
 			var vendor_balance = $('#vendor_balance'+rowNum).val()
 

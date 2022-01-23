@@ -5,4 +5,6 @@
 /downloads/
 .idea/
 .DS_Store
-/protected/runtime/
+src/protected/runtime/
+src/protected/config/
+src/assets/

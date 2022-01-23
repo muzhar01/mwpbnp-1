@@ -1,13 +1,30 @@
-<h2>Current Price</h2>
-<style>
-    .items{
-        font-size: 20px !important;
-    }
-</style>
-<button class="btn btn-success" onCLick="window.print()">Print List</button>
+<?php
+/* @var $this DefaultController */
 
-<?php $this->widget('zii.widgets.CListView', array(
-        'dataProvider'=>$model->search(),
-        'itemView'=>'_current',
-        'template'=>"{items}\n{pager}", // here is the template that confused me!! 
-)); ?>
+
+$this->breadcrumbs=array(
+    'Reports'=>array('index'),
+    'Current Price',
+);
+
+
+?>
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h1 class="box-title">Current Price</h1>
+            <a class="btn btn-success pull-right" onCLick="window.print()"><i class="fa fa-print"></i> Print current price</a>
+        </div>
+         <div class="box-body">
+             <?php $this->widget('zii.widgets.CListView', array(
+                 'dataProvider'=>$model->search(),
+                 'itemView'=>'_current',
+                 'template'=>"{items}\n{pager}", // here is the template that confused me!!
+             )); ?>
+         </div>
+    </div>
+</section>
+
+<h2></h2>
+
+

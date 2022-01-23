@@ -146,27 +146,25 @@ public function actionUpdate($id)
 
 
 	public function actionEnterbill(){
-		$sumCurrentQty;
 		$produts=new Products();
 		$item=new Item();
-		$exitfild='';
-
 		$sqls = Yii::app()->db->createCommand("SELECT * FROM `item` ORDER BY `id` DESC LIMIT 1");
 		$bill_unique_no = $sqls->queryAll();
 
-
-		$catId;$proID;$sizeId;$thicId;$new_Qty;
 		if(isset($_POST['totalRows'])){
         	$totalRows = $_POST['totalRows'];
-          		$bill = new Paybill();
-
-				$bill->vendor_id = $_POST['vendor_id']; 	 	
-        		$bill->bill_id = $_POST['refno']; 	
-        		$bill->amount_due = $_POST['totalamount']; 	
-				$bill->bill_date = $_POST['bill_date'];
- 
-				$bill->save();
-			
+            /*
+             * Add Billing Information
+             */
+            $bill = new Paybill();
+            $bill->vendor_id = $_POST['vendor_id'];
+            $bill->bill_id = $_POST['refno'];
+            $bill->amount_due = $_POST['totalamount'];
+            $bill->bill_date = $_POST['bill_date'];
+            $bill->save();
+			/*
+			 * Add vendoers
+			 */
 			$model=new Vendor();
 	 		$criteria=new CDbCriteria;     
 		    $criteria->condition= 'id="'.$bill->vendor_id.'"';
@@ -174,7 +172,6 @@ public function actionUpdate($id)
 			$vendor_current = $bill->amount_due + $model->current_balance;
 			$model->current_balance = $vendor_current ;
 			$model->update();
-
 
         	for($i=1; $i<=$totalRows; $i++){
         		$item=new Item();
@@ -190,10 +187,7 @@ public function actionUpdate($id)
 				$item->new_Qty=$_POST['getQty'.$i];
 				$item->cost=$_POST['cost'.$i];
 				$item->bill_date = $_POST['bill_date'];
-
-
-
-					if($item->save()){
+                if($item->save()){
 						$sql = Yii::app()->db->createCommand("SELECT * FROM `item_current` WHERE (`cate_id` =$catId AND `pro_id` =$proId AND `size_id` =$sizeId AND `thickness_id` =$thicId)");
 						
 	                 	$exitfild=$sql->queryAll();// check field exits
@@ -242,13 +236,17 @@ public function actionUpdate($id)
 					}
 			}	
 
-			$redirect = $_POST['btn_sate_val'];
-			if($redirect == 'close'){
+
+			if($_POST['submit'] == 'Save & Close'){
+                Yii::app()->user->setFlash('success', "Billing is saved successfully!");
 				$this->redirect('index');
-			}elseif($redirect == 'new'){
+			}
+            elseif($_POST['submit'] == 'Save & New'){
+                Yii::app()->user->setFlash('success', "Billing is saved successfully!");
 				$this->render('enterbill',['produts'=>$produts,'item'=>$item , 'bill_unique_no' => $bill_unique_no]);
 			}
-        }else{
+        }
+        else{
 
         	$this->render('enterbill',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
         }
@@ -430,11 +428,8 @@ echo $price;
 	}
 
 	public function actionSize(){
-
 		  if(isset($_POST)){
-
 		   $proId=$_POST['proid'];
-
 		   $sql = Yii::app()->db->createCommand("
 									 SELECT `product_size`.`title`,`product_size`.`id` 
 									 FROM `products_sizes_listings` 
@@ -443,12 +438,11 @@ echo $price;
 									 WHERE (`products_sizes_listings`.`product_id` =$proId);
 									");
                          $produts_size=$sql->queryAll();
-
-                         $html="<option value='cls'>Select Produts</option>";
-		 foreach($produts_size as $row){
-           				 $html.="<option value='".$row['id']."'>".$row['title']."</option>";
-        			}
-		  }
+                         $html="<option value='cls'>Size</option>";
+                         foreach($produts_size as $row){
+                            $html.="<option value='".$row['id']."'>".stripslashes($row['title'])."</option>";
+                                    }
+                          }
 
         die($html);
  	
@@ -505,7 +499,7 @@ public function actionThickness(){
                          $thickness=$sql->queryAll();
                          $html="<option value='cls'>Select Produts</option>";
 		 foreach($thickness as $row){
-           				 $html.="<option value='".$row['id']."'>".$row['title']."</option>";
+           				 $html.="<option value='".$row['id']."'>".stripslashes($row['title'])."</option>";
         			}
 		  }
 
@@ -590,55 +584,43 @@ public function actionPurchasereturn(){
 
 
 public function actionPaybill(){
-
-	
-
 	$vendor = new Vendor();
 	$vendor = $vendor->model()->findAll();
+    if(isset($_POST['id'])){
+        $id = $_POST['paybillID'];
+        $pay_bill = new Paybill();
+        $criteria=new CDbCriteria;
+        $criteria->condition= 'id="'.$id.'"';
+        $pay_bill= $pay_bill->find($criteria);
+        $amount_pay = isset($_POST['amount_pay'])? (float) $_POST['amount_pay'] :0;
+        $discount = isset($_POST['discount'])? (float) $_POST['discount'] :0;
+        $paying = $amount_pay + $discount;
+        $model=new Vendor();
+        $criteria=new CDbCriteria;
+        $criteria->condition= 'id="'.$_POST['vendor_id'].'"';
+        $model= $model->find($criteria);
+        $vendor_current = $model->current_balance - $paying;
+        $model->current_balance = $vendor_current ;
+        $model->update();
+        $total_fixed_amount = isset($_POST['total_fixed_amount']) ? $_POST['total_fixed_amount'] : 0;
+        $partial_paid_amount = isset($_POST['partial_paid_amount']) ? $_POST['partial_paid_amount'] : 0;
+        $prev_discount = isset($_POST['prev_discount']) ? $_POST['prev_discount'] : 0;
 
-if(isset($_POST['id'])){
+        $amount_due = $total_fixed_amount - $paying ;
+	    $total_paid  = $partial_paid_amount + $amount_pay + $discount;
+	    $total_discount  = $prev_discount + $discount;
 
-	$id = $_POST['paybillID'];
-	$pay_bill = new Paybill();
-	$criteria=new CDbCriteria;     
-  	$criteria->condition= 'id="'.$id.'"';
-	$pay_bill= $pay_bill->find($criteria);
+        $pay_bill->discount= $total_discount;
+        $pay_bill->amount_paid = $total_paid;
+        $pay_bill->amount_balance= $amount_due;
 
-
-	$paying = $_POST['amount_pay'] + $_POST['discount'];
-
-	$model=new Vendor();
-	$criteria=new CDbCriteria;     
-    $criteria->condition= 'id="'.$_POST['vendor_id'].'"';
-	$model= $model->find($criteria);
-	$vendor_current = $model->current_balance - $paying;
-	$model->current_balance = $vendor_current ;
-	$model->update();
-
-	$amount_due = $_POST['total_fixed_amount'] - $paying ;
-
-	$total_paid  = $_POST['partial_paid_amount'] + $_POST['amount_pay'] + $_POST['discount'];
-	$total_discount  = $_POST['prev_discount'] + $_POST['discount'];
-
-
-
-	$pay_bill->discount= $total_discount;
-	$pay_bill->amount_paid = $total_paid;
-	//$pay_bill->amount_due = $amount_due;
-	$pay_bill->amount_balance= $amount_due;
-	
-	
-	//$pay_bill->vendor_id = $_POST['vendor_id'];
-	
-
-	if($pay_bill->amount_balance == 0){
-		$pay_bill->bill_paid = 1; 
-	}
-
-	if($pay_bill->update()){
+        if($pay_bill->amount_balance == 0){
+            $pay_bill->bill_paid = 1;
+        }
+    	if($pay_bill->update()){
 
 		$discount= $_POST['discount'];;
-		$amount_paid= $_POST['amount_pay']; 
+		$amount_paid=  isset($_POST['amount_pay'])? $_POST['amount_pay'] :0;
 		$amount_due= $_POST['total_fixed_amount'];
 		$pay_date = $_POST['date_bill'];
 		$payment_method= $_POST['method'];
@@ -655,22 +637,19 @@ if(isset($_POST['id'])){
 										'".$bill_id."',
 										'".$vendor_id."')";
 
-$parameters = array("pay_date"=>$pay_date,
-					"discount"=>					$discount,
-					"amount_paid"=>					$amount_paid,
-					"payment_method"=>				$payment_method,
-					"amount_due"=>					$amount_due,
-					"amount_balance"=>				$pay_bill->amount_balance,
-					"bill_date"=>					$bill_date,
-					"bill_id"=>						$bill_id,
-					"vendor_id"=>					$vendor_id);
+        $parameters = array("pay_date"=>$pay_date,
+                            "discount"=>					$discount,
+                            "amount_paid"=>					$amount_paid,
+                            "payment_method"=>				$payment_method,
+                            "amount_due"=>					$amount_due,
+                            "amount_balance"=>				$pay_bill->amount_balance,
+                            "bill_date"=>					$bill_date,
+                            "bill_id"=>						$bill_id,
+                            "vendor_id"=>					$vendor_id);
 
-$result = Yii::app()->db->createCommand($sql)->execute($parameters);
+    $result = Yii::app()->db->createCommand($sql)->execute($parameters);
 
-	
-
-	//$bill_details = $sql->queryAll();
-$sql = Yii::app()->db->createCommand("SELECT pay_bill.id AS paybillID, pay_bill.amount_balance, pay_bill.amount_paid, pay_bill.amount_due, pay_bill.vendor_id,pay_bill.bill_id, pay_bill.bill_date,
+    $sql = Yii::app()->db->createCommand("SELECT pay_bill.id AS paybillID, pay_bill.amount_balance, pay_bill.amount_paid, pay_bill.amount_due, pay_bill.vendor_id,pay_bill.bill_id, pay_bill.bill_date,
 	vendor.Name, vendor.id, vendor.current_balance, pay_bill.discount from `pay_bill`
 		INNER JOIN vendor ON vendor.id = pay_bill.vendor_id Where bill_paid = 0");
 	$bill_details = $sql->queryAll();

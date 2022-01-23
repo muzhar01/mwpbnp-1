@@ -25,18 +25,11 @@ Yii::app()->clientScript->registerScript('search', "
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Sales Force List</h1>
+            <a class="btn btn-success otherArea pull-right" href="exportsalesforce"><i class="fa fa-download"></i> Export</a>
+            <a class="btn btn-danger otherArea pull-right" style="margin-right: 5px" href="javascript:void(0)" onclick="printData()"><i class="fa fa-print"></i> Print List</a>
         </div>
-
-
-	
         <div class="box-body">
-		<div class="otherArea">
-            <a class="btn btn-success" href="exportsalesforce">Export</a>
-            <a class="btn btn-danger" href="javascript:void(0)" onclick="printData()">Print List</a>      
-        </div>
-
-
-            <?php $this->widget('zii.widgets.grid.CGridView', array(
+		    <?php $this->widget('zii.widgets.grid.CGridView', array(
             'id'=>'members-grid',
             'dataProvider'=>$model->reportsearch(),
             //'filter'=>$model,
@@ -59,8 +52,8 @@ Yii::app()->clientScript->registerScript('search', "
 
 
              ?>
-</div>
-</div>
+        </div>
+    </div>
 </section>
 
 <script type="text/javascript">
@@ -69,9 +62,7 @@ function printData()
 {
     $(".otherArea").css('display','none');
     window.print();
-   // var divToPrint=document.getElementById("printTable");
-   // newWin= window.open("");
-   // newWin.document.write(divToPrint.outerHTML);
+
 }
 window.onafterprint = function(){
     $(".otherArea").css('display','block');

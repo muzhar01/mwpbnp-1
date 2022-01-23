@@ -1,447 +1,220 @@
+<?php
 
+$this->breadcrumbs = array(
+    'Vendor' => array('index'),
+    'Purchase return',
+);
 
-<?php  include('submenu.php');
-
-
-
-
-
-		 $sql = Yii::app()->db->createCommand()
-
-                                        ->select('id,name')
-
-                                        ->from('products');
-
-                         $pro=$sql->queryAll();
-
-       $sql = Yii::app()->db->createCommand()
-
-                                        ->select('id,category,unit')
-
-                                        ->from('product_main_category');
-
-                         $Category=$sql->queryAll();  
-
-
-
-        $sql = Yii::app()->db->createCommand()
-
-                                        ->select('id,Name, address')
-
-                                        ->from('vendor');
-
-                         $vendor=$sql->queryAll();  
-
-
-
-                         
-
-
-
+$sql = Yii::app()->db->createCommand()
+            ->select('id,name')
+            ->from('products');
+$pro=$sql->queryAll();
+$sql = Yii::app()->db->createCommand()
+            ->select('id,category,unit')
+            ->from('product_main_category');
+$Category=$sql->queryAll();
+$sql = Yii::app()->db->createCommand()
+            ->select('id,Name, address')
+            ->from('vendor');
+$vendor=$sql->queryAll();
 $CategoryUnit = $Category;
-
-
-
 $vendorAddress = $vendor;
-
 ?>
+<section class="content">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h1 class="box-title">Purchase Returns</h1>
+        </div>
+        <?php $form=$this->beginWidget('CActiveForm', array(
+            'id'=>'purchase-return',
+            'enableAjaxValidation'=>false,
+            'enableClientValidation'=>true,
+        )); ?>
+        <div class="box-body">
+            <div class="row">
+                <div class="form-group col-xs-10 col-sm-4 col-md-5 col-lg-3">
 
+                    <label for="exampleSelect1">Vendor</label>
 
+                    <select  id="vendorSel" class="form-control col-md-3" name="vendor_id" required="required">
 
-<div class="container contains">
+                        <option value="">Select Vendor</option>
 
-<div class="row" style="margin: 0 auto; display:flex; justify-content: center; border: 1px solid #ccc; background: #fff">
-	<h1>Purchase Returns</h1>
-</div>
-	<div class="form create-form">
-
-	<?php $form=$this->beginWidget('CActiveForm', array(
-		'id'=>'purchase-return',
-		'enableAjaxValidation'=>false,
-		'enableClientValidation'=>true,
-	)); ?>
-
-<style>
-
-	th{
-
-		border-right:1px solid #cecece;
-
-	}
-
-	td{
-
-		border-right:1px solid #cecece;
-
-	}
-
-	.subtds>span:not(:last-child){
-
-		border-right:1px solid #cecece;
-
-	}
-
-</style>
-
-
-
-<div class="form-group col-xs-10 col-sm-4 col-md-5 col-lg-5">
-
-    <label for="exampleSelect1">Vendor</label>
-
-    <select  id="vendorSel" class="form-control col-md-3" name="vendor_id" required="required">
-
-    	<option value="">Select Vendor</option>	
-
-    <?php foreach($vendor as $vendors){ ?>
-
-      <option value="<?= $vendors['id'] ?>"><?= $vendors['Name']; ?></option>
-
-      <?php } ?>
-
-    </select>
-
-<?php foreach($vendor as $vendorAddress){ ?>
-
-      <input type="hidden"  id="<?= $vendorAddress['id']; ?>" value="<?= $vendorAddress['address']; ?>"> 
-
-<?php } ?>
-
-</div>
-
-<div class="form-group col-xs-10 col-sm-4 col-md-7 col-lg-7">
-
-  <label for="example-datetime-local-input" >Date and time</label>
-
-  <div class="input-group date" id="example" required="required">
-
-
-
-  <input type="text" class="form-control"  name="bill_date" required="required" />
-
-
-
-  <span class="input-group-addon">
-
-
-
-    <span class="glyphicon glyphicon-calendar"></span>
-
-
-
-  </span>
-
-</div>
-
-
-
-</div>
-
-<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-
-    <label for="address">Address</label>
-
-    <textarea class="form-control" id="vendor-address" rows="2" name="vendorAddress"></textarea>
-
-</div>
-
-<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-
-    <label for="Ref" >Ref no.</label>
-
-    <input type="text" class="form-control col-md-3" id="refno" placeholder="Enter Ref no." name="refno" required="required">
-
-</div>
-
-<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-
-    <label for="amount">Amount Due.</label>
-
-    <input type="text" class="form-control col-md-2" id="totamounts" placeholder="Enter Amount." name="totalamount" readonly>
-
-</div>
-
-<div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
-
-    <label for="terms">Reason Of Return</label>
-
-    <input type="text" class="form-control col-md-2" id="terms" placeholder="Enter Terms" name="terms">
-
-</div>
-
-<div class="clearfix hr" ></div>
-
-		<div style="box-sizing: border-box; display: flex;  margin-left: 15px;">
-
-		<p class="note" >Fields with <span class="required lable-required">*</span> are required.</p>
-
-		</div>
-
-		<?php echo $form->errorSummary($item); ?>
-
-			<div class="">
-
-				<div class="panel-body">
-
-					<div class="panel panel-default">
-
-						<div class="table-responsive">
-
-						<table class="table table-condensed">
-
-						<thead>
-
-							<th class="col-lg-1">item</th>
-
-							<th class="text-center col-lg-4">Description</th>
-
-							<th class="text-center unitCol"><strong>U/M</strong></th>
-
-							<th class="text-center"><strong>Cur/Qty</strong></th>
-
-							<th class="text-center"><strong>Return/Qty</strong></th>
-
-							<th class="text-center"><strong>Cost</strong></th>
-
-    						<th class="text-center"><strong>Totals</strong></th>
-
-    						<th class="text-right"><strong>Add</strong></th>
-
-    						<th class="text-right"><strong>Del</strong></th>  
-
-						</thead>
-
-						<tbody>
-
-							<tr>
-
-								<td></td>
-
-								<td class="subtds col-lg-6">
-
-									<span class="col-lg-4 text-center"><strong>products</strong></span>
-
-									<span class="col-lg-4 text-center"><strong>size</strong></span>
-
-									<span class="col-lg-4 text-center"><strong>Thickness</strong></span>
-
-								</td>
-
-    							<td class="text-center"></td>
-
-    							<td class="text-center"></td>
-
-    							<td class="text-center"></td>
-
-	    						<td class="text-center"></td>
-
-	    						<td class="text-center"></td>
-
-	    						<td class="text-right"></td>
-
-							</tr>
-
-							<!-- foreach ($order->lineItems as $line) or some such thing here -->
-
-							
-
-							<tr id="addRow">
-
-								<td class="col-lg-2 itemscol">
-
-									<select name="category1" id="category1" class="form-control col-md-4" onChange="javascript:categories(this.id)" required="required">
-
-										  <option selected="selected" value="">Choose Category</option>
-
-										  <?php
-
-										    foreach($Category as $Cate) { ?>
-
-										      <option value="<?= $Cate['id'] ?>"><?= $Cate['category'] ?></option>
-
-										  <?php
-
-										    } ?>
-
-										</select>
-
-									</td>
-
-								<td class="text-center">
-
-									<div class="col-lg-4">
-
-										<select name="pro1" id="pro1" class="form-control creat-f required" onChange="javascript:products(this.id)" required="required">
-
-									</select> 
-
-									</div>
-
-									<div class="col-lg-4">
-
-										<select name="size1" id="size1" class="form-control creat-f" >
-
-										</select> 
-
-									</div>
-
-									<div class="col-lg-4">
-
-										<select name="thickness1" id="thickness1" class="form-control creat-f required" onChange="javascript:thicknesses(this.id)" required="required">
-
-										</select>
-
-									</div>
-
-								</td>
-
-								<td class="text-center">
-
-									<input type="text" id="unit1" class="form-control unitall" disabled >
-
-								</td>
-
-								<td class="text-right">
-
-									<input  readOnly=true type="text" id="current_Qty1"  name="current_Qty1" class="form-control">
-
-										<?php echo $form->error($item,'current_Qty'); ?>
-
-								</td>
-
-								<td class="text-right">
-
-									<?php echo $form->textField($item,'new_Qty',['name'=> 'getQty1' ,'onkeyup'=>'{ getQty(this.id); }' ,'id' => 'getQty1' ,'class'=>'form-control creat-f getQty' , 'placeholder' => '0' , "required"=>"required"]); ?>
-
-									<?php echo $form->error($item,'new_Qty'); ?>
-
-								</td>
-
-								<td class="text-right"><input type="text" name="cost1" id="cost1" placeholder="0.00" class="form-control getcost" onkeyup="javascript:getCost(this.id)" required="required"></td>
-
-								<td class="col-lg-1">
-
-									<input type="text" name="total1" id="total1" placeholder="0" class="form-control total text-center" ">
-
-								</td>
-
-								<td><button type="button" id="addRows1" onclick="javascript:if(validation(this.id)==true){addOneRow(this.id);}"><i class="fa fa-plus" aria-hidden="true"></i></button></td>
-
-								
-
-							</tr>
-
-    						
-
-						</tbody>
-
-						</table>							
-
-						</div>
-
-						<div id="mainAppend" style="display:none">
-
-							<div id="mainData"></div>
-
-						</div>
-
-						<input type="hidden" name="totalRows" id="totalRows" value="1">
-
-					</div>								
-
-				</div>
-
-			</div>
-
-
-
-		<div class="col-lg-5">
-
-			<br>
-		<input type="hidden" id="btn_sate_val" name="btn_sate_val" value="">
-		<button type="button" class="bnt btn btn-primary save_close">Save & Close</button>
-
-		<button type="button" class="bnt btn btn-primary save_new">Save & New</button>
-
-		<button type="button" class="bnt btn btn-primary save_clear">Clear</button>
-
-	</div>
-
-
-
-			
-
-			<?php $this->endWidget(); ?>
-
-
-
-		</div><!-- form -->
-
-
-
-</div>
-
-
-
-
+                        <?php foreach($vendor as $vendors){ ?>
+
+                            <option value="<?= $vendors['id'] ?>"><?= $vendors['Name']; ?></option>
+
+                        <?php } ?>
+
+                    </select>
+
+                    <?php foreach($vendor as $vendorAddress){ ?>
+                        <input type="hidden"  id="<?= $vendorAddress['id']; ?>" value="<?= $vendorAddress['address']; ?>">
+                    <?php } ?>
+
+                </div>
+                <div class="form-group col-xs-10 col-sm-4 col-md-7 col-lg-3">
+
+                    <label for="example-datetime-local-input" >Date and time</label>
+
+                    <div class="input-group date" id="example" required="required">
+
+
+
+                        <input type="text" class="form-control"  name="bill_date" required="required" />
+
+
+
+                        <span class="input-group-addon">
+
+
+
+                    <span class="glyphicon glyphicon-calendar"></span>
+
+
+
+                  </span>
+
+                    </div>
+
+
+
+                </div>
+                <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
+                    <label for="Ref" >Ref no.</label>
+                    <input type="text" class="form-control col-md-3" id="refno" placeholder="Enter Ref no." name="refno" required="required">
+                </div>
+                <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
+                    <label for="amount">Amount Due.</label>
+                    <input type="text" class="form-control col-md-2" id="totamounts" placeholder="Enter Amount." name="totalamount" readonly>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-8">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control col-md-2" id="address" placeholder="Address" name="vendorAddress">
+                </div>
+                <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-4">
+                    <label for="terms">Reason Of Return</label>
+                    <input type="text" class="form-control col-md-2" id="terms" placeholder="Enter Terms" name="terms">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <th class="col-lg-1">item</th>
+                    <th class="text-center col-lg-4">Description</th>
+                    <th class="text-center unitCol"><strong>U/M</strong></th>
+                    <th class="text-center"><strong>Cur/Qty</strong></th>
+                    <th class="text-center"><strong>Get/Qty</strong></th>
+                    <th class="text-center"><strong>Cost</strong></th>
+                    <th class="text-center"><strong>Totals</strong></th>
+                    <th class="text-right"><strong><button type="button" class="btn btn-sm btn-success" id="addRows1" onclick="javascript:if(validation(this.id)==true){addOneRow(this.id);}"><i class="fa fa-plus" aria-hidden="true"></i></button></strong></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Category</th>
+                        <td class="subtds col-lg-5">
+                            <span class="col-lg-4 text-center"><strong>Products</strong></span>
+                            <span class="col-lg-4 text-center"><strong>Size</strong></span>
+                            <span class="col-lg-4 text-center"><strong>Thickness</strong></span>
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <!-- foreach ($order->lineItems as $line) or some such thing here -->
+
+                    <tr id="addRow">
+                        <td class="col-lg-2 itemscol">
+                            <select name="category1" id="category1" class="form-control col-md-4 cat" onChange="javascript:categories(this.id)" required="required">
+                                <option selected="selected" value="">Select</option>
+                                <?php
+                                foreach($Category as $Cate) { ?>
+                                    <option value="<?= $Cate['id'] ?>"><?= $Cate['category'] ?></option>
+                                    <?php
+                                } ?>
+                            </select>
+                        </td>
+                        <td class="text-center">
+                            <div class="col-lg-4">
+                                <select name="pro1" id="pro1" class="form-control creat-f required pros" onChange="javascript:products(this.id)" required="required">
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select name="size1" id="size1" class="form-control creat-f sizes" required="required">
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                                <select name="thickness1" id="thickness1" class="form-control creat-f thicks" onChange="javascript:thicknesses(this.id)" required="required">
+                                </select>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <input type="text" id="unit1" class="form-control unitall" disabled >
+                        </td>
+                        <td class="text-right">
+                            <input  readOnly=true type="text" id="current_Qty1"  name="current_Qty1" class="form-control " required="required">
+                            <?php echo $form->error($item,'current_Qty'); ?>
+                        </td>
+                        <td class="text-right">
+                            <?php echo $form->textField($item,'new_Qty',['name'=> 'getQty1' ,'onkeyup'=>'{ getQty(this.id); }' ,'id' => 'getQty1' ,'class'=>'form-control creat-f getQty qtys' , 'placeholder' => '0' , "required"=>"required"]); ?>
+                            <?php echo $form->error($item,'new_Qty'); ?>
+                        </td>
+                        <td class="text-right">
+                            <input type="text" name="cost1" id="cost1" placeholder="0.00" class="form-control getcost costs" onkeyup="javascript:getCost(this.id)" required="required"></td>
+                        <td class="col-lg-1">
+                            <input type="text" name="total1" id="total1" placeholder="0" class="form-control total text-center" ">
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="mainAppend" style="display:none">
+                <div id="mainData"></div>
+            </div>
+            <input type="hidden" name="totalRows" id="totalRows" value="1">
+        </div>
+        <div class="box-footer">
+            <input type="hidden" id="btn_sate_val" name="btn_sate_val" value="">
+            <input type="submit" name="submit" value="Save & Close" class="bnt btn btn-danger save_close">
+            <input type="submit" name="submit" value="Save & New" class="bnt btn btn-success save_new">
+            <button type="button" class="bnt btn btn-primary save_clear">Clear</button>
+        </div>
+        <?php $this->endWidget(); ?>
+    </div>
+</section>
 
 <script type="text/javascript">
-
-$('#example').datetimepicker();
-
 $(function(){
 $('.save_close').click(function(){
-
-
-
 		if($(this).hasClass('save_close')){
-
 			var vendor = $('#vendorSel').val();
-
 			var bill_date = $('#bill_date').val();
-
 			var refno =  $('#refno').val();
-
 			var cat = $('.cat').val();
-
 			var pros = $('.pros').val();
-
 			var thicks =  $('.thicks').val();
-
 			var sizes = $('.sizes').val();
-
 			var qtys = $('.qtys').val();
-
 			var costs =  $('.costs').val();
-
 			if(vendor == '' || bill_date == '' || refno == '' || cat == '' || pros == '' || thicks == '' || sizes == '' || qtys == '' || costs == ''){
-
 				alert("Oops ! Some fields are blank, Please fill all fields");
-
 				return false;
-
 			}
-
-		
-
 			$('#btn_sate_val').val('close')
-
 			$('#purchase-return').submit();
-
 		}
-
 	});
-
 $('.save_clear').click(function(){
-
 		    $(this).closest('form').find("input[type=text], textarea, select").val("");
-
-
-
 	});
-
-
-
 $('.save_new').on('click', function(){
 
 			var vendor = $('#vendorSel').val();
@@ -470,22 +243,16 @@ $('.save_new').on('click', function(){
 	});
 });
 	function addOneRow(id){
-
 		var getRow = $('#addRow').html();
-
 		var getRowNo = parseInt($('#totalRows').val());
-
 		getRowNo += 1;
-
-
-
 		$('#totalRows').val(getRowNo);
 
 
 
 		$('#mainData').append('<tr id="rowStack'+getRowNo+'">'+getRow+'</tr>')
 
-		$('#rowStack'+getRowNo).append('<td><button type="button" data-id="'+getRowNo+'" class="removeRow" id="removeRows'+getRowNo+'" onclick="javascript:removeOneRow(this.id)"><i class="fa fa-times" aria-hidden="true"></i></button></td>');
+		$('#rowStack'+getRowNo).append('<td><button type="button" data-id="'+getRowNo+'" class="btn btn-danger btn-sm removeRow" id="removeRows'+getRowNo+'" onclick="javascript:removeOneRow(this.id)"><i class="fa fa-times" aria-hidden="true"></i></button></td>');
 
 		//Change id and name for dynamic Entry...
 
@@ -989,9 +756,6 @@ function validation(id){
 
 <script type="text/javascript">
 	$(document).ready(function(e) {
-		$('#example').datetimepicker();	
-		$(".main-sidebar").css('display', 'none');
-		$(".content-wrapper").css('margin-left', '0');
-		$(".main-form").css('width', '100%');
-	});
+		$('#example').datetimepicker();
+    });
 </script>

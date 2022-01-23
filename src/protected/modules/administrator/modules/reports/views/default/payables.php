@@ -4,25 +4,19 @@
 
 $pageSize = Yii::app ()->user->getState ('pageSize', 50);
 $this->breadcrumbs = array(
-                    'Payables' => array('index'),
-                    'Manage',
+                    'Report' => array('index'),
+                    'Payables',
 );
 ?>
 <section class="content">
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Payables</h1>
-                    </div>
+            <a class="btn btn-success pull-right otherArea " href="exportPayables"><i class="fa fa-download"></i> <i class="fa fa-download"></i>Export List</a>
+            <a href="javascript:void(0)" class="btn btn-danger pull-right otherArea" style="margin-right: 5px;" onclick="printData()"><i class="fa fa-print"></i> Print List</a>
+         </div>
         <div class="box-body">
-           <div class="otherArea">
-
-              <a class="btn btn-success" href="exportPayables">Export List</a>
-              <a href="javascript:void(0)" class="btn btn-danger pull-left mr-5" style="margin-right: 10px;" onclick="printData()">Print List</a> 
-            
-              
-           </div>
-
-              <?php $this->widget('zii.widgets.grid.CGridView', array(
+            <?php $this->widget('zii.widgets.grid.CGridView', array(
             'id'=>'members-grid',
             'dataProvider'=>$model->reportsearch(),
             //'filter'=>$model,
