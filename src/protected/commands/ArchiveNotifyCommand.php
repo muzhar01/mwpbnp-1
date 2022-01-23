@@ -8,6 +8,7 @@ class ArchiveNotifyCommand extends CConsoleCommand {
         foreach ($model as $row){
             Products::model()->saveArchivePrice($row->id);
         }
+        echo 'done';
     }
 
     
