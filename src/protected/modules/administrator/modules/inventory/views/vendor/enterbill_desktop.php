@@ -1,8 +1,6 @@
 
 <?php 
-//include('submenu.php');
 $getcompanysettings = QuotesSettings::model()->find();
-
        $sql = Yii::app()->db->createCommand()
                                         ->select('id,name')
                                         ->from('products');
@@ -20,38 +18,24 @@ $getcompanysettings = QuotesSettings::model()->find();
                                         ->select('id,name')
                                         ->from('banks');
                          $PaymentMethods=$sql->queryAll();                                    
-
-                         
-
 $CategoryUnit = $Category;
-
 $vendorAddress = $vendor;
 ?>
-
+<section class="content">
+    <div class="box box-primary otherArea">
+        <div class="box-header with-border">
+            <h1 class="box-title">Create Quote-Desktop</h1>
+        </div>
+        <div class="box-body"></div>
+    </div>
+</section>
 <div class="container contains main-form">
-	<div class="row" style="margin: 0 auto; display:flex; justify-content: center; border: 1px solid #ccc; background: #fff">
-		<h1>Create Quote-Desktop</h1>
-	</div>
-
 		<div class="form create-form">
 			<?php $form=$this->beginWidget('CActiveForm', array(
 				'id'=>'enterbill',
 				'enableAjaxValidation'=>false,
 				'enableClientValidation'=>true,
 				)); ?>
-<style>
-	th{
-		border-right:1px solid #cecece;
-	}
-	td{
-		border-right:1px solid #cecece;
-	}
-	.subtds>span:not(:last-child){
-		border-right:1px solid #cecece;
-	}
-	label{padding-top: 10px !important;}
-</style>
-
 <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
     <label for="exampleSelect1">Customer Name</label>
     <select  id="vendorSel" class="form-control col-md-3 " name="vendor_id" required="required">
@@ -60,9 +44,7 @@ $vendorAddress = $vendor;
       <option value="<?= $vendors['id'] ?>"><?= $vendors['lname']; ?></option>
       <?php } ?>
     </select>
-
 </div>
-
 <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
     <label for="exampleSelect1">Customer Cell #</label>
     <select  id="customer_cellular" class="form-control col-md-3 " name="customer_cellular" required="required">
@@ -72,13 +54,11 @@ $vendorAddress = $vendor;
       <?php } ?>
     </select>
 </div>
-<div style="display: none;">
 <?php foreach($vendor as $vendorAddress){ ?>
-      <input type="hidden"  id="<?= $vendorAddress['id']; ?>" value="<?= $vendorAddress['fname']." | ".$vendorAddress['address']; ?>">
+  <input type="hidden"  id="<?= $vendorAddress['id']; ?>" value="<?= $vendorAddress['fname']." | ".$vendorAddress['address']; ?>">
   <input type="hidden"  id="<?= "get_current_balance".$vendorAddress['id']; ?>" value="<?= $vendorAddress['current_balance']; ?>"> 
   <input type="hidden"  id="<?= "get_cellular".$vendorAddress['id']; ?>" value="<?= $vendorAddress['current_balance']; ?>"> 
 <?php } ?>
-</div>
 <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
   <label for="example-datetime-local-input" >Date and time</label>
   <div class="input-group date" id="example">
@@ -97,8 +77,6 @@ $vendorAddress = $vendor;
     <label for="Ref" >Invoice no.</label>
     <input type="text" class="form-control col-md-3" id="refno" placeholder="Enter Ref no." name="refno" required="required" value="<?php echo date("YmdHis");?>" readonly="readonly">
 </div>
-
-<div style="clear: both;"></div>
 <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
     <label for="terms">Terms</label>
     <input type="text" class="form-control col-md-2" id="terms" placeholder="Enter Terms" name="terms">
@@ -107,16 +85,11 @@ $vendorAddress = $vendor;
     <label for="address">Address</label>
     <input type="text" class="form-control col-md-3" id="vendor-address"  name="vendorAddress">
 </div>
-
 <div class="form-group col-xs-10 col-sm-4 col-md-3 col-lg-3">
     <label for="amount">Amount Payable.</label>
     <input type="text" class="form-control col-md-2" id="user_current_balance" placeholder="Enter Amount." name="totalamount" readonly>
 </div>
-<div style="clear: both;"></div>
-<div class="clearfix hr" ></div>
-	<!-- 	<div style="box-sizing: border-box; display: flex; margin-left: 15px">
-		<p class="note" >Fields with <span class="required lable-required">*</span> are required.</p>
-		</div> -->
+
 		<?php echo $form->errorSummary($item); ?>
 			<div class="">
 				<div class="panel-body">
@@ -296,9 +269,6 @@ $vendorAddress = $vendor;
 <script type="text/javascript">
 	$(document).ready(function(e) {
 		$('#example').datetimepicker();	
-		$(".main-sidebar").css('display', 'none');
-		$(".content-wrapper").css('margin-left', '0');
-		$(".main-form").css('width', '100%');
 	});
 
 $('.save_close').click(function(){

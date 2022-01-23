@@ -205,6 +205,10 @@ class AdminUser extends CActiveRecord {
        }
 
        public function checkAccess ($resource_id, $action = 'view') { // Resource id | Action
+
+              if($action === 'update')
+                  $action='edit';
+
               if ($this->role_id == 1)
                      return true;
               else {

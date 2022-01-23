@@ -18,8 +18,7 @@ class MarketpriceNotifyCommand extends CConsoleCommand {
                         $modelMarket->price=$priceRow->price;
                         $modelMarket->created_date=$now;
                         $modelMarket->last_date=$priceRow->created_date;
-                        print_r($modelMarket);
-                        //$modelMarket->save(FALSE);      
+                        $modelMarket->save(FALSE);
                     }
                     
                 }

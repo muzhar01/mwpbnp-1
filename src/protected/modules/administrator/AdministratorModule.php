@@ -11,8 +11,24 @@ class AdministratorModule extends CWebModule {
 
               Yii::app ()->params['tagline'] = "Administrator";
               /*               * * LOADING MODULE ** */
-              $this->setModules (array('adminuser','vehicledrivers','newsletter','menus','report','marketing','ironfurniture','reports','products','orders','sales', 'customers', 'customer','inventory','payments'));
-               /*               * * LOADING MODULE ** */
+              $this->setModules (array('adminuser',
+                                        'vehicledrivers','
+                                        newsletter',
+                                        'menus',
+                                        'report',
+                                        'marketing',
+                                        'ironfurniture',
+                                        'reports',
+                                        'products',
+                                        'orders',
+                                        'sales',
+                                        'customers',
+                                        'customer',
+                                        'inventory',
+                                        'payments',
+                                        'domains'
+                ));
+               /*** LOADING MODULE ** */
               Yii::app ()->theme = 'rapidadmin';
               Yii::app ()->name = Yii::app ()->name . ' - Admin';
 
