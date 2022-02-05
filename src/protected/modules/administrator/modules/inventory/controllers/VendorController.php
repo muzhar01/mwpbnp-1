@@ -179,7 +179,7 @@ public function actionUpdate($id)
         		$item->ref_no = $_POST['refno']; 	
         		$item->total = $_POST['total'.$i]; 	
         		$item->terms = $_POST['terms'];
-        		$item->bill_unique_no = $_POST['bill_unique_no'];		
+        		$item->bill_unique_no = time();
 		 		$catId = $item->cat_id=$_POST['category'.$i];
 				$proId = $item->pro_id=$_POST['pro'.$i];
 				$sizeId = $item->size_id=$_POST['size'.$i];
@@ -243,12 +243,12 @@ public function actionUpdate($id)
 			}
             elseif($_POST['submit'] == 'Save & New'){
                 Yii::app()->user->setFlash('success', "Billing is saved successfully!");
-				$this->render('enterbill',['produts'=>$produts,'item'=>$item , 'bill_unique_no' => $bill_unique_no]);
+				$this->render('enterbill',['produts'=>$produts,'item'=>$item , 'bill_unique_no' => time()]);
 			}
         }
         else{
 
-        	$this->render('enterbill',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
+        	$this->render('enterbill',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => time()]);
         }
 
 	}
@@ -338,9 +338,9 @@ public function actionUpdate($id)
 
 		}
 		if(isset($_POST['totalRows'])){ //echo "<pre>"; print_r($_POST); die;
-			$this->render('review_confirm_enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' =>$bill_unique_no]);
+			$this->render('review_confirm_enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' =>time()]);
         }else{
-        	$this->render('enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
+        	$this->render('enterbill_desktop',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => time()]);
         }
 
 	}

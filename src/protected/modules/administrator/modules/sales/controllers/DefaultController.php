@@ -62,7 +62,7 @@ public function actionEnterbill(){
         		$item->ref_no = $_POST['refno']; 	
         		$item->total = $_POST['total'.$i]; 	
         		$item->terms = $_POST['terms'];
-        		$item->bill_unique_no = $_POST['bill_unique_no'];		
+        		$item->bill_unique_no = time();
 		 		$catId = $item->cat_id=$_POST['category'.$i];
 				$proId = $item->pro_id=$_POST['pro'.$i];
 				$sizeId = $item->size_id=$_POST['size'.$i];
@@ -126,11 +126,11 @@ public function actionEnterbill(){
 			if($redirect == 'close'){
 				$this->redirect('index');
 			}elseif($redirect == 'new'){
-				$this->render('enterbill',['produts'=>$produts,'item'=>$item , 'bill_unique_no' => $bill_unique_no]);
+				$this->render('enterbill',['produts'=>$produts,'item'=>$item , 'bill_unique_no' => time()]);
 			}
         }else{
 
-        	$this->render('enterbill',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => $bill_unique_no]);
+        	$this->render('enterbill',['produts'=>$produts,'item'=>$item, 'bill_unique_no' => time()]);
         }
 
 	}

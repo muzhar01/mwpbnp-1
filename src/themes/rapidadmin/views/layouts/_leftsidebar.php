@@ -322,6 +322,22 @@
                 <a href="/administrator/banners"><i class="fa fa-file-photo-o" aria-hidden="true"></i>Ads Banners</a>
             </li>
             <?php } ?>
+            <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('43')){ ?>
+            <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/domains")  ?  "active" : '' ; ?>  treeview">
+                <a href="/administrator/domains/dashboard"><i class="fa fa-globe" aria-hidden="true"></i><span>Domain Management</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/payments")  ?  "active" : '' ; ?>  treeview-menu">
+                    <li class=" <?php  echo (Yii::app ()->controller->action->id == "vendor")  ?  "active" : '' ; ?>">
+                        <a href="/administrator/domains/index"><i class="fa fa-anchor"></i> Domains</a>
+                    </li>
+                    <li class=" <?php  echo (Yii::app ()->controller->action->id == "customer")  ?  "active" : '' ; ?>">
+                        <a href="/administrator/domains/customer"><i class="fa fa-users"></i> Customers</a>
+                    </li>
+                    <li class=" <?php  echo (Yii::app ()->controller->action->id == "payments")  ?  "active" : '' ; ?>">
+                        <a href="/administrator/domains/payments"><i class="fa fa-dollar"></i> Payments</a>
+                    </li>
+                </ul>
+            </li>
+        <?php }?>
         </ul>
     </section>
 </aside>

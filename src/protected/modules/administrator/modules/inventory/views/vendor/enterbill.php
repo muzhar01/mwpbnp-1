@@ -152,7 +152,7 @@ $vendorAddress = $vendor;
                     </tbody>
                 </table>
             </div>
-            <input type="hidden" name="bill_unique_no" value="<?= $bill_unique_no[0]['bill_unique_no'] + 1; ?>">
+            <input type="hidden" name="bill_unique_no" value="<?php isset($bill_unique_no[0]) ?  $bill_unique_no[0]['bill_unique_no'] + 1: 1; ?>">
             <input type="hidden" id="btn_sate_val" name="btn_sate_val" value="">
             <div id="mainAppend" style="display:none">
                 <div id="mainData"></div>

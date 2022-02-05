@@ -5,6 +5,7 @@ return array(
     'adminUrl' => '/',
     'memberUrl' => '/member',
     'inventoryUrl' => '/inventory',
+    'main_domain'=>'devmwpbnp.com',
     'access' => 'You are not authorized to perform this action.',
     '404' => 'The requested page does not exist..',
     '301' => 'You are not authorized to access this page.',

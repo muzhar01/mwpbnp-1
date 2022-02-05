@@ -106,6 +106,12 @@
 
 
     </body>
+        <!-- InputMask -->
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/input-mask/jquery.inputmask.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+        <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/plugins/datepicker/bootstrap-datepicker.js"></script>
         <script src="<?php echo Yii::app()->theme->baseUrl; ?>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

@@ -13,10 +13,9 @@
 		<?php 
                 $criteria = new CDbCriteria();
                 $criteria->addCondition('published=1 AND Id > 1');
-//		/$criteria->compare();
-		$list = CHtml::ListData(Role::model()->findAll($criteria),'id','name');
-		echo $form->dropDownList($model,'role_id', $list,array('class' => 'form-control'));
-                ?>
+                $list = CHtml::ListData(Role::model()->findAll($criteria),'id','name');
+		        echo $form->dropDownList($model,'role_id', $list,array('class' => 'form-control'));
+        ?>
 		<?php echo $form->error($model,'role_id'); ?>
 	</div>
 
@@ -38,7 +37,7 @@
             <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'view');?> View</div>
             <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'add');?> Add</div>
             <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'edit');?> Edit</div>
-	    <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'delete');?> Delete</div>
+	        <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'delete');?> Delete</div>
             <div style="width: 90px;float: left"><?php echo  $form->checkBox($model,'published');?> Published</div>
             </fieldset> 
 		

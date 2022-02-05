@@ -4,15 +4,13 @@ $this->breadcrumbs=array(
 	'Error',
 );
 ?>
-<section class="content-header">
-    <h2>Error 404</h2>
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h1 class="box-title"><?php echo $code;?> <i class="fa fa-warning text-red"></i>Error <?php echo $code; ?></h1>
+        </div>
+        <div class="box-body">
+            <?php echo CHtml::encode($message); ?>
+        </div>
+    </div>
 </section>
-
-<div class="error-content">
-              <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
-              <p>
-                We could not find the page you were looking for.
-                Meanwhile, you may <a href="../../index.html">return to dashboard</a> or try using the search form.
-              </p>
-              
-</div>

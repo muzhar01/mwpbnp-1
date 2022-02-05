@@ -6,12 +6,13 @@ $this->breadcrumbs = array (
 		'Error' . $code
 );
 ?>
-<div class="error-page">
-    <h2 class="headline text-red"><?php echo $code;?></h2>
-    <div class="error-content">
-        <h2 > <i class="fa fa-warning text-red"></i>Error <?php echo $code; ?></h2>
-        <div class="error">
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h1 class="box-title"><?php echo $code;?> <i class="fa fa-warning text-red"></i>Error <?php echo $code; ?></h1>
+        </div>
+        <div class="box-body">
             <?php echo CHtml::encode($message); ?>
         </div>
     </div>
-</div>
+</section>

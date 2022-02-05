@@ -5,11 +5,54 @@ error_reporting(E_ALL);
 ini_set('display_error', 'On');
 $yii = dirname ( __FILE__ ) . '/framework/yii.php';
 $config = dirname ( __FILE__ ) . '/protected/config/main.php';
-
+$server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+//die($server_name);
 // remove the following lines when in production mode
 defined ( 'YII_DEBUG' ) or define ( 'YII_DEBUG', true );
 // specify how many levels of call stack should be shown in each log message
 defined ( 'YII_TRACE_LEVEL' ) or define ( 'YII_TRACE_LEVEL', 3 );
 
+
 require_once ($yii);
+
+$_arr = CMap::mergeArray(
+    require(dirname(__FILE__) . '/protected/config/main.php'), array()
+);
+$dsn = $_arr['components']['db']['connectionString'];
+$username = $_arr['components']['db']['username'];
+$password = $_arr['components']['db']['password'];
+
+if($server_name===$_arr['params']['main_domain']){
+    $config = dirname(__FILE__) . '/protected/config/main.php';
+}
+else {
+    $maincon = new CDbConnection($dsn, $username, $password);
+    $maincon->active = true;
+    $sql = "select * from mwp_domains where domain_name = 'http://$_SERVER[SERVER_NAME]'";
+    $model = $maincon->createCommand($sql)->queryRow();
+
+    if (!$model) {
+        echo "
+        <div style='color: red;font-family: tahoma;font-weight: bold;margin: 20% auto;text-align: center;'>
+            This domain has not been registered correctly in your account yet. 
+            <a href='https://www.mwpbnp.com/contact-us'>Click Here</a> to contact site Administrator Now.
+        </div>";
+        exit();
+    }
+    else if($model['status']==0){
+        echo "<div style='color: red;font-family: tahoma;font-weight: bold;margin: 20% auto;text-align: center;'>
+                Your domain is blocked due to due or any other technical reason, please contact the site administrator at the following link if you have any questions: 
+                <a href='https://www.mwpbnp.com/contact-us'>Click Here</a> to contact site Administrator Now.
+             </div>";
+        exit();
+    }
+    else{
+        $config_file_name = str_replace('.', '_', $_SERVER['SERVER_NAME']);
+        //$config = dirname(__FILE__) . '/protected/domain/'.$config_file_name;
+        $config = dirname(__FILE__) . '/protected/domains/' . $config_file_name . '_main.php';
+
+    }
+    $maincon->active = false;
+}
+
 Yii::createWebApplication ( $config )->run ();

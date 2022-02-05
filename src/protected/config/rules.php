@@ -10,7 +10,12 @@ return array(
     'administrator/profile/edit' => 'administrator/default/edit',
     'administrator/forgot-password' => '/administrator/default/forgotpassword',
     'administrator/site-settings' => 'administrator/sitesettings/index',
-    
+    'administrator/domains/dashboard' => 'administrator/domains/default/dashboard',
+    'administrator/domains/index' => 'administrator/domains/default/index',
+    'administrator/domains/create' => 'administrator/domains/default/create',
+    'administrator/domains/update' => 'administrator/domains/default/update',
+    'administrator/domains/published' => 'administrator/domains/default/published',
+
     'member' => 'member/default/index',
     'member/chowkat-tool' => 'member/default/chowkattool',
     'member/signup' => 'member/default/signup',
