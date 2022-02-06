@@ -12,27 +12,32 @@
 
 <div class="wide form">
 
-<?php echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
+<?php
+
+echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
 	'action'=>Yii::app()->createUrl(\$this->route),
 	'method'=>'get',
-)); ?>\n"; ?>
+)); ?>\n";
+?>
 
 <?php foreach($this->tableSchema->columns as $column): ?>
 <?php
-	$field=$this->generateInputField($this->modelClass,$column);
-	if(strpos($field,'password')!==false)
+
+	$field = $this->generateInputField ( $this->modelClass, $column );
+	if (strpos ( $field, 'password' ) !== false)
 		continue;
-?>
-	<div class="row">
+	?>
+	<div class="form-group">
 		<?php echo "<?php echo \$form->label(\$model,'{$column->name}'); ?>\n"; ?>
-		<?php echo "<?php echo ".$this->generateActiveField($this->modelClass,$column)."; ?>\n"; ?>
+		<?php echo "<?php echo ".$this->generateActiveField($this->modelClass,$column,array('class'=>'form-control'))."; ?>\n"; ?>
 	</div>
 
 <?php endforeach; ?>
-	<div class="row buttons">
-		<?php echo "<?php echo CHtml::submitButton('Search'); ?>\n"; ?>
+	<div class="form-group">
+		<?php echo "<?php echo CHtml::submitButton('Search',array('class'=>'form-control')); ?>\n"; ?>
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
 
-</div><!-- search-form -->
+</div>
+<!-- search-form -->
