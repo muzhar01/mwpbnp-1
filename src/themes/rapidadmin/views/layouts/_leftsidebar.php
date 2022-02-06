@@ -1,4 +1,4 @@
-<?php $active = '';  ?>
+<?php $active = ''; $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']); ?>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -317,12 +317,12 @@
                 <a href="/administrator/webpages"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Webpages</a>
             </li>
             <?php } ?>
-            <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('11')){ ?>
+            <?php if(Yii::app()->user->role == 1 && Yii::app()->params['main_domain']==$server_name) { ?>
             <li   class=" <?php  echo (Yii::app ()->controller->id == "banner")  ?  "active" : '' ; ?>">
                 <a href="/administrator/banners"><i class="fa fa-file-photo-o" aria-hidden="true"></i>Ads Banners</a>
             </li>
             <?php } ?>
-            <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('43')){ ?>
+            <?php if(Yii::app()->user->role == 1 && Yii::app()->params['main_domain']==$server_name) { ?>
             <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/domains")  ?  "active" : '' ; ?>  treeview">
                 <a href="/administrator/domains/dashboard"><i class="fa fa-globe" aria-hidden="true"></i><span>Domain Management</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/payments")  ?  "active" : '' ; ?>  treeview-menu">

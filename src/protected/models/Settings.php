@@ -11,6 +11,7 @@ class Settings extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    private $_oldImage;
 	public function tableName()
 	{
 		return 'settings';
@@ -24,10 +25,11 @@ class Settings extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('meta_tag,meta_description', 'required'),
 			array('cart_settings', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('cart_settings', 'safe', 'on'=>'search'),
+			array('cart_settings,logo,meta_tag,meta_description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,17 +84,7 @@ class Settings extends CActiveRecord
                     ),
         ));
 	}
-protected function beforeSave () {
-              if (parent::beforeSave ()) {
-                     if ($this->isNewRecord) {
-                            $this->created_date =  date('Y-m-d h:m:s');
-                     }
-                    
-                     return true;
-              }
-              else
-                     return false;
-       }
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -103,4 +95,21 @@ protected function beforeSave () {
 	{
 		return parent::model($className);
 	}
+
+    public function afterFind() {
+        $this->_oldImage = $this->logo;
+        parent::afterFind();
+    }
+
+    protected function beforeSave() {
+        if (parent::beforeSave()) {
+            if (!$this->isNewRecord && empty($this->image)) {
+                $this->logo = $this->_oldImage;
+            }
+
+            return true;
+        } else
+            return false;
+    }
+
 }

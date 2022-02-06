@@ -16,7 +16,7 @@ return array(
     'name' => 'MWPBNP',
     // autoloading model and component classes
     'timeZone' => 'Asia/Karachi',
-    'theme' => 'mwpbnp',
+    'theme' => 'basicmwpbnp',
     // preloading 'log' component
     'preload' => array(
         'log'

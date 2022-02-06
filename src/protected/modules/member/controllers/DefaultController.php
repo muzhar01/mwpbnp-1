@@ -53,7 +53,7 @@ class DefaultController extends Controller {
             print_r($model->attributes);
             if ($model->save()) {
                 Yii::app()->user->setFlash('success', "Your profile is saved successfully!");
-                $this->redirect('my-profile');
+                $this->redirect('/member');
             } else {
                 Yii::app()->user->setFlash('error', "Unable to save your profile!");
             }
@@ -63,10 +63,7 @@ class DefaultController extends Controller {
     }
 
     public function actionChowkatTool() {
-        // if (Yii::app()->user->isGuest) {
-        //     $this->redirect('/member/login');
-        //     Yii::app()->end();
-        // }
+
         $this->layout = '//layouts/column2';
         $created_by = isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value : '';
         if (!isset($created_by)) {
@@ -90,10 +87,7 @@ class DefaultController extends Controller {
     }
 
     public function actionAddCart() {
-        // if (Yii::app()->user->isGuest) {
-        //     $this->redirect('login', true);
-        // }
-        
+
         $cartCookies = isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value : '';
 		
         if (empty($cartCookies)) {
@@ -242,22 +236,21 @@ class DefaultController extends Controller {
     }
 
     public function actionLogin() {
-
-       
         $model = new LoginForm;
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
-
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
             if ($model->validate() && $model->login()) {
                 $this->redirect('/member');
+            } else{
+                Yii::app()->user->setFlash('error', 'Your username/email and password is incorrect.');
             }
 
+
         }
-         
         $this->render('login', array(
             'model' => $model,
         ));

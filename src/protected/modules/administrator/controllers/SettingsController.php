@@ -6,7 +6,6 @@ class SettingsController extends Controller {
 
     public function actionIndex() {
         $model = QuotesSettings::model()->findByPk(1);
-
         if (isset($_POST['QuotesSettings'])) {
             $model->attributes = $_POST['QuotesSettings'];
 			$model->setAttribute('executive_email', $_POST['QuotesSettings']['executive_email']);
@@ -40,6 +39,29 @@ class SettingsController extends Controller {
             }
         }
         $this->render('settings', array('model' => $model));
+    }
+
+    public function actionWebsettings(){
+        $model = Settings::model()->find(1);
+        if (isset($_POST['Settings'])) {
+            $model->attributes=$_POST['Settings'];
+            if(!empty($_FILES['Settings']['name']['logo'])){
+                $rnd = rand(0,9999);
+                $uploadedFile=CUploadedFile::getInstance($model,'logo');
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+
+                $uploadedFile->saveAs($this->uploadPath.'/'.$fileName);
+                $model->logo = $fileName;
+            }
+            if($model->save()){
+                Yii::app()->user->setFlash('success', "Your information successfully saved!");
+                $this->redirect($this->baseUrl . '/settings');
+            } else{
+                Yii::app()->user->setFlash('error', "Your information is unable to save successfully saved!");
+
+            }
+        }
+        $this->render('index', array('model' => $model));
     }
 
 }

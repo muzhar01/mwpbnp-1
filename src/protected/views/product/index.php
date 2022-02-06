@@ -8,7 +8,7 @@
                 <h4><a href="/product/details/<?php echo $row->slug?>">View details</a></h4>
             </div>
             <?php echo 
-             (!empty($row->image)) ?  CHtml::image(Yii::app()->request->baseUrl.'/images/products/'.$row->image,"image",array("width"=>200))
+             (!empty($row->image)) ?  CHtml::image($this->publicPath.'/products/' .$row->image,"image",array("width"=>200))
              : CHtml::image(Yii::app()->request->baseUrl.'/images/products/no-image.png',"image",array("width"=>200)); 
           ?>
         </div>

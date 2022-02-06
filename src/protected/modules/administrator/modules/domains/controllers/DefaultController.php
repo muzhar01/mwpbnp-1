@@ -62,6 +62,12 @@ class DefaultController extends Controller
             if(isset($_POST['MwpDomains']))
             {
                 $model->attributes=$_POST['MwpDomains'];
+                $model->database_name = str_replace('http://','',$model->domain_name);
+                $model->user_name=  $model->database_name=str_replace('.','_',$model->database_name);
+                $model->password= $this->randomPassword();
+                $date = date("Y-m-d");
+                $date = date('Y-m-d', strtotime($date. ' + '.$model->trial_period.' days'));
+                $model->expiry_date = date('Y-m-d', strtotime($date. ' + '.$model->subscription_period.' year'));
                 if($model->save()) {
                     Yii::app()->user->setFlash('success', "Domain is saved successfully!");
                     $this->redirect(array('index'));
@@ -76,6 +82,16 @@ class DefaultController extends Controller
             throw new CHttpException(403, Yii::app()->params['access']);
     }
 
+    private  function randomPassword() {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+{}|><?~';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 14; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.

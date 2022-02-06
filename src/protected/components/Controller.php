@@ -23,7 +23,25 @@ class Controller extends CController {
 	 */
 	public $breadcrumbs = array ();
         
-        public $pageKeywords;
-        public $pageDescription;
+    public $pageKeywords;
+
+    public $pageDescription;
+
+    public $uploadPath;
+
+    public $publicPath;
+
+
+    public function  init() {
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+        if($server_name==Yii::app()->params['main_domain']) {
+            $this->uploadPath = Yii::app()->basePath . '/../images/products/';
+            $this->publicPath= '/images/products/';
+        } else{
+            $this->uploadPath = $this->uploadPath = Yii::app()->basePath . '/../images/domains/'.$server_name;
+            $this->publicPath= '/images/domains/'.$server_name;
+        }
+
+    }
 
 }

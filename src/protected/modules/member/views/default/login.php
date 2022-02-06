@@ -16,7 +16,12 @@
         ),
     ));
     ?>
-   <?php echo $form->error($model,'message',array('class'=>'alert alert-danger')); ?>
+   <?php echo CHtml::errorSummary($model, NULL, NULL, array('class' => 'alert alert-danger')); ?>
+            <?php if (Yii::app()->user->hasFlash('error')): ?>
+                <div class="alert alert-danger">
+                    <?php echo Yii::app()->user->getFlash('error'); ?>
+                </div>
+            <?php endif; ?>
     <?php 
     echo $form->error($model,'password'); ?>
     <div class="form-group">

@@ -33,7 +33,7 @@
             <header class="main-header">
                 <!-- Logo -->
 
-                <a href="/administrator/dashboard" class="logo">
+                <a href="/administrator" class="logo">
                     <?php echo Yii::app()->name ?> 
                 </a>
                 

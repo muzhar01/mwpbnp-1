@@ -54,20 +54,20 @@ Yii::app()->clientScript->registerScript('search', "
                         'header' => "Show Records " . CHtml::dropDownList('pageSize', $pageSize, array(20 => 20, 50 => 50, 100 => 100, 200 => 200), array(
                             'onchange' => "$.fn.yiiGridView.update('mwp-domains-grid',{ data:{pageSize: $(this).val() }})",
                         )),
-                        'template' => '{published}{update}{delete}',
+                        'template' => '{published}{delete}',
                         'buttons' => array(
                             'published' => array(
                                 'label' => 'Published',
                                 'imageUrl' => Yii::app()->request->baseUrl . "/images/tick.png" ,
                                 'url' => 'Yii::app()->createUrl("/administrator/domains/published?id=".$data->id)',
-                                'visible' => '( Yii::app()->user->role == 1) || AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess(25,"published")',
+                                'visible' => '( Yii::app()->user->role == 1)',
                             ),
                             'update' => array(
-                                'visible' => '( Yii::app()->user->role == 1) && AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess(25,"edit")',
+                                'visible' => '( Yii::app()->user->role == 1)',
                             ),
 
                             'delete' => array(
-                               'visible' => '( Yii::app()->user->role == 1) || AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess(25,"delete")',
+                               'visible' => '( Yii::app()->user->role == 1)',
                             ),
                         ),
                     ),

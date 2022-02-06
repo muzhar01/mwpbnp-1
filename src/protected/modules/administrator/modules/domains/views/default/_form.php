@@ -22,38 +22,63 @@
                 <span class="text-info">URL: http://example.mwpbnp.com</span>
                 <?php echo $form->error($model,'domain_name'); ?>
             </div>
-
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'user_name'); ?>
-                <?php echo $form->textField($model,'user_name',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-                <span class="text-info">Administrator username so user can login in admin area.</span>
-                <?php echo $form->error($model,'user_name'); ?>
-            </div>
-
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'password'); ?>
-                <?php echo $form->passwordField($model,'password',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-                <span class="text-info">Administrator password so user can login in admin area.</span>
-                <?php echo $form->error($model,'password'); ?>
-            </div>
-
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'created_at'); ?>
-                <div class="input-group date">
-                    <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
+            <div class="row">
+                <div class="col-lg-6">
+                     <div class="form-group">
+                        <?php echo $form->labelEx($model,'created_at'); ?>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                           <?php echo $form->textField($model,'created_at',array('class'=>'form-control','id'=>'datepicker')); ?>
+                        </div>
+                        <?php echo $form->error($model,'created_at'); ?>
                     </div>
-                   <?php echo $form->textField($model,'created_at',array('class'=>'form-control','id'=>'datepicker')); ?>
                 </div>
-                <?php echo $form->error($model,'created_at'); ?>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model,'amount'); ?>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"> <span class="text-bold text-style"> PKR.</span></i>
+                            </div>
+                            <?php echo $form->textField($model,'amount',array('class'=>'form-control','maxlength'=>10)); ?>
+                        </div>
+                        <?php echo $form->error($model,'amount'); ?>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model,'trial_period'); ?>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"> <span class="text-bold text-style"> No of Days.</span>  </i>
+                            </div>
+                            <?php echo $form->textField($model,'trial_period',array('class'=>'form-control','maxlength'=>2)); ?>
+                        </div>
+                        <?php echo $form->error($model,'trial_period'); ?>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model,'subscription_period'); ?>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"> <span class="text-bold text-style"> No of Years.</span></i>
+                            </div>
+                            <?php echo $form->textField($model,'subscription_period',array('class'=>'form-control','maxlength'=>2)); ?>
+                        </div>
+                        <?php echo $form->error($model,'subscription_period'); ?>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model, 'status'); ?> <br>
                 <?php
                 echo $form->radioButtonList($model, 'status', array('1' => 'Active',
-                    '0' => 'Block'), array(
+                    '0' => 'Block','2'=>'Suspend'), array(
                         'template' => '{input}{label}',
                         'separator' => '',
                         'labelOptions' => array('style' => 'padding: 2px 10px;width: auto;'),
@@ -64,6 +89,12 @@
                 <?php echo $form->error($model, 'status'); ?>
 
             </div>
+
+
+
+        </div>
+        <div class="col-lg-6">
+
             <div class="form-group">
                 <?php echo $form->labelEx($model,'customer_id'); ?>
                 <?php
@@ -73,15 +104,6 @@
                 ?>
                 <?php echo $form->error($model,'customer_id'); ?>
             </div>
-
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'database_name'); ?>
-                <?php echo $form->textField($model,'database_name',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
-                <?php echo $form->error($model,'database_name'); ?>
-            </div>
-
-
-
             <div class="form-group">
                 <?php echo $form->labelEx($model,'template'); ?>
                 <?php echo $form->textField($model,'template',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>

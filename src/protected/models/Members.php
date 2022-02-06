@@ -59,7 +59,7 @@ class Members extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			//array('unit, fname, lname, username, address,verifyCode, cnic, city, zipcode, phone_office, fax_no, phone_res, email, cellular, company_name, company_no, company_ntn_no, company_gst_no,terms, job_title, password, status, created_date, secret_key, is_enable', 'required'),
-			array('terms, fname, lname,verifyCode,phone_office, email,password, confirm_password, office_geo_lng, office_geo_lat, shipping_geo_lng, shipping_geo_lat', 'required', 'on' => 'register'),
+			array('terms, fname, lname,phone_office, email,password, confirm_password', 'required', 'on' => 'register'),
             array('status, is_enable, type', 'numerical', 'integerOnly'=>true),
 			array('company_no', 'length', 'max'=>20),
 			array('fname, lname, username, sales_officer,verify_email, verify_cnic, verify_company_ntn_no, verify_company_gst_no,  zone, area, address, office_geo_lng, office_geo_lat, shipping_geo_lng, shipping_geo_lat, city, zipcode, phone_office, email', 'length', 'max'=>100),

@@ -61,6 +61,7 @@ body {
 .layout-top-nav .main-footer {
   margin-left: 0;
 }
+.text-style {font-family: "Helvetica Neue", "Segoe UI", Segoe, Helvetica, Arial, "Lucida Grande", sans-serif !important;}
 @media (max-width: 767px) {
   .content-wrapper,
   .right-side,

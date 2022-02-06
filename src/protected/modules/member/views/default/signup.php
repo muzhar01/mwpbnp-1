@@ -53,11 +53,7 @@
                 <?php echo $form->textField($model, 'lname', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
                 <?php echo $form->error($model, 'lname', array('class' => 'alert alert-danger')); ?>
             </div>
-            <div class="form-group">
-                <?php echo $form->labelEx($model, 'cellular'); ?>
-                <?php echo $form->textField($model, 'cellular', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50, 'placeholder' => 'e.g 923001234567','maxlength'=>12,'minimum'=>12)); ?> 
-                <?php echo $form->error($model, 'cellular', array('class' => 'alert alert-danger')); ?>
-            </div>
+
             <div class="form-group">
                 <?php echo $form->labelEx($model, 'phone_office'); ?>
                 <?php echo $form->textField($model, 'phone_office', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50, 'placeholder' => 'Enter office landline number with area code. e.g 051-xxxxxxx')); ?>
@@ -80,19 +76,7 @@
                 <?php echo $form->error($model, 'confirm_password', array('class' => 'alert alert-danger')); ?>
             </div>
 
-            <!-- GOOGLE MAP -->
-            <div class="form-group">
-                <label>Please Select Your Location</label>
-                <div id="map"></div>
-                <div class="row hidden">
-                    <div class="col-md-6">
-                        <?php echo $form->textField($model, 'office_geo_lat', array('class' => 'form-control', 'id' => 'lat')); ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?php echo $form->textField($model, 'office_geo_lng', array('class' => 'form-control', 'id' => 'lng')); ?>
-                    </div>
-                </div>
-            </div>
+
 
             <?php if (CCaptcha::checkRequirements()): ?>
                 <div class="form-group">

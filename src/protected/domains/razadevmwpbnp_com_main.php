@@ -2,11 +2,11 @@
 $merge_components  = require(dirname(__FILE__) . '/../config/components.php');
 $db =    array(
          'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=razasteels',
+            'connectionString' => 'mysql:host=localhost;dbname=razadevmwpbnp_com',
             'emulatePrepare' => true,
             'schemaCachingDuration' => '86400',
-            'username' => 'rayjohnson',
-            'password' => '123456',
+            'username' => 'razadevmwpbnp_com',
+            'password' => 'pzo_2VS%4Pk6sz',
             'charset' => 'utf8',
         )
  );
@@ -14,8 +14,8 @@ $components = array_merge($merge_components, $db);
 
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'razadevmwpbnp.com',
-    //'theme' => 'idea',
+    'name' => 'Raza Steels',
+    'theme' => 'basicmwpbnp',
     'preload' => array('log'),
     'import' => array(
         'application.models.*',

@@ -1,0 +1,178 @@
+
+    .container-custom-size, .main-contentarea, .maincontent-detail>.row>.col-lg-12 {
+        padding:0px;
+    }
+    .container-custom-size img{
+      width:100%;
+      max-width:600px; 
+    }
+    .container-custom-size .row{
+         margin:0px;
+    }
+
+
+.section{
+        padding:40px 20px;
+    }
+
+@media only screen and (min-width: 768px) {
+    .section{
+        padding:70px 0px;
+    }
+}
+    .white-section h2{
+        color: #2491d0;
+    }
+    .blue-section{
+        background-color: #2491d0;
+        color:white;
+    }
+    .blue-section h2, .blue-section p{ color:white;}
+
+    .no-space{
+        padding:0px;
+        margin:0px;
+     }
+     .content{
+         padding:0px;
+      }
+     .indent-p p{
+        text-indent: 50px;
+      }
+      .align-flex{
+          display:flex;
+       align-items:center;
+       }
+.no-padding-bottom{padding-bottom:0px;}
+.align-right{
+text-align:right;}
+.align-center{
+text-align:center;}
+.flex{
+display:flex;}
+
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.card{
+margin-bottom: 20px;
+background-color:#2491d0;
+    padding: 20px 35px;
+    padding-left:50px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+flex: 1 0 47%;
+margin-right:20px;
+}
+.card-inner{
+display:flex;}
+.card-right{
+margin-left:auto;
+}
+.card h3, .card p , .card li{
+color:white;
+}
+.card li{
+background:none;
+list-style-type: disc;}
+
+@media only screen and (min-width: 768px) {
+.card{
+
+flex: 1 0 30%;
+}
+
+}
+
+.card p{
+    line-height: 1.3;}
+@media only screen and (min-width: 768px) {
+.card p{
+margin-bottom: 0px;
+    line-height: 0.5;}
+}
+.card li{
+line-height:1.3;}
+.card ul{
+padding-bottom:13px;}
+
+.founder-section{
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+.founders .founder{
+width:100%;
+margin-right:20px;
+text-align:center;
+}
+
+
+@media only screen and (max-width: 768px) {
+.mob{
+padding-bottom:0px;
+}
+}
+
+@media only screen and (min-width: 768px){
+.go-back{
+margin-top: -80px !important;
+}
+.founders{
+display:flex;
+margin-top: -100px;
+}
+
+.founders .founder{
+width:20%;
+}
+}
+
+
+
+.founders .founder img{
+max-width:210px;
+}
+.team-titles{
+display: flex; justify-content: center; flex-wrap: wrap;
+}
+.team-titles .team-title{
+margin-right: 30px; font-size: 20px; margin-bottom: 10px;
+}
+.team-titles .team-title:hover{
+cursor:pointer;
+}
+.team-titles .active-team-title{
+color:#2491d0;
+font-weigth:600;
+}
+.team-member{
+text-align: center; margin-bottom: 15px;
+height:300px;
+}
+.team-member img{
+max-width: 190px;
+}
+.team-member .member-name{
+background-color: #2491d0;
+text-align:center;
+padding-top:5px;
+padding-bottom:5px;
+width:100%;
+max-width:250px;
+margin:0 auto;
+margin-top:10px;
+}
+.team-member .member-name h5{
+color:white;
+padding:0px;
+margin:0px;
+}
+@media only screen and (min-width: 768px){
+.founder-section{
+padding-left:10px;
+}
+}

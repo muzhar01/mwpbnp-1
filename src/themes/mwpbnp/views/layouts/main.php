@@ -198,7 +198,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
       <div class="header-top">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12 col-lg-6" style="padding-top: 11px;">
+            <div class="col-sm-12 col-lg-5" style="padding-top: 11px;">
               <p style="padding-top: 2px;"><i class="fa fa-phone" aria-hidden="true"></i> + 92 (333) 44 85 888, + 92 (333) 44 85 999, + 92 (51) 44 85 888, + 92 (51) 44 85 999    Rawalpindi Office: + 92 (51) 274 81 88</p>
             </div>
 
@@ -219,7 +219,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
                 <a href="//www.mwpbnp.com/rss" target="blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
               </div>
             </div>
-            <div class="col-sm-12 col-lg-3 socialicons-list padd-0">
+            <div class="col-sm-12 col-lg-4 socialicons-list padd-0">
 
 
               <ul class="header-btns" style="float: left !important;text-align: left;padding-left: 10px;">

@@ -2,21 +2,26 @@
 /* @var $this QuotesSettingsController */
 /* @var $model QuotesSettings */
 /* @var $form CActiveForm */
+
+$server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+
 ?>
 <section class="content">
     <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'quotes-settings-QuotesSettings-form',
-        // Please note: When you enable ajax validation, make sure the corresponding
-        // controller action is handling ajax validation correctly.
-        // See class documentation of CActiveForm for details on this,
-        // you need to use the performAjaxValidation()-method described there.
         'enableAjaxValidation' => false,
     ));
     ?>
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Company Settings</h1>
+            <?php
+            if($server_name!=Yii::app()->params['main_domain'] && Yii::app()->user->role==1) {
+                echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Website Settings', $this->baseUrl . '/settings/websettings',
+                    array('class' => 'btn btn-success', 'style' => 'float:right'));
+            }
+            ?>
         </div>
         <div class="box-body">
             <div class="row">
@@ -77,7 +82,6 @@
                                     <th>Role</th>
                                     <th>Email</th>
                                     <th>SMS at Call number</th>
-
                                 </tr>
                         </thead>
                         <tbody>

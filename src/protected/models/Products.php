@@ -245,14 +245,7 @@ class Products extends CActiveRecord {
         return true;
     }
     
-    public function afterFind() {
-        $this->_oldImage = $this->image;
-        if($this->getUserType() == 1){
-            $this->gst_tax=$this->income_tax=$this->other_tax=0.0;
-        }
-        
-        parent::afterFind();
-        }
+
     public function getUserType(){
         if(!Yii::app()->user->isGuest && Yii::app()->user->id > 0){
             $model= Members::model()->findByPk(Yii::app()->user->id);
@@ -262,8 +255,15 @@ class Products extends CActiveRecord {
             }
         }
     }
-     
 
+    public function afterFind() {
+        $this->_oldImage = $this->image;
+        if($this->getUserType() == 1){
+            $this->gst_tax=$this->income_tax=$this->other_tax=0.0;
+        }
+
+        parent::afterFind();
+    }
     protected function beforeSave() {
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {

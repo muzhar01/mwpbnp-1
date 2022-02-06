@@ -1,113 +1,80 @@
 <?php
 $this->breadcrumbs = array(
-    'Admin User Management',
+    'Website Settings',
 );
 ?>
 <section class="content">
-    <div class="box box-danger">   
-        <div class="box-header">
-            <h3>Product Management</h3>
+    <div class="box box-danger">
+        <div class="box-header with-border">
+            <h1 class="box-title">Website Settings</h1>
+            <?php if (AdminUser::model ()->findByPk (Yii::app ()->user->id)->checkAccess ($this->resource_id, 'add'))
+                echo CHtml::link ('<i class="fa fa-plus-square" aria-hidden="true"></i> Company Settings', $this->baseUrl . '/settings', array('class' => 'btn btn-success', 'style' => 'float:right'));
+            ?>
+
+            <?php
+            $form = $this->beginWidget('CActiveForm', array(
+                'id' => 'settings-form',
+                'enableAjaxValidation' => false,
+                'htmlOptions' => array(
+                    'enctype' => 'multipart/form-data',
+                ),
+            ));
+            ?>
             <div class="box-body">
-                <div class="row"> 
-                    <?php if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id)) { ?>
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-blue">
-                                <span class="info-box-icon"><i class="fa fa fa-tachometer"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Category</span>
-                                    <span class="info-box-number"><?php echo ProductCategory::model()->count() ?></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/category" style="color: #fff;"><i class="fa fa fa-tachometer"></i> See all categories</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                     
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-red">
-                                <span class="info-box-icon"><i class="fa fa-compass"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Thickness</span>
-                                    <span class="info-box-number"><?php echo ProductThickness::model()->count() ?></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/productthickness" style="color: #fff;"><i class="fa fa-compass"></i> See all thickness</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                       
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-aqua">
-                                <span class="info-box-icon"><i class="fa fa-gear"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Product Size</span>
-                                    <span class="info-box-number"><?php echo ProductSize::model()->count() ?></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/productsize" style="color: #fff;"><i class="fa fa-gear"></i> See all size</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                         
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-green">
-                                <span class="info-box-icon"><i class="fa fa-barcode"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Products</span>
-                                    <span class="info-box-number"><?php echo Products::model()->count() ?></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/products" style="color: #fff;"><i class="fa fa-barcode"></i> See all products</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                        
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-olive">
-                                <span class="info-box-icon"><i class="fa fa-cart-arrow-down"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Order</span>
-                                    <span class="info-box-number"><?php echo Quotes::model()->count() ?></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/orders" style="color: #fff;"><i class="fa fa-cart-arrow-down"></i> See all orders</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                        
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="info-box bg-maroon">
-                                <span class="info-box-icon"><i class="fa fa-wrench"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Settings</span>
-                                    <span class="info-box-number"></span>
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 100%"></div>
-                                    </div>
-                                    <span class="progress-description">
-                                        <a href="/administrator/products/default/quotessettings" style="color: #fff;"><i class="fa fa-wrench"></i> See all settings</a>
-                                    </span>
-                                </div><!-- /.info-box-content -->
-                            </div><!-- /.info-box -->
-                        </div><!-- /.col -->
-                    <?php  }?>   
+                <div class="row">
+                    <?php if (Yii::app()->user->hasFlash('success')): ?>
+                        <div class="alert alert-success">
+                            <?php echo Yii::app()->user->getFlash('success'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, 'meta_tag'); ?>
+                            <?php echo $form->textField($model, 'meta_tag', array('class' => 'form-control', 'size' => 60, 'maxlength' => 255)); ?>
+                            <?php echo $form->error($model, 'meta_tag'); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, 'meta_description'); ?>
+                            <?php echo $form->textField($model, 'meta_description', array('class' => 'form-control', 'size' => 60, 'maxlength' => 255)); ?>
+                            <?php echo $form->error($model, 'meta_description'); ?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $form->labelEx($model, 'logo'); ?>
+                            <?php echo CHtml::activeFileField($model, 'logo', array('class' => 'form-control')); ?>
+                            <div class="text-red">Image should be only JPG,PNG and GIF is allowed</div>
+                            <?php echo $form->error($model, 'logo'); ?>
+                        </div>
+                    </div>
+                    <?php if (!$model->isNewRecord) { ?>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <?php echo $form->labelEx($model, 'cart_settings'); ?> <br>
+                                <?php
+                                echo $form->radioButtonList($model, 'cart_settings', array('1' => 'Published',
+                                    '0' => 'Suspend'), array(
+                                        'template' => '{input}{label}',
+                                        'separator' => '',
+                                        'labelOptions' => array('style' => 'padding: 2px 10px;width: auto;'),
+                                        'style' => '',
+                                    )
+                                );
+                                ?>
+                                <?php echo $form->error($model, 'cart_settings'); ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                echo
+                                (!empty($model->logo)) ? CHtml::image($this->publicPath.'/' . $model->logo, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/products/no-image.png', "image", array("width" => 200));
+                                ?>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
+            <div class="box-footer">
+                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary')); ?>
+            </div>
+            <?php $this->endWidget(); ?>
         </div>
     </div>
 </section>    

@@ -13,6 +13,10 @@
  * @property string $database_name
  * @property integer $customer_id
  * @property string $template
+ * @property string $trial_period
+ * @property string $subscription_period
+ * @property string $amount
+ * @property string $expiry_date
  *
  * The followings are the available model relations:
  * @property MwpCustomer $customer
@@ -35,15 +39,15 @@ class MwpDomains extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('domain_name, status, customer_id, user_name, password, database_name, template ', 'required'),
+			array('domain_name, status, customer_id, template ', 'required'),
             array('domain_name','url'),
             array('domain_name,domain_name,user_name,database_name','unique'),
 			array('id, status, customer_id', 'numerical', 'integerOnly'=>true),
 			array('domain_name, user_name, password, database_name, template', 'length', 'max'=>100),
-			array('created_at', 'safe'),
+			array('created_at,expiry_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, domain_name, user_name, password, created_at, status, database_name, customer_id, template', 'safe', 'on'=>'search'),
+			array('id, domain_name, user_name, password, created_at, status, database_name, customer_id, template,trial_period,subscription_period, amount,expiry_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -235,6 +239,7 @@ class MwpDomains extends CActiveRecord
             }
             rmdir($dir);
             }
+
         }
 
     private function dropDatabase(){

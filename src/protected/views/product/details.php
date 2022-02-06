@@ -9,18 +9,19 @@ $total_thickness = count ($thickness);
         <p><?php echo CHtml::decode ($model->description); ?></p>
     </div>
     <div class="col-lg-4 col-md-4">
-        <?php echo CHtml::image('/images/products/'.$model->image, $model->name,array('class'=>'img-responsive'));?>
+        <?php echo CHtml::image($this->publicPath.'/products/' .$model->image, $model->name,array('class'=>'img-responsive'));?>
     </div>
 </div>
 </div>
 <div id="message"></div>
+
 <table class="table table-condensed table-bordered">
-    <tr >
+    <tr>
         <th class="bg-gray"></th>
         <th class="bg-gray" colspan="<?php echo $total_thickness ?>">Thickness</th>
     </tr>
     <tr>
-        <th class="bg-gray" style="white-space: nowrap" >Product Size</th>
+        <th class="bg-gray" >Product Size</th>
         <?php foreach ($thickness as $thicknessdata) { ?>
             <th  ><?php echo stripslashes($thicknessdata->Thickness->title) ?></th>
         <?php } ?>
@@ -45,7 +46,7 @@ $total_thickness = count ($thickness);
                     'beforeSend'=>"function() {
                                         $('#message').html('Please wait...');
                                 }",
-                ),array('class'=>'btn btn-default','title'=>'Add to cart'));}
+                ),array('class'=>'btn btn-primary','title'=>'Add to cart'));}
                 else{
                     echo $price;
                 }?>

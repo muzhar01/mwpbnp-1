@@ -14,6 +14,7 @@ class ProductsController extends Controller
 	public $resource_id=2;
         
         public function init() {
+            parent::init();
             $this->homeUrl=$this->baseUrl .= '/products/products'; //Backend, I am using for Admin
             if (Yii::app()->user->isGuest) {
                 $session = Yii::app()->session;
@@ -21,6 +22,7 @@ class ProductsController extends Controller
                 $session->open();
                 $this->redirect('/administrator/login', true);
             }
+
         }
 
 	/**
@@ -44,36 +46,31 @@ class ProductsController extends Controller
 	 */
 	public function actionCreate()
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')) {
-                $model=new Products;
-                $model->setScenario('insert');
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Products'])){
-			$model->attributes=$_POST['Products'];
-                        if(!empty($model->image)){
-                            $rnd = rand(0,9999); 
+        if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')) {
+            $model=new Products;
+            $model->setScenario('insert');
+            if(isset($_POST['Products'])){
+                $model->attributes=$_POST['Products'];
+                if(!empty($_FILES['Products']['name']['image'])){
+                            $rnd = rand(0,9999);
                             $uploadedFile=CUploadedFile::getInstance($model,'image');
                             $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                            $uploadedFile->saveAs(Yii::app()->basePath.'/../images/products/'.$fileName);  // image will uplode to /images/products/
+                            $uploadedFile->saveAs($this->uploadPath.'/products/'.$fileName);
                             $model->image = $fileName;
                         }
-			if($model->save()){
-
-            $model->saveProductSize($model->id);
-            $model->saveProductThickness($model->id);
-            $this->redirect(array('index'));
-                            }
-                    }
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+                if($model->save()){
+                    $model->saveProductSize($model->id);
+                    $model->saveProductThickness($model->id);
+                    $this->redirect(array('index'));
+                }
             }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
+
+            $this->render('create',array(
+                'model'=>$model,
+            ));
+        }
+        else
+            throw new CHttpException(403, Yii::app()->params['access']);
 	}
 
 	/**
@@ -83,36 +80,35 @@ class ProductsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'update')) {
+        if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'update')) {
                 $model=$this->loadModel($id);
                 $model->setScenario('update');
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+            if(isset($_POST['Products']))
+            {
+                $model->attributes=$_POST['Products'];
 
-		if(isset($_POST['Products']))
-		{
-			$model->attributes=$_POST['Products'];
-            if(!empty($model->image)){
-                    $rnd = rand(0,9999);
-                    $uploadedFile=CUploadedFile::getInstance($model,'image');
-                    $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                    $uploadedFile->saveAs(Yii::app()->basePath.'/../images/products/'.$fileName);
-                    $model->image = $fileName;
-            }
-         
-         	if($model->save()){
-               $model->saveProductSize($model->id);
-               $model->saveProductThickness($model->id);
-               $this->redirect(array('index'));
-                            }
-		}
+                if(!empty($_FILES['Products']['name']['image'])){
+                        $rnd = rand(0,9999);
+                        $uploadedFile=CUploadedFile::getInstance($model,'image');
+                        $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                        $uploadedFile->saveAs($this->uploadPath.'/products/'.$fileName);
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                        $model->image = $fileName;
+                }
+
+                if($model->save()){
+                   $model->saveProductSize($model->id);
+                   $model->saveProductThickness($model->id);
+                   $this->redirect(array('index'));
+                                }
             }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
+
+            $this->render('update',array(
+                'model'=>$model,
+            ));
+        }
+        else
+            throw new CHttpException(403, Yii::app()->params['access']);
 	}
 
 	/**

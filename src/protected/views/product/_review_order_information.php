@@ -80,34 +80,33 @@ $model->save();
         </table>
     </div>
 </div>
+
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h3>Billing Information</h3>
         <table class="table table-striped">
             <tfoot>
-                <tr>
-                    <td>Billing Name.</td>
-                    <td ><?php echo $model->billing_name; ?></td>
-                </tr>
-                <tr>
-                    <td>Address.</td>
-                    <td ><?php echo $model->billing_address. '  '.$model->billing_city . '  ('.$model->billing_zipcode.')'?></td>
-                </tr>
-                <tr>
-                    <td>Phone No.</td>
-                    <td ><?php echo $model->billing_phoneno; ?></td>
-                </tr>
+            <tr>
+                <td>Billing Name.</td>
+                <td ><?php echo $model->billing_name; ?></td>
+            </tr>
+            <tr>
+                <td>Address.</td>
+                <td ><?php echo $model->billing_address. '  '.$model->billing_city . '  ('.$model->billing_zipcode.')'?></td>
+            </tr>
+            <tr>
+                <td>Phone No.</td>
+                <td ><?php echo $model->billing_phoneno; ?></td>
+            </tr>
 
-                <tr>
-                    <td>Mobile No.</td>
-                    <td><?php echo $model->billing_cellno; ?></td>
-                </tr>
+            <tr>
+                <td>Mobile No.</td>
+                <td><?php echo $model->billing_cellno; ?></td>
+            </tr>
             </tfoot>
         </table>
     </div>
-</div>
-<div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-6">
         <h3>Shipping Information</h3>
         <table class="table table-striped">
             <tfoot>
@@ -149,7 +148,6 @@ $model->save();
                     <td>Account No.</td>
                     <td><?php echo $bankModel->account_no;?></td>
                 </tr>
-               
                 <tr>
                     <td>Service Charges <b><?php echo $bankModel->charges;?> %</b></td>
                     <td><?php echo number_format($service_charges,2)?></td>
@@ -157,7 +155,6 @@ $model->save();
                 <tr>
                     <td>Total Amount.</td>
                     <td  aligin="left"><?php 
-                    
                     echo number_format($total+$service_charges, 2); ?> PKR</td>
                 </tr>
             </tfoot>

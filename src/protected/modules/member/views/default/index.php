@@ -15,7 +15,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
         array('name' => 'created_on', 'value' => '$data->created_on'),
     ),
 ));
-
+$server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+if($server_name==Yii::app()->params['main_domain']) {
 ?>
 <p><?php echo $data->detailtext ?></p>
 <div class="pt-50">
@@ -51,6 +52,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
     </div>
 </div>
 <?php
+
 $graph = ProductsGraph::model()->getDaily();
 ?>
 
@@ -155,3 +157,4 @@ $graph = ProductsGraph::model()->getDaily();
 
     });
 </script>
+<?php }
