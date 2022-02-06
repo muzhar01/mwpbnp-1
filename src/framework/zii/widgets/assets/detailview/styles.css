@@ -15,7 +15,7 @@ table.detail-view th, table.detail-view td
 {
 	font-size: 0.9em;
 	border: 1px white solid;
-	padding: 10px;
+	padding: 0.3em 0.6em;
 	vertical-align: top;
 }
 
@@ -27,7 +27,7 @@ table.detail-view th
 
 table.detail-view tr.odd
 {
-	background:#f4f4f4;
+	background:#E5F1F4;
 }
 
 table.detail-view tr.even

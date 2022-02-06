@@ -7,10 +7,9 @@
  */
 ?>
 <?php
-
-$actionName = $modelClass;
-if (strrpos ( $modelClass, 'Form' ) === strlen ( $modelClass ) - 4)
-	$actionName = substr ( $modelClass, 0, strlen ( $modelClass ) - 4 );
+$actionName=$modelClass;
+if(strrpos($modelClass,'Form')===strlen($modelClass)-4)
+    $actionName=substr($modelClass,0,strlen($modelClass)-4);
 ?>
 public function action<?php echo $actionName; ?>()
 {

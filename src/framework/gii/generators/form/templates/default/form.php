@@ -13,21 +13,16 @@
 
 <div class="form">
 
-<?php
-
-echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
-	'id'=>'" . $this->class2id ( $this->modelClass ) . '-' . basename ( $this->viewName ) . "-form',
+<?php echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
+	'id'=>'".$this->class2id($this->modelClass).'-'.basename($this->viewName)."-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// See class documentation of CActiveForm for details on this,
 	// you need to use the performAjaxValidation()-method described there.
 	'enableAjaxValidation'=>false,
-)); ?>\n";
-?>
+)); ?>\n"; ?>
 
-	<p class="note">
-		Fields with <span class="required">*</span> are required.
-	</p>
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
 
@@ -46,5 +41,4 @@ echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
 
-</div>
-<!-- form -->
+</div><!-- form -->

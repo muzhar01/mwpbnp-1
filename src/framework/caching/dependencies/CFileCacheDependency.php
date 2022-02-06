@@ -20,35 +20,34 @@
  * @package system.caching.dependencies
  * @since 1.0
  */
-class CFileCacheDependency extends CCacheDependency {
+class CFileCacheDependency extends CCacheDependency
+{
 	/**
-	 *
 	 * @var string the name of the file whose last modification time is used to
-	 *      check if the dependency has been changed.
+	 * check if the dependency has been changed.
 	 */
 	public $fileName;
-	
+
 	/**
 	 * Constructor.
-	 * 
-	 * @param string $fileName
-	 *        	name of the file whose change is to be checked.
+	 * @param string $fileName name of the file whose change is to be checked.
 	 */
-	public function __construct($fileName = null) {
-		$this->fileName = $fileName;
+	public function __construct($fileName=null)
+	{
+		$this->fileName=$fileName;
 	}
-	
+
 	/**
 	 * Generates the data needed to determine if dependency has been changed.
 	 * This method returns the file's last modification time.
-	 * 
 	 * @throws CException if {@link fileName} is empty
 	 * @return mixed the data needed to determine if dependency has been changed.
 	 */
-	protected function generateDependentData() {
-		if ($this->fileName !== null)
-			return @filemtime ( $this->fileName );
+	protected function generateDependentData()
+	{
+		if($this->fileName!==null)
+			return @filemtime($this->fileName);
 		else
-			throw new CException ( Yii::t ( 'yii', 'CFileCacheDependency.fileName cannot be empty.' ) );
+			throw new CException(Yii::t('yii','CFileCacheDependency.fileName cannot be empty.'));
 	}
 }

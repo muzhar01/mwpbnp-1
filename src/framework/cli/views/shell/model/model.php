@@ -92,10 +92,14 @@ class <?php echo $className; ?> extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 <?php
-foreach ( $columns as $name => $column ) {
-	if ($column->type === 'string') {
+foreach($columns as $name=>$column)
+{
+	if($column->type==='string')
+	{
 		echo "\t\t\$criteria->compare('$name',\$this->$name,true);\n\n";
-	} else {
+	}
+	else
+	{
 		echo "\t\t\$criteria->compare('$name',\$this->$name);\n\n";
 	}
 }

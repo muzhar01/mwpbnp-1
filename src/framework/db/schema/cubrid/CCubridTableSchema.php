@@ -15,11 +15,11 @@
  * @package system.db.schema.cubrid
  * @since 1.1.16
  */
-class CCubridTableSchema extends CDbTableSchema {
+class CCubridTableSchema extends CDbTableSchema
+{
 	/**
-	 *
 	 * @var string name of the schema (database) that this table belongs to.
-	 *      Defaults to null, meaning no schema (or the current database).
+	 * Defaults to null, meaning no schema (or the current database).
 	 */
 	public $schemaName;
 }

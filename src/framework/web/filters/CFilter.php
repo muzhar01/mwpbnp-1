@@ -22,7 +22,8 @@
  * @package system.web.filters
  * @since 1.0
  */
-class CFilter extends CComponent implements IFilter {
+class CFilter extends CComponent implements IFilter
+{
 	/**
 	 * Performs the filtering.
 	 * The default implementation is to invoke {@link preFilter}
@@ -30,46 +31,44 @@ class CFilter extends CComponent implements IFilter {
 	 * child classes. If a child class needs to override this method,
 	 * make sure it calls <code>$filterChain->run()</code>
 	 * if the action should be executed.
-	 * 
-	 * @param CFilterChain $filterChain
-	 *        	the filter chain that the filter is on.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
 	 */
-	public function filter($filterChain) {
-		if ($this->preFilter ( $filterChain )) {
-			$filterChain->run ();
-			$this->postFilter ( $filterChain );
+	public function filter($filterChain)
+	{
+		if($this->preFilter($filterChain))
+		{
+			$filterChain->run();
+			$this->postFilter($filterChain);
 		}
 	}
-	
+
 	/**
 	 * Initializes the filter.
 	 * This method is invoked after the filter properties are initialized
 	 * and before {@link preFilter} is called.
 	 * You may override this method to include some initialization logic.
-	 * 
 	 * @since 1.1.4
 	 */
-	public function init() {
+	public function init()
+	{
 	}
-	
+
 	/**
 	 * Performs the pre-action filtering.
-	 * 
-	 * @param CFilterChain $filterChain
-	 *        	the filter chain that the filter is on.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
 	 * @return boolean whether the filtering process should continue and the action
-	 *         should be executed.
+	 * should be executed.
 	 */
-	protected function preFilter($filterChain) {
+	protected function preFilter($filterChain)
+	{
 		return true;
 	}
-	
+
 	/**
 	 * Performs the post-action filtering.
-	 * 
-	 * @param CFilterChain $filterChain
-	 *        	the filter chain that the filter is on.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
 	 */
-	protected function postFilter($filterChain) {
+	protected function postFilter($filterChain)
+	{
 	}
 }

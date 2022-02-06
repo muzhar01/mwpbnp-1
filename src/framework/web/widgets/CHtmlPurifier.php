@@ -7,9 +7,11 @@
  * @copyright 2008-2013 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-if (! class_exists ( 'HTMLPurifier_Bootstrap', false )) {
-	require_once (Yii::getPathOfAlias ( 'system.vendors.htmlpurifier' ) . DIRECTORY_SEPARATOR . 'HTMLPurifier.standalone.php');
-	HTMLPurifier_Bootstrap::registerAutoload ();
+
+if(!class_exists('HTMLPurifier_Bootstrap',false))
+{
+	require_once(Yii::getPathOfAlias('system.vendors.htmlpurifier').DIRECTORY_SEPARATOR.'HTMLPurifier.standalone.php');
+	HTMLPurifier_Bootstrap::registerAutoload();
 }
 
 /**
@@ -29,8 +31,8 @@ if (! class_exists ( 'HTMLPurifier_Bootstrap', false )) {
  * <pre>
  * $p = new CHtmlPurifier();
  * $p->options = array('URI.AllowedSchemes'=>array(
- * 'http' => true,
- * 'https' => true,
+ *   'http' => true,
+ *   'https' => true,
  * ));
  * $text = $p->purify($text);
  * </pre>
@@ -44,92 +46,85 @@ if (! class_exists ( 'HTMLPurifier_Bootstrap', false )) {
  * @package system.web.widgets
  * @since 1.0
  */
-class CHtmlPurifier extends COutputProcessor {
+class CHtmlPurifier extends COutputProcessor
+{
 	/**
-	 *
 	 * @var object the HTML Purifier instance.
 	 */
 	private $_purifier;
 	/**
-	 *
 	 * @var mixed the options to be passed to HTML Purifier instance.
-	 *      This can be a HTMLPurifier_Config object, an array of directives (Namespace.Directive => Value)
-	 *      or the filename of an ini file.
+	 * This can be a HTMLPurifier_Config object,  an array of directives (Namespace.Directive => Value)
+	 * or the filename of an ini file.
 	 * @see http://htmlpurifier.org/live/configdoc/plain.html
 	 */
-	private $_options = null;
+	private $_options=null;
 	
 	/**
 	 * Processes the captured output.
 	 * This method purifies the output using {@link http://htmlpurifier.org HTML Purifier}.
-	 * 
-	 * @param string $output
-	 *        	the captured output to be processed
+	 * @param string $output the captured output to be processed
 	 */
-	public function processOutput($output) {
-		$output = $this->purify ( $output );
-		parent::processOutput ( $output );
+	public function processOutput($output)
+	{
+		$output=$this->purify($output);
+		parent::processOutput($output);
 	}
 	
 	/**
 	 * Purifies the HTML content by removing malicious code.
-	 * 
-	 * @param mixed $content
-	 *        	the content to be purified.
-	 * @return mixed the purified content
+	 * @param mixed $content the content to be purified.
+	 * @return mixed the purified content 
 	 */
-	public function purify($content) {
-		if (is_array ( $content ))
-			$content = array_map ( array (
-					$this,
-					'purify' 
-			), $content );
+	public function purify($content)
+	{
+		if(is_array($content))
+			$content=array_map(array($this,'purify'),$content);
 		else
-			$content = $this->getPurifier ()->purify ( $content );
+			$content=$this->getPurifier()->purify($content);
 		return $content;
 	}
 	
 	/**
 	 * Set the options for HTML Purifier and create a new HTML Purifier instance based on these options.
-	 * 
-	 * @param mixed $options
-	 *        	the options for HTML Purifier
+	 * @param mixed $options the options for HTML Purifier
 	 * @return static the object instance itself
 	 */
-	public function setOptions($options) {
-		$this->_options = $options;
-		$this->createNewHtmlPurifierInstance ();
+	public function setOptions($options)
+	{
+		$this->_options=$options;
+		$this->createNewHtmlPurifierInstance();
 		return $this;
 	}
 	
 	/**
 	 * Get the options for the HTML Purifier instance.
-	 * 
 	 * @return mixed the HTML Purifier instance options
 	 */
-	public function getOptions() {
+	public function getOptions()
+	{
 		return $this->_options;
 	}
 	
 	/**
 	 * Get the HTML Purifier instance or create a new one if it doesn't exist.
-	 * 
 	 * @return HTMLPurifier
 	 */
-	protected function getPurifier() {
-		if ($this->_purifier !== null)
+	protected function getPurifier()
+	{
+		if($this->_purifier!==null)
 			return $this->_purifier;
-		return $this->createNewHtmlPurifierInstance ();
+		return $this->createNewHtmlPurifierInstance();
 	}
 	
 	/**
 	 * Create a new HTML Purifier instance.
-	 * 
 	 * @return HTMLPurifier
 	 */
-	protected function createNewHtmlPurifierInstance() {
-		$this->_purifier = new HTMLPurifier ( $this->getOptions () );
-		$this->_purifier->config->set ( 'Cache.SerializerPath', Yii::app ()->getRuntimePath () );
+	protected function createNewHtmlPurifierInstance()
+	{
+		$this->_purifier=new HTMLPurifier($this->getOptions());
+		$this->_purifier->config->set('Cache.SerializerPath',Yii::app()->getRuntimePath());
 		return $this->_purifier;
 	}
 }

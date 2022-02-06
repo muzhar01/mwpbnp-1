@@ -8,11 +8,10 @@
  */
 ?>
 <?php
-
 echo "<?php\n";
-$label = $this->class2name ( $modelClass, true );
-$route = $modelClass . '/index';
-$route [0] = strtolower ( $route [0] );
+$label=$this->class2name($modelClass,true);
+$route=$modelClass.'/index';
+$route[0]=strtolower($route[0]);
 echo "\$this->breadcrumbs=array(
 	'$label',
 );\n";

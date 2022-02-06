@@ -26,84 +26,88 @@
  * @package system.cli.commands
  * @since 1.1.6
  */
-class MigrateCommand extends CConsoleCommand {
-	const BASE_MIGRATION = 'm000000_000000_base';
-	
+class MigrateCommand extends CConsoleCommand
+{
+	const BASE_MIGRATION='m000000_000000_base';
+
 	/**
-	 *
 	 * @var string the directory that stores the migrations. This must be specified
-	 *      in terms of a path alias, and the corresponding directory must exist.
-	 *      Defaults to 'application.migrations' (meaning 'protected/migrations').
+	 * in terms of a path alias, and the corresponding directory must exist.
+	 * Defaults to 'application.migrations' (meaning 'protected/migrations').
 	 */
-	public $migrationPath = 'application.migrations';
+	public $migrationPath='application.migrations';
 	/**
-	 *
 	 * @var string the name of the table for keeping applied migration information.
-	 *      This table will be automatically created if not exists. Defaults to 'tbl_migration'.
-	 *      The table structure is: (version varchar(180) primary key, apply_time integer)
+	 * This table will be automatically created if not exists. Defaults to 'tbl_migration'.
+	 * The table structure is: (version varchar(180) primary key, apply_time integer)
 	 */
-	public $migrationTable = 'tbl_migration';
+	public $migrationTable='tbl_migration';
 	/**
-	 *
 	 * @var string the application component ID that specifies the database connection for
-	 *      storing migration information. Defaults to 'db'.
+	 * storing migration information. Defaults to 'db'.
 	 */
-	public $connectionID = 'db';
+	public $connectionID='db';
 	/**
-	 *
 	 * @var string the path of the template file for generating new migrations. This
-	 *      must be specified in terms of a path alias (e.g. application.migrations.template).
-	 *      If not set, an internal template will be used.
+	 * must be specified in terms of a path alias (e.g. application.migrations.template).
+	 * If not set, an internal template will be used.
 	 */
 	public $templateFile;
 	/**
-	 *
 	 * @var string the default command action. It defaults to 'up'.
 	 */
-	public $defaultAction = 'up';
+	public $defaultAction='up';
 	/**
-	 *
 	 * @var boolean whether to execute the migration in an interactive mode. Defaults to true.
-	 *      Set this to false when performing migration in a cron job or background process.
+	 * Set this to false when performing migration in a cron job or background process.
 	 */
-	public $interactive = true;
-	public function beforeAction($action, $params) {
-		$path = Yii::getPathOfAlias ( $this->migrationPath );
-		if ($path === false || ! is_dir ( $path )) {
-			echo 'Error: The migration directory does not exist: ' . $this->migrationPath . "\n";
-			exit ( 1 );
+	public $interactive=true;
+
+	public function beforeAction($action,$params)
+	{
+		$path=Yii::getPathOfAlias($this->migrationPath);
+		if($path===false || !is_dir($path))
+		{
+			echo 'Error: The migration directory does not exist: '.$this->migrationPath."\n";
+			exit(1);
 		}
-		$this->migrationPath = $path;
-		
-		$yiiVersion = Yii::getVersion ();
+		$this->migrationPath=$path;
+
+		$yiiVersion=Yii::getVersion();
 		echo "\nYii Migration Tool v1.0 (based on Yii v{$yiiVersion})\n\n";
-		
-		return parent::beforeAction ( $action, $params );
+
+		return parent::beforeAction($action,$params);
 	}
-	public function actionUp($args) {
-		if (($migrations = $this->getNewMigrations ()) === array ()) {
+
+	public function actionUp($args)
+	{
+		if(($migrations=$this->getNewMigrations())===array())
+		{
 			echo "No new migration found. Your system is up-to-date.\n";
 			return 0;
 		}
-		
-		$total = count ( $migrations );
-		$step = isset ( $args [0] ) ? ( int ) $args [0] : 0;
-		if ($step > 0)
-			$migrations = array_slice ( $migrations, 0, $step );
-		
-		$n = count ( $migrations );
-		if ($n === $total)
-			echo "Total $n new " . ($n === 1 ? 'migration' : 'migrations') . " to be applied:\n";
+
+		$total=count($migrations);
+		$step=isset($args[0]) ? (int)$args[0] : 0;
+		if($step>0)
+			$migrations=array_slice($migrations,0,$step);
+
+		$n=count($migrations);
+		if($n===$total)
+			echo "Total $n new ".($n===1 ? 'migration':'migrations')." to be applied:\n";
 		else
-			echo "Total $n out of $total new " . ($total === 1 ? 'migration' : 'migrations') . " to be applied:\n";
-		
-		foreach ( $migrations as $migration )
+			echo "Total $n out of $total new ".($total===1 ? 'migration':'migrations')." to be applied:\n";
+
+		foreach($migrations as $migration)
 			echo "    $migration\n";
 		echo "\n";
-		
-		if ($this->confirm ( 'Apply the above ' . ($n === 1 ? 'migration' : 'migrations') . "?" )) {
-			foreach ( $migrations as $migration ) {
-				if ($this->migrateUp ( $migration ) === false) {
+
+		if($this->confirm('Apply the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateUp($migration)===false)
+				{
 					echo "\nMigration failed. All later migrations are canceled.\n";
 					return 2;
 				}
@@ -111,28 +115,35 @@ class MigrateCommand extends CConsoleCommand {
 			echo "\nMigrated up successfully.\n";
 		}
 	}
-	public function actionDown($args) {
-		$step = isset ( $args [0] ) ? ( int ) $args [0] : 1;
-		if ($step < 1) {
+
+	public function actionDown($args)
+	{
+		$step=isset($args[0]) ? (int)$args[0] : 1;
+		if($step<1)
+		{
 			echo "Error: The step parameter must be greater than 0.\n";
 			return 1;
 		}
-		
-		if (($migrations = $this->getMigrationHistory ( $step )) === array ()) {
+
+		if(($migrations=$this->getMigrationHistory($step))===array())
+		{
 			echo "No migration has been done before.\n";
 			return 0;
 		}
-		$migrations = array_keys ( $migrations );
-		
-		$n = count ( $migrations );
-		echo "Total $n " . ($n === 1 ? 'migration' : 'migrations') . " to be reverted:\n";
-		foreach ( $migrations as $migration )
+		$migrations=array_keys($migrations);
+
+		$n=count($migrations);
+		echo "Total $n ".($n===1 ? 'migration':'migrations')." to be reverted:\n";
+		foreach($migrations as $migration)
 			echo "    $migration\n";
 		echo "\n";
-		
-		if ($this->confirm ( 'Revert the above ' . ($n === 1 ? 'migration' : 'migrations') . "?" )) {
-			foreach ( $migrations as $migration ) {
-				if ($this->migrateDown ( $migration ) === false) {
+
+		if($this->confirm('Revert the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateDown($migration)===false)
+				{
 					echo "\nMigration failed. All later migrations are canceled.\n";
 					return 2;
 				}
@@ -140,34 +151,43 @@ class MigrateCommand extends CConsoleCommand {
 			echo "\nMigrated down successfully.\n";
 		}
 	}
-	public function actionRedo($args) {
-		$step = isset ( $args [0] ) ? ( int ) $args [0] : 1;
-		if ($step < 1) {
+
+	public function actionRedo($args)
+	{
+		$step=isset($args[0]) ? (int)$args[0] : 1;
+		if($step<1)
+		{
 			echo "Error: The step parameter must be greater than 0.\n";
 			return 1;
 		}
-		
-		if (($migrations = $this->getMigrationHistory ( $step )) === array ()) {
+
+		if(($migrations=$this->getMigrationHistory($step))===array())
+		{
 			echo "No migration has been done before.\n";
 			return 0;
 		}
-		$migrations = array_keys ( $migrations );
-		
-		$n = count ( $migrations );
-		echo "Total $n " . ($n === 1 ? 'migration' : 'migrations') . " to be redone:\n";
-		foreach ( $migrations as $migration )
+		$migrations=array_keys($migrations);
+
+		$n=count($migrations);
+		echo "Total $n ".($n===1 ? 'migration':'migrations')." to be redone:\n";
+		foreach($migrations as $migration)
 			echo "    $migration\n";
 		echo "\n";
-		
-		if ($this->confirm ( 'Redo the above ' . ($n === 1 ? 'migration' : 'migrations') . "?" )) {
-			foreach ( $migrations as $migration ) {
-				if ($this->migrateDown ( $migration ) === false) {
+
+		if($this->confirm('Redo the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateDown($migration)===false)
+				{
 					echo "\nMigration failed. All later migrations are canceled.\n";
 					return 2;
 				}
 			}
-			foreach ( array_reverse ( $migrations ) as $migration ) {
-				if ($this->migrateUp ( $migration ) === false) {
+			foreach(array_reverse($migrations) as $migration)
+			{
+				if($this->migrateUp($migration)===false)
+				{
 					echo "\nMigration failed. All later migrations are canceled.\n";
 					return 2;
 				}
@@ -175,281 +195,340 @@ class MigrateCommand extends CConsoleCommand {
 			echo "\nMigration redone successfully.\n";
 		}
 	}
-	public function actionTo($args) {
-		if (! isset ( $args [0] ))
-			$this->usageError ( 'Please specify which version, timestamp or datetime to migrate to.' );
-		
-		if (( string ) ( int ) $args [0] == $args [0])
-			return $this->migrateToTime ( $args [0] );
-		elseif (($time = strtotime ( $args [0] )) !== false)
-			return $this->migrateToTime ( $time );
+
+	public function actionTo($args)
+	{
+		if(!isset($args[0]))
+			$this->usageError('Please specify which version, timestamp or datetime to migrate to.');
+
+		if((string)(int)$args[0]==$args[0])
+			return $this->migrateToTime($args[0]);
+		elseif(($time=strtotime($args[0]))!==false)
+			return $this->migrateToTime($time);
 		else
-			return $this->migrateToVersion ( $args [0] );
+			return $this->migrateToVersion($args[0]);
 	}
-	private function migrateToTime($time) {
-		$data = $this->getDbConnection ()->createCommand ()->select ( 'version,apply_time' )->from ( $this->migrationTable )->where ( 'apply_time<=:time', array (
-				':time' => $time 
-		) )->order ( 'apply_time DESC' )->limit ( 1 )->queryRow ();
-		
-		if ($data === false) {
-			echo "Error: Unable to find a version before " . date ( 'Y-m-d H:i:s', $time ) . ".\n";
+
+	private function migrateToTime($time)
+	{
+		$data=$this->getDbConnection()->createCommand()
+			->select('version,apply_time')
+			->from($this->migrationTable)
+			->where('apply_time<=:time',array(':time'=>$time))
+			->order('apply_time DESC')
+			->limit(1)
+			->queryRow();
+
+		if($data===false)
+		{
+			echo "Error: Unable to find a version before ".date('Y-m-d H:i:s',$time).".\n";
 			return 1;
-		} else {
-			echo "Found version " . $data ['version'] . " applied at " . date ( 'Y-m-d H:i:s', $data ['apply_time'] ) . ", it is before " . date ( 'Y-m-d H:i:s', $time ) . ".\n";
-			return $this->migrateToVersion ( substr ( $data ['version'], 1, 13 ) );
+		}
+		else
+		{
+			echo "Found version ".$data['version']." applied at ".date('Y-m-d H:i:s',$data['apply_time']).", it is before ".date('Y-m-d H:i:s',$time).".\n";
+			return $this->migrateToVersion(substr($data['version'],1,13));
 		}
 	}
-	private function migrateToVersion($version) {
-		$originalVersion = $version;
-		if (preg_match ( '/^m?(\d{6}_\d{6})(_.*?)?$/', $version, $matches ))
-			$version = 'm' . $matches [1];
-		else {
+
+	private function migrateToVersion($version)
+	{
+		$originalVersion=$version;
+		if(preg_match('/^m?(\d{6}_\d{6})(_.*?)?$/',$version,$matches))
+			$version='m'.$matches[1];
+		else
+		{
 			echo "Error: The version option must be either a timestamp (e.g. 101129_185401)\nor the full name of a migration (e.g. m101129_185401_create_user_table).\n";
 			return 1;
 		}
-		
+
 		// try migrate up
-		$migrations = $this->getNewMigrations ();
-		foreach ( $migrations as $i => $migration ) {
-			if (strpos ( $migration, $version . '_' ) === 0)
-				return $this->actionUp ( array (
-						$i + 1 
-				) );
+		$migrations=$this->getNewMigrations();
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+				return $this->actionUp(array($i+1));
 		}
-		
+
 		// try migrate down
-		$migrations = array_keys ( $this->getMigrationHistory ( - 1 ) );
-		foreach ( $migrations as $i => $migration ) {
-			if (strpos ( $migration, $version . '_' ) === 0) {
-				if ($i === 0) {
+		$migrations=array_keys($this->getMigrationHistory(-1));
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($i===0)
+				{
 					echo "Already at '$originalVersion'. Nothing needs to be done.\n";
 					return 0;
-				} else
-					return $this->actionDown ( array (
-							$i 
-					) );
+				}
+				else
+					return $this->actionDown(array($i));
 			}
 		}
-		
+
 		echo "Error: Unable to find the version '$originalVersion'.\n";
 		return 1;
 	}
-	public function actionMark($args) {
-		if (isset ( $args [0] ))
-			$version = $args [0];
+
+	public function actionMark($args)
+	{
+		if(isset($args[0]))
+			$version=$args[0];
 		else
-			$this->usageError ( 'Please specify which version to mark to.' );
-		$originalVersion = $version;
-		if (preg_match ( '/^m?(\d{6}_\d{6})(_.*?)?$/', $version, $matches ))
-			$version = 'm' . $matches [1];
+			$this->usageError('Please specify which version to mark to.');
+		$originalVersion=$version;
+		if(preg_match('/^m?(\d{6}_\d{6})(_.*?)?$/',$version,$matches))
+			$version='m'.$matches[1];
 		else {
 			echo "Error: The version option must be either a timestamp (e.g. 101129_185401)\nor the full name of a migration (e.g. m101129_185401_create_user_table).\n";
 			return 1;
 		}
-		
-		$db = $this->getDbConnection ();
-		
+
+		$db=$this->getDbConnection();
+
 		// try mark up
-		$migrations = $this->getNewMigrations ();
-		foreach ( $migrations as $i => $migration ) {
-			if (strpos ( $migration, $version . '_' ) === 0) {
-				if ($this->confirm ( "Set migration history at $originalVersion?" )) {
-					$command = $db->createCommand ();
-					for($j = 0; $j <= $i; ++ $j) {
-						$command->insert ( $this->migrationTable, array (
-								'version' => $migrations [$j],
-								'apply_time' => time () 
-						) );
+		$migrations=$this->getNewMigrations();
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($this->confirm("Set migration history at $originalVersion?"))
+				{
+					$command=$db->createCommand();
+					for($j=0;$j<=$i;++$j)
+					{
+						$command->insert($this->migrationTable, array(
+							'version'=>$migrations[$j],
+							'apply_time'=>time(),
+						));
 					}
 					echo "The migration history is set at $originalVersion.\nNo actual migration was performed.\n";
 				}
 				return 0;
 			}
 		}
-		
+
 		// try mark down
-		$migrations = array_keys ( $this->getMigrationHistory ( - 1 ) );
-		foreach ( $migrations as $i => $migration ) {
-			if (strpos ( $migration, $version . '_' ) === 0) {
-				if ($i === 0)
+		$migrations=array_keys($this->getMigrationHistory(-1));
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($i===0)
 					echo "Already at '$originalVersion'. Nothing needs to be done.\n";
-				else {
-					if ($this->confirm ( "Set migration history at $originalVersion?" )) {
-						$command = $db->createCommand ();
-						for($j = 0; $j < $i; ++ $j)
-							$command->delete ( $this->migrationTable, $db->quoteColumnName ( 'version' ) . '=:version', array (
-									':version' => $migrations [$j] 
-							) );
+				else
+				{
+					if($this->confirm("Set migration history at $originalVersion?"))
+					{
+						$command=$db->createCommand();
+						for($j=0;$j<$i;++$j)
+							$command->delete($this->migrationTable, $db->quoteColumnName('version').'=:version', array(':version'=>$migrations[$j]));
 						echo "The migration history is set at $originalVersion.\nNo actual migration was performed.\n";
 					}
 				}
 				return 0;
 			}
 		}
-		
+
 		echo "Error: Unable to find the version '$originalVersion'.\n";
 		return 1;
 	}
-	public function actionHistory($args) {
-		$limit = isset ( $args [0] ) ? ( int ) $args [0] : - 1;
-		$migrations = $this->getMigrationHistory ( $limit );
-		if ($migrations === array ())
+
+	public function actionHistory($args)
+	{
+		$limit=isset($args[0]) ? (int)$args[0] : -1;
+		$migrations=$this->getMigrationHistory($limit);
+		if($migrations===array())
 			echo "No migration has been done before.\n";
-		else {
-			$n = count ( $migrations );
-			if ($limit > 0)
-				echo "Showing the last $n applied " . ($n === 1 ? 'migration' : 'migrations') . ":\n";
-			else
-				echo "Total $n " . ($n === 1 ? 'migration has' : 'migrations have') . " been applied before:\n";
-			foreach ( $migrations as $version => $time )
-				echo "    (" . date ( 'Y-m-d H:i:s', $time ) . ') ' . $version . "\n";
-		}
-	}
-	public function actionNew($args) {
-		$limit = isset ( $args [0] ) ? ( int ) $args [0] : - 1;
-		$migrations = $this->getNewMigrations ();
-		if ($migrations === array ())
-			echo "No new migrations found. Your system is up-to-date.\n";
-		else {
-			$n = count ( $migrations );
-			if ($limit > 0 && $n > $limit) {
-				$migrations = array_slice ( $migrations, 0, $limit );
-				echo "Showing $limit out of $n new " . ($n === 1 ? 'migration' : 'migrations') . ":\n";
-			} else
-				echo "Found $n new " . ($n === 1 ? 'migration' : 'migrations') . ":\n";
-			
-			foreach ( $migrations as $migration )
-				echo "    " . $migration . "\n";
-		}
-	}
-	public function actionCreate($args) {
-		if (isset ( $args [0] ))
-			$name = $args [0];
 		else
-			$this->usageError ( 'Please provide the name of the new migration.' );
-		
-		if (! preg_match ( '/^\w+$/', $name )) {
+		{
+			$n=count($migrations);
+			if($limit>0)
+				echo "Showing the last $n applied ".($n===1 ? 'migration' : 'migrations').":\n";
+			else
+				echo "Total $n ".($n===1 ? 'migration has' : 'migrations have')." been applied before:\n";
+			foreach($migrations as $version=>$time)
+				echo "    (".date('Y-m-d H:i:s',$time).') '.$version."\n";
+		}
+	}
+
+	public function actionNew($args)
+	{
+		$limit=isset($args[0]) ? (int)$args[0] : -1;
+		$migrations=$this->getNewMigrations();
+		if($migrations===array())
+			echo "No new migrations found. Your system is up-to-date.\n";
+		else
+		{
+			$n=count($migrations);
+			if($limit>0 && $n>$limit)
+			{
+				$migrations=array_slice($migrations,0,$limit);
+				echo "Showing $limit out of $n new ".($n===1 ? 'migration' : 'migrations').":\n";
+			}
+			else
+				echo "Found $n new ".($n===1 ? 'migration' : 'migrations').":\n";
+
+			foreach($migrations as $migration)
+				echo "    ".$migration."\n";
+		}
+	}
+
+	public function actionCreate($args)
+	{
+		if(isset($args[0]))
+			$name=$args[0];
+		else
+			$this->usageError('Please provide the name of the new migration.');
+
+		if(!preg_match('/^\w+$/',$name)) {
 			echo "Error: The name of the migration must contain letters, digits and/or underscore characters only.\n";
 			return 1;
 		}
-		
-		$name = 'm' . gmdate ( 'ymd_His' ) . '_' . $name;
-		$content = strtr ( $this->getTemplate (), array (
-				'{ClassName}' => $name 
-		) );
-		$file = $this->migrationPath . DIRECTORY_SEPARATOR . $name . '.php';
-		
-		if ($this->confirm ( "Create new migration '$file'?" )) {
-			file_put_contents ( $file, $content );
+
+		$name='m'.gmdate('ymd_His').'_'.$name;
+		$content=strtr($this->getTemplate(), array('{ClassName}'=>$name));
+		$file=$this->migrationPath.DIRECTORY_SEPARATOR.$name.'.php';
+
+		if($this->confirm("Create new migration '$file'?"))
+		{
+			file_put_contents($file, $content);
 			echo "New migration created successfully.\n";
 		}
 	}
-	public function confirm($message, $default = false) {
-		if (! $this->interactive)
+
+	public function confirm($message,$default=false)
+	{
+		if(!$this->interactive)
 			return true;
-		return parent::confirm ( $message, $default );
+		return parent::confirm($message,$default);
 	}
-	protected function migrateUp($class) {
-		if ($class === self::BASE_MIGRATION)
+
+	protected function migrateUp($class)
+	{
+		if($class===self::BASE_MIGRATION)
 			return;
-		
+
 		echo "*** applying $class\n";
-		$start = microtime ( true );
-		$migration = $this->instantiateMigration ( $class );
-		if ($migration->up () !== false) {
-			$this->getDbConnection ()->createCommand ()->insert ( $this->migrationTable, array (
-					'version' => $class,
-					'apply_time' => time () 
-			) );
-			$time = microtime ( true ) - $start;
-			echo "*** applied $class (time: " . sprintf ( "%.3f", $time ) . "s)\n\n";
-		} else {
-			$time = microtime ( true ) - $start;
-			echo "*** failed to apply $class (time: " . sprintf ( "%.3f", $time ) . "s)\n\n";
+		$start=microtime(true);
+		$migration=$this->instantiateMigration($class);
+		if($migration->up()!==false)
+		{
+			$this->getDbConnection()->createCommand()->insert($this->migrationTable, array(
+				'version'=>$class,
+				'apply_time'=>time(),
+			));
+			$time=microtime(true)-$start;
+			echo "*** applied $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+		}
+		else
+		{
+			$time=microtime(true)-$start;
+			echo "*** failed to apply $class (time: ".sprintf("%.3f",$time)."s)\n\n";
 			return false;
 		}
 	}
-	protected function migrateDown($class) {
-		if ($class === self::BASE_MIGRATION)
+
+	protected function migrateDown($class)
+	{
+		if($class===self::BASE_MIGRATION)
 			return;
-		
+
 		echo "*** reverting $class\n";
-		$start = microtime ( true );
-		$migration = $this->instantiateMigration ( $class );
-		if ($migration->down () !== false) {
-			$db = $this->getDbConnection ();
-			$db->createCommand ()->delete ( $this->migrationTable, $db->quoteColumnName ( 'version' ) . '=:version', array (
-					':version' => $class 
-			) );
-			$time = microtime ( true ) - $start;
-			echo "*** reverted $class (time: " . sprintf ( "%.3f", $time ) . "s)\n\n";
-		} else {
-			$time = microtime ( true ) - $start;
-			echo "*** failed to revert $class (time: " . sprintf ( "%.3f", $time ) . "s)\n\n";
+		$start=microtime(true);
+		$migration=$this->instantiateMigration($class);
+		if($migration->down()!==false)
+		{
+			$db=$this->getDbConnection();
+			$db->createCommand()->delete($this->migrationTable, $db->quoteColumnName('version').'=:version', array(':version'=>$class));
+			$time=microtime(true)-$start;
+			echo "*** reverted $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+		}
+		else
+		{
+			$time=microtime(true)-$start;
+			echo "*** failed to revert $class (time: ".sprintf("%.3f",$time)."s)\n\n";
 			return false;
 		}
 	}
-	protected function instantiateMigration($class) {
-		$file = $this->migrationPath . DIRECTORY_SEPARATOR . $class . '.php';
-		require_once ($file);
-		$migration = new $class ();
-		$migration->setDbConnection ( $this->getDbConnection () );
+
+	protected function instantiateMigration($class)
+	{
+		$file=$this->migrationPath.DIRECTORY_SEPARATOR.$class.'.php';
+		require_once($file);
+		$migration=new $class;
+		$migration->setDbConnection($this->getDbConnection());
 		return $migration;
 	}
-	
+
 	/**
-	 *
 	 * @var CDbConnection
 	 */
 	private $_db;
-	protected function getDbConnection() {
-		if ($this->_db !== null)
+	protected function getDbConnection()
+	{
+		if($this->_db!==null)
 			return $this->_db;
-		elseif (($this->_db = Yii::app ()->getComponent ( $this->connectionID )) instanceof CDbConnection)
+		elseif(($this->_db=Yii::app()->getComponent($this->connectionID)) instanceof CDbConnection)
 			return $this->_db;
-		
+
 		echo "Error: CMigrationCommand.connectionID '{$this->connectionID}' is invalid. Please make sure it refers to the ID of a CDbConnection application component.\n";
-		exit ( 1 );
+		exit(1);
 	}
-	protected function getMigrationHistory($limit) {
-		$db = $this->getDbConnection ();
-		if ($db->schema->getTable ( $this->migrationTable, true ) === null) {
-			$this->createMigrationHistoryTable ();
+
+	protected function getMigrationHistory($limit)
+	{
+		$db=$this->getDbConnection();
+		if($db->schema->getTable($this->migrationTable,true)===null)
+		{
+			$this->createMigrationHistoryTable();
 		}
-		return CHtml::listData ( $db->createCommand ()->select ( 'version, apply_time' )->from ( $this->migrationTable )->order ( 'version DESC' )->limit ( $limit )->queryAll (), 'version', 'apply_time' );
+		return CHtml::listData($db->createCommand()
+			->select('version, apply_time')
+			->from($this->migrationTable)
+			->order('version DESC')
+			->limit($limit)
+			->queryAll(), 'version', 'apply_time');
 	}
-	protected function createMigrationHistoryTable() {
-		$db = $this->getDbConnection ();
-		echo 'Creating migration history table "' . $this->migrationTable . '"...';
-		$db->createCommand ()->createTable ( $this->migrationTable, array (
-				'version' => 'varchar(180) NOT NULL PRIMARY KEY',
-				'apply_time' => 'integer' 
-		) );
-		$db->createCommand ()->insert ( $this->migrationTable, array (
-				'version' => self::BASE_MIGRATION,
-				'apply_time' => time () 
-		) );
+
+	protected function createMigrationHistoryTable()
+	{
+		$db=$this->getDbConnection();
+		echo 'Creating migration history table "'.$this->migrationTable.'"...';
+		$db->createCommand()->createTable($this->migrationTable,array(
+			'version'=>'varchar(180) NOT NULL PRIMARY KEY',
+			'apply_time'=>'integer',
+		));
+		$db->createCommand()->insert($this->migrationTable,array(
+			'version'=>self::BASE_MIGRATION,
+			'apply_time'=>time(),
+		));
 		echo "done.\n";
 	}
-	protected function getNewMigrations() {
-		$applied = array ();
-		foreach ( $this->getMigrationHistory ( - 1 ) as $version => $time )
-			$applied [substr ( $version, 1, 13 )] = true;
-		
-		$migrations = array ();
-		$handle = opendir ( $this->migrationPath );
-		while ( ($file = readdir ( $handle )) !== false ) {
-			if ($file === '.' || $file === '..')
+
+	protected function getNewMigrations()
+	{
+		$applied=array();
+		foreach($this->getMigrationHistory(-1) as $version=>$time)
+			$applied[substr($version,1,13)]=true;
+
+		$migrations=array();
+		$handle=opendir($this->migrationPath);
+		while(($file=readdir($handle))!==false)
+		{
+			if($file==='.' || $file==='..')
 				continue;
-			$path = $this->migrationPath . DIRECTORY_SEPARATOR . $file;
-			if (preg_match ( '/^(m(\d{6}_\d{6})_.*?)\.php$/', $file, $matches ) && is_file ( $path ) && ! isset ( $applied [$matches [2]] ))
-				$migrations [] = $matches [1];
+			$path=$this->migrationPath.DIRECTORY_SEPARATOR.$file;
+			if(preg_match('/^(m(\d{6}_\d{6})_.*?)\.php$/',$file,$matches) && is_file($path) && !isset($applied[$matches[2]]))
+				$migrations[]=$matches[1];
 		}
-		closedir ( $handle );
-		sort ( $migrations );
+		closedir($handle);
+		sort($migrations);
 		return $migrations;
 	}
-	public function getHelp() {
+
+	public function getHelp()
+	{
 		return <<<EOD
 USAGE
   yiic migrate [action] [parameter]
@@ -509,9 +588,11 @@ EXAMPLES
 
 EOD;
 	}
-	protected function getTemplate() {
-		if ($this->templateFile !== null)
-			return file_get_contents ( Yii::getPathOfAlias ( $this->templateFile ) . '.php' );
+
+	protected function getTemplate()
+	{
+		if($this->templateFile!==null)
+			return file_get_contents(Yii::getPathOfAlias($this->templateFile).'.php');
 		else
 			return <<<EOD
 <?php

@@ -18,17 +18,39 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	/**
 	 * @return array action filters
 	 */
-	public $resource_id=25;
-        
-        public function init() {
-            $this->homeUrl=$this->baseUrl .= '/adminuser/access'; //Backend, I am using for Admin
-            if (Yii::app()->user->isGuest) {
-                $session = Yii::app()->session;
-                $session['referal_url'] = $this->baseUrl;
-                $session->open();
-                $this->redirect('/administrator/login', true);
-            }
-        }
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
 
 	/**
 	 * Displays a particular model.
@@ -36,13 +58,9 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionView($id)
 	{
-		if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'view')) {
-                    $this->render('view',array(
-                            'model'=>$this->loadModel($id),
-                    ));
-                }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
 	}
 
 	/**
@@ -51,8 +69,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionCreate()
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')) {
-                $model=new <?php echo $this->modelClass; ?>;
+		$model=new <?php echo $this->modelClass; ?>;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -67,9 +84,6 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 		$this->render('create',array(
 			'model'=>$model,
 		));
-            }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
 	}
 
 	/**
@@ -79,8 +93,7 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionUpdate($id)
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'update')) {
-                $model=$this->loadModel($id);
+		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -95,9 +108,6 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 		$this->render('update',array(
 			'model'=>$model,
 		));
-            }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
 	}
 
 	/**
@@ -107,15 +117,11 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionDelete($id)
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'delete')) {
-                $this->loadModel($id)->delete();
+		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-            }
-                else
-                    throw new CHttpException(403, Yii::app()->params['access']);
 	}
 
 	/**
@@ -123,36 +129,26 @@ class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseContro
 	 */
 	public function actionIndex()
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'view')) {
-                $model=new <?php echo $this->modelClass; ?>('search');
+		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new <?php echo $this->modelClass; ?>('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['<?php echo $this->modelClass; ?>']))
 			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
-                if (isset ($_GET['pageSize'])) {
-                            Yii::app ()->user->setState ('pageSize', (int) $_GET['pageSize']);
-                            unset ($_GET['pageSize']);  // would interfere with pager and repetitive page size change
-                }
-		$this->render('index',array(
+
+		$this->render('admin',array(
 			'model'=>$model,
 		));
-           } else
-                    throw new CHttpException(403, Yii::app()->params['access']);
 	}
-
-	public function actionPublished($id) {
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'published')) {
-                $Id = (int) $_GET['id'];
-                $model = $this->loadModel($Id);
-
-                if ($model->published == 1)
-                    $model->published = 0;
-                else
-                    $model->published = 1;
-                if ($model->save())
-                    $this->redirect($this->baseUrl . '/index');
-             } else
-                    throw new CHttpException(403, Yii::app()->params['access']);
-        }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

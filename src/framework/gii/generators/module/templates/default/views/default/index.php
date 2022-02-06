@@ -13,6 +13,5 @@ The action belongs to the controller "<?php echo "<?php"; ?> echo get_class($thi
 in the "<?php echo "<?php"; ?> echo $this->module->id; ?>" module.
 </p>
 <p>
-	You may customize this page by editing
-	<tt><?php echo "<?php"; ?> echo __FILE__; ?></tt>
+You may customize this page by editing <tt><?php echo "<?php"; ?> echo __FILE__; ?></tt>
 </p>

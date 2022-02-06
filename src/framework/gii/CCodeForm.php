@@ -15,18 +15,19 @@
  * @package system.gii
  * @since 1.1.2
  */
-class CCodeForm extends CActiveForm {
+class CCodeForm extends CActiveForm
+{
 	/**
-	 *
 	 * @var CCodeModel the code model associated with the form
 	 */
 	public $model;
-	
+
 	/**
 	 * Initializes the widget.
 	 * This renders the form open tag.
 	 */
-	public function init() {
+	public function init()
+	{
 		echo <<<EOD
 <div class="form gii">
 	<p class="note">
@@ -34,24 +35,25 @@ class CCodeForm extends CActiveForm {
 		Click on the <span class="sticky">highlighted fields</span> to edit them.
 	</p>
 EOD;
-		parent::init ();
+		parent::init();
 	}
-	
+
 	/**
 	 * Runs the widget.
 	 */
-	public function run() {
-		$templates = array ();
-		foreach ( $this->model->getTemplates () as $i => $template )
-			$templates [$i] = basename ( $template ) . ' (' . $template . ')';
-		
-		$this->renderFile ( Yii::getPathOfAlias ( 'gii.views.common.generator' ) . '.php', array (
-				'model' => $this->model,
-				'templates' => $templates 
-		) );
-		
-		parent::run ();
-		
+	public function run()
+	{
+		$templates=array();
+		foreach($this->model->getTemplates() as $i=>$template)
+			$templates[$i]=basename($template).' ('.$template.')';
+
+		$this->renderFile(Yii::getPathOfAlias('gii.views.common.generator').'.php',array(
+			'model'=>$this->model,
+			'templates'=>$templates,
+		));
+
+		parent::run();
+
 		echo "</div>";
 	}
 }

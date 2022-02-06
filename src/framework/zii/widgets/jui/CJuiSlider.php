@@ -7,7 +7,8 @@
  * @copyright 2008-2013 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-Yii::import ( 'zii.widgets.jui.CJuiWidget' );
+
+Yii::import('zii.widgets.jui.CJuiWidget');
 
 /**
  * CJuiSlider displays a slider.
@@ -18,15 +19,15 @@ Yii::import ( 'zii.widgets.jui.CJuiWidget' );
  * To use this widget, you may insert the following code in a view:
  * <pre>
  * $this->widget('zii.widgets.jui.CJuiSlider',array(
- * 'value'=>37,
- * // additional javascript options for the slider plugin
- * 'options'=>array(
- * 'min'=>10,
- * 'max'=>50,
- * ),
- * 'htmlOptions'=>array(
- * 'style'=>'height:20px;',
- * ),
+ *     'value'=>37,
+ *     // additional javascript options for the slider plugin
+ *     'options'=>array(
+ *         'min'=>10,
+ *         'max'=>50,
+ *     ),
+ *     'htmlOptions'=>array(
+ *         'style'=>'height:20px;',
+ *     ),
  * ));
  * </pre>
  *
@@ -41,35 +42,35 @@ Yii::import ( 'zii.widgets.jui.CJuiWidget' );
  * @package zii.widgets.jui
  * @since 1.1
  */
-class CJuiSlider extends CJuiWidget {
+class CJuiSlider extends CJuiWidget
+{
 	/**
-	 *
 	 * @var string the name of the container element that contains the slider. Defaults to 'div'.
 	 */
-	public $tagName = 'div';
+	public $tagName='div';
 	/**
-	 *
 	 * @var integer determines the value of the slider, if there's only one handle. If there is more than one handle, determines the value of the first handle.
 	 */
 	public $value;
-	
+
 	/**
 	 * Run this widget.
 	 * This method registers necessary javascript and renders the needed HTML code.
 	 */
-	public function run() {
-		$id = $this->getId ();
-		if (isset ( $this->htmlOptions ['id'] ))
-			$id = $this->htmlOptions ['id'];
+	public function run()
+	{
+		$id=$this->getId();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
 		else
-			$this->htmlOptions ['id'] = $id;
-		
-		echo CHtml::tag ( $this->tagName, $this->htmlOptions, '' );
-		
-		if ($this->value !== null)
-			$this->options ['value'] = $this->value;
-		
-		$options = CJavaScript::encode ( $this->options );
-		Yii::app ()->getClientScript ()->registerScript ( __CLASS__ . '#' . $id, "jQuery('#{$id}').slider($options);" );
+			$this->htmlOptions['id']=$id;
+
+		echo CHtml::tag($this->tagName,$this->htmlOptions,'');
+
+		if($this->value!==null)
+			$this->options['value']=$this->value;
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').slider($options);");
 	}
 }

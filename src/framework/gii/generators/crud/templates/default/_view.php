@@ -8,28 +8,24 @@
 /* @var $this <?php echo $this->getControllerClass(); ?> */
 /* @var $data <?php echo $this->getModelClass(); ?> */
 ?>
-<section class="content">
-    <div class="box box-primary">
-        <div class="box-header with-border">
-            <h3 class="box-title">View <?php echo $this->modelClass . " <?php echo \$model->{$this->tableSchema->primaryKey}; ?>"; ?></h3>
-        </div>
-        <div class="box-body">
-            <div class="view">
-                <?php
-                $count = 0;
-                foreach ($this->tableSchema->columns as $column) {
-                    if ($column->isPrimaryKey)
-                        continue;
-                    if (++$count == 7)
-                        echo "\t<?php /*\n";
-                    echo "\t<b><?php echo CHtml::encode(\$data->getAttributeLabel('{$column->name}')); ?>:</b>\n";
-                    echo "\t<?php echo CHtml::encode(\$data->{$column->name}); ?>\n\t<br />\n\n";
-                }
-                if ($count >= 7)
-                    echo "\t*/ ?>\n";
-                ?>
 
-            </div>
-        </div>
-    </div>
-</section>
+<div class="view">
+
+<?php
+echo "\t<b><?php echo CHtml::encode(\$data->getAttributeLabel('{$this->tableSchema->primaryKey}')); ?>:</b>\n";
+echo "\t<?php echo CHtml::link(CHtml::encode(\$data->{$this->tableSchema->primaryKey}), array('view', 'id'=>\$data->{$this->tableSchema->primaryKey})); ?>\n\t<br />\n\n";
+$count=0;
+foreach($this->tableSchema->columns as $column)
+{
+	if($column->isPrimaryKey)
+		continue;
+	if(++$count==7)
+		echo "\t<?php /*\n";
+	echo "\t<b><?php echo CHtml::encode(\$data->getAttributeLabel('{$column->name}')); ?>:</b>\n";
+	echo "\t<?php echo CHtml::encode(\$data->{$column->name}); ?>\n\t<br />\n\n";
+}
+if($count>=7)
+	echo "\t*/ ?>\n";
+?>
+
+</div>

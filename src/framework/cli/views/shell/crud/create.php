@@ -8,9 +8,8 @@
  */
 ?>
 <?php
-
 echo "<?php\n";
-$label = $this->class2name ( $modelClass, true );
+$label=$this->class2name($modelClass,true);
 echo "\$this->breadcrumbs=array(
 	'$label'=>array('index'),
 	'Create',

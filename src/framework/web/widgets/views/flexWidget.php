@@ -70,30 +70,30 @@ if ( hasProductInstall && !hasRequestedVersion ) {
 </script>
 <noscript>
 	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-		id="<?php echo $this->name ?>" width="<?php echo $this->width ?>"
+		id="<?php echo $this->name ?>"
+		width="<?php echo $this->width ?>"
 		height="<?php echo $this->height ?>"
 		codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
-		<param name="movie"
-			value="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf" />
-		<param name="quality" value="<?php echo $this->quality ?>" />
-		<param name="bgcolor" value="<?php echo $this->bgColor ?>" />
-		<param name="flashVars" value="<?php echo $this->flashVarsAsString ?>" />
-		<param name="allowScriptAccess"
-			value="<?php echo $this->allowScriptAccess ?>" />
-		<param name="allowFullScreen"
-			value="<?php echo $this->allowFullScreen ?>" />
-		<embed
-			src="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf"
-			quality="<?php echo $this->quality ?>"
-			bgcolor="<?php echo $this->bgColor ?>"
-			width="<?php echo $this->width ?>"
-			height="<?php echo $this->height ?>" name="<?php echo $this->name ?>"
-			align="<?php echo $this->align ?>" play="true" loop="false"
-			quality="<?php echo $this->quality ?>"
-			allowScriptAccess="<?php echo $this->allowScriptAccess ?>"
-			allowFullScreen="<?php echo $this->allowFullScreen ?>"
-			type="application/x-shockwave-flash"
-			pluginspage="http://www.adobe.com/go/getflashplayer">
-		</embed>
+			<param name="movie" value="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf" />
+			<param name="quality" value="<?php echo $this->quality ?>" />
+			<param name="bgcolor" value="<?php echo $this->bgColor ?>" />
+			<param name="flashVars" value="<?php echo $this->flashVarsAsString ?>" />
+			<param name="allowScriptAccess" value="<?php echo $this->allowScriptAccess ?>" />
+			<param name="allowFullScreen" value="<?php echo $this->allowFullScreen ?>" />
+			<embed src="<?php echo $this->baseUrl ?>/<?php echo $this->name ?>.swf"
+				quality="<?php echo $this->quality ?>"
+				bgcolor="<?php echo $this->bgColor ?>"
+				width="<?php echo $this->width ?>"
+				height="<?php echo $this->height ?>"
+				name="<?php echo $this->name ?>"
+				align="<?php echo $this->align ?>"
+				play="true"
+				loop="false"
+				quality="<?php echo $this->quality ?>"
+				allowScriptAccess="<?php echo $this->allowScriptAccess ?>"
+				allowFullScreen="<?php echo $this->allowFullScreen ?>"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
 	</object>
 </noscript>

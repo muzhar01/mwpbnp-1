@@ -15,9 +15,9 @@
  * @package system.db.schema.pgsql
  * @since 1.0
  */
-class CPgsqlTableSchema extends CDbTableSchema {
+class CPgsqlTableSchema extends CDbTableSchema
+{
 	/**
-	 *
 	 * @var string name of the schema that this table belongs to.
 	 */
 	public $schemaName;

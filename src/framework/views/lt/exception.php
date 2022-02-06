@@ -3,57 +3,20 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="lt" lang="lt">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo CHtml::encode($data['type'])?></title>
 
 <style type="text/css">
 /*<![CDATA[*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
-	em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
-	tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
-	legend, table, caption, tbody, tfoot, thead, tr, th, td {
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	line-height: 1;
-}
-
-ol, ul {
-	list-style: none;
-}
-
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-	content: none;
-}
-
-:focus {
-	outline: 0;
-}
-
-ins {
-	text-decoration: none;
-}
-
-del {
-	text-decoration: line-through;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
 
 body {
 	font: normal 9pt "Verdana";
@@ -127,9 +90,9 @@ pre span.error-ln {
 .code pre {
 	background-color: #ffe;
 	margin: 0.5em 0;
-	padding: 0.5em;
-	line-height: 125%;
-	border: 1px solid #eee;
+    padding: 0.5em;
+    line-height: 125%;
+    border: 1px solid #eee;
 }
 
 .source .file {
@@ -160,21 +123,24 @@ pre span.error-ln {
 	padding: 0.5em;
 }
 
-.trace .plus, .trace .minus {
-	display: inline;
-	vertical-align: middle;
-	text-align: center;
-	border: 1px solid #000;
-	color: #000;
-	font-size: 10px;
-	line-height: 10px;
-	margin: 0;
-	padding: 0 1px;
-	width: 10px;
-	height: 10px;
+.trace .plus,
+.trace .minus {
+	display:inline;
+	vertical-align:middle;
+	text-align:center;
+	border:1px solid #000;
+	color:#000;
+	font-size:10px;
+	line-height:10px;
+	margin:0;
+	padding:0 1px;
+	width:10px;
+	height:10px;
 }
 
-.trace.collapsed .minus, .trace.expanded .plus, .trace.collapsed pre {
+.trace.collapsed .minus,
+.trace.expanded .plus,
+.trace.collapsed pre {
 	display: none;
 }
 
@@ -191,68 +157,68 @@ pre span.error-ln {
 </head>
 
 <body>
-	<div class="container">
-		<h1><?php echo $data['type']?></h1>
+<div class="container">
+	<h1><?php echo $data['type']?></h1>
 
-		<p class="message">
+	<p class="message">
 		<?php echo nl2br(CHtml::encode($data['message']))?>
 	</p>
 
-		<div class="source">
-			<p class="file"><?php echo CHtml::encode($data['file'])."({$data['line']})"?></p>
+	<div class="source">
+		<p class="file"><?php echo CHtml::encode($data['file'])."({$data['line']})"?></p>
 		<?php echo $this->renderSourceCode($data['file'],$data['line'],$this->maxSourceLines); ?>
 	</div>
 
-		<div class="traces">
-			<h2>Dėklo pėdsakas</h2>
+	<div class="traces">
+		<h2>Dėklo pėdsakas</h2>
 		<?php $count=0; ?>
-		<table style="width: 100%;">
+		<table style="width:100%;">
 		<?php foreach($data['traces'] as $n => $trace): ?>
 		<?php
-			if ($this->isCoreCode ( $trace ))
-				$cssClass = 'core collapsed';
-			elseif (++ $count > 3)
-				$cssClass = 'app collapsed';
+			if($this->isCoreCode($trace))
+				$cssClass='core collapsed';
+			elseif(++$count>3)
+				$cssClass='app collapsed';
 			else
-				$cssClass = 'app expanded';
-			$hasCode = $trace ['file'] !== 'unknown' && is_file ( $trace ['file'] );
-			?>
+				$cssClass='app expanded';
+			$hasCode=$trace['file']!=='unknown' && is_file($trace['file']);
+		?>
 		<tr class="trace <?php echo $cssClass; ?>">
-					<td class="number">
+			<td class="number">
 				#<?php echo $n; ?>
 			</td>
-					<td class="content">
-						<div class="trace-file">
+			<td class="content">
+				<div class="trace-file">
 					<?php if($hasCode): ?>
 						<div class="plus">+</div>
-							<div class="minus">–</div>
+						<div class="minus">–</div>
 					<?php endif; ?>
 					<?php
-			echo '&nbsp;';
-			echo CHtml::encode ( $trace ['file'] ) . "(" . $trace ['line'] . ")";
-			echo ': ';
-			if (! empty ( $trace ['class'] ))
-				echo "<strong>{$trace['class']}</strong>{$trace['type']}";
-			echo "<strong>{$trace['function']}</strong>(";
-			if (! empty ( $trace ['args'] ))
-				echo CHtml::encode ( $this->argumentsToString ( $trace ['args'] ) );
-			echo ')';
-			?>
+						echo '&nbsp;';
+						echo CHtml::encode($trace['file'])."(".$trace['line'].")";
+						echo ': ';
+						if(!empty($trace['class']))
+							echo "<strong>{$trace['class']}</strong>{$trace['type']}";
+						echo "<strong>{$trace['function']}</strong>(";
+						if(!empty($trace['args']))
+							echo CHtml::encode($this->argumentsToString($trace['args']));
+						echo ')';
+					?>
 				</div>
 
 				<?php if($hasCode) echo $this->renderSourceCode($trace['file'],$trace['line'],$this->maxTraceSourceLines); ?>
 			</td>
-				</tr>
+		</tr>
 		<?php endforeach; ?>
 		</table>
-		</div>
+	</div>
 
-		<div class="version">
+	<div class="version">
 		<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
 	</div>
-	</div>
+</div>
 
-	<script type="text/javascript">
+<script type="text/javascript">
 /*<![CDATA[*/
 var traceReg = new RegExp("(^|\\s)trace-file(\\s|$)");
 var collapsedReg = new RegExp("(^|\\s)collapsed(\\s|$)");

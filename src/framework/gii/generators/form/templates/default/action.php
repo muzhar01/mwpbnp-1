@@ -5,8 +5,7 @@
  */
 ?>
 <?php
-
-$viewName = basename ( $this->viewName );
+$viewName=basename($this->viewName);
 ?>
 public function action<?php echo ucfirst(trim($viewName,'_')); ?>()
 {

@@ -19,68 +19,64 @@
  *
  * @property string $id The unique identifier for the identity.
  * @property string $name The display name for the identity.
- *          
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.web.auth
  * @since 1.0
  */
-class CUserIdentity extends CBaseUserIdentity {
+class CUserIdentity extends CBaseUserIdentity
+{
 	/**
-	 *
 	 * @var string username
 	 */
 	public $username;
 	/**
-	 *
 	 * @var string password
 	 */
 	public $password;
-	
+
 	/**
 	 * Constructor.
-	 * 
-	 * @param string $username
-	 *        	username
-	 * @param string $password
-	 *        	password
+	 * @param string $username username
+	 * @param string $password password
 	 */
-	public function __construct($username, $password) {
-		$this->username = $username;
-		$this->password = $password;
+	public function __construct($username,$password)
+	{
+		$this->username=$username;
+		$this->password=$password;
 	}
-	
+
 	/**
 	 * Authenticates a user based on {@link username} and {@link password}.
 	 * Derived classes should override this method, or an exception will be thrown.
 	 * This method is required by {@link IUserIdentity}.
-	 * 
 	 * @return boolean whether authentication succeeds.
+	 * @throws CException
 	 */
-	public function authenticate() {
-		throw new CException ( Yii::t ( 'yii', '{class}::authenticate() must be implemented.', array (
-				'{class}' => get_class ( $this ) 
-		) ) );
+	public function authenticate()
+	{
+		throw new CException(Yii::t('yii','{class}::authenticate() must be implemented.',array('{class}'=>get_class($this))));
 	}
-	
+
 	/**
 	 * Returns the unique identifier for the identity.
 	 * The default implementation simply returns {@link username}.
 	 * This method is required by {@link IUserIdentity}.
-	 * 
 	 * @return string the unique identifier for the identity.
 	 */
-	public function getId() {
+	public function getId()
+	{
 		return $this->username;
 	}
-	
+
 	/**
 	 * Returns the display name for the identity.
 	 * The default implementation simply returns {@link username}.
 	 * This method is required by {@link IUserIdentity}.
-	 * 
 	 * @return string the display name for the identity.
 	 */
-	public function getName() {
+	public function getName()
+	{
 		return $this->username;
 	}
 }

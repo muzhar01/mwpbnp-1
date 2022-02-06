@@ -1,103 +1,88 @@
 <?xml version="1.0"?>
-<!-- $Id: cpp.xml,v 1.1 2007/06/03 02:35:28 ssttoo Exp $ -->
+<!-- $Id: cpp.xml,v 1.2 2008-07-31 23:06:30 ssttoo Exp $ -->
 
 <highlight lang="CPP" case="no">
 
 	<authors>
-		<author name="Aaron Kalin" />
-		<author name="Andrey Demenev" email="demenev@gmail.com" />
+		<author name="Aaron Kalin"/>
+        <author name="Andrey Demenev" email="demenev@gmail.com"/>
 	</authors>
 
-	<comment>
-		Thanks to Aaron Kalin for initial
-		implementation of this highlighter
-	</comment>
+    <comment>
+Thanks to Aaron Kalin for initial
+implementation of this highlighter
+    </comment>
 
 	<default innerClass="code" />
 
 	<block name="escaped" match="\\" innerClass="special" contained="yes">
-		<onlyin region="strdouble" />
+		<onlyin region="strdouble"/>
 	</block>
 
-	<region name="strdouble" delimClass="quotes" innerClass="string"
-		start="&quot;" end="&quot;" />
+    <region name="strdouble" delimClass="quotes" innerClass="string" start="&quot;" end="&quot;"/>
 
-	<region name="block" delimClass="brackets" innerClass="code"
-		start="\{" end="\}">
-		<contains all="yes" />
+	<region name="block" delimClass="brackets" innerClass="code" start="\{" end="\}">
+		<contains all="yes"/>
 	</region>
 
-	<region name="brackets" delimClass="brackets" innerClass="code"
-		start="\(" end="\)">
-		<contains all="yes" />
+	<region name="brackets" delimClass="brackets" innerClass="code" start="\(" end="\)">
+		<contains all="yes"/>
 	</region>
 
-	<region name="sqbrackets" delimClass="brackets" innerClass="code"
-		start="\[" end="\]">
-		<contains all="yes" />
+	<region name="sqbrackets" delimClass="brackets" innerClass="code" start="\[" end="\]">
+		<contains all="yes"/>
 	</region>
 
-	<block name="identifier" match="[a-z_]\w*" innerClass="identifier"
-		case="no" />
+	<block name="identifier" match="[a-z_]\w*" innerClass="identifier" case="no"/>
 
-	<block name="hexinteger" match="\b0[xX][\da-f]+" innerClass="number"
-		contained="yes" />
-	<block name="integer" match="\b\d\d*|\b0\b" innerClass="number"
-		contained="yes" />
-	<block name="octinteger" match="\b0[0-7]+" innerClass="number"
-		contained="yes" />
-	<block name="float" match="\b(\d*\.\d+)|(\d+\.\d*)" innerClass="number"
-		contained="yes" />
+  <block name="hexinteger" match="\b0[xX][\da-f]+" innerClass="number"/>
+  <block name="integer" match="\b\d\d*|\b0\b" innerClass="number"/>
+  <block name="octinteger" match="\b0[0-7]+" innerClass="number"/>
+  <block name="float" match="\b(\d*\.\d+)|(\d+\.\d*)" innerClass="number"/>
 
 
-	<region name="strincl" delimClass="quotes" innerClass="string"
-		start="&lt;" end="&gt;">
-		<onlyin region="include" />
+  <region name="strincl" delimClass="quotes" innerClass="string" start="&lt;" end="&gt;">
+      <onlyin region="include" />
+  </region>
+
+  <!-- <block name="preprocessor" match="^#[azAZ_]\w*" innerClass="prepro"/> -->
+    <region name="include" innerClass="prepro" start="/^[ \t]*#include/m" end="/(?&lt;!\\)$/m">
+		<contains region="strdouble"/>
+		<contains region="strincl"/>
 	</region>
 
-	<!-- <block name="preprocessor" match="^#[azAZ_]\w*" innerClass="prepro"/> -->
-	<region name="include" innerClass="prepro" start="/^[ \t]*#include/m"
-		end="/(?&lt;!\\)$/m">
-		<contains region="strdouble" />
-		<contains region="strincl" />
-	</region>
-
-	<region name="preprocessor" delimClass="prepro" innerClass="code"
-		start="/^[ \t]*#[ \t]*[a-z]+/mi" end="/(?&lt;!\\)$/m">
-		<contains region="comment" />
-		<contains region="mlcomment" />
-		<contains region="strdouble" />
-		<contains region="brackets" />
-		<contains region="block" />
-		<contains block="identifier" />
-		<contains block="integer" />
-		<contains block="hexinteger" />
-		<contains block="octinteger" />
-		<contains block="float" />
+    <region name="preprocessor" delimClass="prepro"  innerClass="code" start="/^[ \t]*#[ \t]*[a-z]+/mi" end="/(?&lt;!\\)$/m">
+        <contains region="comment"/>
+        <contains region="mlcomment"/>
+		<contains region="strdouble"/>
+        <contains region="brackets"/>
+        <contains region="block"/>
+        <contains block="identifier"/>
+        <contains block="integer"/>
+        <contains block="hexinteger"/>
+        <contains block="octinteger"/>
+        <contains block="float"/>
 
 	</region>
 
-	<block name="number" match="\d*\.?\d+" innerClass="number" />
+	<block name="number" match="\d*\.?\d+" innerClass="number"/>
 
 
-	<region name="mlcomment" innerClass="mlcomment" start="\/\*"
-		end="\*\/">
-		<contains block="cvstag" />
+	<region name="mlcomment" innerClass="mlcomment" start="\/\*" end="\*\/" >
+		<contains block="cvstag"/>
 	</region>
 
 	<block name="cvstag" match="\$\w+\s*:.+\$" innerClass="inlinedoc">
 
-		<onlyin region="mlcomment" />
-		<onlyin region="comment" />
+		<onlyin region="mlcomment"/>
+		<onlyin region="comment"/>
 	</block>
 
-	<region name="comment" start="\/\/.+" end="/$/m" innerClass="comment"
-		delimClass="comment">
-		<contains block="cvstag" />
-	</region>
+	<region name="comment" start="\/\/.+" end="/$/m" innerClass="comment" delimClass="comment">
+		<contains block="cvstag"/>
+    </region>
 
-	<keywords name="reserved" inherits="identifier" innerClass="reserved"
-		case="yes">
+    <keywords name="reserved" inherits="identifier" innerClass="reserved" case="yes">
 		<keyword match="and" />
 		<keyword match="and_eq" />
 		<keyword match="asm" />
@@ -149,12 +134,11 @@
 		<keyword match="xor" />
 		<keyword match="xor_eq" />
 
-		<keyword match="false" />
+        <keyword match="false" />
 		<keyword match="true" />
 	</keywords>
 
-	<keywords name="types" inherits="identifier" innerClass="types"
-		case="yes">
+	<keywords name="types" inherits="identifier" innerClass="types" case="yes">
 
 		<keyword match="auto" />
 		<keyword match="bool" />
@@ -193,8 +177,7 @@
 
 	</keywords>
 
-	<keywords name="Common Macros" inherits="identifier"
-		innerClass="prepro" case="yes">
+	<keywords name="Common Macros" inherits="identifier" innerClass="prepro" case="yes">
 		<keyword match="NULL" />
 		<keyword match="TRUE" />
 		<keyword match="FALSE" />
@@ -210,8 +193,9 @@
 	</keywords>
 
 
-	<!-- <keywords name="reserved" inherits="identifier" innerClass="reserved" 
-		case="yes"> -->
+	<!--
+	<keywords name="reserved" inherits="identifier" innerClass="reserved" case="yes">
+	-->
 
 </highlight>
 

@@ -24,28 +24,29 @@
  * The followings are the available model relations:
 <?php foreach($relations as $name=>$relation): ?>
  * @property <?php
-		if (preg_match ( "~^array\(self::([^,]+), '([^']+)', '([^']+)'\)$~", $relation, $matches )) {
-			$relationType = $matches [1];
-			$relationModel = $matches [2];
-			
-			switch ($relationType) {
-				case 'HAS_ONE' :
-					echo $relationModel . ' $' . $name . "\n";
-					break;
-				case 'BELONGS_TO' :
-					echo $relationModel . ' $' . $name . "\n";
-					break;
-				case 'HAS_MANY' :
-					echo $relationModel . '[] $' . $name . "\n";
-					break;
-				case 'MANY_MANY' :
-					echo $relationModel . '[] $' . $name . "\n";
-					break;
-				default :
-					echo 'mixed $' . $name . "\n";
-			}
-		}
-		?>
+	if (preg_match("~^array\(self::([^,]+), '([^']+)', '([^']+)'\)$~", $relation, $matches))
+    {
+        $relationType = $matches[1];
+        $relationModel = $matches[2];
+
+        switch($relationType){
+            case 'HAS_ONE':
+                echo $relationModel.' $'.$name."\n";
+            break;
+            case 'BELONGS_TO':
+                echo $relationModel.' $'.$name."\n";
+            break;
+            case 'HAS_MANY':
+                echo $relationModel.'[] $'.$name."\n";
+            break;
+            case 'MANY_MANY':
+                echo $relationModel.'[] $'.$name."\n";
+            break;
+            default:
+                echo 'mixed $'.$name."\n";
+        }
+	}
+    ?>
 <?php endforeach; ?>
 <?php endif; ?>
  */
@@ -121,36 +122,24 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
 		$criteria=new CDbCriteria;
 
 <?php
-foreach ( $columns as $name => $column ) {
-	if ($column->type === 'string') {
+foreach($columns as $name=>$column)
+{
+	if($column->type==='string')
+	{
 		echo "\t\t\$criteria->compare('$name',\$this->$name,true);\n";
-	} else {
+	}
+	else
+	{
 		echo "\t\t\$criteria->compare('$name',\$this->$name);\n";
 	}
 }
 ?>
 
 		return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-            'sort' => array(
-                'defaultOrder' => 'id DESC',
-            ),
-            'pagination' => array(
-                        'pageSize' => Yii::app()->user->getState('pageSize',50),
-                    ),
-        ));
+			'criteria'=>$criteria,
+		));
 	}
-protected function beforeSave () {
-              if (parent::beforeSave ()) {
-                     if ($this->isNewRecord) {
-                            $this->created_date =  date('Y-m-d h:m:s');
-                     }
-                    
-                     return true;
-              }
-              else
-                     return false;
-       }
+
 <?php if($connectionId!='db'):?>
 	/**
 	 * @return CDbConnection the database connection used for this class

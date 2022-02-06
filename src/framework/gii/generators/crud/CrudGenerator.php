@@ -1,4 +1,6 @@
 <?php
-class CrudGenerator extends CCodeGenerator {
-	public $codeModel = 'gii.generators.crud.CrudCode';
+
+class CrudGenerator extends CCodeGenerator
+{
+	public $codeModel='gii.generators.crud.CrudCode';
 }

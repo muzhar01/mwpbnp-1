@@ -8,6 +8,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
+
 /**
  * CConfiguration represents an array-based configuration.
  *
@@ -16,8 +17,8 @@
  * The configuration data may be obtained from a PHP script. For example,
  * <pre>
  * return array(
- * 'name'=>'My Application',
- * 'defaultController'=>'index',
+ *     'name'=>'My Application',
+ *     'defaultController'=>'index',
  * );
  * </pre>
  * Use the following code to load the above configuration data:
@@ -36,21 +37,21 @@
  * @package system.collections
  * @since 1.0
  */
-class CConfiguration extends CMap {
+class CConfiguration extends CMap
+{
 	/**
 	 * Constructor.
-	 * 
-	 * @param mixed $data
-	 *        	if string, it represents a config file (a PHP script returning the configuration as an array);
-	 *        	If array, it is config data.
+	 * @param mixed $data if string, it represents a config file (a PHP script returning the configuration as an array);
+	 * If array, it is config data.
 	 */
-	public function __construct($data = null) {
-		if (is_string ( $data ))
-			parent::__construct ( require ($data) );
+	public function __construct($data=null)
+	{
+		if(is_string($data))
+			parent::__construct(require($data));
 		else
-			parent::__construct ( $data );
+			parent::__construct($data);
 	}
-	
+
 	/**
 	 * Loads configuration data from a file and merges it with the existing configuration.
 	 *
@@ -58,43 +59,42 @@ class CConfiguration extends CMap {
 	 * <pre>
 	 * return array
 	 * (
-	 * 'name'=>'My Application',
-	 * 'defaultController'=>'index',
+	 *     'name'=>'My Application',
+	 *     'defaultController'=>'index',
 	 * );
 	 * </pre>
 	 *
-	 * @param string $configFile
-	 *        	configuration file path (if using relative path, be aware of what is the current path)
+	 * @param string $configFile configuration file path (if using relative path, be aware of what is the current path)
 	 * @see mergeWith
 	 */
-	public function loadFromFile($configFile) {
-		$data = require ($configFile);
-		if ($this->getCount () > 0)
-			$this->mergeWith ( $data );
+	public function loadFromFile($configFile)
+	{
+		$data=require($configFile);
+		if($this->getCount()>0)
+			$this->mergeWith($data);
 		else
-			$this->copyFrom ( $data );
+			$this->copyFrom($data);
 	}
-	
+
 	/**
 	 * Saves the configuration into a string.
 	 * The string is a valid PHP expression representing the configuration data as an array.
-	 * 
 	 * @return string the string representation of the configuration
 	 */
-	public function saveAsString() {
-		return str_replace ( "\r", '', var_export ( $this->toArray (), true ) );
+	public function saveAsString()
+	{
+		return str_replace("\r",'',var_export($this->toArray(),true));
 	}
-	
+
 	/**
 	 * Applies the configuration to an object.
 	 * Each (key,value) pair in the configuration data is applied
 	 * to the object like: $object->$key=$value.
-	 * 
-	 * @param object $object
-	 *        	object to be applied with this configuration
+	 * @param object $object object to be applied with this configuration
 	 */
-	public function applyTo($object) {
-		foreach ( $this->toArray () as $key => $value )
-			$object->$key = $value;
+	public function applyTo($object)
+	{
+		foreach($this->toArray() as $key=>$value)
+			$object->$key=$value;
 	}
 }

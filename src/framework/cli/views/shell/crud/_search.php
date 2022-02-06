@@ -9,21 +9,17 @@
 ?>
 <div class="wide form">
 
-<?php
-
-echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
+<?php echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
 	'action'=>Yii::app()->createUrl(\$this->route),
 	'method'=>'get',
-)); ?>\n";
-?>
+)); ?>\n"; ?>
 
 <?php foreach($columns as $column): ?>
 <?php
-
-	$field = $this->generateInputField ( $modelClass, $column );
-	if (strpos ( $field, 'password' ) !== false)
+	$field=$this->generateInputField($modelClass,$column);
+	if(strpos($field,'password')!==false)
 		continue;
-	?>
+?>
 	<div class="row">
 		<?php echo "<?php echo \$form->label(\$model,'{$column->name}'); ?>\n"; ?>
 		<?php echo "<?php echo ".$this->generateActiveField($modelClass,$column)."; ?>\n"; ?>
@@ -36,5 +32,4 @@ echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>
 
-</div>
-<!-- search-form -->
+</div><!-- search-form -->

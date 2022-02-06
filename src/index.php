@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_error', 'On');
 $yii = dirname ( __FILE__ ) . '/framework/yii.php';
-$config = dirname ( __FILE__ ) . '/protected/config/main.php';
+
 $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
 //die($server_name);
 // remove the following lines when in production mode
@@ -48,7 +48,6 @@ else {
     }
     else{
         $config_file_name = str_replace('.', '_', $_SERVER['SERVER_NAME']);
-        //$config = dirname(__FILE__) . '/protected/domain/'.$config_file_name;
         $config = dirname(__FILE__) . '/protected/domains/' . $config_file_name . '_main.php';
 
     }

@@ -15,26 +15,25 @@
  * @package system.logging
  * @since 1.1.13
  */
-class CChainedLogFilter extends CComponent implements ILogFilter {
+class CChainedLogFilter extends CComponent implements ILogFilter
+{
 	/**
-	 *
 	 * @var array list of filters to apply to the logs.
-	 *      The value of each array element will be passed to {@link Yii::createComponent} to create
-	 *      a log filter object. As a result, this can be either a string representing the
-	 *      filter class name or an array representing the filter configuration.
-	 *      In general, the log filter classes should implement {@link ILogFilter} interface.
-	 *      Filters will be applied in the order they are defined.
+	 * The value of each array element will be passed to {@link Yii::createComponent} to create
+	 * a log filter object. As a result, this can be either a string representing the
+	 * filter class name or an array representing the filter configuration.
+	 * In general, the log filter classes should implement {@link ILogFilter} interface.
+	 * Filters will be applied in the order they are defined.
 	 */
-	public $filters = array ();
-	
+	public $filters=array();
+
 	/**
 	 * Filters the given log messages by applying all filters configured by {@link filters}.
-	 * 
-	 * @param array $logs
-	 *        	the log messages
+	 * @param array $logs the log messages
 	 */
-	public function filter(&$logs) {
-		foreach ( $this->filters as $filter )
-			Yii::createComponent ( $filter )->filter ( $logs );
+	public function filter(&$logs)
+	{
+		foreach($this->filters as $filter)
+			Yii::createComponent($filter)->filter($logs);
 	}
 }

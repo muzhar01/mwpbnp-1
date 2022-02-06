@@ -8,6 +8,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
+
 /**
  * CChoiceFormat is a helper that chooses an appropriate message based on the specified number value.
  * The candidate messages are given as a string in the following format:
@@ -33,46 +34,49 @@
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.i18n
  */
-class CChoiceFormat {
+class CChoiceFormat
+{
 	/**
 	 * Formats a message according to the specified number value.
-	 * 
-	 * @param string $messages
-	 *        	the candidate messages in the format of 'expr1#message1|expr2#message2|expr3#message3'.
-	 *        	See {@link CChoiceFormat} for more details.
-	 * @param mixed $number
-	 *        	the number value
+	 * @param string $messages the candidate messages in the format of 'expr1#message1|expr2#message2|expr3#message3'.
+	 * See {@link CChoiceFormat} for more details.
+	 * @param mixed $number the number value
 	 * @return string the selected message
 	 */
-	public static function format($messages, $number) {
-		$n = preg_match_all ( '/\s*([^#]*)\s*#([^\|]*)\|/', $messages . '|', $matches );
-		if ($n === 0)
+	public static function format($messages, $number)
+	{
+		$n=preg_match_all('/\s*([^#]*)\s*#([^\|]*)\|/',$messages.'|',$matches);
+		if($n===0)
 			return $messages;
-		for($i = 0; $i < $n; ++ $i) {
-			$expression = $matches [1] [$i];
-			$message = $matches [2] [$i];
-			if ($expression === ( string ) ( int ) $expression) {
-				if ($expression == $number)
+		for($i=0;$i<$n;++$i)
+		{
+			$expression=$matches[1][$i];
+			$message=$matches[2][$i];
+			if($expression===(string)(int)$expression)
+			{
+				if($expression==$number)
 					return $message;
-			} elseif (self::evaluate ( str_replace ( 'n', '$n', $expression ), $number ))
+			}
+			elseif(self::evaluate(str_replace('n','$n',$expression),$number))
 				return $message;
 		}
 		return $message; // return the last choice
 	}
-	
+
 	/**
 	 * Evaluates a PHP expression with the given number value.
-	 * 
-	 * @param string $expression
-	 *        	the PHP expression
-	 * @param mixed $n
-	 *        	the number value
+	 * @param string $expression the PHP expression
+	 * @param mixed $n the number value
 	 * @return boolean the expression result
 	 */
-	protected static function evaluate($expression, $n) {
-		try {
-			return @eval ( "return $expression;" );
-		} catch ( ParseError $e ) {
+	protected static function evaluate($expression,$n)
+	{
+		try
+		{
+			return @eval("return $expression;");
+		}
+		catch (ParseError $e)
+		{
 			return false;
 		}
 	}

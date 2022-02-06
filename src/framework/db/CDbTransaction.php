@@ -18,90 +18,95 @@
  * $transaction=$connection->beginTransaction();
  * try
  * {
- * $connection->createCommand($sql1)->execute();
- * $connection->createCommand($sql2)->execute();
- * //.... other SQL executions
- * $transaction->commit();
+ *    $connection->createCommand($sql1)->execute();
+ *    $connection->createCommand($sql2)->execute();
+ *    //.... other SQL executions
+ *    $transaction->commit();
  * }
  * catch(Exception $e)
  * {
- * $transaction->rollback();
+ *    $transaction->rollback();
  * }
  * </pre>
  *
  * @property CDbConnection $connection The DB connection for this transaction.
  * @property boolean $active Whether this transaction is active.
- *          
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.db
  * @since 1.0
  */
-class CDbTransaction extends CComponent {
-	private $_connection = null;
+class CDbTransaction extends CComponent
+{
+	private $_connection=null;
 	private $_active;
-	
+
 	/**
 	 * Constructor.
-	 * 
-	 * @param CDbConnection $connection
-	 *        	the connection associated with this transaction
+	 * @param CDbConnection $connection the connection associated with this transaction
 	 * @see CDbConnection::beginTransaction
 	 */
-	public function __construct(CDbConnection $connection) {
-		$this->_connection = $connection;
-		$this->_active = true;
+	public function __construct(CDbConnection $connection)
+	{
+		$this->_connection=$connection;
+		$this->_active=true;
 	}
-	
+
 	/**
 	 * Commits a transaction.
-	 * 
 	 * @throws CException if the transaction or the DB connection is not active.
 	 */
-	public function commit() {
-		if ($this->_active && $this->_connection->getActive ()) {
-			Yii::trace ( 'Committing transaction', 'system.db.CDbTransaction' );
-			$this->_connection->getPdoInstance ()->commit ();
-			$this->_active = false;
-		} else
-			throw new CDbException ( Yii::t ( 'yii', 'CDbTransaction is inactive and cannot perform commit or roll back operations.' ) );
+	public function commit()
+	{
+		if($this->_active && $this->_connection->getActive())
+		{
+			Yii::trace('Committing transaction','system.db.CDbTransaction');
+			if($this->_connection->getPdoInstance()->inTransaction())
+				$this->_connection->getPdoInstance()->commit();
+			$this->_active=false;
+		}
+		else
+			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
 	}
-	
+
 	/**
 	 * Rolls back a transaction.
-	 * 
 	 * @throws CException if the transaction or the DB connection is not active.
 	 */
-	public function rollback() {
-		if ($this->_active && $this->_connection->getActive ()) {
-			Yii::trace ( 'Rolling back transaction', 'system.db.CDbTransaction' );
-			$this->_connection->getPdoInstance ()->rollBack ();
-			$this->_active = false;
-		} else
-			throw new CDbException ( Yii::t ( 'yii', 'CDbTransaction is inactive and cannot perform commit or roll back operations.' ) );
+	public function rollback()
+	{
+		if($this->_active && $this->_connection->getActive())
+		{
+			Yii::trace('Rolling back transaction','system.db.CDbTransaction');
+			if($this->_connection->getPdoInstance()->inTransaction())
+				$this->_connection->getPdoInstance()->rollBack();
+			$this->_active=false;
+		}
+		else
+			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
 	}
-	
+
 	/**
-	 *
 	 * @return CDbConnection the DB connection for this transaction
 	 */
-	public function getConnection() {
+	public function getConnection()
+	{
 		return $this->_connection;
 	}
-	
+
 	/**
-	 *
 	 * @return boolean whether this transaction is active
 	 */
-	public function getActive() {
+	public function getActive()
+	{
 		return $this->_active;
 	}
-	
+
 	/**
-	 *
-	 * @param boolean $value
-	 *        	whether this transaction is active
+	 * @param boolean $value whether this transaction is active
 	 */
-	protected function setActive($value) {
-		$this->_active = $value;
+	protected function setActive($value)
+	{
+		$this->_active=$value;
 	}
 }

@@ -6,7 +6,6 @@
 .grid-view
 {
 	padding: 15px 0;
-        clear: both;
 }
 
 .grid-view table.items
@@ -87,15 +86,13 @@
 
 .grid-view .button-column
 {
-	text-align: left;
-	width: 80px;
-	white-space: nowrap;
+	text-align: center;
+	width: 60px;
 }
 
 .grid-view .button-column img
 {
 	border: 0;
-        margin: 0px 5px;
 }
 
 .grid-view .checkbox-column

@@ -21,30 +21,32 @@
  * @package system.web.widgets
  * @since 1.0
  */
-class CClipWidget extends CWidget {
+class CClipWidget extends CWidget
+{
 	/**
-	 *
 	 * @var boolean whether to render the clip content in place. Defaults to false,
-	 *      meaning the captured clip will not be displayed.
+	 * meaning the captured clip will not be displayed.
 	 */
-	public $renderClip = false;
-	
+	public $renderClip=false;
+
 	/**
 	 * Starts recording a clip.
 	 */
-	public function init() {
-		ob_start ();
-		ob_implicit_flush ( false );
+	public function init()
+	{
+		ob_start();
+		ob_implicit_flush(false);
 	}
-	
+
 	/**
 	 * Ends recording a clip.
 	 * This method stops output buffering and saves the rendering result as a named clip in the controller.
 	 */
-	public function run() {
-		$clip = ob_get_clean ();
-		if ($this->renderClip)
+	public function run()
+	{
+		$clip=ob_get_clean();
+		if($this->renderClip)
 			echo $clip;
-		$this->getController ()->getClips ()->add ( $this->getId (), $clip );
+		$this->getController()->getClips()->add($this->getId(),$clip);
 	}
 }

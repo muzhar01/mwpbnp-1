@@ -7,7 +7,8 @@
  * @copyright 2008-2013 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-Yii::import ( 'zii.widgets.jui.CJuiWidget' );
+
+Yii::import('zii.widgets.jui.CJuiWidget');
 
 /**
  * CJuiDraggable displays a draggable widget.
@@ -18,12 +19,12 @@ Yii::import ( 'zii.widgets.jui.CJuiWidget' );
  * To use this widget, you may insert the following code in a view:
  * <pre>
  * $this->beginWidget('zii.widgets.jui.CJuiDraggable',array(
- * // additional javascript options for the draggable plugin
- * 'options'=>array(
- * 'scope'=>'myScope',
- * ),
+ *     // additional javascript options for the draggable plugin
+ *     'options'=>array(
+ *         'scope'=>'myScope',
+ *     ),
  * ));
- * echo 'Your draggable content here';
+ *     echo 'Your draggable content here';
  *
  * $this->endWidget();
  *
@@ -40,36 +41,38 @@ Yii::import ( 'zii.widgets.jui.CJuiWidget' );
  * @package zii.widgets.jui
  * @since 1.1
  */
-class CJuiDraggable extends CJuiWidget {
+class CJuiDraggable extends CJuiWidget
+{
 	/**
-	 *
 	 * @var string the name of the Draggable element. Defaults to 'div'.
 	 */
-	public $tagName = 'div';
-	
+	public $tagName='div';
+
 	/**
 	 * Renders the open tag of the draggable element.
 	 * This method also registers the necessary javascript code.
 	 */
-	public function init() {
-		parent::init ();
-		
-		$id = $this->getId ();
-		if (isset ( $this->htmlOptions ['id'] ))
-			$id = $this->htmlOptions ['id'];
+	public function init()
+	{
+		parent::init();
+
+		$id=$this->getId();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
 		else
-			$this->htmlOptions ['id'] = $id;
-		
-		$options = CJavaScript::encode ( $this->options );
-		Yii::app ()->getClientScript ()->registerScript ( __CLASS__ . '#' . $id, "jQuery('#{$id}').draggable($options);" );
-		
-		echo CHtml::openTag ( $this->tagName, $this->htmlOptions ) . "\n";
+			$this->htmlOptions['id']=$id;
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').draggable($options);");
+
+		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
 	}
-	
+
 	/**
 	 * Renders the close tag of the draggable element.
 	 */
-	public function run() {
-		echo CHtml::closeTag ( $this->tagName );
+	public function run()
+	{
+		echo CHtml::closeTag($this->tagName);
 	}
 }
