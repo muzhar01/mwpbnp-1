@@ -64,7 +64,7 @@ class Members extends CActiveRecord
 			array('company_no', 'length', 'max'=>20),
 			array('fname, lname, username, sales_officer,verify_email, verify_cnic, verify_company_ntn_no, verify_company_gst_no,  zone, area, address, office_geo_lng, office_geo_lat, shipping_geo_lng, shipping_geo_lat, city, zipcode, phone_office, email', 'length', 'max'=>100),
 			array('cnic, fax_no, phone_res,company_name,notification_language', 'length', 'max'=>50),
-			array('email,sales_officer,  zone, area, cellular, fname, lname', 'required' ),
+			array('email,sales_officer,  zone, area, fname, lname', 'required' ),
 			
 			array('company_ntn_no, company_gst_no', 'length', 'max'=>25),
 			array('job_title', 'length', 'max'=>60),

@@ -58,12 +58,12 @@ class DefaultController extends Controller
 
             // Uncomment the following line if AJAX validation is needed
             $this->performAjaxValidation($model);
-
+            $model->template='basicmwpbnp';
             if(isset($_POST['MwpDomains']))
             {
                 $model->attributes=$_POST['MwpDomains'];
                 $model->database_name = str_replace('http://','',$model->domain_name);
-                $model->user_name=  $model->database_name=str_replace('.','_',$model->database_name);
+                //$model->user_name=  $model->database_name=str_replace('.','_',$model->database_name);
                 $model->password= $this->randomPassword();
                 $date = date("Y-m-d");
                 $date = date('Y-m-d', strtotime($date. ' + '.$model->trial_period.' days'));

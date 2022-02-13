@@ -39,7 +39,7 @@ class MwpDomains extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('domain_name, status, customer_id, template ', 'required'),
+			array('domain_name, status, customer_id,user_name, template ', 'required'),
             array('domain_name','url'),
             array('domain_name,domain_name,user_name,database_name','unique'),
 			array('id, status, customer_id', 'numerical', 'integerOnly'=>true),

@@ -22,6 +22,12 @@
                 <span class="text-info">URL: http://example.mwpbnp.com</span>
                 <?php echo $form->error($model,'domain_name'); ?>
             </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'user_name'); ?>
+                <?php echo $form->textField($model,'user_name',array('size'=>14,'maxlength'=>14,'class'=>'form-control')); ?>
+                <span class="text-info">Less then 14 Character Unique</span>
+                <?php echo $form->error($model,'user_name'); ?>
+            </div>
             <div class="row">
                 <div class="col-lg-6">
                      <div class="form-group">
