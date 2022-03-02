@@ -103,7 +103,7 @@ class Settings extends CActiveRecord
 
     protected function beforeSave() {
         if (parent::beforeSave()) {
-            if (!$this->isNewRecord && empty($this->image)) {
+            if ($this->isNewRecord && empty($this->image)) {
                 $this->logo = $this->_oldImage;
             }
 

@@ -30,7 +30,11 @@ class OrdersController extends Controller {
         ));
         }
         public function actionDetails($id){
-        $model = $this->loadModel($id);   
+        $model = $this->loadModel($id);
+        if($model->member_id!=Yii::app()->user->id) {
+            throw new CHttpException(403, 'The requested page does not exist.');
+            Yii:app()->end();
+        }
         $order = new QuotesOrder('search');
         $order->unsetAttributes();  // clear any default values
         if (isset($_GET['QuotesOrder']))

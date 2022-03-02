@@ -992,6 +992,20 @@ CREATE TABLE `sms_content` (
    `created_by` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `sms_content` (`id`, `status_id`, `sms_content`, `email_content`, `sms_urdu_content`, `email_urdu_content`, `published`, `created_date`, `created_by`) VALUES
+(2, 3, 'Thank you for Signup with mwpbnp.com, your signup details has been sent on your registered email address.', '<p>Dear {{first_name}} {{last_name}},<br /> <br /> Thank you for visiting <a target=\"_blank\">mwpbnp.com</a> and registering with MWP, an exclusive sales and service center of MWP Business &amp; Presentations Pvt Ltd. an Iron and Steel Products Stockiest and Suppliers.<br /> <br /> &nbsp;As a <a target=\"_blank\">mwpbnp.com</a> registered user, you may:<br /> <br /> -&nbsp; View Online Current Market Rates of vide range of Iron and Steel products<br /> -&nbsp; View Archived Market Rates of vide range of Iron and Steel products of any specific day<br /> -&nbsp; Inquiry/ Quote/ Order online and deposit payment online through 12 different methods of payment<br /> - Obtain quote and order status updates.<br /> - View your online purchasing history.<br /> - Easy Processing<br /> - Guaranteed Weight on Computerized Digital Weighing Scales<br /> - Guaranteed Gauge as per standards<br /> - Customer Satisfaction is our aim<br /> <br /> And of course, you have access to all the other information and functionality available on <a target=\"_blank\">mwpbnp.com</a>.<br /> <br /> If you would like to make changes to your user profile information, including changing your password, selecting your site preferences, and adding your billing and shipping addresses, log into the site and select the MY ACCOUNT link located in the main navigation.<br /> <br /> Visit MWPBNP.com frequently for the latest product and services information.<br /> <br /> Please {{verify_link}} to confirm/verify your account.</p>\r\n<p>MWPBNP.Com Webmaster</p>', 'ببببببببببب', 'ککککککک', 1, '2018-08-11 01:08:17', NULL),
+(3, 4, 'Thank you for your email verification, this will be your registered email address.', '<p>Thank you for your email verification, this will be your registered email address and will be used for all future correspondence.</p>', '', '', 1, '2018-08-11 11:08:44', NULL),
+(4, 5, 'Thank you for your cell number verification, this will be your registered cell number with us.', '<p>Thank you for your cell number verification, this will be your registered cell number with us.</p>', 'ححح', 'ححح', 1, '2018-08-11 11:08:25', NULL),
+(5, 6, 'Your Quotation/Order no. {{quote_id}} dated {{date}} has been created, and in process.', '<p>Your Quotation/Order no. {{quote_id}} dated {{date}} has been created, and in process. Let us know if you want to make any changes. Please proceed to make payment via any of available payment methods, and send a copy to us.</p>', '', '', 1, '2018-08-11 11:08:18', NULL),
+(6, 8, 'Your Quotation/Order no. {{quote_id}} dated {{date}} has been created, and now processing for dispatch. Please make Payment of Rs. {{amount}}', '<p>Your Quotation/Order no. {{quote_id}} dated {{date}} has been created, and now processing for dispatch. Let us know if you want to make any changes. Please proceed to make payment of Rs. {{amount}} via any of available payment methods, and send a copy to us.</p>', '', '', 1, '2018-08-11 11:08:12', NULL),
+(7, 9, 'Your Payment of Rs. {{amount}}  dated {{date}} has been received, Your remaining balance is Rs. {{balance}}. Thank you for your payment.', '<p>Your Payment of Rs. {{amount}} dated {{date}} has been received, Your remaining balance is Rs. {{balance}}. Thank you for your payment.</p>', '', '', 1, '2018-08-11 11:08:31', NULL),
+(8, 10, 'Your Quotation/Order no. {{quote_id}} dated {{date}} is confirmed and soon will be dispatched. Please wait for a call from our delivery department.', '<p>Your Quotation/Order no.&nbsp;{{quote_id}} dated {{date}} is confirmed and soon will be dispatched. Please wait for a call from our delivery department.</p>', '', '', 1, '2018-08-11 11:08:06', NULL),
+(9, 11, 'Your Quotation/Order no. {{quote_id}} dated {{date}} is ready for dispatch. Please wait for a call from our delivery department.', '<p>Your Quotation/Order no. {{quote_id}} dated {{date}} is ready for dispatch. Please wait for a call from our delivery department.</p>', '', '', 1, '2018-08-11 11:08:32', NULL),
+(10, 12, 'Your Order no. {{quote_id}} dated {{date}} has been dispatched. Please take care of receiving your goods and Sign Delivery Note.', '<p>Your Order no. {{quote_id}} dated {{date}} has been dispatched. Please take care of receiving your goods and Sign Delivery Note.</p>', '', '', 1, '2018-08-11 11:08:07', NULL),
+(11, 13, 'Your Order no. {{quote_id}} dated {{date}} has been delivered. Thank you for your Order.', '<p>Your Order no. {{quote_id}} dated {{date}} has been delivered. Thank you for your Order.</p>', '', '', 1, '2018-08-11 11:08:07', NULL),
+(12, 14, 'Your Order no. {{quote_id}} dated {{date}} has been cancelled and refunded. Refund Policy applied.', '<p>Your Order no. {{quote_id}} dated {{date}} has been cancelled and refunded. Refund Policy applied.</p>', '', '', 1, '2018-08-11 11:08:00', NULL),
+(13, 15, 'Your Order no. {{quote_id}} dated {{date}} has been CLOSED in the system', '<p>Your Order no. {{quote_id}} dated {{date}} has been CLOSED in the system.</p>', '', '', 1, '2018-08-11 11:08:36', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1006,6 +1020,20 @@ CREATE TABLE `sms_trigger_status` (
       `created_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+INSERT INTO `sms_trigger_status` (`id`, `title`, `tag`, `published`, `created_date`) VALUES
+(3, 'Member Signup', 'MEMBER_SIGNUP', 1, '2018-05-19 11:05:47'),
+(4, 'Email Verified', 'EMAIL_VERIFIED', 1, '2018-05-19 11:05:56'),
+(5, 'Cell Number Verified', 'CELL_NUMBER_VERIFIED', 1, '2018-05-19 11:05:42'),
+(6, 'Order Creation', 'ORDER_CREATION', 1, '2018-05-19 11:05:33'),
+(7, 'Order inprocess', 'ORDER_INPROCESS', 1, '2018-05-19 11:05:43'),
+(8, 'Order Call Verified', 'ORDER_CALL_VERIFIED', 1, '2018-05-19 11:05:09'),
+(9, 'Order Payment Verified', 'ORDER_PAYMENT_VERIFIED', 1, '2018-05-19 11:05:29'),
+(10, 'Order Confirmed', 'ORDER_CONFIRMED', 1, '2018-05-19 11:05:33'),
+(11, 'Order Ready for Delivery', 'ORDER_READY_FOR_DELIVERY', 1, '2018-05-19 11:05:47'),
+(12, 'Order Dispatched', 'ORDER_DISPATCHED', 1, '2018-05-19 11:05:09'),
+(13, 'Order Delivered', 'ORDER_DELIVERED', 1, '2018-05-19 11:05:25'),
+(14, 'Order Refund', 'ORDER_REFUND', 1, '2018-05-19 11:05:46'),
+(15, 'Order Close', 'ORDER_CLOSE', 1, '2018-05-19 11:05:54');
 -- --------------------------------------------------------
 
 --
@@ -1966,7 +1994,7 @@ ALTER TABLE `product_category` ADD CONSTRAINT `product_category_ibfk_1` FOREIGN 
 
 ALTER TABLE `quotes_order`
     ADD CONSTRAINT `quotes_order_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-    ADD CONSTRAINT `quotes_order_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `products_sizes_listings` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+    ADD CONSTRAINT `quotes_order_ibfk_2` FOREIGN KEY (`size_id`) REFERENCES `product_size` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
     ADD CONSTRAINT `quotes_order_ibfk_3` FOREIGN KEY (`thickness_id`) REFERENCES `product_thickness` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
     ADD CONSTRAINT `quotes_order_ibfk_4` FOREIGN KEY (`weight`) REFERENCES `product_weight_listings` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 

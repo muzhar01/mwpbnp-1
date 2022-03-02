@@ -148,7 +148,7 @@ $this->breadcrumbs=array(
                                 <span class="info-box-text">Balance Remaining</span>
                                 <span class="info-box-number">
                                     <?php $response = SmsGateway::getBalance();
-                                     echo $response->results[0]->balance .' '. $response->results[0]->currency;
+                                     echo $response->results[0]->balance;
                                     ?>
                                 </span>
                                 <div class="progress">
