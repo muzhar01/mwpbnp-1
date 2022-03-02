@@ -137,8 +137,8 @@ class MwpDomains extends CActiveRecord
        {
            if(parent::beforeSave ()){
                if($this->isNewRecord) {
-                   $this->CreateDatabase();
-                   $this->SQLDump();
+                  // $this->CreateDatabase();
+                   //$this->SQLDump();
                    $this->CreateDirectories();
                    $this->CreateDomainConfig();
                }
@@ -173,12 +173,12 @@ class MwpDomains extends CActiveRecord
     //  STEP 1.  CREATE DATABASE
     protected function CreateDatabase() {
         $DATABASE_SERVER_IP ='localhost';
-        //$SQL="CREATE USER '$this->user_name'@'$DATABASE_SERVER_IP' IDENTIFIED WITH mysql_native_password BY '$this->password'; ";
-        //Yii::app()->db->createCommand($SQL)->execute();
+        $SQL="CREATE USER '$this->user_name'@'$DATABASE_SERVER_IP' IDENTIFIED WITH mysql_native_password BY '$this->password'; ";
+        Yii::app()->db->createCommand($SQL)->execute();
         $SQL="CREATE DATABASE `" . $this->database_name . "`;";
         Yii::app()->db->createCommand($SQL)->execute();
-        //$SQL="GRANT SELECT, INSERT, UPDATE, DELETE ON `$this->database_name`.* TO '$this->user_name'@'$DATABASE_SERVER_IP'; ALTER USER '$this->user_name'@'$DATABASE_SERVER_IP; FLUSH PRIVILEGES;";
-        //Yii::app()->db->createCommand($SQL)->execute();
+        $SQL="GRANT SELECT, INSERT, UPDATE, DELETE ON `$this->database_name`.* TO '$this->user_name'@'$DATABASE_SERVER_IP'; ALTER USER '$this->user_name'@'$DATABASE_SERVER_IP; FLUSH PRIVILEGES;";
+        Yii::app()->db->createCommand($SQL)->execute();
         return "<br /><i class='fa fa-check-square'></i> 2. Database is completed successfully";
     }
     //  STEP 2.  CREATE DATABASE
