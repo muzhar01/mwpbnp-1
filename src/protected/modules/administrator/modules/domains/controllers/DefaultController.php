@@ -83,10 +83,10 @@ class DefaultController extends Controller
     }
 
     private  function randomPassword() {
-        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+{}|><?~';
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
         $pass = array(); //remember to declare $pass as an array
         $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-        for ($i = 0; $i < 14; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $n = rand(0, $alphaLength);
             $pass[] = $alphabet[$n];
         }
