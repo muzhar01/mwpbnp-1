@@ -12,7 +12,9 @@ $pageSize = Yii::app()->user->getState('pageSize', 50);
             <h1 class="box-title">Admin Users</h1>
 
             <?php
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add'))
+            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')
+                     && CheckPackage::Validate('users',Members::model()->count())
+            )
                 echo CHtml::link('<i class="fa fa-user"></i> Create Admin User', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
             ?>
 
@@ -35,7 +37,6 @@ $pageSize = Yii::app()->user->getState('pageSize', 50);
                             'id',
                             'name',
                             'username',
-                            //'email_address',
                             array('header' => 'Role', 'type' => 'Raw', 'name' => 'role_id', 'value' => '$data->role->name', 'filter' => ''),
                             array('header' => 'Report Levels', 'type' => 'Raw', 'name' => 'levels', 'value' => [$this,'gridTestData'], 'filter' => ''),
                             array('header' => 'Status', 'type' => 'Raw', 'name' => 'status', 'value' => '($data->status)? "Active":"<span style=\"color:#f00\">Suspend</span>"'),

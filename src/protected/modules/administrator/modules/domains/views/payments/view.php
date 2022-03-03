@@ -18,15 +18,17 @@ $this->breadcrumbs=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'payment_type',
+		array('type' => 'Raw', 'name' => 'payment_type', 'value' =>$model->getPaymentType()),
 		'transection_id',
 		'payment_date',
-		'created_by',
-		'bank_info',
+		array('type' => 'Raw', 'name' => 'created_by', 'value' =>$model->created->name),
+		array('type' => 'Raw', 'name' => 'bank_info', 'value' =>$model->bank->name),
 		'notes',
-		'scan_image',
-		'domain_id',
-		'customer_id',
+        array('type' => 'Raw', 'name' => 'payment_type', 'value' =>"<img src='/images/payments/$model->scan_image'>"),
+		array('type' => 'Raw', 'name' => 'domain_id', 'value' =>$model->domain->domain_name),
+        array('type' => 'Raw', 'name' => 'customer_id', 'value' =>$model->customer->full_name),
+        array('type' => 'Raw', 'name' => 'payment', 'value' =>$model->payment ." Months"),
+
 	),
 )); ?>
         </div>

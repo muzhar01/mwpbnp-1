@@ -82,7 +82,7 @@ class DefaultController extends Controller {
        			if (!empty($session['referal_url']))
 					$this->redirect($session['referal_url']);
 					else
-                                         $this->redirect($this->baseUrl . '');
+                 $this->redirect($this->baseUrl . '');
 				$session->close();
 			}
 		}

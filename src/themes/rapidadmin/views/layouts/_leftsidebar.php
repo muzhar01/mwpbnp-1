@@ -1,4 +1,5 @@
-<?php $active = ''; $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']); ?>
+<?php $active = '';
+$server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']); ?>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -31,6 +32,7 @@
                      <li   class=" <?php  echo (Yii::app ()->controller->id == "user")  ?  "active" : '' ; ?>">
                         <a   href="/administrator/adminuser/user"><i class="fa fa-user-md"></i> Users</a>
                     </li>
+                    <?php if(CheckPackage::CheckPackage()) { ?>
                      <li   class=" <?php  echo (Yii::app ()->controller->id == "role")  ?  "active" : '' ; ?>">
                         <a href="/administrator/adminuser/role"><i class="fa fa-compass"></i> Roles</a>
                     </li>
@@ -40,6 +42,7 @@
                    <li   class=" <?php  echo (Yii::app ()->controller->id == "access")  ?  "active" : '' ; ?>">
                         <a  href="/administrator/adminuser/access"><i class="fa fa-gavel"></i> Access</a>
                     </li>
+                    <?php }?>
                 </ul>
             </li>
             <?php }?>
@@ -196,104 +199,7 @@
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('9')){ ?>
             <li class=" <?php  echo (Yii::app ()->controller->module->id ==  "administrator/reports")  ?  "active" : '' ; ?> ">
                <a   href="/administrator/reports"><i class="fa fa-bar-chart-o"></i>Reports</a>
-               <?php /*
-                <ul class="<?php  echo (Yii::app ()->controller->module->id ==  "administrator/reports")  ?  "active" : '' ; ?>  treeview-menu">
 
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('41')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default" && Yii::app()->controller->action->id=='pricelist')  ?  "active" : '' ; ?>">
-                       <a href="/administrator/reports/default/pricelist"><i class="fa fa-compass"></i> Current Price</a>
-                    </li>
-                    <?php } if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('42')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default" && Yii::app()->controller->action->id=='inventorylist')  ?  "active" : '' ; ?>">
-                       <a href="/administrator/reports/default/inventorylist"><i class="fa fa-compass"></i> Current Inventory</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('28')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='customerlist')  ?  "active" : '' ; ?>">
-                        <a href="/administrator/reports/default/customerlist"><i class="fa fa-user" aria-hidden="true"></i>Customer List</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('29')){ ?>
-                     <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='customerpayments')  ?  "active" : '' ; ?>">
-                        <a href="/administrator/reports/default/customerpayments"><i class="fa fa-user" aria-hidden="true"></i>Customer Payments</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('30')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='customerdues')  ?  "active" : '' ; ?>">
-                        <a href="/administrator/reports/default/customerdues"><i class="fa fa-user" aria-hidden="true"></i>Receivable</a>
-                    </li><?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('31')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='ledger')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/ledger"><i class="fa fa-file"></i> Vehicle Ledger</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('27')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='paymentmethods')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/paymentmethods"><i class="fa fa-file"></i> Payment Methods</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('32')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='mobileandemaillist')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/mobileandemaillist"><i class="fa fa-file"></i> Mobile & Email List</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('29')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='customerpayments')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/customerpayments"><i class="fa fa-file"></i> Company Payments</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('33')){ ?>
-
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='vendorpaymentlist')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/vendorpaymentlist"><i class="fa fa-file"></i> Vendor Payments</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('34')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='quotesconfirmed')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/quotesconfirmed"><i class="fa fa-file"></i> Quotes Confirmed</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('36')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='ordersinline')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/ordersinline"><i class="fa fa-file"></i> Orders Inline</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('37')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='orderfordelivery')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/orderfordelivery"><i class="fa fa-file"></i> Orders 4 Delivery</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('38')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='ledgerreports')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/salesforce"><i class="fa fa-file"></i> Sales Force List</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('39')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='ledgerreports')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/marketingsheet"><i class="fa fa-file"></i> Marketing Data Sheet</a>
-                    </li>
-                    <?php } ?>
-
-                    <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('40')){ ?>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "default"&& Yii::app()->controller->action->id=='ledgerreports')  ?  "active" : '' ; ?>">
-                        <a   href="/administrator/reports/default/payables"><i class="fa fa-file"></i> Payables</a>
-                    </li>
-                    <?php } ?>
-               </ul>
-                */?>
                 </li>
            <?php } ?>
             <?php if(AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('10')) { ?>

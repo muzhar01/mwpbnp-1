@@ -45,6 +45,10 @@ class Controller extends CController
 	
 	public $breadcrumbs=array();
 
+    public $webpages,$videos,$package_email,$package_user='';
+
+
+
     public function  init() {
         $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
         if($server_name==Yii::app()->params['main_domain']) {
@@ -56,4 +60,5 @@ class Controller extends CController
         }
 
     }
+
 }

@@ -18,13 +18,13 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <?php echo $form->labelEx($model,'domain_name'); ?>
-                <?php echo $form->textField($model,'domain_name',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+                <?php echo $form->textField($model,'domain_name',array('size'=>60,'maxlength'=>100,'class'=>'form-control','disabled'=>(!$model->isNewRecord)? 'disabled':'' )); ?>
                 <span class="text-info">URL: http://example.mwpbnp.com</span>
                 <?php echo $form->error($model,'domain_name'); ?>
             </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'user_name'); ?>
-                <?php echo $form->textField($model,'user_name',array('size'=>14,'maxlength'=>14,'class'=>'form-control')); ?>
+                <?php echo $form->textField($model,'user_name',array('size'=>14,'maxlength'=>14,'class'=>'form-control','disabled'=>(!$model->isNewRecord)? 'disabled':'')); ?>
                 <span class="text-info">Less then 14 Character Unique</span>
                 <?php echo $form->error($model,'user_name'); ?>
             </div>
@@ -36,7 +36,7 @@
                             <div class="input-group-addon">
                                 <i class="fa fa-calendar"></i>
                             </div>
-                           <?php echo $form->textField($model,'created_at',array('class'=>'form-control','id'=>'datepicker')); ?>
+                           <?php echo $form->textField($model,'created_at',array('class'=>'form-control','id'=>'datepicker','disabled'=>(!$model->isNewRecord)? 'disabled':'')); ?>
                         </div>
                         <?php echo $form->error($model,'created_at'); ?>
                     </div>
@@ -105,15 +105,24 @@
                 <?php echo $form->labelEx($model,'customer_id'); ?>
                 <?php
                 $listing=CHtml::listData(MwpCustomer::model()->findAll(), 'id', 'full_name');
-                echo $form->dropDownList($model, 'customer_id', $listing, array('class' => 'form-control', 'empty' => 'Select Customer',
+                echo $form->dropDownList($model, 'customer_id', $listing, array('class' => 'form-control', 'empty' => 'Select Customer','disabled'=>(!$model->isNewRecord)? 'disabled':'',
                 ));
                 ?>
                 <?php echo $form->error($model,'customer_id'); ?>
             </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'template'); ?>
-                <?php echo $form->textField($model,'template',array('size'=>60,'maxlength'=>100,'class'=>'form-control')); ?>
+                <?php echo $form->textField($model,'template',array('size'=>60,'maxlength'=>100,'class'=>'form-control','disabled'=>(!$model->isNewRecord)? 'disabled':'')); ?>
                 <?php echo $form->error($model,'template'); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'package_id'); ?>
+                <?php
+                $listing=CHtml::listData(Packages::model()->findAll(), 'id', 'name');
+                echo $form->dropDownList($model, 'package_id', $listing, array('class' => 'form-control', 'empty' => 'Select Package',
+                ));
+                ?>
+                <?php echo $form->error($model,'package_id'); ?>
             </div>
         </div>
     </div>

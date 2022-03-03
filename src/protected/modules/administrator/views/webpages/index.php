@@ -23,7 +23,10 @@ Yii::app()->clientScript->registerScript('search', "
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Manage Webpages</h1>
-            <?php            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add'))
+            <?php
+            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')
+                && CheckPackage::Validate('webpages',Webpages::model()->count())
+            )
                 echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Create Webpages' , $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
             ?>        </div>
         <div class="box-body">

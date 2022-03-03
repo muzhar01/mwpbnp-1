@@ -56,7 +56,7 @@
                             <p>Total Quotes</p>
                         </div>
                         <div class="icon"><i class="fa fa-pie-chart"></i></div>
-                        <a href="/administrator/products/orders" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a></div>
+                        <a href="/administrator/orders" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a></div>
                 </div>
                 <!-- ./col -->
             </div></div>

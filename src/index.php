@@ -46,7 +46,16 @@ else {
              </div>";
         exit();
     }
+    else if(strtotime($model['expiry_date']) < strtotime(date('Y-m-d'))){
+        echo "<div style='color: red;font-family: tahoma;font-weight: bold;margin: 20% auto;text-align: center;'>
+                Sorry! Your domain is expired. Please contact to site owner. 
+                <a href='https://www.mwpbnp.com/contact-us'>Click Here</a> to contact site Administrator Now.
+             </div>";
+        exit();
+    }
     else{
+        $sql = "select * from packages where id =" .$model['package_id'];
+        $package = $maincon->createCommand($sql)->queryRow();
         $config_file_name = str_replace('.', '_', $_SERVER['SERVER_NAME']);
         $config = dirname(__FILE__) . '/protected/domains/' . $config_file_name . '_main.php';
 

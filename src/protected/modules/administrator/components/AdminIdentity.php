@@ -16,6 +16,7 @@ class AdminIdentity extends CUserIdentity {
      */
     public function authenticate() {
         $user = AdminUser::model()->find('LOWER(username)=?', array(strtolower($this->username)));
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
         if ($user === null)
             return $this->errorCode = self::ERROR_USERNAME_INVALID;
         else if (!$user->encrypt($this->password))
@@ -31,6 +32,12 @@ class AdminIdentity extends CUserIdentity {
             $this->setState('role', $user->getRole());
             $this->setState('name', $user->name);
             $this->setState('type', 'admin');
+            if($server_name==Yii::app()->params['main_domain']) {
+                $this->setState('package', 10);
+            }
+            else{
+                $this->setState('package', $GLOBALS['package']['id']);
+            }
             $user->save(false);
             $this->errorCode = self::ERROR_NONE;
             return $this->errorCode == self::ERROR_NONE;

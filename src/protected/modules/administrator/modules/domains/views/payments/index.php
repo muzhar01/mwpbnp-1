@@ -39,12 +39,12 @@ Yii::app()->clientScript->registerScript('search', "
             'pagerCssClass' => 'box-footer clearfix',
             'columns'=>array(
             		'id',
-                     array('type' => 'Raw', 'name' => 'customer_id', 'value' => '$data->paymenttype'),
+                    array('type' => 'Raw', 'name' => 'domain_id', 'value' => '$data->domain->domain_name'),
                     'payment_date',
-                     array('type' => 'Raw', 'name' => 'created_by', 'value' => '$data->created->name'),
-                    'bank_info',
-                    array('type' => 'Raw', 'name' => 'customer_id', 'value' => '$data->customer->full_name'),
+                    array('type' => 'Raw', 'name' => 'created_by', 'value' => '$data->created->name'),
+                    array('type' => 'Raw', 'name' => 'bank_info', 'value' => '$data->bank->name'),
                     array('type' => 'Raw', 'name' => 'transection_status', 'value' => '$data->TransectionStatus'),
+                    array('type' => 'Raw', 'name' => 'payment', 'value' => '$data->payment." months"'),
                     array(
                         'class' => 'CButtonColumn',
                         'header' => "Show Records " . CHtml::dropDownList('pageSize', $pageSize, array(20 => 20, 50 => 50, 100 => 100, 200 => 200), array(

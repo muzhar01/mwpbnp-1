@@ -44,17 +44,15 @@ Yii::app()->clientScript->registerScript('search', "
                     'domain_name',
                     'user_name',
                     'password',
-                    'created_at',
+                    array('type' => 'Raw', 'name' => 'expiry_date', 'value' => '$data->getexpirydate()'),
                     array('type' => 'Raw', 'name' => 'status', 'value' => '($data->status)? "<span style=\"color:#0F9E5Ef0;font-weight: bold\">Active</span>":"<span style=\"color:#f00\">Block</span>"'),
                     array('type' => 'Raw', 'name' => 'customer_id', 'value' => '$data->customer->full_name'),
-                    'template',
-
                     array(
                         'class' => 'CButtonColumn',
                         'header' => "Show Records " . CHtml::dropDownList('pageSize', $pageSize, array(20 => 20, 50 => 50, 100 => 100, 200 => 200), array(
                             'onchange' => "$.fn.yiiGridView.update('mwp-domains-grid',{ data:{pageSize: $(this).val() }})",
                         )),
-                        'template' => '{published}{delete}',
+                        'template' => '{published} {update} {delete}',
                         'buttons' => array(
                             'published' => array(
                                 'label' => 'Published',

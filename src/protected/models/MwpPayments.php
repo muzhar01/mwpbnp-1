@@ -20,6 +20,7 @@ class MwpPayments extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    private $_oldImage;
 	public function tableName()
 	{
 		return 'mwp_payments';
@@ -33,13 +34,13 @@ class MwpPayments extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-            array('payment_type, created_by,transection_id,scan_image,bank_info,notes,payment_date, domain_id, customer_id,transection_status', 'required'),
+            array('payment_type,payment, created_by,transection_id,scan_image,bank_info,notes,payment_date, domain_id, customer_id,transection_status', 'required'),
 			array('payment_type, created_by, domain_id, customer_id,transection_status', 'numerical', 'integerOnly'=>true),
-			array('transection_id, bank_info, scan_image', 'length', 'max'=>100),
+			array('transection_id, bank_info, scan_image,payment', 'length', 'max'=>100),
 			array('payment_date, notes', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, payment_type, transection_id, payment_date, created_by, bank_info, notes, scan_image, domain_id, customer_id,transection_status', 'safe', 'on'=>'search'),
+			array('id, payment_type, transection_id, payment_date,payment, created_by, bank_info, notes, scan_image, domain_id, customer_id,transection_status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +53,8 @@ class MwpPayments extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'customer' => array(self::BELONGS_TO, 'MwpCustomer', 'customer_id'),
+            'domain' => array(self::BELONGS_TO, 'MwpDomains', 'domain_id'),
+            'bank' => array(self::BELONGS_TO, 'Banks', 'bank_info'),
             'created' => array(self::BELONGS_TO, 'AdminUser', 'created_by'),
 		);
 	}
@@ -73,6 +76,7 @@ class MwpPayments extends CActiveRecord
 			'domain_id' => 'Domain',
 			'customer_id' => 'Customer',
 			'transection_status' => 'Transection Status',
+			'payment' => 'Payment Duration',
 		);
 	}
 
@@ -119,7 +123,14 @@ class MwpPayments extends CActiveRecord
         protected function beforeSave () {
               if (parent::beforeSave ()) {
                      if ($this->isNewRecord) {
-                            $this->created_at =  date('Y-m-d h:m:s');
+                         $expires = strtotime('+' . $this->payment . ' month', strtotime($this->payment_date));
+                         $model = MwpDomains::model()->findByPk($this->domain_id);
+                         $model->expiry_date =date('Y-m-d', $expires);
+                         $model->save();
+
+                         if (empty($this->scan_image)) {
+                             $this->scan_image = $this->_oldImage;
+                         }
                      }
                      return true;
               }
@@ -132,11 +143,15 @@ class MwpPayments extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return MwpPayments the static model class
 	 */
+    public function afterFind() {
+        $this->_oldImage = $this->scan_image;
+        parent::afterFind();
+    }
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-
     public function getPaymentType(){
         switch ($this->payment_type){
             case 1:
@@ -151,7 +166,6 @@ class MwpPayments extends CActiveRecord
         }
         return $type;
     }
-
     public function getTransectionStatus(){
         $type ='';
         switch ($this->transection_status){
@@ -170,4 +184,6 @@ class MwpPayments extends CActiveRecord
         }
         return $type;
     }
+
+
 }

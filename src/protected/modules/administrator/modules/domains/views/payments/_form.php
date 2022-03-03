@@ -8,12 +8,12 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'mwp-payments-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
     'htmlOptions' => array(
         'enctype' => 'multipart/form-data',
     ),
 )); ?>
-
+    <?php echo $form->errorSummary($model); ?>
 	<p class="text-red">
 		Fields with <span class="required">*</span> are required.
 	</p>
@@ -26,7 +26,7 @@
                 <?php
                 $listing=CHtml::listData(MwpDomains::model()->findAll(), 'id', 'domain_name');
                 echo $form->dropDownList($model, 'domain_id', $listing, array('class' => 'form-control', 'empty' => 'Select Domain',
-                ));
+                'disabled'=>(!$model->isNewRecord)? 'disabled':''));
                 ?>
                 <?php echo $form->error($model,'domain_id'); ?>
             </div>
@@ -35,14 +35,30 @@
                 <?php
                 $listing=CHtml::listData(MwpCustomer::model()->findAll(), 'id', 'full_name');
                 echo $form->dropDownList($model, 'customer_id', $listing, array('class' => 'form-control', 'empty' => 'Select Customer',
-                ));
+                'disabled'=>(!$model->isNewRecord)? 'disabled':''));
                 ?>
                 <?php echo $form->error($model,'customer_id'); ?>
             </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'payment_date'); ?>
-                <?php echo $form->textField($model,'payment_date',array('class' => 'form-control')); ?>
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <?php echo $form->textField($model,'payment_date',array('class'=>'form-control','id'=>'datepicker','disabled'=>(!$model->isNewRecord)? 'disabled':'')); ?>
+                </div>
                 <?php echo $form->error($model,'payment_date'); ?>
+
+            </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'payment'); ?>
+                <?php
+                echo $form->dropDownList($model,'payment',
+                    array('1'=>'Monthly','3'=>'Quarterly','6'=>'Half Yearly' ,'12'=>'Yearly'),
+                    array('class' => 'form-control')
+                );
+                ?>
+                <?php echo $form->error($model,'payment'); ?>
             </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'notes'); ?>
@@ -89,31 +105,28 @@
                 ?>
                 <?php echo $form->error($model,'transection_status'); ?>
             </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <?php echo $form->labelEx($model, 'scan_image'); ?>
-                        <?php echo CHtml::activeFileField($model, 'scan_image', array('class' => 'form-control')); ?>
-                        <div class="text-red">Image should be only JPG,PNG and GIF is allowed</div>
-                        <?php echo $form->error($model, 'scan_image'); ?>
-                    </div>
-                </div>
-                <?php if (!$model->isNewRecord) { ?>
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <?php
-                            echo
-                            (!empty($model->image)) ? CHtml::image(Yii::app()->request->baseUrl . '/images/payments/' . $model->scan_image, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/payments/no-image.png', "image", array("width" => 200));
-                            ?>
-                        </div>
-                    </div>
-                <?php } ?>
+            <?php if ($model->isNewRecord) { ?>
+            <div class="form-group">
+                <?php echo $form->labelEx($model, 'scan_image'); ?>
+                <?php echo CHtml::activeFileField($model, 'scan_image', array('class' => 'form-control')); ?>
+                <div class="text-red">Image should be only JPG,PNG and GIF is allowed</div>
+                <?php echo $form->error($model, 'scan_image'); ?>
             </div>
-
-
+            <?php } ?>
 
         </div>
     </div>
+    <?php if (!$model->isNewRecord) { ?>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <?php  echo
+                    (!empty($model->scan_image)) ? CHtml::image('/images/payments/' . $model->scan_image, "image", array()) : CHtml::image(Yii::app()->request->baseUrl . '/images/payments/no-image.png', "image", array("width" => 200));
+                    ?>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
     <div class="form-group">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary')); ?>
 	</div>
@@ -121,4 +134,12 @@
 <?php $this->endWidget(); ?>
 
 </div>
-<!-- form -->
+<script>
+    $(function () {
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true,
+            format: 'yyyy-mm-dd'
+        })
+    });
+</script>

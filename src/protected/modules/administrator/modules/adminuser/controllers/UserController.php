@@ -10,6 +10,7 @@ class UserController extends Controller {
     public $resource_id = 25;
 
     public function init() {
+        //parent::init();
         Yii::import('application.extensions.phpmailer.JPhpMailer'); // Import php mail class
 		$this->baseUrl.= '/adminuser/user';
         if (Yii::app()->user->isGuest) {

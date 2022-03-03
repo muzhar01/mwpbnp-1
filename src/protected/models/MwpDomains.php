@@ -39,11 +39,11 @@ class MwpDomains extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('domain_name, status, customer_id,user_name, template ', 'required'),
+			array('domain_name, status, customer_id,user_name, template,package_id ', 'required'),
             array('domain_name','url'),
             array('domain_name,domain_name,user_name,database_name','unique'),
 			array('id, status, customer_id', 'numerical', 'integerOnly'=>true),
-			array('domain_name, user_name, password, database_name, template', 'length', 'max'=>100),
+			array('domain_name, user_name,amount, password, database_name, template', 'length', 'max'=>100),
 			array('created_at,expiry_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -60,6 +60,7 @@ class MwpDomains extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'customer' => array(self::BELONGS_TO, 'MwpCustomer', 'customer_id'),
+            'package' => array(self::BELONGS_TO, 'Package', 'package_id'),
 		);
 	}
 
@@ -78,6 +79,7 @@ class MwpDomains extends CActiveRecord
 			'database_name' => 'Database Name',
 			'customer_id' => 'Customer',
 			'template' => 'Template',
+			'package_id' => 'Package',
 		);
 	}
 
@@ -107,6 +109,7 @@ class MwpDomains extends CActiveRecord
 		$criteria->compare('status',$this->status);
 		$criteria->compare('database_name',$this->database_name,true);
 		$criteria->compare('customer_id',$this->customer_id);
+		$criteria->compare('package_id',$this->package_id);
 		$criteria->compare('template',$this->template,true);
 
 		return new CActiveDataProvider($this, array(
@@ -247,6 +250,15 @@ class MwpDomains extends CActiveRecord
         $SQL="DROP DATABASE `$this->database_name`; DROP USER '$this->user_name'@'$DATABASE_SERVER_IP';";
         Yii::app()->db->createCommand($SQL)->execute();
         return true;
+    }
+
+    public function getexpirydate(){
+        if(strtotime($this->expiry_date) < strtotime(date('Y-m-d'))){
+            return "<span class='text-bold text-danger'>".date('d-M-Y',strtotime($this->expiry_date))."</span>";
+        }
+        else{
+            return date('d-M-Y',strtotime($this->expiry_date));
+        }
     }
 
 }

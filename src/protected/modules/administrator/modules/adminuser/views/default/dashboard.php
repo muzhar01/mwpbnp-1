@@ -26,7 +26,8 @@ $this->breadcrumbs = array(
                             </div><!-- /.info-box -->
                         </div><!-- /.col -->
                     <?php } ?>
-                    <?php if (Yii::app()->user->role == 1) { ?> 
+                    <?php
+                    if (Yii::app()->user->role == 1  && Yii::app()->user->package > 2) { ?>
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="info-box bg-red">
                                 <span class="info-box-icon"><i class="fa fa-compass"></i></span>

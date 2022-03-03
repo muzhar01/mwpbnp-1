@@ -205,16 +205,13 @@ class AdminUser extends CActiveRecord {
        }
 
        public function checkAccess ($resource_id, $action = 'view') { // Resource id | Action
-
               if($action === 'update')
                   $action='edit';
-
               if ($this->role_id == 1)
                      return true;
               else {
                      $criteria = new CDbCriteria;
                      $criteria->addCondition ('`resource_id` in(' . $resource_id . ') AND `role_id` =' . $this->role_id . ' AND `' . $action . '`=1');
-              
                      $access = Access::model ()->count ($criteria);
                      if ($access > 0)
                             return true;
@@ -223,9 +220,14 @@ class AdminUser extends CActiveRecord {
               }
        }
 
+       public function checkPackageAccess(){
+           $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+           if(Yii::app()->params['main_domain']!=$server_name) {
+               return $GLOBALS['package'];
+           }
+       }
+
        public function parseTokens ($string, $newpassword) {
-
-
               $tokens = $this->getTextBetweenTags ($string);
               foreach ($tokens as $token) {
                      echo $$token = '';

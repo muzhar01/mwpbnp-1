@@ -27,7 +27,9 @@ Yii::app ()->clientScript->registerScript ('search', "
         <div class="box-header with-border">
             <h1 class="box-title">Manage Payment Methods</h1>
             <?php
-            if (AdminUser::model ()->findByPk (Yii::app ()->user->id)->checkAccess ($this->resource_id, 'add'))
+            if (AdminUser::model ()->findByPk (Yii::app ()->user->id)->checkAccess ($this->resource_id, 'add')
+                && CheckPackage::Validate('users',Banks::model()->count())
+            )
                    echo CHtml::link ('<i class="fa fa-user"></i> Create Banks', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
             ?>        </div>
         <div class="box-body">

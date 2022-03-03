@@ -1,4 +1,20 @@
-<?php $GetActionName = Yii::app()->controller->id;?><!DOCTYPE html>
+<?php $GetActionName = Yii::app()->controller->id;
+$server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+ if(Yii::app()->params['main_domain']!=$server_name) {
+    $date_diff = (strtotime($GLOBALS['model']['expiry_date'])-strtotime(date('Y-m-d')) ) / 86400;
+    $message= "Domain expire on: ".date('d-M-Y', strtotime($GLOBALS['model']['expiry_date']));
+    if($date_diff <= 2 )
+        $class="text-danger";
+    else if($date_diff > 2 and $date_diff < 5 )
+        $class="text-info";
+    else if($date_diff > 5 and $date_diff < 10 )
+        $class="text-warning";
+    else {
+        $class = "text-primary";}
+}
+?>
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -42,10 +58,20 @@
                     <!-- Sidebar toggle button-->
                     
                     <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button"><span class="sr-only">Toggle navigation</span></a>
-                    
+                    <?php if(Yii::app()->params['main_domain']!=$server_name){?>
+                        <div class="col-lg-10" style="margin-top: 14px">
+                            <span class="text-bold text-aqua">Package: <?php echo $GLOBALS['package']['name']?></span>
+                            <span class="pull-right text-bold ">
+                                    <?php
+                                    //echo "<span class='text-success'>Start: ".$start_date .'</span> ';
+                                    echo "<span class='$class'> $message </span> <br>";
+                                   // echo ($date_diff < 10) ? "<span class='text-danger'>".round($date_diff, 0)." days left </span>" :'';?>
+                                </span>
+                        </div>
+                    <?php } ?>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                           
+
                             <!-- Messages: style can be found in dropdown.less-->
 
                             <?php //include('_helppages.php') ?>
@@ -89,11 +115,13 @@
                         ?>
                         <?php endif; ?>
                         <?php if (Yii::app()->user->hasFlash('error')): ?>
-                        <div class="alert alert-danger">
-                        <?php echo Yii::app()->user->getFlash('error'); ?>
-                        </div>
-                            <?php endif; ?>
+                            <div class="alert alert-danger">
+                                 <?php echo Yii::app()->user->getFlash('error'); ?>
+                            </div>
+                        <?php endif; ?>
                 </section>
+
+
                 <!-- Main content -->
                             <?php echo $content; ?>
                 <!-- /.content -->

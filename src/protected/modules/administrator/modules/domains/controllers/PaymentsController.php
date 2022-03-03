@@ -12,16 +12,19 @@ class PaymentsController extends Controller
 	 * @return array action filters
 	 */
 	public $resource_id=43;
-        
-        public function init() {
-            $this->homeUrl=$this->baseUrl .= '/domains/payments'; //Backend, I am using for Admin
-            if (Yii::app()->user->isGuest) {
-                $session = Yii::app()->session;
-                $session['referal_url'] = $this->baseUrl;
-                $session->open();
-                $this->redirect('/administrator/login', true);
-            }
+    public  $uploadPath;
+
+    public function init() {
+        $this->homeUrl=$this->baseUrl .= '/domains/payments'; //Backend, I am using for Admin
+        $this->uploadPath = Yii::app()->basePath . '/../images/payments/';
+
+        if (Yii::app()->user->isGuest) {
+            $session = Yii::app()->session;
+            $session['referal_url'] = $this->baseUrl;
+            $session->open();
+            $this->redirect('/administrator/login', true);
         }
+    }
 
 	/**
 	 * Displays a particular model.
@@ -47,13 +50,27 @@ class PaymentsController extends Controller
             if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add')) {
                 $model=new MwpPayments;
 
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['MwpPayments']))
 		{
 			$model->attributes=$_POST['MwpPayments'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->created_by = Yii::app()->user->id;
+            if(!empty($_FILES['MwpPayments']['name']['scan_image'])){
+                $rnd = rand(0,9999);
+                $uploadedFile=CUploadedFile::getInstance($model,'scan_image');
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+
+                $uploadedFile->saveAs($this->uploadPath.'/'.$fileName);
+                $model->scan_image = $fileName;
+            }
+            if($model->save()){
+                Yii::app()->user->setFlash('success', "Your information successfully saved!");
+                $this->redirect($this->baseUrl);
+            } else{
+                Yii::app()->user->setFlash('error', "Your information is unable to save successfully saved!");
+
+            }
 		}
 
 		$this->render('create',array(
@@ -71,17 +88,32 @@ class PaymentsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-            if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'update')) {
-                $model=$this->loadModel($id);
+        if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'update')) {
+            $model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
 		if(isset($_POST['MwpPayments']))
 		{
 			$model->attributes=$_POST['MwpPayments'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->created_by = Yii::app()->user->id;
+
+            if(!empty($_FILES['MwpPayments']['name']['scan_image'])){
+                $rnd = rand(0,9999);
+                $uploadedFile=CUploadedFile::getInstance($model,'scan_image');
+                $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+                $uploadedFile->saveAs($this->uploadPath.'/'.$fileName);
+                $model->scan_image = $fileName;
+            }
+            if($model->save()){
+
+                Yii::app()->user->setFlash('success', "Your information successfully saved!");
+                $this->redirect($this->baseUrl);
+            } else{
+                Yii::app()->user->setFlash('error', "Your information is unable to save successfully saved!");
+
+            }
 		}
 
 		$this->render('update',array(
