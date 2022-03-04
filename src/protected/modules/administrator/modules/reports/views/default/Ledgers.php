@@ -19,21 +19,24 @@ $GetVehicles = VehicleRegistration::model()->findAll();
     <div class="box box-primary" style="padding-left: 20px;">
         <div class="box-header with-border">
             <h1 class="box-title"> Vehicles Ledger</h1>
-            
+            <div class="otherArea">
+                <a href="exportvehicleledger?from_date=<?php echo isset($from_date)?$from_date:'';?>&to_date=<?php echo isset($to_date)?$to_date:'';?>&vehicle_id=<?php echo isset($vehicle_id)?$vehicle_id:'';?>" class="btn btn-primary pull-right mr-5"><i class="fa fa-download"></i> Export</a>
+                <a href="javascript:void(0)" style="margin-right: 5px" class="btn btn-danger pull-right mr-5" onclick="printData()"><i class="fa fa-print"></i> Print</a>
+            </div>
         </div>
         <div class="box-body">
             <div class="otherArea">
               <form method="post" action="">
                     <div class="row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="control-label">From Date</label>
                             <input type="date" name="from_date" class="form-control" required >
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="control-label">To Date</label>
                             <input type="date" name="to_date" class="form-control" required>
                         </div>
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-3">
                             <label class="control-label">Vehicles</label>
                             <select name="vehicle_id" class="form-control">
                                 <option value="">All Vehicles</option>
@@ -44,9 +47,8 @@ $GetVehicles = VehicleRegistration::model()->findAll();
                         }?>
                             </select>
                         </div>
-                        <div class="form-group col-md-12 pull-right" style="padding-top: 20px">
-
-                            <input type="submit" name="search" class="btn btn-primary" value="search">
+                        <div class="form-group col-md-3 "style="margin-top: 25px">
+                            <input type="submit" name="search" class="btn btn-primary " value="search">
                         </div>
                     </div>
                 </form>  
@@ -57,18 +59,9 @@ if(isset($_POST['search']) || !empty($GetResult)){?>
 <div style="clear: both;text-align: center;color: green;font-weight: bold;">
     Displaying Result from <?php echo date("d M, Y",strtotime($from_date)); ?> to <?php echo date("d M, Y",strtotime($to_date)); ?>
 </div>
-<!-- <form method="post" action="<?php echo Yii::app()->baseUrl."/administrator/vehicles/LedgerReport/"; ?>" target="_blank">
-    <input type="hidden" name="search_from_date" value="<?php echo $from_date;?>">
-    <input type="hidden" name="search_to_date" value="<?php echo $to_date;?>">
-    
-    <button type="submit" name="print" class="btn btn-primary pull-right mr-5">Export</button>
-</form>   -->
-<div class="otherArea">
-     <a href="exportvehicleledger?from_date=<?php echo isset($from_date)?$from_date:'';?>&to_date=<?php echo isset($to_date)?$to_date:'';?>&vehicle_id=<?php echo isset($vehicle_id)?$vehicle_id:'';?>" class="btn btn-primary pull-right mr-5">Export</a>
-<a href="javascript:void(0)" class="btn btn-danger pull-right mr-5" onclick="printData()">Print</a>  
-</div>
+
 <hr>
-    <table class="table" id="printTable" border="1" cellspacing="0">
+    <table class="table table table-bordered table-striped" id="printTable">
         <thead>
             <tr>
             <th>Date</th>

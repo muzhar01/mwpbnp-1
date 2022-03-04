@@ -19,7 +19,7 @@
             <div class="form-group">
                 <?php echo $form->labelEx($model,'domain_name'); ?>
                 <?php echo $form->textField($model,'domain_name',array('size'=>60,'maxlength'=>100,'class'=>'form-control','disabled'=>(!$model->isNewRecord)? 'disabled':'' )); ?>
-                <span class="text-info">URL: http://example.mwpbnp.com</span>
+                <span class="text-info">URL: http://www.example.com</span>
                 <?php echo $form->error($model,'domain_name'); ?>
             </div>
             <div class="form-group">

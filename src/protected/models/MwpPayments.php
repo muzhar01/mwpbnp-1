@@ -123,11 +123,10 @@ class MwpPayments extends CActiveRecord
         protected function beforeSave () {
               if (parent::beforeSave ()) {
                      if ($this->isNewRecord) {
-                         $expires = strtotime('+' . $this->payment . ' month', strtotime($this->payment_date));
                          $model = MwpDomains::model()->findByPk($this->domain_id);
+                         $expires = strtotime('+' . $this->payment . ' month', strtotime($model->expiry_date));
                          $model->expiry_date =date('Y-m-d', $expires);
                          $model->save();
-
                          if (empty($this->scan_image)) {
                              $this->scan_image = $this->_oldImage;
                          }

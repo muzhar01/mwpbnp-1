@@ -23,7 +23,7 @@
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'resigtration_number'); ?>
-		<?php echo $form->textField($model,'resigtration_number',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'resigtration_number',array('class' => 'form-control','size'=>60,'maxlength'=>12)); ?>
 		<?php echo $form->error($model,'resigtration_number'); ?>
 	</div>
 
@@ -41,47 +41,47 @@
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'maker_name'); ?>
-		<?php echo $form->textField($model,'maker_name',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'maker_name',array('class' => 'form-control','size'=>20,'maxlength'=>20)); ?>
 		<?php echo $form->error($model,'maker_name'); ?>
 	</div>
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'manufacturer_year'); ?>
-		<?php echo $form->numberField($model,'manufacturer_year',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'manufacturer_year',array('class' => 'form-control','size'=>50,'maxlength'=>4)); ?>
 		<?php echo $form->error($model,'manufacturer_year'); ?>
 	</div>
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'registered_loading_weight'); ?>
-		<?php echo $form->textField($model,'registered_loading_weight',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'registered_loading_weight',array('class' => 'form-control','size'=>60,'maxlength'=>4)); ?>
 		<?php echo $form->error($model,'registered_loading_weight'); ?>
 	</div>
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'loading_capacity_weight'); ?>
-		<?php echo $form->textField($model,'loading_capacity_weight',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'loading_capacity_weight',array('class' => 'form-control','size'=>60,'maxlength'=>4)); ?>
 		<?php echo $form->error($model,'loading_capacity_weight'); ?>
 	</div>
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'loading_capacity_length'); ?>
-		<?php echo $form->textField($model,'loading_capacity_length',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'loading_capacity_length',array('class' => 'form-control','size'=>60,'maxlength'=>6)); ?>
 		<?php echo $form->error($model,'loading_capacity_length'); ?>
 	</div>
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'owner_name'); ?>
-		<?php echo $form->textField($model,'owner_name',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'owner_name',array('class' => 'form-control','size'=>60,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'owner_name'); ?>
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'owner_cnic'); ?>
-		<?php echo $form->textField($model,'owner_cnic',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'owner_cnic',array('class' => 'form-control','size'=>60,'maxlength'=>15)); ?>
 		<?php echo $form->error($model,'owner_cnic'); ?>
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'owner_contact_number'); ?>
-		<?php echo $form->textField($model,'owner_contact_number',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->textField($model,'owner_contact_number',array('class' => 'form-control','size'=>60,'maxlength'=>12)); ?>
 		<?php echo $form->error($model,'owner_contact_number'); ?>
 	</div>
 

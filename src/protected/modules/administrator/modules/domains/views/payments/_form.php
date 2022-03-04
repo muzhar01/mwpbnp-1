@@ -54,7 +54,7 @@
                 <?php echo $form->labelEx($model,'payment'); ?>
                 <?php
                 echo $form->dropDownList($model,'payment',
-                    array('1'=>'Monthly','3'=>'Quarterly','6'=>'Half Yearly' ,'12'=>'Yearly'),
+                    array('0'=>'Current','1'=>'Monthly','3'=>'Quarterly','6'=>'Half Yearly' ,'12'=>'Yearly'),
                     array('class' => 'form-control')
                 );
                 ?>

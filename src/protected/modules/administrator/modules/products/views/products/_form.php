@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <?php
                     echo
-                    (!empty($model->image)) ? CHtml::image($this->publicPath.'/products/' . $model->image, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/products/no-image.png', "image", array("width" => 200));
+                    (!empty($model->image)) ? CHtml::image($this->publicPath.'' . $model->image, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/products/no-image.png', "image", array("width" => 200));
                     ?>
                 </div>
             </div>

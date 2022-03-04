@@ -69,8 +69,6 @@ if(isset($_POST['search'])){
             <th>Vendor Company</th>
             <th>Payment Date</th>
             <th>Amount</th>
-            <!-- <th>Payment Method</th> -->
-           
             </tr>
         </thead>
 

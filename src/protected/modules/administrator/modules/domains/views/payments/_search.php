@@ -18,7 +18,7 @@
 		<?php
         echo $form->dropDownList($model,'transection_status',
             array('1'=>'Received','2'=>'Verified','3'=>'Approved'),
-            array('class' => 'form-control')
+            array('class' => 'form-control', 'empty' => 'Select Status')
         );
         ?>
 	</div>
@@ -26,7 +26,7 @@
         <?php
         echo $form->dropDownList($model,'payment_type',
         array('1'=>'Cash','2'=>'Cheque','3'=>'Online Transfer'),
-        array('class' => 'form-control')
+        array('class' => 'form-control', 'empty' => 'Select Payment')
         );
         ?>
     </div>
