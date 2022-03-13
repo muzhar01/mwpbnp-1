@@ -36,9 +36,9 @@ $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']); ?>
                      <li   class=" <?php  echo (Yii::app ()->controller->id == "role")  ?  "active" : '' ; ?>">
                         <a href="/administrator/adminuser/role"><i class="fa fa-compass"></i> Roles</a>
                     </li>
-                    <li   class=" <?php  echo (Yii::app ()->controller->id == "resources")  ?  "active" : '' ; ?>">
+                   <!-- <li   class=" <?php /* echo (Yii::app ()->controller->id == "resources")  ?  "active" : '' ; */?>">
                         <a  href="/administrator/adminuser/resources"><i class="fa fa-briefcase"></i> Resources</a>
-                    </li>
+                    </li>-->
                    <li   class=" <?php  echo (Yii::app ()->controller->id == "access")  ?  "active" : '' ; ?>">
                         <a  href="/administrator/adminuser/access"><i class="fa fa-gavel"></i> Access</a>
                     </li>

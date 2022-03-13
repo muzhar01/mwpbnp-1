@@ -26,7 +26,7 @@ class CheckPackage extends CApplicationComponent
 
         $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
         if($server_name!=Yii::app()->params['main_domain']) {
-            if (isset($GLOBALS['package']['id']) > 2)
+            if (isset($GLOBALS['package']['id']) && $GLOBALS['package']['id']  > 2)
                 return true;
             else
                 return false;
