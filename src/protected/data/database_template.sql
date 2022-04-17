@@ -1194,7 +1194,7 @@ INSERT INTO `webpages` (`id`, `title`, `alias`, `seo_title`, `meta_keyword`, `me
 (3, 'Terms and conditions of use', 'terms-and-conditions-of-use', 'Terms and conditions of use', 'terms-and-conditions-of-use', 'terms-and-conditions-of-use', 1, '<h1>Terms and conditions</h1>\r\n<p>Please enter your content</p>', 1, '2022-02-06 06:02:40'),
 (4, 'Privacy Policy', 'privacy-policy', 'Privacy Policy', 'Privacy Policy', 'Privacy Policy', 1, '<h1>Privacy Policy</h1>\r\n<p>Add your content here.</p>', 1, '2022-02-06 06:02:08'),
 (5, 'Refund Policy', 'refund-policy', 'Refund Policy', 'Refund Policy', 'Refund Policy', 1, '<h1>Refund Policy</h1>\r\n<p>Your content will be here</p>', 1, '2022-02-06 06:02:09'),
-(5, 'Member Welcome', 'member-welcome', 'Member Welcome', 'Member Welcome', 'Member Welcomey', 1, '<h1>Member Welcome</h1>\r\n<p>Your content will be here</p>', 1, '2022-02-06 06:02:09');
+(6, 'Member Welcome', 'member-welcome', 'Member Welcome', 'Member Welcome', 'Member Welcomey', 1, '<h1>Member Welcome</h1>\r\n<p>Your content will be here</p>', 1, '2022-02-06 06:02:09');
 
 -- --------------------------------------------------------
 

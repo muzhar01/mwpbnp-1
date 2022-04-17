@@ -71,24 +71,7 @@ $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
                     <?php } ?>
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-
-                            <!-- Messages: style can be found in dropdown.less-->
-
-                            <?php //include('_helppages.php') ?>
-
-                            <?php //include('_messages.php') ?>
-
-                            <!-- Notifications: style can be found in dropdown.less -->
-                            <?php //include('_notifications.php') ?>
-
-                            <!-- Tasks: style can be found in dropdown.less -->
-
-                            <?php //include('_tasks.php') ?>
-
-                            <!-- User Account: style can be found in dropdown.less -->
-
-                            <?php include('_profile.php') ?>
-
+                             <?php include('_profile.php') ?>
                         </ul>
                     </div>
                 </nav>

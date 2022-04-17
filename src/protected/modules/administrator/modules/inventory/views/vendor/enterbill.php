@@ -80,7 +80,7 @@ $vendorAddress = $vendor;
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
-                    <th class="col-lg-1">item</th>
+                    <th class="col-lg-1">Item</th>
                     <th class="text-center col-lg-4">Description</th>
                     <th class="text-center unitCol"><strong>U/M</strong></th>
                     <th class="text-center"><strong>Cur/Qty</strong></th>

@@ -140,8 +140,8 @@ class MwpDomains extends CActiveRecord
        {
            if(parent::beforeSave ()){
                if($this->isNewRecord) {
-                  // $this->CreateDatabase();
-                   //$this->SQLDump();
+                   $this->CreateDatabase();
+                   $this->SQLDump();
                    $this->CreateDirectories();
                    $this->CreateDomainConfig();
                }

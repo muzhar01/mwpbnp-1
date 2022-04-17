@@ -59,8 +59,13 @@ Yii::app()->clientScript->registerScript('search', "
                         'type' => 'raw',
                         'value' => 'CHtml::textField("sort_order[$data[id]]",$data["sort_order"],array("style"=>"width:50px;"))',
                     ),
-                    'unit',
-                    array('type' => 'Raw', 'name' => 'published', 'value' => '($data["published"])? "Yes":"<span style=\"color:#f00\">No</span>"'),
+                    array(
+                        'name' => 'unit',
+                        'header' => 'Unit',
+                        'type' => 'raw',
+                        'value' => 'CHtml::decode($data["unit"])'
+                    ),
+                    array('type' => 'Raw', 'header' => 'Published','name' => 'published', 'value' => '($data["published"])? "Yes":"<span style=\"color:#f00\">No</span>"'),
                     array
                         (
                         'class' => 'CButtonColumn',

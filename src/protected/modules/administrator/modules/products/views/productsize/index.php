@@ -25,7 +25,7 @@ Yii::app()->clientScript->registerScript('search', "
             <h1 class="box-title">Manage Product Sizes</h1>
             <?php
             if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add'))
-                echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Create ProductSize', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
+                echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Create Product Size', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
             ?>        </div>
         <div class="box-body">
             <div class="search-form" style="display: none">
@@ -62,7 +62,7 @@ Yii::app()->clientScript->registerScript('search', "
                             'published' => array(
                                 'label' => 'Published',
                                 'imageUrl' => Yii::app()->request->baseUrl . "/images/tick.png",
-                                'url' => 'Yii::app()->createUrl("/administrator/ProductSize/published", array("id"=>$data->id))',
+                                'url' => 'Yii::app()->createUrl("/administrator/products/productsize/published", array("id"=>$data->id))',
                                 'visible' => 'AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess('.$this->resource_id.',"published")',
                             ),
                             'update' => array(

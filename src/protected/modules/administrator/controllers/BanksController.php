@@ -139,7 +139,8 @@ class BanksController extends Controller
                     $model->published = 0;
                 else
                     $model->published = 1;
-                if ($model->save())
+
+                if ($model->save(false))
                     $this->redirect($this->baseUrl . '/index');
              } else
                     throw new CHttpException(403, Yii::app()->params['access']);

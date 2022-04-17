@@ -63,10 +63,10 @@ class DefaultController extends Controller
             {
                 $model->attributes=$_POST['MwpDomains'];
                 $model->database_name = str_replace('http://','',$model->domain_name);
-                //$model->user_name=  $model->database_name=str_replace('.','_',$model->database_name);
-                //$model->password= $this->randomPassword();
-                $model->user_name='new_develop';
-                $model->password='Waseem456';
+                $model->user_name=  $model->database_name=str_replace('.','_',$model->database_name);
+                $model->password= $this->randomPassword();
+                //$model->user_name='new_develop';
+                //$model->password='Waseem456';
                 $date = date("Y-m-d");
                 $date = date('Y-m-d', strtotime($date. ' + '.$model->trial_period.' days'));
                 $model->expiry_date = date('Y-m-d', strtotime($date. ' + '.$model->subscription_period.' year'));

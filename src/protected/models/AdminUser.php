@@ -44,17 +44,20 @@ class AdminUser extends CActiveRecord {
               // NOTE: you should only define rules for those attributes that
               // will receive user inputs.
               return array(
-                                  array('name,commission,level_a,level_b,level_c,level_d, address, city, zipcode, state, email_address, role_id, username, password, phone_number', 'required'),
-                                  array('role_id, create_on, lastlogin_on, status, phone_number', 'numerical', 'integerOnly' => true),
-                                  array('name, address', 'length', 'max' => 255),
-                                  array('city', 'length', 'max' => 100),
-                                  array('zipcode, state, username', 'length', 'max' => 20),
-                                  array('email_address', 'length', 'max' => 60),
-                                  array('activiation_code, password', 'length', 'max' => 50),
-                                  // The following rule is used by search().
-                                  // @todo Please remove those attributes that should not be searched.
-                                  array('id,level_a,level_b,level_c,level_d, name, address, city, zipcode, state, email_address, role_id, activiation_code, create_on, lastlogin_on, status, username, password, phone_number', 'safe', 'on' => 'search'),
-              );
+                  array('name,commission, address, city, zipcode, state, email_address, role_id, username, password, phone_number', 'required'),
+                  array('role_id, create_on, lastlogin_on, status, phone_number,commission', 'numerical', 'integerOnly' => true),
+                  array('name, address', 'length', 'max' => 255),
+                  array('level_a,level_b,level_c,level_d', 'length', 'max' => 1),
+
+                  array('phone_number','length', 'max' => 14),
+                  array('city', 'length', 'max' => 100),
+                  array('zipcode, state, username', 'length', 'max' => 20),
+                  array('email_address', 'length', 'max' => 60),
+                  array('activiation_code, password', 'length', 'max' => 50),
+                  // The following rule is used by search().
+                  // @todo Please remove those attributes that should not be searched.
+                  array('id,level_a,level_b,level_c,level_d, name, address, city, zipcode, state, email_address, role_id, activiation_code, create_on, lastlogin_on, status, username, password, phone_number', 'safe', 'on' => 'search'),
+            );
        }
 
        /**
@@ -64,7 +67,7 @@ class AdminUser extends CActiveRecord {
               // NOTE: you may need to adjust the relation name and the related
               // class name for the relations automatically generated below.
               return array(
-                                  'role' => array(self::BELONGS_TO, 'Role', 'role_id'),
+                  'role' => array(self::BELONGS_TO, 'Role', 'role_id'),
 
               );
        }
@@ -74,22 +77,22 @@ class AdminUser extends CActiveRecord {
         */
        public function attributeLabels () {
               return array(
-                                  'id' => 'ID',
-                                  'name' => 'Name',
-                                  'address' => 'Address',
-                                  'city' => 'City',
-                                  'zipcode' => 'Zipcode',
-                                  'state' => 'State',
-                                  'email_address' => 'Email Address',
-                                  'role_id' => 'Role',
-                                  'activiation_code' => 'Activiation Code',
-                                  'create_on' => 'Create On',
-                                  'lastlogin_on' => 'Lastlogin On',
-                                  'status' => 'Status',
-                                  'username' => 'Username',
-                                  'password' => 'Password',
-                                  'phone_number' => 'Phone Number',
-                                  'commission'=>'Commission'  
+                  'id' => 'ID',
+                  'name' => 'Name',
+                  'address' => 'Address',
+                  'city' => 'City',
+                  'zipcode' => 'Zipcode',
+                  'state' => 'State',
+                  'email_address' => 'Email Address',
+                  'role_id' => 'Role',
+                  'activiation_code' => 'Activiation Code',
+                  'create_on' => 'Create On',
+                  'lastlogin_on' => 'Lastlogin On',
+                  'status' => 'Status',
+                  'username' => 'Username',
+                  'password' => 'Password',
+                  'phone_number' => 'Phone Number',
+                  'commission'=>'Commission'
               );
        }
 
@@ -165,9 +168,9 @@ class AdminUser extends CActiveRecord {
        protected function beforeSave () {
               if (parent::beforeSave ()) {
                      if ($this->isNewRecord) {
-                            $this->create_on = $this->create_on = date('Y-m-d h:m:s');
+                            $this->create_on = strtotime(date('Y-m-d h:m:s'));
                      }
-                     
+
                      return true;
               }
               else
