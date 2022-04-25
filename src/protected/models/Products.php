@@ -182,6 +182,7 @@ class Products extends CActiveRecord {
         $start_date = date('Y-m-d') . ' 00:00:00';
         $end_date = date('Y-m-d') . ' 23:59:59';
         $criteria = new CDbCriteria();
+        $criteria->select ='thickness_id,size_id';
         $criteria->condition = "product_id= $id";
         $criteria->group = 'thickness_id, size_id';
         $rows = ProductMarketPrice::model()->findAll($criteria);

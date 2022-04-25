@@ -18,10 +18,7 @@ class SiteController extends Controller {
             )
         );
     }
- public function actionTest(){
-     echo "<br>After ENCY: " .$sum = Yii::app()->getSecurityManager()->encrypt("This is my first program in Yii.");
-     echo "<br>After DESC: " .Yii::app()->getSecurityManager()->decrypt($sum);
- }
+
     /**
      * This is the default 'index' action that is invoked
      * when an action is not explicitly requested by users.
@@ -37,12 +34,14 @@ class SiteController extends Controller {
 
         fclose($fp);
     }
+
     public function actionMarketPriceCron($token) {
         if($token=='73829182738192837hdjskajhasd71892389123GDhsjag3yu'){
         $model = Products::model()->findAll();
         foreach ($model as $row) {
             $last_modify_date = ProductMarketPrice::model()->getMaxCreatedDate($row->id);
-            $modelPrice = ProductMarketPrice::model()->findAll(array('condition' => "`created_date`='$last_modify_date' AND `product_id`=$row->id"));
+            $modelPrice = ProductMarketPrice::model()
+                ->findAll(array('condition' => "`created_date`='$last_modify_date' AND `product_id`=$row->id"));
             foreach ($modelPrice as $priceRow) {
                 $modelMarket = new ProductMarketPrice();
                 $date = strtotime($priceRow->created_date);
@@ -54,23 +53,25 @@ class SiteController extends Controller {
                 $modelMarket->created_date = $now.' 01:00:00';
                 $modelMarket->last_date = $priceRow->created_date;
                 $modelMarket->save(FALSE);
-                
+                }
             }
-        }
+         echo 'Done';
         } 
         else 
             die('Error in token');
     }
+
     public function actionGraphCron($token){
+        echo $token;
+        exit();
         if($token=='73829182738192837hdjskajhasd71892389123GDhsjag4yu'){
         $start_date=date('Y-m-d').' 00:00:00';
         $end_date=date('Y-m-d').' 23:59:59';
         $model = Products::model()->findAll();
         foreach ($model as $row) {
         $SQL="select SUM(((min_price + max_price)/2))/count(product_id) as price from product_archive_price where 
- 	    product_id ='$row->id' and created_date between '$start_date' and '$end_date' group by product_id;";
+ 	    product_id ='$row->id' and created_date between '$start_date' and '$end_date' group by product_id, price;";
         $data= Yii::app()->db->createCommand($SQL)->queryRow();
-        //echo $data['price'].'<br>';
             if($data['price'] > 0){
                 $graph= new ProductsGraph();
                 $graph->product_id=$row->id;
@@ -79,6 +80,7 @@ class SiteController extends Controller {
             }
 
         }
+        die('Done');
         } 
         else 
             die('Error in token');
