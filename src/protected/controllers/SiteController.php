@@ -62,8 +62,7 @@ class SiteController extends Controller {
     }
 
     public function actionGraphCron($token){
-        echo $token;
-        exit();
+
         if($token=='73829182738192837hdjskajhasd71892389123GDhsjag4yu'){
         $start_date=date('Y-m-d').' 00:00:00';
         $end_date=date('Y-m-d').' 23:59:59';
