@@ -77,7 +77,7 @@ class VehicleRegistration extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'resigtration_number' => 'Resigtration Number',
+			'resigtration_number' => 'Registration Number',
 			'date_of_registration' => 'Date Of Registration',
 			'vehicle_type' => 'Vehicle Type',
 			'maker_name' => 'Maker Name',
@@ -86,7 +86,7 @@ class VehicleRegistration extends CActiveRecord
 			'loading_capacity_weight' => 'Loading Capacity Weight',
 			'loading_capacity_length' => 'Loading Capacity Length',
 			'owner_name' => 'Owner Name',
-			'owner_cnic' => 'Owner Cnic',
+			'owner_cnic' => 'Owner CNIC',
 			'owner_contact_number' => 'Owner Contact Number',
 			'owner_address' => 'Owner Address',
 			'status' => 'Status',

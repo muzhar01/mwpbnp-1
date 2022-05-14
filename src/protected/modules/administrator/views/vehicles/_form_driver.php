@@ -58,8 +58,13 @@
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'last_increament_date'); ?>
-		<?php echo $form->dateField($model,'last_increament_date',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+        <div class="input-group date" id="last_increament">
+		<?php echo $form->textField($model,'last_increament_date',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'last_increament_date'); ?>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
 	</div>
 
 	<div class="form-group col-md-4">
@@ -75,8 +80,13 @@
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'appointment_date'); ?>
-		<?php echo $form->dateField($model,'appointment_date',array('class' => 'form-control','size'=>60,'maxlength'=>20)); ?>
-		<?php echo $form->error($model,'appointment_date'); ?>
+        <div class="input-group date" id="appointment_date">
+		<?php echo $form->textField($model,'appointment_date',array('class' => 'form-control','size'=>60,'maxlength'=>20)); ?>
+             <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+        <?php echo $form->error($model,'appointment_date'); ?>
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'appointment_terms'); ?>
@@ -98,3 +108,19 @@
 
 </div>
 <!-- form -->
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $("#VehicleDrivers_salary_last_increament").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $('#last_increament').datepicker({
+            endDate: '+0d',
+            todayHighlight:true,
+        });
+        $('#appointment_date').datepicker({
+            endDate: '+0d',
+            todayHighlight:true,
+        });
+
+    });
+</script>

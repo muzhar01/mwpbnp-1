@@ -119,7 +119,9 @@
 
 $(function(){
 	$('#example').datetimepicker();
-
+    $("#totamounts").on('input', function(e) {
+        $(this).val($(this).val().replace(/[^0-9]/g, ''));
+    });
 
 	$('#applys').click(function(){
 		$(this).attr('disabled', 'disabled')

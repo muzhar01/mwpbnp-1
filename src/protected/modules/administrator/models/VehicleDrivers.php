@@ -73,7 +73,7 @@ class VehicleDrivers extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cnic' => 'Cnic',
+			'cnic' => 'CNIC',
 			'FullName' => 'Full Name',
 			'FatherName' => 'Father Name',
 			'current_salary' => 'Current Salary',

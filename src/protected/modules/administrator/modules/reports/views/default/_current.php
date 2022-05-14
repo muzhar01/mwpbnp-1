@@ -18,12 +18,12 @@
   <tr>
       <th class="bg-gray" style="white-space: nowrap" >Product Size</th>
       <?php foreach ($thickness as $thicknessdata) { ?>
-             <th  ><?php echo stripslashes ($thicknessdata->Thickness->title) ?></th>
+             <th  ><?php echo isset($thicknessdata->Thickness->title)? stripslashes ($thicknessdata->Thickness->title):''; ?></th>
       <?php } ?>
   </tr>
   <?php foreach ($size as $sizedata) { ?>
          <tr>
-             <th class="bg-gray"><?php echo stripslashes ($sizedata->size->title) ?></th>
+             <th class="bg-gray"><?php echo isset($sizedata->size->title)  ? stripslashes ($sizedata->size->title) :''; ?></th>
              <?php
              foreach ($thickness as $thicknessdata) {
                     $price = ProductMarketPrice::model ()->getTodayPrice($data->id,$sizedata->size_id,$thicknessdata->thickness_id);

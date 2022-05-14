@@ -82,7 +82,6 @@ Yii::app()->clientScript->registerScript('search', "
                    'id',
                    array('name'=>'vehicle_id','value'=>'$data->vehicle->resigtration_number'),
                    'income',
-                   'reference',
                    'expenses',
                    'payment',
                    'payment_date',

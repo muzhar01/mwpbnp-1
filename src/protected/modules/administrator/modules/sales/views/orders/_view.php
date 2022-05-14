@@ -1,7 +1,7 @@
 <?php
 $thickness = ProductsThicknessListings::model()->findAll("product_id=$data->id");
-$size = ProductsSizesListings::model()->findAll("product_id=$data->id");
-$total_size = count($size);
+$sizes = ProductsSizesListings::model()->findAll("product_id=$data->id");
+$total_size = count($sizes);
 $total_thickness = count($thickness);
 ?>
 
@@ -27,9 +27,9 @@ $total_thickness = count($thickness);
                      <th  ><?php echo stripslashes($thicknessdata->Thickness->title) ?></th>
                  <?php } ?>
              </tr>
-             <?php foreach ($size as $sizedata) { ?>
+             <?php foreach ($sizes as $sizedata) {  ?>
                  <tr>
-                     <th class="bg-gray"><?php echo stripslashes($sizedata->size->title) ?></th>
+                     <th class="bg-gray"><?php echo (isset($sizedata->size->title))? stripslashes($sizedata->size->title) :'' ?></th>
                          <?php
 						 
                          foreach ($thickness as $thicknessdata) {

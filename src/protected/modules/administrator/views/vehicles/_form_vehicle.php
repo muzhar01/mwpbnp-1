@@ -29,7 +29,12 @@
 
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'date_of_registration'); ?>
-		<?php echo $form->dateField($model,'date_of_registration',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+        <div class="input-group date" id="date_of_reg">
+		<?php echo $form->textField($model,'date_of_registration',array('class' => 'form-control','size'=>60,'maxlength'=>200)); ?>
+        <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
 		<?php echo $form->error($model,'date_of_registration'); ?>
 	</div>
 
@@ -81,7 +86,7 @@
 	</div>
 	<div class="form-group col-md-4">
 		<?php echo $form->labelEx($model,'owner_contact_number'); ?>
-		<?php echo $form->textField($model,'owner_contact_number',array('class' => 'form-control','size'=>60,'maxlength'=>12)); ?>
+		<?php echo $form->textField($model,'owner_contact_number',array('class' => 'form-control','size'=>60,'maxlength'=>25)); ?>
 		<?php echo $form->error($model,'owner_contact_number'); ?>
 	</div>
 
@@ -106,3 +111,25 @@
 
 </div>
 <!-- form -->
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $('#date_of_reg').datepicker({
+            endDate: '+0d',
+            todayHighlight:true,
+        });
+        $("#VehicleRegistration_manufacturer_year").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $("#VehicleRegistration_registered_loading_weight").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $("#VehicleRegistration_loading_capacity_weight").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $("#VehicleRegistration_loading_capacity_length").on('input', function(e) {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        });
+        $('#VehicleRegistration_owner_contact_number').inputmask('(999) 9999999', { 'placeholder': '(999) 9999999' })
+        $('#VehicleRegistration_owner_cnic').inputmask('99999-9999999-9', { 'placeholder': '99999-9999999-9' })
+    });
+</script>
