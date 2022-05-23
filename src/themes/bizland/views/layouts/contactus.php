@@ -1,13 +1,7 @@
 <?php
 $settings = Settings::model()->findByPk(1);
 $quote_settings = QuotesSettings::model()->findByPk(1);
-$criteria = new CDbCriteria();
-$criteria->addCondition('main_category_id > 0');
-$criteria->limit = 10;
-$criteria->group='main_category_id';
-$criteria->order = 'id DESC';
 
-$product_categories = ProductCategory::model()->findAll($criteria);
 ?>
 <!DOCTYPE html>
 <html lang="en">

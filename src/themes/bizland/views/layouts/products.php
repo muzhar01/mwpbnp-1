@@ -2,10 +2,11 @@
 $settings = Settings::model()->findByPk(1);
 $quote_settings = QuotesSettings::model()->findByPk(1);
 $criteria = new CDbCriteria();
+$criteria->select ='label,slug,main_category_id';
 $criteria->addCondition('main_category_id > 0');
 $criteria->limit = 10;
-$criteria->group='main_category_id';
-$criteria->order = 'id DESC';
+$criteria->group='label,slug,main_category_id';
+$criteria->order = 'main_category_id DESC';
 
 $product_categories = ProductCategory::model()->findAll($criteria);
 ?>

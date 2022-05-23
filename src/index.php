@@ -1,5 +1,4 @@
 <?php
-
 // change the following paths if necessary
 error_reporting(E_ALL);
 ini_set('display_error', 'On');
@@ -28,7 +27,7 @@ if($server_name===$_arr['params']['main_domain']){
 else {
     $maincon = new CDbConnection($dsn, $username, $password);
     $maincon->active = true;
-    $sql = "select * from mwp_domains where domain_name = 'http://$_SERVER[SERVER_NAME]'";
+    $sql = "select * from mwp_domains where domain_name = 'http://$server_name'";
     $model = $maincon->createCommand($sql)->queryRow();
 
     if (!$model) {
@@ -56,7 +55,7 @@ else {
     else{
         $sql = "select * from packages where id =" .$model['package_id'];
         $package = $maincon->createCommand($sql)->queryRow();
-        $config_file_name = str_replace('.', '_', $_SERVER['SERVER_NAME']);
+        $config_file_name = str_replace('.', '_', $server_name);
         $config = dirname(__FILE__) . '/protected/domains/' . $config_file_name . '_main.php';
 
     }

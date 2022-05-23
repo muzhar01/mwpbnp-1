@@ -117,7 +117,7 @@ class ProductsGraph extends CActiveRecord {
         $criteria = new CDbCriteria();
         $criteria->select=array('created_date','SUM(total_price)','COUNT(gid)', 'SUM(total_price)/COUNT(gid) as total_price');
         $criteria->addBetweenCondition('created_date', $start_date, $end_date);
-        $criteria->group = "created_date";
+        $criteria->group = "created_date,total_price";
         $model = self::model()->findAll($criteria);
         $string = '';
         if ($model) {
