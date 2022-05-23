@@ -7,13 +7,18 @@
  */
 class OrdersController extends Controller {
     public $layout = '//layouts/column2';
+
     public function init() {
-            if (Yii::app()->user->isGuest) {
-                $session = Yii::app()->session;
-                $session['referal_url'] = '/member/order';
-                $session->open();
-                $this->redirect('/member/login', true);
-            }
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+        if($server_name!=Yii::app()->params['main_domain']) {
+            $this->publicPath= '/images/domains/'.$server_name;
+        }
+        if (Yii::app()->user->isGuest) {
+            $session = Yii::app()->session;
+            $session['referal_url'] = '/member/order';
+            $session->open();
+            $this->redirect('/member/login', true);
+        }
         }
         
         

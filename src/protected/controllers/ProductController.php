@@ -2,19 +2,26 @@
 
 class ProductController extends Controller {
     public $easypasa_url ='easypay.easypaisa.com.pk'; //easypay.easypaisa.com.pk  // easypaystg.easypaisa.com.pk
-    public $storeId=4063; 
-    public function actions() { 
+    public $storeId=4063;
+
+    public function init() {
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+        if($server_name!=Yii::app()->params['main_domain']) {
+            $this->layout='//layouts/products';
+            $this->publicPath= '/images/domains/'.$server_name;
+        }
+    }
+    public function actions() {
         return array(
             'captcha' => array(
                 'class' => 'CCaptchaAction',
                 'backColor' => 0xFFFFFF,
             ),
         );
+
     }
 
     public function actionIndex() {
-        // renders the view file 'protected/views/site/index.php'
-        // using the default layout 'protected/views/layouts/main.php'
         $model = Products::model()->findAll(array('condition' => 'published=1', 'order' => 'sort_position ASC'));
         $this->render('index', array('model' => $model));
     }
@@ -101,7 +108,7 @@ class ProductController extends Controller {
             </div>
             </div> 
     <?php }
-     public function actionDelete($id) {
+    public function actionDelete($id) {
             $userId=Yii::app()->user->id;
             if($userId!=''){
              /*$this->loadModel($id)->delete();
@@ -142,6 +149,7 @@ class ProductController extends Controller {
         }
        die('notok');
     }
+
     public function actionDetails($slug) {
         $criteria = new CDbCriteria;
         $criteria->compare('slug', $slug,true);
