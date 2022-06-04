@@ -307,6 +307,7 @@ public function actionUpdate($id)
 				//$item_current->created_date =  date("Y-m-d H:i:s");
 				$item_current->user_id =yii::app()->user->id;
 				$item_current->cart_type = 'A';
+                $item_current->created_by=Yii::app()->user->id;
 				if($item_current->save()){}else{ print_r($item_current->getErrors()); die;}
 
 				$QuotesOrder =new QuotesOrder;
