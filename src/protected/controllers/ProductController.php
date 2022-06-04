@@ -270,25 +270,19 @@ class ProductController extends Controller {
         else {
             $modelQoute = Quotes::model()->findByPk($session['quote']);
         }
-          ;
-     
-       /* if (isset($_POST['Quotes'])) {
-            $modelQoute->attributes = $_POST['Quotes'];
-            if ($modelQoute->save()) {
-                $session['quote'] = $modelQoute->id;
-                $this->redirect('/product/review');
-                
-            }
-        }*/
   
         if (isset($_POST['Quotes'])) {
             $userId=Yii::app()->user->id;
             $_POST['Quotes']['member_id']=$userId;
             $modelQoute->attributes = $_POST['Quotes'];
+            $modelQoute->created_by=$userId;
             if ($modelQoute->save()) {
                 $session['quote'] = $modelQoute->id;
+                Yii::app()->user->setFlash('success', "Order is successfuly created.");
                 $this->redirect('/product/review');
                 
+            }else{
+                Yii::app()->user->setFlash('error', "There is a problem in Quote");
             }
         }
         $this->render('checkout', array(
