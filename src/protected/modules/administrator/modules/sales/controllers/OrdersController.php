@@ -182,9 +182,11 @@ public function actionChowkatTool() {
             $modelCart->product_id = $model->id;
             $modelCart->size_id = $modelsize->size_id;
             $modelCart->thickness_id = $modelthickness->thickness_id;
-            $modelCart->created_by = $cartCookies;
+            //$modelCart->created_by = $cartCookies;
             $modelCart->cart_type = 'A';
             $modelCart->quantity = 1;
+            $modelCart->created_by = Yii::app()->user->id;
+            $modelCart->user_id = Yii::app()->user->id;
             $cart= Cart::model()->count("created_by=$cartCookies");
             
             if ($modelCart->save(false))
