@@ -52,6 +52,7 @@ class ProductsController extends Controller
             if(isset($_POST['Products'])){
                 $model->attributes=$_POST['Products'];
                 $model->weight='';
+                $model->length='';
                 if(!empty($_FILES['Products']['name']['image'])){
                             $rnd = rand(0,9999);
                             $uploadedFile=CUploadedFile::getInstance($model,'image');
