@@ -308,6 +308,7 @@ public function actionUpdate($id)
 				$item_current->user_id =yii::app()->user->id;
 				$item_current->cart_type = 'A';
                 $item_current->created_by=Yii::app()->user->id;
+
 				if($item_current->save()){}else{ print_r($item_current->getErrors()); die;}
 
 				$QuotesOrder =new QuotesOrder;
@@ -321,7 +322,8 @@ public function actionUpdate($id)
 				$QuotesOrder->thickness_id=$_POST['thickness'.$i];
 				$QuotesOrder->additional = '';
 				$QuotesOrder->price  =$_POST['total'.$i];
-				//$QuotesOrder->user_id =yii::app()->user->id;
+               $QuotesOrder->other_tax= $QuotesOrder->income_tax=$QuotesOrder->gst_tax='0.0';
+
 				$QuotesOrder->quote_id = $qoute_id;
 				$QuotesOrder->save();
 
