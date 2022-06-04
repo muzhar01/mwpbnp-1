@@ -56,7 +56,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'cnic'); ?>
-            <?php echo $form->textField($model, 'cnic', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'cnic', array('class' => 'form-control', 'size' => 40, 'maxlength' => 13)); ?>
             <?php echo $form->error($model, 'cnic'); ?>
         </div>
     </div>
@@ -88,14 +88,14 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'phone_office'); ?>
-            <?php echo $form->textField($model, 'phone_office', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'phone_office', array('class' => 'form-control', 'size' => 40, 'maxlength' => 30)); ?>
             <?php echo $form->error($model, 'phone_office'); ?>
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'fax_no'); ?>
-            <?php echo $form->textField($model, 'fax_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'fax_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 30)); ?>
             <?php echo $form->error($model, 'fax_no'); ?>
         </div>
     </div>
@@ -129,7 +129,7 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'company_no'); ?>
-            <?php echo $form->textField($model, 'company_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'company_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 10)); ?>
             <?php echo $form->error($model, 'company_no'); ?>
         </div>
     </div>
@@ -138,14 +138,14 @@ $form = $this->beginWidget('CActiveForm', array(
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'company_ntn_no'); ?>
-            <?php echo $form->textField($model, 'company_ntn_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'company_ntn_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 10)); ?>
             <?php echo $form->error($model, 'company_ntn_no'); ?>
         </div>
     </div>
     <div class="col-lg-6">
         <div class="form-group">
             <?php echo $form->labelEx($model, 'company_gst_no'); ?>
-            <?php echo $form->textField($model, 'company_gst_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 50)); ?>
+            <?php echo $form->textField($model, 'company_gst_no', array('class' => 'form-control', 'size' => 40, 'maxlength' => 20)); ?>
             <?php echo $form->error($model, 'company_gst_no'); ?>
         </div>
     </div>
