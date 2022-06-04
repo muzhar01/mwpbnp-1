@@ -331,6 +331,7 @@ public function actionUpdate($id)
 			 $NotifyModel = new Members();
 			 $NotifyModel->sendOrderCreationMessage($vendor_id,5,$qoute_id,$bill_date,$total_net_payable);
 			 $this->redirect('/inventory/vendor/CreateQuotesForDesktop');
+             Yii::app()->end();
 
 		}
 		if(isset($_POST['totalRows'])){ //echo "<pre>"; print_r($_POST); die;
