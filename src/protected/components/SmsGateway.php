@@ -8,16 +8,16 @@
 
 class SmsGateway extends CApplicationComponent
 {
-    private static $username = "923335174530";///Your Username
-    private static $password = "8941";///Your Password
+    private static $username = "923334485888";///Your Username
+    private static $password = "Shani786";///Your Password
     private static $sender = "MWBPNP";
     private static $timeout = 30;
-
-    private $url= 'http://sendpk.com/api/sms.php';
+    private static $api_key= '923334485888-875870d8-5a33-4e97-9b7d-7aa347215605';
+    private $url= 'https://sendpk.com/api/sms.php';
 
     public static function getBalance()
     {
-        $url='http://sendpk.com/api/balance.php?username='.self::$username.'&password='.self::$password.'&format=json';
+        $url="https://sendpk.com/api/balance.php?username=".self::$username."&password=".self::$password."";
         $ch  =  curl_init();
         $timeout  =  30;
         curl_setopt ($ch,CURLOPT_URL, $url) ;
@@ -25,14 +25,13 @@ class SmsGateway extends CApplicationComponent
         curl_setopt ($ch,CURLOPT_CONNECTTIMEOUT, self::$timeout) ;
         $response = curl_exec($ch) ;
         curl_close($ch) ;
-        return json_decode($response);
+        return str_replace('| Package# 1:','',$response);
     }
 
     public  function sendMessage($phone_number,$message){
-        $this->url=$this->url.'?username='.self::$username.'&password='.self::$password;
-        $sender='MWPBNP';
-        //$phone_number='923125061418';
-        $post = "sender=".urlencode($sender)."&mobile=".urlencode($phone_number)."&message=".urlencode($message)."";
+        $this->url=$this->url.'?api_key='.self::$api_key;
+
+        $post = "sender=".urlencode(self::$sender)."&mobile=".urlencode($phone_number)."&message=".urlencode($message)."";
 
         $ch  =  curl_init();
         $timeout  =  30;
@@ -43,6 +42,7 @@ class SmsGateway extends CApplicationComponent
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $response = curl_exec($ch);
+       // print_r($response);
         return json_decode($response);
     }
 
@@ -52,7 +52,7 @@ class SmsGateway extends CApplicationComponent
         if(!$post==$this->processDate($data)){
             return 'Post data is missing, Please check your post data';
         }
-        $this->url=$this->url.'?username='.$this->username.'&password='.$this->password;
+        $this->url=$this->url.'?api_key='.self::$api_key;
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)');

@@ -146,9 +146,9 @@ $this->breadcrumbs=array(
                             <span class="info-box-icon"><i class="fa fa-credit-card"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Balance Remaining</span>
-                                <span class="info-box-number">
+                                <span class="info-box-text">
                                     <?php $response = SmsGateway::getBalance();
-                                     echo $response->results[0]->balance;
+                                     echo substr($response,'0',12);
                                     ?>
                                 </span>
                                 <div class="progress">
