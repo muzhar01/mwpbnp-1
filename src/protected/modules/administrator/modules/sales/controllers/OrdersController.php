@@ -118,23 +118,6 @@ public function actionChowkatTool() {
 
     public function actionCreate() {
 
-        /*$model = new Cart('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Cart']))
-        $model->attributes = $_GET['Cart'];
-        //$model->created_by = $created_by;
-        $model->product_id = 15;
-
-        $form = new Cart();
-        $model->scenario = 'chowkat';
-        
-        $this->render('create', array(
-            'dataProvider' => Products::model()->search(),
-            'model' => $model,
-            'form' => $form,
-        ));
-*/
-
         $cartCookies =  isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value :'';
         $model = new Cart('search');
         
@@ -146,7 +129,9 @@ public function actionChowkatTool() {
 
         $form = new Cart();
         $model->scenario = 'chowkat';
-
+        echo '<pre>';
+        print_r($model->attributes);
+        exit();
         $this->render('create', array(
             'model' => $model,
             'dataProvider'=>Products::model()->search(true),
@@ -185,7 +170,6 @@ public function actionChowkatTool() {
             $modelCart->created_by = $cartCookies;
             $modelCart->cart_type = 'A';
             $modelCart->quantity = 1;
-            //$modelCart->created_by = Yii::app()->user->id;
             $modelCart->user_id = Yii::app()->user->id;
             $cart= Cart::model()->count("created_by=$cartCookies");
             
@@ -222,10 +206,6 @@ public function actionChowkatTool() {
             }
         }
 
-
-        // } else{
-        //     throw new CHttpException(404,'The requested page does not exist.');
-        // }
     }
     public function actionCheckout($id) {
         //if(isset($_REQUEST['yt0'])){ echo date("YmdHis"); die;}
