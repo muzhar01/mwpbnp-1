@@ -30,9 +30,7 @@ class CartController extends Controller {
     public function actionIndex() {
          // echo 1; die;
         $cartCookies =  isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value :'';
-            
         $model = new Cart('search');
-        
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Cart']))
             $model->attributes = $_GET['Cart'];
@@ -80,9 +78,7 @@ class CartController extends Controller {
         ));
     }
 
-    
-
-        public function actionAjaxUpdateCart(){
+    public function actionAjaxUpdateCart(){
         if(Yii::app()->request->isAjaxRequest){
             if(isset($_POST['quantity'])){
                 foreach ($_POST['quantity'] as $key =>$items){

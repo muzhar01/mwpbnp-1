@@ -28,7 +28,6 @@ $form = $this->beginWidget('CActiveForm', array(
         ));
 ?>
 
-<?php // echo $cartCookies; die('aaaaaaa'); ?>
 <?php
 if($cartCookies!=''){ //by jyoti
     if (!Yii::app()->user->isGuest && Yii::app()->user->role == 2) {
@@ -86,16 +85,12 @@ if($cartCookies!=''){ //by jyoti
             'columns' => array(
                 array('name' => 'product_id', 'value'=>'$data->product->name. "<br />".stripslashes($data->size->title)."(".$data->type.") / ".stripslashes($data->thickness->title).$data->chowkat."[".$data->ckt_qty."]"', 'type' => 'raw', 'footer' => 'Total Price'),
                 array('name' => 'price', 'value' => '$data->getPrice()." / ".$data->product->category->unit'),
-                
+
+                array('name' => 'Weight', 'value' => '!empty($data->ckt_qty)? $data->quantity ." Kg": "--"'),
                 array(
                     'name' => 'quantity',
                     'type' => 'raw',
-                    'value' => 'CHtml::textField("quantity[$data->id]",$data->quantity,array("style"=>"width:100px;", "maxlength" => 10))." ".$data->product->category->unit',
-                ),
-                array(
-                    'name' => 'chowkat_Qty',
-                    'type' => 'raw',
-                    'value' => '$data->ckt_qty',
+                    'value' => 'CHtml::textField("quantity[$data->id]",empty($data->ckt_qty)?$data->quantity:$data->ckt_qty,array("style"=>"width:50px;", "maxlength" => 5))." "',
                 ),
                 array('name' => 'total_price', 'value' => 'number_format($data->getSubTotalPrice(),2)', 'footer' => number_format($model->getTotalPrice(), 2)),
                 array(
