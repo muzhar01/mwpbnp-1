@@ -24,9 +24,12 @@ Yii::app()->clientScript->registerScript('search', "
     <div class="box box-primary">
         <div class="box-header with-border">
             <h1 class="box-title">Manage Status</h1>
-            <?php if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add'))
+            <?php
+            /*if (AdminUser::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'add'))
                 echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Create Status', $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right'));
-            ?>        </div>
+            */
+            ?>
+        </div>
         <div class="box-body">
 
             <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -45,7 +48,7 @@ Yii::app()->clientScript->registerScript('search', "
                         'header' => "Show Records " . CHtml::dropDownList('pageSize', $pageSize, array(20 => 20, 50 => 50, 100 => 100, 200 => 200), array(
                                 'onchange' => "$.fn.yiiGridView.update('sms-trigger-status-grid',{ data:{pageSize: $(this).val() }})",
                             )),
-                        'template' => '{published}{update}',
+                        'template' => '{update}',
                         'buttons' => array(
                             'published' => array(
                                 'label' => 'Published',

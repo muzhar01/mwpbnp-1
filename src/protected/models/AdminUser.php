@@ -48,8 +48,9 @@ class AdminUser extends CActiveRecord {
                   array('role_id, create_on, lastlogin_on, status, phone_number,commission', 'numerical', 'integerOnly' => true),
                   array('name, address', 'length', 'max' => 255),
                   array('level_a,level_b,level_c,level_d', 'length', 'max' => 1),
-
+                  array('name,city','match','pattern'=>'/^([A-Za-z]+)$/'),
                   array('phone_number','length', 'max' => 14),
+                  array('phone_number','match','pattern'=>'/^([0-9]+)$/'),
                   array('city', 'length', 'max' => 100),
                   array('zipcode, state, username', 'length', 'max' => 20),
                   array('email_address', 'length', 'max' => 60),

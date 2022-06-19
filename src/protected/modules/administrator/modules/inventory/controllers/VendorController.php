@@ -10,8 +10,9 @@ class VendorController extends Controller
 	public $resource_id=16;
 
 	function init() {
+       // $this->homeUrl=$this->baseUrl .= '/inventory/vendor'; //Backend, I am using for Admin
 		$this->pageTitle=$this->sitename.' '.$this->pageTitle;
-			$this->baseUrl='administrator/inventory';
+        $this->homeUrl = $this->baseUrl='/administrator/inventory/vendor';
 			
 	  Yii::import('application.extensions.phpmailer.JPhpMailer'); // Import php mail class
   }
@@ -44,16 +45,17 @@ class VendorController extends Controller
 				$model->attributes=$_POST['Vendor'];
 					if($searchmodel)
 						 {
-						Yii::app()->user->setFlash('notification',' Records Already Exists ');
-						$this->render('create',['model'=>$model]);
+						Yii::app()->user->setFlash('success',' Records Already Exists ');
+                             $this->redirect(Yii::app()->createUrl($this->baseUrl.'/index'));
 						}
 					else if($model->save())
 						{
-							Yii::app()->user->setFlash('save',' Records has Been Successfully Save.. ');
-						 $this->render('create',['model'=>$model]);
+						 Yii::app()->user->setFlash('success',' Records has Been Successfully Save.. ');
+                            $this->redirect(Yii::app()->createUrl($this->baseUrl.'/index'));
 						}
 					else{
-						die('not save');
+                        Yii::app()->user->setFlash('error',' Error while save data. ');
+
 					}
 			}
 		
