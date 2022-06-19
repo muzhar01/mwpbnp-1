@@ -214,6 +214,7 @@ public function actionChowkatTool() {
             $model->product_id = 15;
             $model->cart_type = 'A';
             $model->created_by = $cartCookies;
+            $model->user_id = Yii::app()->user->id;
             if ($model->save(false)) {
                 Yii::app()->user->setFlash('success', "Chowkat is successfully created");
                 $this->redirect('/administrator/sales/orders/create');
