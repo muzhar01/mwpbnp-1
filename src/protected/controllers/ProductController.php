@@ -108,36 +108,17 @@ class ProductController extends Controller {
             </div>
             </div> 
     <?php }
+
     public function actionDelete($id) {
-            $userId=Yii::app()->user->id;
-            if($userId!=''){
-             /*$this->loadModel($id)->delete();
-                $model=Cart::model()->findByPk($id);
-                if($model){}
-                $model->delete();*/
-           
-              $param=array('created_by' =>$userId);
-              Cart::model()->deleteByPk($id,'',$param);
-              $this->redirect('https://www.mwpbnp.com/product/cart');
 
-              
-              //Yii::app()->end();
-            }
-           // die('aaa');
-
-
-             
-      /*  if (Members::model()->findByPk(Yii::app()->user->id)->checkAccess($this->resource_id, 'delete')) {
-            $this->loadModel($id)->delete();
-            print_r($id); die();
+        if (Yii::app()->user->id) {
+            Cart::model()->deleteByPk($id);
             // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        }
 
 
-        } else{
-            throw new CHttpException(403, Yii::app()->params['access']);
-        }*/
     }
     public function actionDeletetest(){
         if(file_exists('protected/config/database.php')){ 
