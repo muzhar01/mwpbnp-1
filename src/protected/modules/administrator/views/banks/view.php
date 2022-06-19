@@ -23,8 +23,8 @@ $this->breadcrumbs=array(
 		'name',
 		'account_no',
 		'account_title',
-		'created_date',
-		 array('type' => 'Raw', 'name' => 'published', 'value' =>($model->published)? "Yes":"<span style=\"color:#f00\">No</span>"),  
+		 array('type' => 'Raw', 'name' => 'created_date', 'value' => date("Y-m-d",strtotime($model->created_date))),
+		 array('type' => 'Raw', 'name' => 'published', 'value' =>($model->published)? "Yes":"<span style=\"color:#f00\">No</span>"),
 		
 	),
 )); ?>
