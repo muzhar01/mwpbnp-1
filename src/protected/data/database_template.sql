@@ -2001,6 +2001,40 @@ ALTER TABLE `quotes_order`
 
 ALTER TABLE `products` ADD FOREIGN KEY (`category_id`) REFERENCES `product_category`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
+CREATE TABLE `paybill_current` (
+       `id` int NOT NULL,
+       `pay_date` datetime DEFAULT CURRENT_TIMESTAMP,
+       `discount` float DEFAULT NULL,
+       `amount_paid` float DEFAULT NULL,
+       `payment_method` int DEFAULT NULL,
+       `amount_due` float DEFAULT NULL,
+       `amount_balance` float DEFAULT NULL,
+       `bill_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+       `bill_id` bigint NOT NULL,
+       `vendor_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `paybill_current`
+--
+ALTER TABLE `paybill_current`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `paybill_current`
+--
+ALTER TABLE `paybill_current`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+
 COMMIT;
 
 
