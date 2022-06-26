@@ -299,9 +299,9 @@ CREATE TABLE `item` (
     `cost` float NOT NULL,
     `total` float NOT NULL,
     `vendor_id` int(100) NOT NULL,
-    `ref_no` int(100) NOT NULL,
-    `bill_unique_no` int(100) NOT NULL,
-    `terms` varchar(20) NOT NULL,
+    `ref_no` bigint NOT NULL,
+    `bill_unique_no` bigint NOT NULL,
+    `terms` text NOT NULL,
     `bill_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -340,8 +340,8 @@ CREATE TABLE `item_return` (
    `total` float NOT NULL,
    `vendor_id` int(100) NOT NULL,
    `ref_no` int(100) NOT NULL,
-   `bill_unique_no` int(100) NOT NULL,
-   `terms` varchar(20) NOT NULL,
+   `bill_unique_no`bigint NOT NULL,
+   `terms` text NOT NULL,
    `bill_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -467,7 +467,7 @@ CREATE TABLE `payments` (
 
 CREATE TABLE `pay_bill` (
     `id` int(11) NOT NULL,
-    `bill_id` int(10) NOT NULL,
+    `bill_id` BIGINT NOT NULL,
     `vendor_id` int(10) NOT NULL,
     `bill_date` date NOT NULL,
     `discount` float NOT NULL,

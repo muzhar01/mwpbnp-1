@@ -117,6 +117,10 @@ class ProductController extends Controller {
             if (!isset($_GET['ajax']))
                 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
         }
+        else{
+            Yii::app()->user->setFlash('error', "You need to login first then you will be able to delete or update item in cart.");
+            echo "<script>window.location.reload();</script>";
+        }
 
 
     }
@@ -329,7 +333,10 @@ class ProductController extends Controller {
                 foreach ($_POST['quantity'] as $key =>$items){
                     $model= Cart::model()->findByPk($key);
                     if($model){
-                        $model->quantity=$items;
+                        if(empty($model->ckt_qty))
+                            $model->quantity=$items;
+                        else
+                            $model->ckt_qty=$items;
                         $model->save(false);
                     }
                             
@@ -341,113 +348,109 @@ class ProductController extends Controller {
 
 
     public function actionPayment() {
-	
-	$model_profile = Members::model()->findbyPk(Yii::app()->user->id);
-		
+	    $model_profile = Members::model()->findbyPk(Yii::app()->user->id);
 		$session = Yii::app()->session;
         $session->open();
-        
         $model = Quotes::model()->findByPk($session['quote']);
-
         $model->status='Processing';
         $model->save();
         $model->saveOrder();
        
-        if ($model) { 
-		
-		if($model->payment_type == 'EasyPay - Mobile ')
-		{
-			$paymentMethod='MA_PAYMENT_METHOD';
-			$emailAddr='info@mwpbnp.com';
-			$mobileNum="03485384454";
-		}
-		else if($model->payment_type == 'EasyPay - EasyPaisa Shop')
-		{
-			$paymentMethod='OTC_PAYMENT_METHOD';
-			$emailAddr='info@mwpbnp.com';
-$mobileNum="03485384454";
-		}
-		else
-		{
-			$paymentMethod='CC_PAYMENT_METHOD';
-			$emailAddr=$model_profile->email;
-$mobileNum=$model_profile->cellular;
-		}
-$hashRequest = '';
-$hashKey = '0JCLI8R8UXJ4ZR9X'; // generated from easypay account
-$storeId="4063";
-$amount=$model->quote_value;
-$postBackURL="https://www.f/product/confirm";
-$orderRefNum=$model->quote_id;
-$expiryDate="20190721 112300";
-$autoRedirect=0 ;
-/*$emailAddr='info@mwpbnp.com';
-$mobileNum="03485384454";*/
+        if ($model) {
+
+            if($model->payment_type == 'EasyPay - Mobile ')
+            {
+                $paymentMethod='MA_PAYMENT_METHOD';
+                $emailAddr='info@mwpbnp.com';
+                $mobileNum="03485384454";
+            }
+            else if($model->payment_type == 'EasyPay - EasyPaisa Shop')
+            {
+                $paymentMethod='OTC_PAYMENT_METHOD';
+                $emailAddr='info@mwpbnp.com';
+                $mobileNum="03485384454";
+            }
+            else
+            {
+                $paymentMethod='CC_PAYMENT_METHOD';
+                $emailAddr=$model_profile->email;
+                $mobileNum=$model_profile->cellular;
+            }
+            $hashRequest = '';
+            $hashKey = '0JCLI8R8UXJ4ZR9X'; // generated from easypay account
+            $storeId="4063";
+            $amount=$model->quote_value;
+            $postBackURL="https://www.f/product/confirm";
+            $orderRefNum=$model->quote_id;
+            $expiryDate="20190721 112300";
+            $autoRedirect=0 ;
+            /*$emailAddr='info@mwpbnp.com';
+            $mobileNum="03485384454";*/
 
 
-///starting encryption///
-$paramMap = array();
-$paramMap['amount']  = $amount;
-$paramMap['autoRedirect']  = $autoRedirect;
-$paramMap['emailAddr']  = $emailAddr;
-$paramMap['expiryDate'] = $expiryDate;
-$paramMap['mobileNum'] =$mobileNum;
-$paramMap['orderRefNum']  = $orderRefNum;
-$paramMap['paymentMethod']  = $paymentMethod;
-$paramMap['postBackURL'] = $postBackURL;
-$paramMap['storeId']  = $storeId;
-// exit;
-//Creating string to be encoded
-$mapString = '';
-foreach ($paramMap as $key => $val) {
-      $mapString .=  $key.'='.$val.'&';
-}
-$mapString  = substr($mapString , 0, -1);
+            ///starting encryption///
+            $paramMap = array();
+            $paramMap['amount']  = $amount;
+            $paramMap['autoRedirect']  = $autoRedirect;
+            $paramMap['emailAddr']  = $emailAddr;
+            $paramMap['expiryDate'] = $expiryDate;
+            $paramMap['mobileNum'] =$mobileNum;
+            $paramMap['orderRefNum']  = $orderRefNum;
+            $paramMap['paymentMethod']  = $paymentMethod;
+            $paramMap['postBackURL'] = $postBackURL;
+            $paramMap['storeId']  = $storeId;
+            // exit;
+            //Creating string to be encoded
+            $mapString = '';
+            foreach ($paramMap as $key => $val) {
+                  $mapString .=  $key.'='.$val.'&';
+            }
+            $mapString  = substr($mapString , 0, -1);
 
-// Encrypting mapString
-function pkcs5_pad($text, $blocksize) {
-      $pad = $blocksize - (strlen($text) % $blocksize);
-      return $text . str_repeat(chr($pad), $pad);
-}
+        // Encrypting mapString
+        function pkcs5_pad($text, $blocksize) {
+              $pad = $blocksize - (strlen($text) % $blocksize);
+              return $text . str_repeat(chr($pad), $pad);
+        }
 
-$alg = MCRYPT_RIJNDAEL_128; // AES
-$mode = MCRYPT_MODE_ECB; // ECB
+        $alg = MCRYPT_RIJNDAEL_128; // AES
+        $mode = MCRYPT_MODE_ECB; // ECB
 
-$iv_size = mcrypt_get_iv_size($alg, $mode);
-$block_size = mcrypt_get_block_size($alg, $mode);
-$iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
+        $iv_size = mcrypt_get_iv_size($alg, $mode);
+        $block_size = mcrypt_get_block_size($alg, $mode);
+        $iv = mcrypt_create_iv($iv_size, MCRYPT_DEV_URANDOM);
 
-$mapString = pkcs5_pad($mapString, $block_size);
-$crypttext = mcrypt_encrypt($alg, $hashKey, $mapString, $mode, $iv);
-$hashRequest = base64_encode($crypttext);
-// end encryption;
+        $mapString = pkcs5_pad($mapString, $block_size);
+        $crypttext = mcrypt_encrypt($alg, $hashKey, $mapString, $mode, $iv);
+        $hashRequest = base64_encode($crypttext);
+        // end encryption;
 
-$string = '<html><title>Redirecting Esay Pay...</title>'
-                    . '<body>'
-                    . '<p style="text-align: center;width: 20%;position: absolute;top: 43%;left: 41%;padding: 20px;">'
-                    . '<img src="/images/ajax-loader.gif" alt="Loading..." />'
-                    . '</p>';
-            $string.='<form action="https://easypay.easypaisa.com.pk/easypay/Index.jsf" method="POST" id="easyPayStartForm">
-                    <input name="storeId" value="'.$storeId.'" hidden = "true"/>
-                    <input name="amount" value="'.$amount.'" hidden = "true"/>
-                    <input name="postBackURL" value="'.$postBackURL.'" hidden = "true"/>
-                    <input name="orderRefNum" value="'.$orderRefNum.'" hidden = "true"/>
-                    <input type ="hidden" name="expiryDate" value="'.$expiryDate.'" />
-                    <input type ="hidden" name="autoRedirect" value="'.$autoRedirect.'" />
-                    <input type ="hidden" name="paymentMethod" value="'.$paymentMethod.'" />
-                    <input type ="hidden" name="emailAddr" value="'.$emailAddr.'" />
-                    <input type ="hidden" name="mobileNum" value="'.$mobileNum.'" />
-                    <input type ="hidden" name="merchantHashedReq" value="'.$hashRequest.'" />
-                    ';
-            $string.= '</form></body></html>';
-            $string.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                      setTimeout(function(){ 
-                        $("#easyPayStartForm").submit();
-                    }, 1000); 
-                    }); 
-                </script>';
+        $string = '<html><title>Redirecting Esay Pay...</title>'
+                . '<body>'
+                . '<p style="text-align: center;width: 20%;position: absolute;top: 43%;left: 41%;padding: 20px;">'
+                . '<img src="/images/ajax-loader.gif" alt="Loading..." />'
+                . '</p>';
+        $string.='<form action="https://easypay.easypaisa.com.pk/easypay/Index.jsf" method="POST" id="easyPayStartForm">
+                <input name="storeId" value="'.$storeId.'" hidden = "true"/>
+                <input name="amount" value="'.$amount.'" hidden = "true"/>
+                <input name="postBackURL" value="'.$postBackURL.'" hidden = "true"/>
+                <input name="orderRefNum" value="'.$orderRefNum.'" hidden = "true"/>
+                <input type ="hidden" name="expiryDate" value="'.$expiryDate.'" />
+                <input type ="hidden" name="autoRedirect" value="'.$autoRedirect.'" />
+                <input type ="hidden" name="paymentMethod" value="'.$paymentMethod.'" />
+                <input type ="hidden" name="emailAddr" value="'.$emailAddr.'" />
+                <input type ="hidden" name="mobileNum" value="'.$mobileNum.'" />
+                <input type ="hidden" name="merchantHashedReq" value="'.$hashRequest.'" />
+                ';
+        $string.= '</form></body></html>';
+        $string.='<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                  setTimeout(function(){ 
+                    $("#easyPayStartForm").submit();
+                }, 1000); 
+                }); 
+            </script>';
             echo $string;
 		} else {
             $this->redirect('/products/review');
@@ -528,22 +531,7 @@ $string = '<html><title>Redirecting Esay Pay...</title>'
         $this->render('archive',array('model'=>$model,'date'=>(!isset($_POST['archivedate'])) ? date('Y-m-d'): $_POST['archivedate']));        
     }
 
-    public function actionArchivetst($slug){
 
-        print_r($_POST);
-        die();
-        if(empty($slug))
-            throw new CHttpException(404, 'The requested page does not exist.');
-        $this->layout = '//layouts/column2';
-        $model=new Products('search');
-        $model->unsetAttributes();  // clear any default values
-            if(isset($_POST['archivedate']))
-            $model->attributes=$_POST['archivedate'];
-            $model->slug=$slug;
-         
-         //$date=$_POST['archivedate'];;
-        $this->render('archive',array('model'=>$model,'date'=>(!isset($_POST['archivedate'])) ? date('Y-m-d'): $_POST['archivedate']));        
-    }
 
 
 }

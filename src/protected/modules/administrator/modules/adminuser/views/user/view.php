@@ -23,8 +23,8 @@ $this->breadcrumbs=array(
 		'state',
 		'email_address',
 		array('header'=>'Created on','type'=>'Raw','name'=>'create_on','value'=>date(Yii::app()->params['date'], $model->create_on)),
-                array('header'=>'Last Login Date','type'=>'Raw','name'=>'lastlogin_on','value'=>date(Yii::app()->params['date'], $model->lastlogin_on)),
-		 array('header'=>'Status','type'=>'Raw','name'=>'status','value'=>($model->status)? "Active":"<span style=\"color:#f00\">Suspend</span>"),
+        array('header'=>'Last Login Date','type'=>'Raw','name'=>'lastlogin_on','value'=>date(Yii::app()->params['date'], $model->lastlogin_on)),
+		array('header'=>'Status','type'=>'Raw','name'=>'status','value'=>($model->status)? "Active":"<span style=\"color:#f00\">Suspend</span>"),
 		'username',
 	),
 )); ?>
