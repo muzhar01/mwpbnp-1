@@ -57,7 +57,7 @@ class ProductsController extends Controller
                             $rnd = rand(0,9999);
                             $uploadedFile=CUploadedFile::getInstance($model,'image');
                             $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                            $uploadedFile->saveAs($this->uploadPath.'/'.$fileName);
+                            $uploadedFile->saveAs($this->uploadPath.'/products/'.$fileName);
                             $model->image = $fileName;
                         }
                 if($model->save()){
@@ -91,10 +91,11 @@ class ProductsController extends Controller
                 $model->attributes=$_POST['Products'];
 
                 if(!empty($_FILES['Products']['name']['image'])){
+
                         $rnd = rand(0,9999);
                         $uploadedFile=CUploadedFile::getInstance($model,'image');
                         $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-                        $uploadedFile->saveAs($this->uploadPath.'/'.$fileName);
+                        $uploadedFile->saveAs($this->uploadPath.'/products/'.$fileName);
 
                         $model->image = $fileName;
                 }
