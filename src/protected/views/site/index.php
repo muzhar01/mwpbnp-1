@@ -7,17 +7,18 @@
 
     <div class="pt-50">
         <ul class="nav nav-tabs">
+            
             <li class="active">
-                <a data-toggle="tab" href="#pakistan_price">Pakistan Price</a>
+                <a data-toggle="tab" href="#international_price">International Price</a>
             </li>
             <li class="">
-                <a data-toggle="tab" href="#international_price">International Price</a>
+                <a data-toggle="tab" href="#pakistan_price">Pakistan Price</a>
             </li>
         </ul>
 
         <div class="tab-content">
 
-            <div id="pakistan_price" class="tab-pane fade in active">
+            <div id="pakistan_price" class="tab-pane ">
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Line chart -->
@@ -30,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div id="international_price" class="tab-pane ">
+            <div id="international_price" class="tab-pane fade in active ">
                 <iframe src='https://www.tradingeconomics.com/embed/?s=steel&v=201703040000t&h=300&w=600&ref=/commodity/steel' height='300' width='100%' frameborder='0' scrolling='no'></iframe><br />
                 source: <a href='https://www.tradingeconomics.com/commodity/steel'>tradingeconomics.com</a>
             </div>
@@ -58,6 +59,7 @@
             </div><!-- /.box -->
         </div>
     </div>
+    
     <h3 class="mb-25">Import Steel Prices</h3>
     <div id="pakistan_price">
         <div class="row">
