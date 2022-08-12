@@ -96,13 +96,15 @@
                         ));
                         ?>
                         <?php endif; ?>
-                        <?php if (Yii::app()->user->hasFlash('error')): ?>
-                        <div class="alert alert-danger">
-                        <?php echo Yii::app()->user->getFlash('error'); ?>
-                        </div>
-                            <?php endif; ?>
+
+
                 </section>
                 <!-- Main content -->
+                <?php if (Yii::app()->user->hasFlash('error')): ?>
+                    <div class="alert alert-danger mt-5">
+                        <?php echo Yii::app()->user->getFlash('error'); ?>
+                    </div>
+                <?php endif; ?>
                             <?php echo $content; ?>
                 <!-- /.content -->
             </div>

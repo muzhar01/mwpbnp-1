@@ -54,8 +54,9 @@ class CategoryController extends Controller
 			$model->attributes=$_POST['ProductCategory'];
                         $model->level=$model->getLevel($model->parent_id);
                         if($model->save()){
-                               $model->saveCategorySize($model->id);
-				$this->redirect(array('index'));
+                            $model->saveCategorySize($model->id);
+                            Yii::app()->user->setFlash('success', "category is successfully saved!");
+                            $this->redirect(array('index'));
                         }
 		}
 
@@ -86,8 +87,9 @@ class CategoryController extends Controller
                         $model->level=$model->getLevel($model->parent_id);
                        
                         if($model->save()){
-                               $model->saveCategorySize($model->id);
-				$this->redirect(array('index'));
+                            $model->saveCategorySize($model->id);
+                            Yii::app()->user->setFlash('success', "category is successfully saved!");
+                            $this->redirect(array('index'));
                         }
 		}
 
@@ -111,6 +113,7 @@ class CategoryController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
+            Yii::app()->user->setFlash('success', "category is successfully deleted!");
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
             }
                 else
@@ -147,8 +150,10 @@ class CategoryController extends Controller
                     $model->published = 0;
                 else
                     $model->published = 1;
-                if ($model->save())
+                if ($model->save(false)) {
+                    Yii::app()->user->setFlash('success', "category is successfully saved!");
                     $this->redirect($this->baseUrl . '/index');
+                }
              } else
                     throw new CHttpException(403, Yii::app()->params['access']);
         }

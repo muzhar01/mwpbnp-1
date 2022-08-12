@@ -60,7 +60,8 @@ if (!Yii::app()->user->isGuest && Yii::app()->user->role == 2) {
             array(
                 'name' => 'quantity',
                 'type' => 'raw',
-                'value' => 'CHtml::textField("quantity[$data->id]",$data->quantity,array("style"=>"width:50px;", "maxlength" => 5))." ".$data->product->category->unit',
+                'value' => 'empty($data->ckt_qty) ? CHtml::numberField("quantity[$data->id]",$data->quantity,array("style"=>"width:70px;", "maxlength" => 5)) : CHtml::numberField("quantity[$data->id]",$data->ckt_qty,array("style"=>"width:70px;", "maxlength" => 5))',
+                //'value' => 'CHtml::textField("quantity[$data->id]",$data->quantity,array("style"=>"width:50px;", "maxlength" => 5))." ".$data->product->category->unit',
             ),
             array('name' => 'total_price', 'value' => 'number_format($data->getSubTotalPrice(),2)', 'footer' => number_format($model->getTotalPrice(), 2)),
             array(

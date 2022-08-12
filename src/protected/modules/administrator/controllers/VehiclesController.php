@@ -303,8 +303,8 @@ class VehiclesController extends Controller
         $model->unsetAttributes();  // clear any default values
         if(isset($_GET['VehiclePayments'])) {
             $model->attributes = $_GET['VehiclePayments'];
-            $model->from_date = $_GET['VehiclePayments']['from_date'];
-            $model->to_date = $_GET['VehiclePayments']['to_date'];
+            $model->from_date = $_GET['VehiclePayments']['from_date'] .' 00:00:00';
+            $model->to_date = $_GET['VehiclePayments']['to_date'] .' 23:59:59';
             //$model->today = $_GET['VehiclePayments']['today'];
         }
         if (isset ($_GET['pageSize'])) {

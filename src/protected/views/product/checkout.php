@@ -22,10 +22,16 @@
                 'validateOnSubmit' => true,
             ),
         ));
-        ?> 
-
+        ?>
+        <?php echo $form->errorSummary($modelQoute); ?>
 
         <div class="col-lg-12">
+            <?php if (Yii::app()->user->hasFlash('error')): ?>
+                <div class="alert alert-danger">
+                    <?php echo Yii::app()->user->getFlash('error'); ?>
+                </div>
+            <?php endif; ?>
+
             <fieldset>
                 <legend>Order Information</legend>
                 <div class="row">

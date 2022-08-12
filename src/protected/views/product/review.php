@@ -4,16 +4,14 @@
 
 <div class="row">
     <div class="col-lg-12" style="margin-top: 1em">
-        <span class="pull-right" style="padding: 0px 5px">
-    <?php echo CHtml::link('Review your billing and shipping information <i class="fa fa-cart-arrow-down"></i>',
-        '/product/checkout', array('class' => 'btn btn-primary pull-right')); ?>
-    </span>
     <?php
         $form = $this->beginWidget('CActiveForm', array(
             'id' => 'payment-form',
             'action'=>'/product/completed',
          ));
-      echo CHtml::submitButton('Pay your order now!', array('class' => 'btn btn-success pull-right'));
+      echo CHtml::link('Review Information <i class="fa fa-cart-arrow-down"></i>',
+        '/product/checkout', array('class' => 'btn btn-primary pull-right')) .'&nbsp;';
+      echo CHtml::submitButton('Pay your order now!', array('class' => 'btn btn-danger pull-right'));
       $this->endWidget(); ?>
        
     </div>

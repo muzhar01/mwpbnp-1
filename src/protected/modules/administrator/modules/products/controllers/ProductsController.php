@@ -51,6 +51,8 @@ class ProductsController extends Controller
             $model->setScenario('insert');
             if(isset($_POST['Products'])){
                 $model->attributes=$_POST['Products'];
+                $model->weight='';
+                $model->length='';
                 if(!empty($_FILES['Products']['name']['image'])){
                             $rnd = rand(0,9999);
                             $uploadedFile=CUploadedFile::getInstance($model,'image');
@@ -61,6 +63,7 @@ class ProductsController extends Controller
                 if($model->save()){
                     $model->saveProductSize($model->id);
                     $model->saveProductThickness($model->id);
+                    Yii::app()->user->setFlash('success', "Product is successfully saved!");
                     $this->redirect(array('index'));
                 }
             }
@@ -88,6 +91,7 @@ class ProductsController extends Controller
                 $model->attributes=$_POST['Products'];
 
                 if(!empty($_FILES['Products']['name']['image'])){
+
                         $rnd = rand(0,9999);
                         $uploadedFile=CUploadedFile::getInstance($model,'image');
                         $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
@@ -99,6 +103,8 @@ class ProductsController extends Controller
                 if($model->save()){
                    $model->saveProductSize($model->id);
                    $model->saveProductThickness($model->id);
+                   Yii::app()->user->setFlash('success', "Product is successfully saved!");
+
                    $this->redirect(array('index'));
                                 }
             }

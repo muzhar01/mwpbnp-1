@@ -52,7 +52,8 @@ Yii::app ()->clientScript->registerScript ('search', "
                                                     'account_no',
                                                     'account_title',
                                                     'charges',
-                                                    'created_date',
+
+                                                    array('type' => 'Raw', 'name' => 'created_date', 'value' => 'date("Y-m-d",strtotime($data->created_date))'),
                                                     array('type' => 'Raw', 'name' => 'published', 'value' => '($data->published)? "Yes":"<span style=\"color:#f00\">No</span>"'),
                                                     /*
                                                       'type',
