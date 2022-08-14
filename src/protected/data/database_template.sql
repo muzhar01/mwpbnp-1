@@ -160,7 +160,7 @@ CREATE TABLE `cart` (
 `created_by` varchar(200) NOT NULL,
 `created_date` datetime NOT NULL,
 `cart_type` varchar(2) DEFAULT NULL,
-`user_id` int(11) NOT NULL
+`user_id` int(11) NOT NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 --
@@ -490,8 +490,8 @@ CREATE TABLE `products` (
     `slug` varchar(255) DEFAULT NULL,
     `meta_tag` varchar(255) DEFAULT NULL,
     `image` varchar(100) DEFAULT NULL,
-    `weight` varchar(50) NOT NULL,
-    `length` varchar(50) NOT NULL,
+    `weight` varchar(50) NOT NULL DEFAULT 0,
+    `length` varchar(50) NOT NULL DEFAULT 0,
     `published` tinyint(4) NOT NULL,
     `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `category_id` int(11) NOT NULL,
