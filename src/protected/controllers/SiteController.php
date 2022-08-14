@@ -211,7 +211,14 @@ class SiteController extends Controller {
      * Displays the contact page
      */
     public function actionContact() {
-        $this->layout='//layouts/contactus';
+
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+        if($server_name==Yii::app()->params['main_domain']) {
+            $this->layout = '//layouts/column2';
+        }
+        else{
+            $this->layout='//layouts/contactus';
+        }
 		$model = new ContactForm ();
         if (isset($_POST ['ContactForm'])) {
             $model->attributes = $_POST ['ContactForm'];
