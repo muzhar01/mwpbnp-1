@@ -81,7 +81,7 @@
                 <div class="form-group">
                     <?php
                     echo
-                    (!empty($model->image)) ? CHtml::image($this->publicPath.'' . $model->image, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/products/no-image.png', "image", array("width" => 200));
+                    (!empty($model->image)) ? CHtml::image($this->publicPath.'/products/' . $model->image, "image", array("width" => 200)) : CHtml::image(Yii::app()->request->baseUrl . '/images/products/no-image.png', "image", array("width" => 200));
                     ?>
                 </div>
             </div>
@@ -119,6 +119,7 @@
                 $model->products_thickness = array_keys(CHtml::listData(ProductsThicknessListings::model()->findAll(array('condition' => "product_id=$model->id")), 'thickness_id', 'thickness_id'));
             }
             $criteria = new CDbCriteria();
+            $criteria->compare('published',1);
             $list = CHtml::ListData(ProductThickness::model()->findAll($criteria), 'id', function($post) {
                         return stripslashes($post->title);
                     });

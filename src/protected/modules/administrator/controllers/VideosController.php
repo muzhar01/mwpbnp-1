@@ -46,6 +46,11 @@ class VideosController extends Controller
 		if(isset($_POST['Videos']))
 		{
 			$model->attributes=$_POST['Videos'];
+            $model->video_type='embed';
+            $model->size=100;
+            $model->user_id=Yii::app()->user->id;
+            $model->cat_id=1;
+            $model->fetured=1;
 			if($model->save())
 				$this->redirect(array('index'));
 		}
@@ -70,6 +75,7 @@ class VideosController extends Controller
 		if(isset($_POST['Videos']))
 		{
 			$model->attributes=$_POST['Videos'];
+            $model->video_type='embed';
 			
 			if($model->save())
 				$this->redirect(array('index'));

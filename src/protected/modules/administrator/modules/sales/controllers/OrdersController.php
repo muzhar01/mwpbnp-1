@@ -48,101 +48,50 @@ class OrdersController extends Controller {
         ));
     }
 
+    public function actionDelete($id) {
+            if (Yii::app()->request->isPostRequest) {
+                // we only allow deletion via POST request
+            $model = Cart::model()->findByPk($id);
+            if ($model === null)
+                throw new CHttpException(404, 'The requested page does not exist.');
 
-public function actionDelete($id) {
-        if (Yii::app()->request->isPostRequest) {
-            // we only allow deletion via POST request
-        $model = Cart::model()->findByPk($id);
-        if ($model === null)
-            throw new CHttpException(404, 'The requested page does not exist.');
-        
-            $model->delete();
+                $model->delete();
 
-            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-            if (!isset($_GET['ajax']))
-                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
-        } else
-            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
-    }
-
-public function actionChowkatTool() {
-        
-        $model = new Cart('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Cart']))
-            $model->attributes = $_GET['Cart'];
-        $model->created_by = $created_by;
-        $model->product_id = 15;
-
-        $form = new Cart();
-        $model->scenario = 'chowkat';
-
-        $this->render('cart_chowkat', array(
-            'model' => $model,
-            'form' => $form,
-        ));
-    }
-
-/*    public function actionAddCart() {
-        if (Yii::app()->user->isGuest) {
-            $this->redirect('member/login', true);
-        }
-        
-        $cartCookies = isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value : '';
-        if (empty($cartCookies)) {
-            $cookie = new CHttpCookie('cart', time());
-            $cookie->expire = time() + 60 * 60 * 24;
-            Yii::app()->request->cookies['cart'] = new CHttpCookie('cart', $cookie);
-            $cartCookies = $cookie;
+                // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+                if (!isset($_GET['ajax']))
+                    $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+            } else
+                throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
         }
 
-        $model = new Cart();
-        $model->setScenario('chowkat');
-        if (isset($_POST['Cart'])) {
-            $model->attributes = $_POST['Cart'];
+    public function actionChowkatTool() {
+
+            $model = new Cart('search');
+            $model->unsetAttributes();  // clear any default values
+            if (isset($_GET['Cart']))
+                $model->attributes = $_GET['Cart'];
+            $model->created_by = $created_by;
             $model->product_id = 15;
-            $model->cart_type = 'C';
-            $model->created_by = $cartCookies;
-            if ($model->save(false)) {
-                Yii::app()->user->setFlash('success', "Chowkat is successfully created");
-                $this->redirect('/member/chowkat-tool');
-                Yii::app()->end();
-            }
+
+            $form = new Cart();
+            $model->scenario = 'chowkat';
+
+            $this->render('cart_chowkat', array(
+                'model' => $model,
+                'form' => $form,
+            ));
         }
-
-
-        // } else{
-        //     throw new CHttpException(404,'The requested page does not exist.');
-        // }
-    }*/
 
     public function actionCreate() {
 
-        /*$model = new Cart('search');
-        $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Cart']))
-        $model->attributes = $_GET['Cart'];
-        //$model->created_by = $created_by;
-        $model->product_id = 15;
-
-        $form = new Cart();
-        $model->scenario = 'chowkat';
-        
-        $this->render('create', array(
-            'dataProvider' => Products::model()->search(),
-            'model' => $model,
-            'form' => $form,
-        ));
-*/
-
         $cartCookies =  isset(Yii::app()->request->cookies['cart']) ? Yii::app()->request->cookies['cart']->value :'';
         $model = new Cart('search');
-        
+
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Cart']))
             $model->attributes = $_GET['Cart'];
         $model->created_by = $cartCookies;
-        
+
 
         $form = new Cart();
         $model->scenario = 'chowkat';
@@ -185,6 +134,7 @@ public function actionChowkatTool() {
             $modelCart->created_by = $cartCookies;
             $modelCart->cart_type = 'A';
             $modelCart->quantity = 1;
+            $modelCart->user_id = Yii::app()->user->id;
             $cart= Cart::model()->count("created_by=$cartCookies");
             
             if ($modelCart->save(false))
@@ -212,6 +162,7 @@ public function actionChowkatTool() {
             $model->product_id = 15;
             $model->cart_type = 'A';
             $model->created_by = $cartCookies;
+            $model->user_id = Yii::app()->user->id;
             if ($model->save(false)) {
                 Yii::app()->user->setFlash('success', "Chowkat is successfully created");
                 $this->redirect('/administrator/sales/orders/create');
@@ -219,11 +170,8 @@ public function actionChowkatTool() {
             }
         }
 
-
-        // } else{
-        //     throw new CHttpException(404,'The requested page does not exist.');
-        // }
     }
+
     public function actionCheckout($id) {
         //if(isset($_REQUEST['yt0'])){ echo date("YmdHis"); die;}
         //echo "<pre>"; print_r($_POST); die;
@@ -273,8 +221,7 @@ public function actionChowkatTool() {
             'modelQoute' => $modelQoute,
         ));
     }
-    
-    
+
     public function actionReview(){
         $session = Yii::app()->session;
         $session->open();
@@ -298,6 +245,7 @@ public function actionChowkatTool() {
             'cart' => $cart,
         ));
     }
+
     public function actionCompleted(){
         //echo "<pre>"; print_r($_REQUEST); die;
         $session = Yii::app()->session;
@@ -426,6 +374,7 @@ public function actionChowkatTool() {
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
     }
+
     public function loadProducts($id) {
         $model = Products::model()->findByPk($id);
         if ($model === null)

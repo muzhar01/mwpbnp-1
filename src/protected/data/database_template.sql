@@ -299,9 +299,9 @@ CREATE TABLE `item` (
     `cost` float NOT NULL,
     `total` float NOT NULL,
     `vendor_id` int(100) NOT NULL,
-    `ref_no` int(100) NOT NULL,
-    `bill_unique_no` int(100) NOT NULL,
-    `terms` varchar(20) NOT NULL,
+    `ref_no` bigint NOT NULL,
+    `bill_unique_no` bigint NOT NULL,
+    `terms` text NOT NULL,
     `bill_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -340,8 +340,8 @@ CREATE TABLE `item_return` (
    `total` float NOT NULL,
    `vendor_id` int(100) NOT NULL,
    `ref_no` int(100) NOT NULL,
-   `bill_unique_no` int(100) NOT NULL,
-   `terms` varchar(20) NOT NULL,
+   `bill_unique_no`bigint NOT NULL,
+   `terms` text NOT NULL,
    `bill_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -467,7 +467,7 @@ CREATE TABLE `payments` (
 
 CREATE TABLE `pay_bill` (
     `id` int(11) NOT NULL,
-    `bill_id` int(10) NOT NULL,
+    `bill_id` BIGINT NOT NULL,
     `vendor_id` int(10) NOT NULL,
     `bill_date` date NOT NULL,
     `discount` float NOT NULL,
@@ -2000,6 +2000,40 @@ ALTER TABLE `quotes_order`
     ADD CONSTRAINT `quotes_order_ibfk_4` FOREIGN KEY (`weight`) REFERENCES `product_weight_listings` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 ALTER TABLE `products` ADD FOREIGN KEY (`category_id`) REFERENCES `product_category`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+CREATE TABLE `paybill_current` (
+       `id` int NOT NULL,
+       `pay_date` datetime DEFAULT CURRENT_TIMESTAMP,
+       `discount` float DEFAULT NULL,
+       `amount_paid` float DEFAULT NULL,
+       `payment_method` int DEFAULT NULL,
+       `amount_due` float DEFAULT NULL,
+       `amount_balance` float DEFAULT NULL,
+       `bill_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+       `bill_id` bigint NOT NULL,
+       `vendor_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `paybill_current`
+--
+ALTER TABLE `paybill_current`
+    ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `paybill_current`
+--
+ALTER TABLE `paybill_current`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
 
 COMMIT;
 

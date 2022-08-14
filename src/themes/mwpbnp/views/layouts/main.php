@@ -6,16 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="google-site-verification" content="6x0tCBDItCHcz16XhxWRCC7fZcqKGJhJg84mo16EsDY" />
   <?php 
   $uri = $_SERVER['REQUEST_URI'];
   if($uri=='/'){
 	  ?>
-	  <title>Iron and Steel Manufacturer, Suppliers , Material Stockiest, Exporter In Pakistan | MWPBNP </title>
+	  <title>MWPBNP | We Are a Leading Iron and Steel Materials Supplier </title>
 	  <meta name="keywords" content="iron and steel suppliers, iron and steel business, iron and steel importer, iron and steel exporter, iron and steel manufacturer, iron and steel materials Stockiest, Steel Supplies, fabrication Services, Metal fabrication supply, Leading Supplier of Quality, Quality iron and steel materials, 
 Custom metal fabrications, best steel in pakistan, steel price per ton today in pakistan, steel price per kg today, mwpbnp, ms sheet price per kg in pakistan, cgi sheet price in pakistan, iron sheet price in pakistan today, 20 feet iron square pipe price in pakistan, iron pipe price in pakistan, 20 feet iron pipe price in pakistan, 
 iron sheet price in pakistan, gi sheet price in pakistan, ms square pipe price in pakistan, gi sheet size and price in pakistan, 18 gauge iron pipe price in pakistan, iron square pipe price in pakistan, ms sheet price in islamabad or rawalpindi, ms sheet rate in pakistan, 16 gauge sheet metal price in pakistan, iron sheet price in pakistan per kg, 
 gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets price in pakistan, iron chokhat price in pakistan, steel square pipe price list pakistan, ms square pipe price list in pakistan, square pipe price in pakistan, ms sheet price list today, CPEC , cgi sheets price in pakistan " />
-	   <meta name="description" content="MWPBNP is a leading iron and steel manufacturer, supplier, stockiest, importer & exporter in Pakistan. We provide all types of iron & steel materials at best prices." />
+	   <meta name="description" content="Looking for a reliable steel supplier from the industry? Trust MWPBNP, Our products lasts lifetime. So you don't need to worry about quality when investing in our steel. Contact us today! ." />
 	  <?php
   }
   elseif($uri=='/investors'){
@@ -199,7 +200,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-lg-5" style="padding-top: 11px;">
-              <p style="padding-top: 2px;"><i class="fa fa-phone" aria-hidden="true"></i> + 92 (333) 44 85 888, + 92 (333) 44 85 999, + 92 (51) 44 85 888, + 92 (51) 44 85 999    Rawalpindi Office: + 92 (51) 274 81 88</p>
+              <p style="padding-top: 2px;"><i class="fa fa-phone" aria-hidden="true"></i> + 92 (333) 44 85 888, + 92 (333) 44 85 999, + 92 (51) 44 85 888, + 92 (51) 44 85 999, + 92 (51) 274 81 88</p>
             </div>
 
             <div class="col-md-12 col-lg-3 text-right lng-padd" style="padding-top: 11px;">
@@ -367,6 +368,8 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
                       <li><a href="/investors">Investors</a></li>
                       <!--<li><a href="/faqs">FAQs</a></li> -->
                       <li><a href="/contact-us">Contact Us</a></li>
+                      <li><a href=https://blog.mwpbnp.com/ target="_blank"> Blog</a></li>
+                      
 
                       <li class="dropdown dropdown-button">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bars" aria-hidden="true" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i></a>
@@ -380,6 +383,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
                           <li><a href="/investors">Investors</a></li>
                           <li><a href="/faqs">FAQs</a></li>
                           <li><a href="/contact-us">Contact Us</a></li>
+                          
                         </ul>
 
                       </li>
@@ -582,6 +586,10 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
         <div class="row footer-top">
 
           <div class="col-xs-6 col-sm-4 col-md-2 footer-list">
+            <h6> <a href=https://blog.mwpbnp.com/ target="_blank"> Blog</a></h6>
+          </div>
+          
+          <div class="col-xs-6 col-sm-4 col-md-2 footer-list">
             <h6> <a href="/product/listings">Products</a></h6>
           </div>
 
@@ -591,10 +599,6 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
 
           <div class="col-xs-6 col-sm-4 col-md-2 footer-list">
             <h6> <a href="/product/archive/deform-bar">Archive Price</a></h6>
-          </div>
-
-          <div class="col-xs-6 col-sm-4 col-md-2 footer-list">
-            <h6><a href="/iron-furniture">Ready Made</a></h6>
           </div>
 
           <div class="col-xs-6 col-sm-4 col-md-2 footer-list">

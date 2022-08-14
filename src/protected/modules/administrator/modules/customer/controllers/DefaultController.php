@@ -177,7 +177,23 @@ class DefaultController extends Controller
                 die("did not save item current");
             }*/
         }else{
-            $sql = Yii::app()->db->createCommand("SELECT members.*, customer_transaction.id AS custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC");
+            $sql = Yii::app()->db->createCommand("
+                        SELECT members.id,members.fname,members.job_title,
+                        members.cnic,members.lname,members.username,
+                        members.address,
+                        members.city,members.zipcode,members.zone,
+                        members.area,members.phone_office,
+                        customer_transaction.id AS
+                        custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, 
+                        customer_transaction.payment_method, customer_transaction.amount, 
+                        customer_transaction.mem_id from customer_transaction inner join members 
+                        on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' 
+                        group by members.id,members.fname,members.job_title,members.cnic,members.lname,members.username,members.address,
+                        members.city,members.zipcode,members.zone,members.area,members.phone_office,customer_transaction.id,customer_transaction.date,
+                        customer_transaction.payment_method,customer_transaction.amount,customer_transaction.mem_id
+                        
+                        order by customer_transaction.id DESC;
+                    ");
             $bill_details = $sql->queryAll();
 
             $sql2 = Yii::app()->db->createCommand("SELECT `id`,`name` from banks WHERE `published` = 1");
@@ -195,7 +211,23 @@ class DefaultController extends Controller
 
      
         }else{
-            $sql = Yii::app()->db->createCommand("SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC");
+            $sql = Yii::app()->db->createCommand("
+            SELECT members.id,members.fname,members.job_title,
+                        members.cnic,members.lname,members.username,
+                        members.address,
+                        members.city,members.zipcode,members.zone,
+                        members.area,members.phone_office,
+                        customer_transaction.id AS
+                        custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, 
+                        customer_transaction.payment_method, customer_transaction.amount, 
+                        customer_transaction.mem_id from customer_transaction inner join members 
+                        on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' 
+                        group by members.id,members.fname,members.job_title,members.cnic,members.lname,members.username,members.address,
+                        members.city,members.zipcode,members.zone,members.area,members.phone_office,customer_transaction.id,customer_transaction.date,
+                        customer_transaction.payment_method,customer_transaction.amount,customer_transaction.mem_id
+                        
+                        order by customer_transaction.id DESC;
+                ");
             $bill_details = $sql->queryAll();
 
             $sql2 = Yii::app()->db->createCommand("SELECT `id`,`name` from banks WHERE `published` = 1");
@@ -214,7 +246,23 @@ class DefaultController extends Controller
 
      
         }else{
-            $sql = Yii::app()->db->createCommand("SELECT members.*, customer_transaction.id AS custbillID, customer_transaction.num, customer_transaction.date, customer_transaction.payment_method, customer_transaction.amount, customer_transaction.mem_id from customer_transaction inner join members on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' group by members.id order by customer_transaction.id DESC");
+            $sql = Yii::app()->db->createCommand("
+            SELECT members.id,members.fname,members.job_title,
+                        members.cnic,members.lname,members.username,
+                        members.address,
+                        members.city,members.zipcode,members.zone,
+                        members.area,members.phone_office,
+                        customer_transaction.id AS
+                        custbillID,  MAX(customer_transaction.num) AS Numpy, customer_transaction.date, 
+                        customer_transaction.payment_method, customer_transaction.amount, 
+                        customer_transaction.mem_id from customer_transaction inner join members 
+                        on members.id = customer_transaction.mem_id WHERE customer_transaction.type='invoice' 
+                        group by members.id,members.fname,members.job_title,members.cnic,members.lname,members.username,members.address,
+                        members.city,members.zipcode,members.zone,members.area,members.phone_office,customer_transaction.id,customer_transaction.date,
+                        customer_transaction.payment_method,customer_transaction.amount,customer_transaction.mem_id
+                        
+                        order by customer_transaction.id DESC;
+                ");
             $bill_details = $sql->queryAll();
 
             $sql2 = Yii::app()->db->createCommand("SELECT `id`,`name` from banks WHERE `published` = 1");

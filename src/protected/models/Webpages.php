@@ -67,7 +67,7 @@ class Webpages extends CActiveRecord
 			'meta_keyword' => 'Meta Keyword',
 			'meta_description' => 'Meta Description',
 			'category' => 'Category',
-			'detailtext' => 'Detailtext',
+			'detailtext' => 'Detail Text',
 			'published' => 'Published',
 			'created_date' => 'Created Date',
 		);

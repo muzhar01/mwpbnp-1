@@ -211,36 +211,25 @@ class SiteController extends Controller {
      * Displays the contact page
      */
     public function actionContact() {
-        
+        $this->layout='//layouts/contactus';
 		$model = new ContactForm ();
-		
         if (isset($_POST ['ContactForm'])) {
-            
             $model->attributes = $_POST ['ContactForm'];
             if ($model->validate()) {
-
                 require_once('./PHPMailer/PHPMailerAutoload.php');
-
                 $name    =  $model->name;
 				$subject =  $model->subject;
                 $message =  $model -> body;
-
                 $quotesSetting = QuotesSettings::model()->findByPk(1);
-
                 $contact_us = $quotesSetting->contact_us_email;
 				if (empty($contact_us)) {
 					$contact_us = Yii::app()->params['adminEmail'];
 				}
-
-                //$contact_us = 'mughal.naveed@gmail.com';
-
                 $mail = new PHPMailer;
-              
                 $mail->setFrom($model -> email, $model->name);
                 $mail->addAddress($contact_us, '');
                 $mail->Subject = $subject;
                 $mail->Body = $message;
-
                 $is_file_attached = '';
                 if($_FILES['ContactForm']['error']['attachment'] == 0)
                 {
@@ -259,78 +248,6 @@ class SiteController extends Controller {
                 } else {
                     Yii::app()->user->setFlash('error', "Email was not sent, please try again later.");
                 }
-
-
-                exit();
-                
-                /*
-                    Old code not in use now .... 
-
-                */
-				
-                /*
-				// Always set content-type when sending HTML email
-				$headers = "MIME-Version: 1.0" . "\r\n";
-				$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-				// More headers
-				$headers .= 'From: '.$name.' <'.$model->email.'>' . "\r\n";
-                $headers .= 'X-Mailer: PHP/' . phpversion() . "\r\n";
-				//$headers .= 'Cc: info@mwpbnp.com' . "\r\n";
-	
-				$quotesSetting = QuotesSettings::model()->findByPk(1);
-				
-				$contact_us = $quotesSetting->contact_us_email;
-				if (empty($contact_us)) {
-					$contact_us = Yii::app()->params['adminEmail'];
-				}
-
-
-                $message = $model -> body;
-
-               
-                if($_FILES['ContactForm']['error']['attachment'] == 0)
-                {
-
-                   
-                    $uid = md5(uniqid(time()));
-
-
-                    $path = $_FILES['ContactForm']['tmp_name']['attachment'];
-                    $name = $_FILES['ContactForm']['name']['attachment'];
-                    
-                    $headers .= "Content-Type: multipart/mixed;\r\n"; // Defining Content-Type
-                    $headers .= "MIME-Version: 1.0\r\n";
-                    $headers .= "boundary = $uid\r\n"; //Defining the Boundary
-
-                    $file = $path;
-                    $file_content = file_get_contents( $file);
-                    $file_content = chunk_split(base64_encode($file_content));
-                   
-                    $name = basename($file);
-
-                    $nmessage = "--".$uid."\r\n";
-                    $nmessage .= "Content-type:text/plain; charset=iso-8859-1\r\n";
-                    //$nmessage .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-                    $nmessage .= $message."\r\n\r\n";
-                    $nmessage .= "--".$uid."\r\n";
-                    $nmessage .= "Content-Type: application/octet-stream; name=\"".$name."\"\r\n";
-                    $nmessage .= "Content-Transfer-Encoding: base64\r\n";
-                    $nmessage .="X-Attachment-Id: ".rand(1000, 99999)."\r\n\r\n"; 
-                    $nmessage .= "Content-Disposition: attachment; filename=\"".$name."\"\r\n\r\n";
-                    $nmessage .= $file_content."\r\n\r\n";
-                    $nmessage .= "--".$uid."--";
-
-                    
-
-                    $message = $nmessage;
-                }
-				
-               
-                mail($contact_us, $subject, $message, $headers);
-                Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
-                $this->refresh();
-                */
             }
         }
         $this->render('contact', array(
