@@ -97,12 +97,16 @@ $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
                         ));
                         ?>
                         <?php endif; ?>
-                        <?php if (Yii::app()->user->hasFlash('error')): ?>
-                            <div class="alert alert-danger">
-                                 <?php echo Yii::app()->user->getFlash('error'); ?>
-                            </div>
-                        <?php endif; ?>
+
                 </section>
+
+                    <?php if (Yii::app()->user->hasFlash('error')): ?>
+                        <div class="content" style="margin-top: 10px">
+                            <div class="alert alert-danger">
+                                <?php echo Yii::app()->user->getFlash('error'); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
 
                 <!-- Main content -->

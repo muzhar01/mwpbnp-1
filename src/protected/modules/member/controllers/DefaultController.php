@@ -2,10 +2,15 @@
 
 class DefaultController extends Controller {
 
-    public $layout = '//layouts/column3';
+    public $layout = '//layouts/column2';
+    public $publicPath;
 
     public function init() {
         Yii::import('application.extensions.phpmailer.JPhpMailer'); // Import php mail class
+        $server_name = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+        if($server_name!=Yii::app()->params['main_domain']) {
+            $this->publicPath= '/images/domains/'.$server_name;
+        }
     }
     
     public function actions() {

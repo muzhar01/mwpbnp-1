@@ -199,7 +199,7 @@ class DefaultController extends Controller {
                     }
                }
 
-               $bank= Banks::model()->find("name='$model->payment_type'");
+               /*$bank= Banks::model()->find("name='$model->payment_type'");
                if($model->status=='Confirmed') {
                    $price=number_format(($model->quote_value + $model->transport_charges)-$model->discount, 2);
                    $bankdetails = "<p style='color:red'>Please proceed to deposit
@@ -219,7 +219,8 @@ class DefaultController extends Controller {
                     array($model->quote_id,date('d-m-Y'),$bankdetails),
                     Yii::app()->params['payment_status_emails'][$model->status]['message']) ;
                 $model->save(false);
-                $mail->sendEmail($model->member->email, $subject, $message);
+                $mail->sendEmail($model->member->email, $subject, $message);*/
+                $model->save(false);
               echo "<b>".$model->quote_id .'</b> is successfully changed to <b>'.$model->status.'</b>';
             }
             

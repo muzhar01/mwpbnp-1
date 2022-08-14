@@ -45,11 +45,11 @@ $this->breadcrumbs = array(
                                 <td id="bill_total<?= $i; ?>"><?= $bill_detail['amount_due']; ?></td>
                                 <td><?= $bill_detail['amount_balance']; ?><input id="amount_due<?= $i ?>" type="hidden" name="totalamount" value="<?= $bill_detail['amount_balance']; ?>"></td>
                                 <td id="partial_paid_amount<?= $i ?>"><?=$bill_detail['amount_paid']; ?><input type="hidden" name="partial_paid_amount" value="0"></td>
-                                <td><input type="text" name="discount" data-discount-id="<?=$bill_detail['id'].'-'.$i ?>" class="discount" id="discount<?= $i ?>" value="" disabled="disabled">
+                                <td><input type="text" name="discount"  data-discount-id="<?=$bill_detail['id'].'-'.$i ?>" class="discount" id="discount<?= $i ?>" value="0" disabled="disabled">
                                     <input type="hidden" name="prev_discount" value="<?= $bill_detail['discount']; ?>">
                                 </td>
                                 <input type="hidden" name="vendor_balance" id="vendor_balance<?= $i ?>" value="<?= $bill_detail['current_balance'] ?>">
-                                <td><input type="text" name="amount_pay" data-amountpay-id="<?=$bill_detail['id'].'-'.$i ?>" class="amount_pay" id="amount_pay<?= $i++?>" value="" disabled="disabled"></td>
+                                <td><input type="text" name="amount_pay" data-amountpay-id="<?=$bill_detail['id'].'-'.$i ?>" class="amount_pay" id="amount_pay<?= $i++?>" value="0" disabled="disabled"></td>
                             </tr>
                         <?php } ?>
                         </tbody>
@@ -79,15 +79,15 @@ $this->breadcrumbs = array(
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <input type="hidden" id="pre_row" value="" name="id">
-                    <input type="hidden" id="data-target-id" name="vendor_id">
-                    <input type="hidden" id="total_fixed_amount" name="total_fixed_amount">
-                    <input type="hidden" id="tar_ref_no" name="tar_ref_no">
-                    <input type="hidden" id="paybill_select_id" name="paybillID" value="">
-                    <input type="hidden" id="vendor_bal_previous" value="">
+                     <input type="hidden" id="pre_row" value="" name="id">
+                     <input type="hidden" id="data-target-id" name="vendor_id">
+                     <input type="hidden" id="total_fixed_amount" name="total_fixed_amount">
+                     <input type="hidden" id="tar_ref_no" name="tar_ref_no">
+                     <input type="hidden" id="paybill_select_id" name="paybillID" value="">
+                     <input type="hidden" id="vendor_bal_previous" value="">
                     <label>Remaining Balance:</label>
-                    <input type="hidden" id="remaing_bal_fixed" >
-                    <input type="text" name="remaining_balance"  class="form-control remaining_bal" id="remaining_bal" readonly="" style="border:none; ">
+                     <input type="hidden" id="remaing_bal_fixed" >
+                     <input type="text" name="remaining_balance"  class="form-control remaining_bal" id="remaining_bal" readonly="" style="border:none; ">
                 </div>
                 <div class="col-lg-1">
                     <button class="btn btn-success" type="button" onclick="checkRemainingBal()" style="margin-top: 25px">Paybill</button>
@@ -135,7 +135,7 @@ $this->breadcrumbs = array(
 
 			$('#vendor_name').val(vendor_name)
 
-			var vendor_balance = $('#vendor_balance'+rowNum).val()
+			var vendor_balance = $('#amount_due'+rowNum).val()
 
 			//alert(vendor_balance)
 
@@ -155,66 +155,42 @@ $this->breadcrumbs = array(
 			$('#pre_row').val(rowNum)
 
 			if($('.cur_bal').hasClass('hidden'))
-
-				$('.cur_bal').addClass('hidden')
-
-				$('#bal'+id).removeClass('hidden')
-
-				$('.discount').prop("disabled", true);
-
-				$('.amount_pay').prop("disabled", true);
-
-				$('#discount'+rowNum).prop("disabled", false);
-
-				$('#amount_pay'+rowNum).prop("disabled", false);
-
-				
+                $('.cur_bal').addClass('hidden')
+                $('#bal' + id).removeClass('hidden')
+                $('.discount').prop("disabled", true);
+                $('.amount_pay').prop("disabled", true);
+                $('#discount' + rowNum).prop("disabled", false);
+                $('#amount_pay' + rowNum).prop("disabled", false);
 
 		});
 
 
 
-		$('.discount, .amount_pay').keyup(function(){
+    $('.discount, .amount_pay').keyup(function(){
+        const id = $(this).attr('id');
+        const row = getInt(id);
+        const data_id = $(this).attr('data-discount-id')
+        const amountpay_id = $(this).attr('data-amountpay-id')
+        if(data_id){
+            cur_bal = parseInt($('#bal'+data_id).html());
+        }
+        else{
+             var val = $(this).val();
+
+             amount_due = parseInt($('#amount_due'+row).val());
+             if(amount_due > 0)
+                 cur_bal=amount_due;
+             else
+                 cur_bal = parseInt($('#bill_total'+row).html());
+             var discount = $('#discount'+row).val();
+             var total_remaining = cur_bal  - discount - val;
+             $('#remaining_bal').val(total_remaining)
+
+        }
 
 
 
-			
-
-			const id = $(this).attr('id');
-
-			const row = getInt(id);
-
-			const data_id = $(this).attr('data-discount-id')
-
-			const amountpay_id = $(this).attr('data-amountpay-id')
-
-
-
-			if(data_id){
-
-			 cur_bal = parseInt($('#bal'+data_id).html());
-
-			 //var val = $(this).val();
-
-			}
-
-			else{
-
-			var val = $(this).val();	
-
-			 cur_bal = parseInt($('#remaing_bal_fixed').val());
-
-			 var discount = $('#discount'+row).val();
-
-			 var total_remaining = cur_bal  - discount - val;
-
-			$('#remaining_bal').val(total_remaining)	
-
-			}
-
-
-
-		});
+    });
 
 
 

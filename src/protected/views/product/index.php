@@ -1,6 +1,5 @@
 <h1>Shop</h1>
 <div class="shop-detail">
-    
         <?php foreach ($model as $row){?>
         <div class="shopdetail-boxouter pull-left">
         <div class="shop-thumbnail">

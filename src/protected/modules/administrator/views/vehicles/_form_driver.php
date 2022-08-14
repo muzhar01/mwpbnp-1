@@ -116,10 +116,12 @@
         $('#last_increament').datepicker({
             endDate: '+0d',
             todayHighlight:true,
+            format: 'yyyy-mm-dd',
         });
         $('#appointment_date').datepicker({
             endDate: '+0d',
             todayHighlight:true,
+            format: 'yyyy-mm-dd',
         });
 
     });

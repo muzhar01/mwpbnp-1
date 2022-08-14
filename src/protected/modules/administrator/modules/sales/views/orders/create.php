@@ -103,11 +103,11 @@ $form = $this->beginWidget('CActiveForm', array(
         'type',
         'width',
         'height',
-		 array('name' => 'Weight', 'value' => '$data->quantity'),
+		array('name' => 'Weight', 'value' => '!empty($data->ckt_qty)? $data->quantity ." Kg": "--"'),
         array(
             'name' => 'quantity',
             'type' => 'raw',
-            'value' => 'CHtml::textField("quantity[$data->id]",$data->ckt_qty,array("style"=>"width:50px;", "maxlength" => 5))." "',
+            'value' => 'CHtml::textField("quantity[$data->id]",empty($data->ckt_qty)?$data->quantity:$data->ckt_qty,array("style"=>"width:50px;", "maxlength" => 5))." "',
         ),
         array('name' => 'total_price', 'value' => 'number_format($data->getSubTotalPrice(),2)', 'footer' => number_format($model->getTotalPrice(), 2)),
         array(

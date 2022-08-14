@@ -6,6 +6,7 @@
  */
 
 ?>
+<h1><i class="bi bi-person-check"></i> Register Now.</h1>
 <div class="row form-bg">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="form">

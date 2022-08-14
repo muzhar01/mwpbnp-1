@@ -10,8 +10,9 @@ class VendorController extends Controller
 	public $resource_id=16;
 
 	function init() {
+       // $this->homeUrl=$this->baseUrl .= '/inventory/vendor'; //Backend, I am using for Admin
 		$this->pageTitle=$this->sitename.' '.$this->pageTitle;
-			$this->baseUrl='administrator/inventory';
+        $this->homeUrl = $this->baseUrl='/administrator/inventory/vendor';
 			
 	  Yii::import('application.extensions.phpmailer.JPhpMailer'); // Import php mail class
   }
@@ -44,16 +45,17 @@ class VendorController extends Controller
 				$model->attributes=$_POST['Vendor'];
 					if($searchmodel)
 						 {
-						Yii::app()->user->setFlash('notification',' Records Already Exists ');
-						$this->render('create',['model'=>$model]);
+						Yii::app()->user->setFlash('success',' Records Already Exists ');
+                             $this->redirect(Yii::app()->createUrl($this->baseUrl.'/index'));
 						}
 					else if($model->save())
 						{
-							Yii::app()->user->setFlash('save',' Records has Been Successfully Save.. ');
-						 $this->render('create',['model'=>$model]);
+						 Yii::app()->user->setFlash('success',' Records has Been Successfully Save.. ');
+                            $this->redirect(Yii::app()->createUrl($this->baseUrl.'/index'));
 						}
 					else{
-						die('not save');
+                        Yii::app()->user->setFlash('error',' Error while save data. ');
+
 					}
 			}
 		
@@ -158,20 +160,27 @@ public function actionUpdate($id)
              */
             $bill = new Paybill();
             $bill->vendor_id = $_POST['vendor_id'];
-            $bill->bill_id = $_POST['refno'];
+            $bill->bill_id = time();
             $bill->amount_due = $_POST['totalamount'];
             $bill->bill_date = $_POST['bill_date'];
+            $bill->discount  = isset($_POST['discount']) ? $_POST['discount'] : '0.00';
+            $bill->amount_paid  = isset($_POST['amount_paid']) ? $_POST['amount_paid'] : '0.00';
+            $bill->amount_balance  = isset($_POST['amount_balance']) ? $_POST['amount_balance'] : '0.00';
+            $bill->bill_paid  = isset($_POST['bill_paid']) ? $_POST['bill_paid'] : '0.00';
             $bill->save();
 			/*
 			 * Add vendoers
 			 */
-			$model=new Vendor();
+
 	 		$criteria=new CDbCriteria;     
 		    $criteria->condition= 'id="'.$bill->vendor_id.'"';
-			$model= $model->find($criteria);
-			$vendor_current = $bill->amount_due + $model->current_balance;
-			$model->current_balance = $vendor_current ;
-			$model->update();
+			$model= Vendor::model()->find($criteria);
+            if($model) {
+                $model->current_balance = isset($model->current_balance) ? $model->current_balance : 0.00;
+                $vendor_current = $bill->amount_due + $model->current_balance;
+                $model->current_balance = $vendor_current;
+                $model->update();
+            }
 
         	for($i=1; $i<=$totalRows; $i++){
         		$item=new Item();
@@ -191,15 +200,10 @@ public function actionUpdate($id)
 						$sql = Yii::app()->db->createCommand("SELECT * FROM `item_current` WHERE (`cate_id` =$catId AND `pro_id` =$proId AND `size_id` =$sizeId AND `thickness_id` =$thicId)");
 						
 	                 	$exitfild=$sql->queryAll();// check field exits
-	                 	
-	                	$sql = Yii::app()->db->createCommand("SELECT SUM(`item`.`new_Qty`) FROM `item` WHERE (`item`.`cat_id` =$catId AND `item`.`pro_id` =$proId AND `item`.`size_id` =$sizeId AND `item`.`thickness_id` =$thicId)");
 
+	                	$sql = Yii::app()->db->createCommand("SELECT SUM(`item`.`new_Qty`) FROM `item` WHERE (`item`.`cat_id` =$catId AND `item`.`pro_id` =$proId AND `item`.`size_id` =$sizeId AND `item`.`thickness_id` =$thicId)");
 						$sumQty=$sql->queryAll();// calculate sumCurrentQty
 						$sumCurrentQty=$sumQty['0']['SUM(`item`.`new_Qty`)'];
-
-
-						$updateModel;
-	
 						if(isset($exitfild[0]['id'])){
 							$item_current=new ItemCurrent();	
 							$updateModel=ItemCurrent::model()->findByPk($exitfild['0']['id']);
@@ -307,6 +311,8 @@ public function actionUpdate($id)
 				//$item_current->created_date =  date("Y-m-d H:i:s");
 				$item_current->user_id =yii::app()->user->id;
 				$item_current->cart_type = 'A';
+                $item_current->created_by=Yii::app()->user->id;
+
 				if($item_current->save()){}else{ print_r($item_current->getErrors()); die;}
 
 				$QuotesOrder =new QuotesOrder;
@@ -320,21 +326,16 @@ public function actionUpdate($id)
 				$QuotesOrder->thickness_id=$_POST['thickness'.$i];
 				$QuotesOrder->additional = '';
 				$QuotesOrder->price  =$_POST['total'.$i];
-				//$QuotesOrder->user_id =yii::app()->user->id;
+               $QuotesOrder->other_tax= $QuotesOrder->income_tax=$QuotesOrder->gst_tax='0.0';
+
 				$QuotesOrder->quote_id = $qoute_id;
 				$QuotesOrder->save();
 
 			 }
 			 $NotifyModel = new Members();
 			 $NotifyModel->sendOrderCreationMessage($vendor_id,5,$qoute_id,$bill_date,$total_net_payable);
-			// $this->redirect(array('products/orders'));
-			//echo 1; die;
-			?>
-			<script type="text/javascript">
-				window.location.href = "http://mwpbnp.com/administrator/inventory/vendor/CreateQuotesForDesktop";
-			</script>
-			<?php die;
-
+			 $this->redirect('/administrator/inventory/vendor/CreateQuotesForDesktop');
+             Yii::app()->end();
 
 		}
 		if(isset($_POST['totalRows'])){ //echo "<pre>"; print_r($_POST); die;
@@ -516,31 +517,24 @@ public function actionPurchasereturn(){
 		$catId;$proID;$sizeId;$thicId;$new_Qty;
 		if(isset($_POST['totalRows'])){
         	$totalRows = $_POST['totalRows'];
-          		/*$bill = new Paybill();
-				$bill->vendor_id = $_POST['vendor_id']; 	 	
-        		$bill->bill_id = $_POST['refno']; 	
-        		$bill->amount_due = $_POST['totalamount']; 	
-				$bill->bill_date = $_POST['bill_date'];
-				
-				$bill->save();
-	*/
-
-			$model=new Vendor();
+         	$model=new Vendor();
 	 		$criteria=new CDbCriteria;     
 		    $criteria->condition= 'id="'.$_POST['vendor_id'].'"';
 			$model= $model->find($criteria);
 			$prev_balance = $model->current_balance;
-			$vendor_current = $prev_balance - $_POST['totalamount'];
+			$vendor_current = (float) $prev_balance - (float) $_POST['totalamount'];
 			$model->current_balance = $vendor_current ;
 
 			$model->update();
 
 
         	for($i=1; $i<=$totalRows; $i++){
+
         		$item=new PurchaseReturn();
         		$item->vendor_id = $_POST['vendor_id']; 	 	
         		$item->ref_no = $_POST['refno']; 	
-        		$item->total = $_POST['total'.$i]; 	
+        		$item->bill_unique_no = $_POST['refno'];
+        		$item->total = $_POST['total'.$i];
         		$item->terms = $_POST['terms']; 		
 		 		$catId = $item->cat_id=$_POST['category'.$i];
 				$proId = $item->pro_id=$_POST['pro'.$i];
@@ -553,13 +547,11 @@ public function actionPurchasereturn(){
 
 					if($item->save()){
 						$sql = Yii::app()->db->createCommand("SELECT `id`, `current_Qty` FROM `item_current` WHERE (`cate_id` =$catId AND `pro_id` =$proId AND `size_id` =$sizeId AND `thickness_id` =$thicId)");
-						
-	                 	$result =$sql->queryAll();// check field exits
-
+					 	$result =$sql->queryAll();// check field exits
 	                 	  if(!empty($result)) {
 	                 	  		$prev_qty = $result[0]['current_Qty'] ;
 	                 	  		$return_qty = $item->new_Qty;
-	                 	  		$remaining_qty = $prev_qty - $return_qty;
+	                 	  		$remaining_qty = (int) $prev_qty - (int) $return_qty;
 
 	                 	  	$item_current=new ItemCurrent();	
 							$updateModel=ItemCurrent::model()->findByPk($result['0']['id']);
@@ -586,12 +578,19 @@ public function actionPurchasereturn(){
 public function actionPaybill(){
 	$vendor = new Vendor();
 	$vendor = $vendor->model()->findAll();
+
+
     if(isset($_POST['id'])){
+        if(empty($_POST['date_bill']) || empty($_POST['method']) ){
+            Yii::app()->user->setFlash('error', "Please enter Bill date and Payment Method");
+            $this->redirect('/administrator/inventory/vendor/paybill');
+        }
         $id = $_POST['paybillID'];
-        $pay_bill = new Paybill();
+
         $criteria=new CDbCriteria;
         $criteria->condition= 'id="'.$id.'"';
-        $pay_bill= $pay_bill->find($criteria);
+        $pay_bill= Paybill::model()->find($criteria);
+
         $amount_pay = isset($_POST['amount_pay'])? (float) $_POST['amount_pay'] :0;
         $discount = isset($_POST['discount'])? (float) $_POST['discount'] :0;
         $paying = $amount_pay + $discount;
@@ -618,16 +617,17 @@ public function actionPaybill(){
             $pay_bill->bill_paid = 1;
         }
     	if($pay_bill->update()){
-
-		$discount= $_POST['discount'];;
-		$amount_paid=  isset($_POST['amount_pay'])? $_POST['amount_pay'] :0;
-		$amount_due= $_POST['total_fixed_amount'];
-		$pay_date = $_POST['date_bill'];
+		$discount= isset($_POST['discount']) ? $_POST['discount'] : 0.00;
+        $amount_paid=  isset($_POST['amount_pay'])? $_POST['amount_pay'] :0;
+		$amount_due= isset($_POST['total_fixed_amount']) ? $_POST['total_fixed_amount'] :0.00;
+		$pay_date  = isset($_POST['date_bill']) ? date('Y-m-d',strtotime($_POST['date_bill']) ): date('Y-m-d');
 		$payment_method= $_POST['method'];
 		$vendor_id = $_POST['vendor_id'];
-		$bill_id = $_POST['tar_ref_no'];
-		$bill_date = $_POST['bill_date'];
-		$sql = "insert into paybill_current (pay_date,discount, amount_paid, payment_method, amount_due, amount_balance, bill_date, bill_id, vendor_id) values ('".$pay_date."',
+		$bill_id = isset($_POST['tar_ref_no']) ? $_POST['tar_ref_no'] :'';
+        $bill_date  = isset($_POST['bill_date']) ? date('Y-m-d',strtotime($_POST['bill_date']) ): date('Y-m-d');
+
+		$sql = "insert into paybill_current (pay_date,discount, amount_paid, payment_method, amount_due, amount_balance, bill_date, bill_id, vendor_id) 
+                                        values ('".$pay_date."',
 										'".$discount."',
 										'".$amount_paid."',
 										'".$payment_method."',
@@ -661,43 +661,21 @@ public function actionPaybill(){
 		die("did not save item current");
 	}
 }else{
-	$sql = Yii::app()->db->createCommand("SELECT pay_bill.id AS paybillID, pay_bill.amount_balance, pay_bill.amount_paid, pay_bill.amount_due, pay_bill.vendor_id,pay_bill.bill_id, pay_bill.bill_date,
-	vendor.Name, vendor.id, vendor.current_balance, pay_bill.discount from `pay_bill`
-		INNER JOIN vendor ON vendor.id = pay_bill.vendor_id Where bill_paid = 0");
+    $SQL="SELECT pay_bill.id AS paybillID, pay_bill.amount_balance, pay_bill.amount_paid, pay_bill.amount_due, pay_bill.vendor_id,pay_bill.bill_id, pay_bill.bill_date,
+	        vendor.Name, vendor.id, vendor.current_balance, pay_bill.discount from `pay_bill`
+		INNER JOIN vendor ON vendor.id = pay_bill.vendor_id Where bill_paid = 0 ";
+
+	$sql = Yii::app()->db->createCommand($SQL);
 	$bill_details = $sql->queryAll();
 
 	$sql2 = Yii::app()->db->createCommand("SELECT `id`,`name` from banks WHERE `published` = 1");
 	$payment_method = $sql2->queryAll();
+        Yii::app()->user->setFlash('success', "Payment of bill is completed.");
 }
 	$this->render('paybill',['vendor'=>$vendor, 'bill_details' => $bill_details, 'payment_method' => $payment_method]);
 
 
 }
 
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
 
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }

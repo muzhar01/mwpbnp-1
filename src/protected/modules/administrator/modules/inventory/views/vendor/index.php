@@ -8,6 +8,7 @@ $this->breadcrumbs = array(
 	<div class="box box-info">
         <div class="box-header with-border">
             <h1 class="box-title">Print Vendors</h1>
+            <?php echo CHtml::link('<i class="fa fa-plus-square" aria-hidden="true"></i> Create Vendor' , $this->baseUrl . '/create', array('class' => 'btn btn-success', 'style' => 'float:right;margin-left:5px')); ?>
             <a class="btn btn-danger pull-right" id="print"><i class="fa fa-print"></i> Print</a>
         </div>
         <div class="box-body">
