@@ -82,7 +82,7 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
   <link href='//fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,400italic,600' rel='stylesheet' type='text/css'>
 
   <!-- Bootstrap -->
-  <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/owl.carousel.css" rel="stylesheet">
 
@@ -91,10 +91,10 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
   <!-- hover button css -->
 
   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/demo-page.css" rel="stylesheet" media="all">
-  <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/hover.css" rel="stylesheet" media="all">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" rel="stylesheet" media="all">
 
   <!-- fonts awesome -->
-  <link href="<?php echo Yii::app()->theme->baseUrl; ?>/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- style -->
   <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" rel="stylesheet">
@@ -667,10 +667,9 @@ gi sheets price in pakistan, 16 gauge iron pipe price in pakistan, iron sheets p
   <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
   <?php //Yii::app()->clientScript->registerCoreScript(Yii::app()->theme->baseUrl . '/js/jquery.js', CClientScript::POS_END, array('id' => 'async')); ?>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/custom.js"></script>
-  <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/OwlCarousel2-2.2.1/src/js/owl.autoplay.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/owl.carousel.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 
   <!-- Mubbi Codes Start -->
   <style>

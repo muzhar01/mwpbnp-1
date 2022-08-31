@@ -31,8 +31,9 @@
 
 
     <script src="/themes/rapidadmin//plugins/flot/jquery.flot.min.js"></script>
+	
     <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-    <script src="/themes/rapidadmin/plugins/flot/jquery.flot.resize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.resize.min.js"></script>
     <script src="/themes/rapidadmin//plugins/flot/jquery.flot.time.min.js"></script>
     <script src="/themes/rapidadmin//plugins/flot/jquery.flot.axislabels.js"></script>
     <script src="/themes/rapidadmin//plugins/flot/jshashtable-2.1.js"></script>
